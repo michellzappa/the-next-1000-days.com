@@ -30,8 +30,8 @@ export default function Home({ chapters }: HomeProps) {
         <main className="flex-grow">
           <h1 className="text-4xl font-bold mb-8">The Next 1,000 Days</h1>
           <p className="text-xl mb-8">
-            A human-readable guide for navigating our transition toward
-            artificial general intelligence.
+            A guide for navigating our transition toward artificial general
+            intelligence.
           </p>
 
           <section className="mt-8">
