@@ -1,7 +1,7 @@
 # Creativity
 ## Novelty generators.
 
-Slide-55.png
+Slide-55.webp
 
 
 What does it mean for a machine to generate creative output? Will we recognize AI-created content? What is our role in a hybrid creative environment?

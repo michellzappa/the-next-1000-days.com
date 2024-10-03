@@ -27,18 +27,18 @@ Tarot is two set of cards: the 22 major and 56 minor arcana. The major arcana re
 > Consider ALL existing Tarot cards for THE MAGICIAN.
 > Design vertical tarot cards which show their meanings and associated symbols.
 
-Slide-58.png
+Slide-58.webp
 
 The result was astounding. 
 Instead of a traditional magician standing behind a table, this one stood atop of it waving a magic wand towards the horizon. The symbols, the design - all were immediately arresting and managed to capture part of what gives that particular card its meaning. 
 
-Slide-59.png
+Slide-59.webp
 
 Hallucinations are expected, leaving details like numbers and text prone to misinterpretation. Instead of asking for corrections or even fixing them in post, I felt the vibe of the card wasn't hurt by the models imagination, but enriched by it. 
 
 I expanded the test by generating a few more cards using the exact syntax. Both additional Magicians and adjacent ones like the Fool and High Priestess. With light cherry picking I ended up with a handful of candidates for new cards. Each generation required between one and twenty or thirty repetitions to create an ideal design. At the time, Dall-E would generate four images in different aesthetics, from which you could select one, and then request a new input to be generated in a similar style. I exploited this to keep the design of the Tarot cards somewhat consistent. 
 
-Slide-60.png
+Slide-60.webp
 
 [img magician]
 

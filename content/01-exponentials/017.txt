@@ -1,7 +1,7 @@
 # The AI Zoo
 ## Not All Intelligence is Created Equal
 
-Slide-23.png
+Slide-23.webp
 
 Imagine, for a moment, that you're visiting a peculiar zoo. But instead of lions, tigers, and bears, the exhibits are filled with different types of artificial intelligence. Welcome to the AI Zoo, where not all intelligence is created equal.
 

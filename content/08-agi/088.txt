@@ -1,9 +1,9 @@
 # Sparks of AGI
 
 
-Slide-80.png
+Slide-80.webp
 
-Slide-81.png
+Slide-81.webp
 
 8. The "Sparks of AGI" Debate
    - Discussion of the Microsoft research paper on GPT-4

@@ -1,6 +1,6 @@
 064. Uses of AI 
 
-Slide-64.png
+Slide-64.webp
 
 Design, code, creativity, opinions, code review, bug checking, documentation
 

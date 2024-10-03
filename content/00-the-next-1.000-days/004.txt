@@ -1,6 +1,6 @@
 # Who Are You?
 
-Slide-03.png
+Slide-03.webp
 
 Audience and Relevance
    - Who the talk is designed for (technical leaders, business executives)
@@ -25,7 +25,7 @@ We will cover major AI trends that will impact businesses globally, not just tec
 
 # Strategic Understanding vs. Technical Knowledge
 
-Slide-04.png
+Slide-04.webp
 
 
 Every company is and every organization is having to develop a strategy for how to manage their own transition and transformation and everywhere I look everyone I talk to for the last, easily for the last year, has been enamored with and sort of swept up by the amount of change happening in this space

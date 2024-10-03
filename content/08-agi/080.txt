@@ -1,6 +1,6 @@
 The Age of Spiritual Machines.
 
-Slide-73.png
+Slide-73.webp
 
 * Should we start designing for a post-AGI society?
 * What happens when our lives change because of AGI?
@@ -28,7 +28,7 @@ This chapter will explore various perspectives on AGI, its potential implication
 Remember, as Edsger W. Dijkstra said, "The question of whether machines can think is about as relevant as the question of whether submarines can swim." Perhaps we need to reframe how we think about intelligence altogether.
 
 
-Slide-74.png
+Slide-74.webp
 
 
 

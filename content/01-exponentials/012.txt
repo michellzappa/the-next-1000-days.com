@@ -1,7 +1,7 @@
 # Everything We Make
 ## How Technology Shapes Our Reality
 
-Slide-14.png
+Slide-14.webp
 
 
 
@@ -29,7 +29,7 @@ So, what does all this mean for us, standing on the cusp of artificial general i
 
 Well, for starters, it means we need to be acutely aware of the trajectory we're on. The path from cuneiform to Kindles wasn't inevitable – it was the result of countless decisions, innovations, and adaptations. As we move forward into the age of AI, we're making similar choices that will shape the future in ways we can barely imagine.
 
-Slide-15.png
+Slide-15.webp
 
 It also means we need to be mindful of how these advancements are changing our expectations. Just as we now expect instant access to information and on-demand everything, what will we come to expect from AI? And how will those expectations shape our society, our relationships, our very concept of what it means to be human?
 
@@ -41,4 +41,4 @@ So the next time you tap your phone to order dinner, take a moment to marvel at 
 
 
 
-Slide-16.png
+Slide-16.webp

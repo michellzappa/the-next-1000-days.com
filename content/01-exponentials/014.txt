@@ -1,7 +1,7 @@
 # The Expert Myth
 ## Why nobody can claim to be an expert on AI.
 
-Slide-18.png
+Slide-18.webp
 
 Imagine, for a moment, that you're at a dinner party. The conversation turns, as it inevitably does these days, to artificial intelligence. Someone mentions ChatGPT, another brings up deep learning, and suddenly, everyone's looking at you. After all, you work in tech. You must be an expert, right?
 

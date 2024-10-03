@@ -1,6 +1,6 @@
 091. Alignment vs. Robustness
 
-Slide-85.png
+Slide-85.webp
 
 ...
 ...

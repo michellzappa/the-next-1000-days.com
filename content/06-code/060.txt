@@ -1,7 +1,7 @@
 # Code
 ## Programming is language.
 
-Slide-63.png
+Slide-63.webp
 
 * Prototyping and piloting new ideas with GenAI.
 * Software is another language which GenAI excels at.

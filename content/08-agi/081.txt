@@ -1,7 +1,7 @@
 081.
 
 
-Slide-75.png
+Slide-75.webp
 
 3. Definitions and Perspectives on AGI
    - OpenAI's definition: "Highly autonomous systems that outperform humans at most economically valuable work"

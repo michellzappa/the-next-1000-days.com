@@ -1,9 +1,9 @@
 # Agents
 ## What used to take weeks can now take minutes.
 
-Slide-67.png
+Slide-67.webp
 
-Slide-68.png
+Slide-68.webp
 
 
 ReAct

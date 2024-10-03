@@ -17,7 +17,7 @@ Generative models are solving the “blank page problem” for creating images, 
 
 Some are quick to learn and incorporate AI tools in their workflow. For creatives this might mean using Dall-E to quickly compose first drafts, while a data analyst might be using Power BI’s text analytics to automatically map database fields or using Github CoPilot to accelerate development. Having access to on-demand intelligence is augmenting our creative and analytical skills, and will soon include other types of intelligence.
 
-c1.png
+c1.webp
 
 ## Master Your Tools
 
