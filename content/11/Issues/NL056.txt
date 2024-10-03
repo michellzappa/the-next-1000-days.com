@@ -1,0 +1,12 @@
+
+In issue 054 we spoke about Google’s challenge dealing with the “Jagged Edge” of expectations in AI (in how infusing generative responses to your search can seriously damage your credibility). Each human seems to display an inner model which shapes our expectations about how other intelligences are supposed to behave.
+
+This mismatch between how we want AIs to perform and how they actually respond to us is maybe the biggest opportunity/threat when it comes to determining how we actually use these systems, individually and collectively. 
+
+When Apple positions Siri as knowledgable and capable, we create a mental model of what it should be able to perform for us. When it then fails and falters with what feels like basic requests, we start doubting the capacity of the system as a whole. 
+
+ChatGPT took the world by storm in 2023 because we had low expectations about chatbots while it wildly outperformed our mental model for what a chat should be capable of. Same as AlphaGo outplaying Lee Sodol in 2016 and DeepBlue Kasparov in 1997. 
+
+Whatever Apple launches today at WWDC will surely represent a big step forward in terms of capability, and maybe it’s enough to start changing our minds about AIs potential. 
+
+#c02

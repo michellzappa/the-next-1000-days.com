@@ -1,0 +1,15 @@
+Happy Monday and welcome to another issue of Artificial Insights, your weekly guide to the many forms of arbitrary intelligence.
+
+It is easy to become caught up in the hype around everything AI is capable of doing. This very newsletter is often guilty of filtering away the negative and focusing mostly on the positive capabilities of our tools. Depending on your perspective, (generative) AI is either a one-way street toward a complete unknown, or autocomplete on steroids blackboxing intelligence.
+I don’t have a definitive take, and rather enjoy exploring the liminal space between either perspective.
+
+For example, earlier today I tried generating an intro for this week’s newsletter with GPT-4, using all the usual best practices of providing training data (42 previous intros), producing a style guide, indicating vocabulary to avoid and structuring my ask around guiding questions and examples – and yet 10/10 suggested outputs were crap. Uninspired, flat and obvious. Uninteresting and impersonal. 
+
+Since the first days of writing this newsletter, people have been asking me whether I’ve outsourced work to an AI. The answer remains: every week I try new angles and approaches, but still find myself doing 80-100% of the work. Despite having a fairly formulaic approach to editing the newsletter, GenAI still doesn’t get it, and more often than not, takes away from the actual joy of writing.
+
+Each week I select a handful of links which capture some of the ideas shaping the emerging capabilities of AI, as well as personal projects and commentary. Before jumping into this week’s links, here are some things we’ve been working on:
+
+🪷 Personal purpose: since last year we’ve been developing a web experience which helps you identify your passions and identify where they overlap, with the help of GPT. The feedback has been overwhelmingly positive, and we will soon offer group workshops online. Email or DM if you’d like to give it a try.
+📇 Emerging vocabulary: Earlier editions of this newsletter featured weekly definitions of terms and concepts used to understand AI (like Alignment, Hallucination, etc). To expand on this idea, we are working on a knowledge graph mapping out the areas and terms defining the field. Learn more on our WhatsApp.
+💬 WhatsApp group: Don’t miss our new group chat. Thanks to readers like you, this has now become my favorite place to find and share new ideas.
+Until next week,MZ

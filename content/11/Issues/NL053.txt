@@ -1,0 +1,10 @@
+Machine learning is not a new endeavor - and while the dream of autonomous cognition has taken on many forms over the last centuries and decades - something goes to be said about the moment we are sharing right now. Sci-fi geeks and technology enthusiasts spent decades questioning when machines would eventually surpass the Turing Test - and it turns out sometime between GPT3.5 and GPT4 we did, and nobody really noticed. We used to think that having an AI masquerade as human would be a monumental transition, while in reality it had virtually no impact on our perception of AI capabilities, and we quickly moved on to other more interesting (and important) problems.
+
+This mismatch between perception and reality is what I find fascinating with emerging technology, in how quickly it rewires our expectations of the world, while leaving almost no trace about how we used to think about the world before a certain technology came into our lives.
+
+While avoiding senseless hype, I am also entirely convinced that the current wave of AI techniques and applications, coupled with an unimaginable amount of investment and academic research, means that we are barely scratching the surface of what this technology will be capable of. Yes, it will change our organizations, institutions and maybe even personal lives. How exactly this will take place is a matter of careful observation and quick response, but we are barely begin to comprehend what lies behind the phase transition we’re all experiencing.
+
+Maybe that is why the drama-of-the-week over at OpenAI doesn’t really bother me. Sam Altman turned internet darling with their rapid ascent and lowercase posts - and it’s no secret OpenAI are beholden only to shareholder value, not humanitarian ones. Rapid valuation in an indeterminate industry is virtually a guarantee of chaos and misaligned expectations between stakeholders. Let’s just hope they don’t ruin the horizon for the rest of us.
+
+
+#c00 

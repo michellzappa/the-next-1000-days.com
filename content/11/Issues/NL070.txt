@@ -1,0 +1,9 @@
+Happy Monday and welcome back to Artificial Insights, your weekly deep dive into the articles, interviews and presentations that will help you understand our inevitable transition towards greater forms of intelligence.
+
+With this newsletter, I try to strike a balance between covering important releases and taking a step back to look at the big picture. I look for conversations and observations which manage to speak with both sides of the equation, avoiding to get caught up with the minutiae of technical implementations or the profound ethical effects caused by AI, which is better left to experts.
+
+I love learning from the deeply knowledgable as much as I enjoy navigating and sharing their insight. No individual is an expert about all aspects of AI. If we consider AI as the intersection of comp sci, math, stats, linguistics, ethics, data science and psychology – then none of us can be considered true experts of the hyperobject that is AI. Irreducibly complex and unprecedented, nobody really knows what is about to happen, meaning each of us are uniquely positioned to ride the wave. 
+
+As always, it’s a privilege to have readers such as yourself with me on this journey. 
+
+#c00 

@@ -1,0 +1,13 @@
+Happy Monday and welcome to your weekly sense-making session around analytic intuition.
+
+One of the questions I’ve been asking myself is: how are we supposed to learn how to adapt and prepare ourselves for the technological transition we are experiencing? If we believe AI to be as transformational as it seems, then what are the best practices and preparations necessary to thrive in the near future?
+
+I don’t expect the effects of AI to diminish in our lifetimes. Like our larger interdependency with technology, I believe the effects of AI will grow indefinitely, requiring a significant reorientation of our systems and collective priorities. Maybe AI is eating the world, or maybe it is the usual suspect of capital showing the way - but its consequences seem inevitable.
+
+This very newsletter attempts to sense-make in small increments, but I have a lingering feeling that something greater is necessary.
+Where do you go for quality insight, if you are not terminally online, living in SF or a Phd ML researcher?
+
+Most conferences, media and innovation thought leaders seem relatively detached from the actual technical development of AI. Earlier this year we mapped out 50+ technology and innovation events & conferences around the world, and either we completely missed a number of specialized events, or there is remarkably little happening in this space. 
+
+Help me answer this question? I feel most people would have something to learn from developing AI-adjacent skills, but almost nobody has the time for it. How do we reach those who need to learn this the most?
+Until next week,MZ

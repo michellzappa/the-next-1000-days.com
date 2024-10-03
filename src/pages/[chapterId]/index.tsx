@@ -7,9 +7,6 @@ import path from "path";
 import Markdown from "../../components/Markdown";
 import Footer from "../../components/Footer";
 
-// Remove the unused SubPage interface
-// interface SubPage { ... }
-
 interface ChapterProps {
   title: string;
   content: string; // Replace 'any' with 'string'
@@ -23,6 +20,15 @@ interface Page {
   title: string;
 }
 
+function getDisplayTitle(pageId: string, chapterId: string) {
+  // Check if the pageId is a chapter intro page (e.g., 010, 020)
+  if (pageId.endsWith("0")) {
+    return `Chapter ${parseInt(chapterId, 10)}`;
+  }
+  // Return the page number for other pages
+  return `Page ${pageId}`;
+}
+
 export default function Chapter({
   title,
   content,
@@ -31,19 +37,21 @@ export default function Chapter({
 }: ChapterProps) {
   const pageId = `${chapterId.padStart(2, "0")}0`;
   const router = useRouter();
-  // Remove the unused chapterIdQuery
-  // const { chapterId: chapterIdQuery } = router.query;
 
   if (router.isFallback) {
     return <div>Loading...</div>;
   }
 
+  console.log("pageId:", pageId, "chapterId:", chapterId, "title:", title);
+
   return (
     <div className="min-h-screen flex flex-col items-center bg-white dark:bg-gray-900 text-black dark:text-white">
       <div className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12">
         <Head>
-          <title>{title || pageId} - The Next 1,000 Days</title>{" "}
-          {/* Update this line */}
+          <title>{`${getDisplayTitle(
+            pageId,
+            chapterId
+          )} - The Next 1,000 Days`}</title>
         </Head>
         <Link
           href="/"
@@ -51,13 +59,11 @@ export default function Chapter({
         >
           ← Back to Home
         </Link>
-        <h1 className="text-4xl font-bold mb-8">{title || pageId}</h1>{" "}
-        {/* Update this line */}
-        <Markdown
-          content={content}
-          chapterId={chapterId}
-          pageId={pageId} // Pass the correct pageId for chapter intros
-        />
+        <div className="text-sm text-gray-500 mb-2">
+          {getDisplayTitle(pageId, chapterId)}
+        </div>
+        <h1 className="text-4xl font-bold mb-8">{title}</h1>
+        <Markdown content={content} chapterId={chapterId} pageId={pageId} />
         {subPages.length > 0 && (
           <section className="mt-12">
             <h2 className="text-2xl font-semibold mb-4">Pages</h2>
@@ -97,7 +103,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const chapterId = params?.chapterId as string;
-  const pageId = `${chapterId.padStart(2, "0")}0`; // Ensure this is correct for chapter intros
+  const pageId = `${chapterId.padStart(2, "0")}0`;
 
   const contentDir = path.join(process.cwd(), "content");
   const chapterDir = fs
@@ -117,20 +123,27 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const mainFile = chapterFiles[0];
   const content = fs.readFileSync(path.join(chapterPath, mainFile), "utf-8");
   const lines = content.split("\n");
-  const title = lines[0].startsWith("# ") ? lines[0].replace("# ", "") : pageId; // Update this line
+
+  // Extract the title and ensure it's a single string
+  const title = lines[0].startsWith("# ")
+    ? lines[0].replace("# ", "").trim()
+    : pageId;
+
+  // Remove the subtitle line from the content
+  const contentWithoutSubtitle = lines.slice(2).join("\n");
 
   const subPages = chapterFiles.slice(1).map((file) => {
     const pageContent = fs.readFileSync(path.join(chapterPath, file), "utf-8");
-    const pageTitle = pageContent.split("\n")[0].replace("# ", "");
+    const pageTitle = pageContent.split("\n")[0].replace("# ", "").trim();
     return { id: file.replace(".txt", ""), title: pageTitle };
   });
 
   return {
     props: {
-      title, // Add this line
-      content: lines.slice(1).join("\n"),
+      title,
+      content: contentWithoutSubtitle,
       chapterId,
-      pageId, // Include pageId in the props
+      pageId,
       subPages,
     },
   };

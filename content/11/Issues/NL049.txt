@@ -1,0 +1,7 @@
+Happy Monday and welcome to your weekly guide to the near future.
+Something that keeps coming up when talking about how to upskill people by teaching them strategic AI applications is usually the question of technical preparedness. Who do you write for? What do you expect in terms of prior knowledge?
+
+Maybe you have just heard of ChatGPT, or perhaps you’re already fine-tuning Llama-3 on your local GPU cluster – no matter. This newsletter is written for everyone interested in the subject.
+
+After a year covering the cutting edge of AI, I have cemented my opinion that the general-purpose nature of AI applications mean that no industry or sector of modern economies will remain unaffected. Maybe we will have to calibrate expectations down moving forward, or maybe we haven’t even started scratching the surface. It is difficult to estimate how quickly it will affect particular groups or functions, but it is certain that we’ll keep ratcheting up both our dependence and the utility of these tools.
+This week I have more questions than answers and hope the selection of links and videos below will satiate your curiosity. I’m also working on a new presentation deck and narrative where I hope to organize current thoughts about the machine-augmented transformation we are all experiencing. Will share more with you in the coming weeks.

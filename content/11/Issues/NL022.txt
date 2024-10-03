@@ -1,0 +1,7 @@
+Happy Monday and greetings from a muggy London. I am here this week together with the TrendWatching crew to talk about Centaurs and technology trends tomorrow at the Barbican. To say I’m excited would be an understatement – London is where Envisioning effectively began a decade ago, and where I had some of my first opportunities to develop and present ideas about the emerging future of technology. 
+
+One of the ideas we’ll be exploring at the session are “creative centaurs”, or using machine intelligence in order to augment our ability to come up with new and unexpected ideas.
+
+We at Envisioning have been developing an AI-augmented co-creation interface and are exploring different application areas for this. One of the more surprising use cases has been around the 🌸 Ikigai – or finding out what gives people a sense of purpose or reason for living. We have created an approach which allows you to input things you love, are good at, can be paid for, and that the world needs, while having GPT increase your scope, identify intersections and eventually propose a unique Ikigai for you. If this is something you want to experiment with, please reply to this message so we can add you to the next cohort in the coming weeks.
+
+This week’s edition is short and sweet and features an interview with a dear friend and cofounder of the Portuguese Women in Tech movement and AthenaDAO, Inês Santos Silva about her use of AI today. As always, please like, share and subscribe to show your appreciation of Artificial Insights! 

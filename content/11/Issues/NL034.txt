@@ -1,0 +1,8 @@
+Happy 2024 and welcome to the second year of Artificial Insights.
+
+The holidays to me are the best time for focused work and I spent the last few weeks immersed in my favorite code editor typing around the clock. The primary output was a new personal website – it’s always been important for me to keep an online presence, and I’ve have blogged on different platforms since forever. Having moved between platforms over the years means there was no cohesive place for myself to keep track of my ideas, and figured a new blog with posts spanning nearly 20 years to be the ultimate holiday gift for myself (and my readers).
+
+In terms of AI news, little was announced in the quiet weeks. I spent a lot of time thinking about what this newsletter should be about. What do I enjoy learning, and what kind of writing is currently underserved? It feels like everything that can be said about AI is being said - and I often stop to question whether it even makes sense to keep the format going in such a crowded space.
+Yet here we are. With another edition, and renewed interest in keeping the flow. After a brief hiatus, welcome back to Artificial Insights and thanks for reading!
+
+#c10 

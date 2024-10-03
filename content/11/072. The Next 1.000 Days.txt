@@ -1,0 +1,15 @@
+072. The Next 1.000 Days
+
+What would you do with unlimited resources?
+
+Most of us spend our lives managing scarcity—scarcity of money, time, and attention. We occasionally manage to reprioritize and act in our best interests, but for the most part, life is about trying to get the most out of limited inputs. Whether you’re putting extra hours into a project or budgeting time to improve yourself, everything comes down to trade-offs. You get 24 hours each day, and unless you’re unusually rich, you treat money and time as finite. You learn to make them stretch.
+
+But what if those limits vanished? What if you had access to an intelligence that could think faster, deeper, and more collaboratively than any human? What if you could deploy it however you liked, working tirelessly towards whatever you set your sights on? What would change about how you spent your time, your attention, your life?
+
+AI is here, and it’s reshaping how we think about what’s possible. But here’s the tricky part: we judge AI based on our limited, human experience. If an AI nails a complex task, we’re impressed. When it fails, especially in ways that seem nonsensical, it’s jarring. Sometimes it fails at something so simple, it leaves you wondering how it ever got anything right in the first place. Reload the same query, and you might get the correct response the next time. But the inconsistency sticks with you.
+
+The challenge is that AI systems don’t operate by our logic, and so their strengths and weaknesses don’t map cleanly to our expectations. AI is like a tool with invisible edges—it can carve out remarkable capabilities in one direction, while creating blind spots in others. And it’s not about the AI’s inherent quirks, but about who is shaping these systems and for what purpose. The decisions about how these tools are designed and deployed are being made by a small group of people in a handful of organizations. They’re deciding the future for all of us.
+
+That’s why staying informed matters. To understand what AI can do—what it can do for you—takes work. It takes making mistakes and adjusting your assumptions. Learning to interact with these systems isn’t a passive process. It’s active and humbling. You have to figure out when the AI is really listening to what you mean versus just giving you a plausible answer. It’s about learning the language of these models and figuring out what you can ask of them.
+
+In a world where intelligence feels infinite, the challenge isn’t getting more of it. It’s knowing how to use it.

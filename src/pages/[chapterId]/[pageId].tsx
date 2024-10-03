@@ -49,7 +49,7 @@ export default function Page({
           href={`/${chapterId}`}
           className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
         >
-          ← Back to Chapter
+          ← Back to Chapter: {chapterTitle}
         </Link>
         <h1 className="text-4xl font-bold mb-8">{title}</h1>
         <Markdown

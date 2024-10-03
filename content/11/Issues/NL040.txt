@@ -1,0 +1,7 @@
+Happy Monday and welcome to another week of Artificial Insights – brought to you from a rainy Amsterdam. I have lived here on and off the past decades due to work and study, and am thrilled to be living here full-time again. Part of the reason for moving back relates to some of the subjects discussed in this very newsletter, and will be sharing a lot more in the coming weeks and months.
+
+All news this week revolves around AI being used for simulation. A few days ago OpenAI showcased Sora, their video generation model, which is nothing short of amazing. The most interesting aspect of Sora is how existing generative models and  architectures can be applied to creating 99% convincing high-fidelity videos.
+
+By learning from existing video data, Sora generates “visual patches”, which are the equivalent of textual tokens. These patches are then used to generate video snippets from a text or image prompt by simulating entire artificial worlds. My understanding of the research paper is that Sora renders the output of a simulated physical or digital process, which means the model is tapping into entire simulated realities.
+
+We talked briefly about generative environments a couple of weeks ago and now more than ever I am convinced that that particular intersection is currently among the most interesting areas of emerging technology. I half-expected MidJourney to get there first, but it seems the underlying technology is more available than I thought. Immersive virtual worlds are on the horizon, whether we are ready for them or not.
