@@ -87,16 +87,14 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
           />
         ),
         code: ({
-          node,
           inline,
           className,
           children,
           ...props
         }: {
-          node: any;
           inline?: boolean;
           className?: string;
-          children: React.ReactNode;
+          children?: React.ReactNode; // Make children optional
         }) => {
           const match = /language-(\w+)/.exec(className || "");
           return !inline ? (
