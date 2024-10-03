@@ -14,6 +14,9 @@ dependencies:
   next-images:
     specifier: ^1.8.5
     version: 1.8.5(webpack@5.95.0)
+  next-plausible:
+    specifier: ^3.12.2
+    version: 3.12.2(next@14.2.14)(react-dom@18.3.1)(react@18.3.1)
   next-themes:
     specifier: ^0.3.0
     version: 0.3.0(react-dom@18.3.1)(react@18.3.1)
@@ -2949,6 +2952,18 @@ packages:
       file-loader: 6.2.0(webpack@5.95.0)
       url-loader: 4.1.1(file-loader@6.2.0)(webpack@5.95.0)
       webpack: 5.95.0
+    dev: false
+
+  /next-plausible@3.12.2(next@14.2.14)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-jyOYLAdwaZZR6nrzFhN9xfVjzYOG6mIQ/LLDCfdAS99ELy759cKfNxluGo+pI2Xh9cYxTFYYZGlnkyR3IPy4yg==}
+    peerDependencies:
+      next: ^11.1.0 || ^12.0.0 || ^13.0.0 || ^14.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      next: 14.2.14(react-dom@18.3.1)(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
     dev: false
 
   /next-themes@0.3.0(react-dom@18.3.1)(react@18.3.1):
