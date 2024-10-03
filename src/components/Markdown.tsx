@@ -2,7 +2,6 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
 interface MarkdownProps {
   content: string;
@@ -11,10 +10,6 @@ interface MarkdownProps {
 }
 
 const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
-  const router = useRouter();
-  // Removed unused queryPageId
-  // const { pageId: queryPageId } = router.query;
-
   // Pre-process the content to replace image placeholders and add chapter/page indicator
   const processedContent = React.useMemo(() => {
     const chapterNumber = chapterId.padStart(3, "0");
@@ -101,7 +96,7 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
           className?: string;
           children?: React.ReactNode; // Make children optional
         }) => {
-          const match = /language-(\w+)/.exec(className || "");
+          // Removed the 'match' variable
           return !inline ? (
             <pre className="bg-gray-100 dark:bg-gray-800 rounded p-4 overflow-x-auto">
               <code className={className} {...props}>
