@@ -57,7 +57,7 @@ export default function Chapter({
         {subPages.length > 0 && (
           <section className="mt-12">
             <h2 className="text-2xl font-semibold mb-4">Pages</h2>
-            {subPages.map((page) => (
+            {subPages.map((page: Page) => (
               <div key={page.id} className="mb-6">
                 <Link
                   href={`/${chapterId}/${page.id}`}
@@ -76,6 +76,13 @@ export default function Chapter({
       </div>
     </div>
   );
+}
+
+// Define the interface for the page object
+interface Page {
+  id: string;
+  title: string;
+  // Add other properties as needed
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
