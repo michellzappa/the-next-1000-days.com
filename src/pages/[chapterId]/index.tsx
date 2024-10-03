@@ -7,28 +7,32 @@ import path from "path";
 import Markdown from "../../components/Markdown";
 import Footer from "../../components/Footer";
 
-interface SubPage {
+// Remove the unused SubPage interface
+// interface SubPage { ... }
+
+interface ChapterProps {
+  title: string;
+  content: string; // Replace 'any' with 'string'
+  chapterId: string;
+  subPages: Page[]; // Replace 'any' with 'Page[]'
+}
+
+// Move the Page interface definition up here
+interface Page {
   id: string;
   title: string;
 }
 
-interface ChapterProps {
-  title: string; // Add this line
-  content: any; // Replace 'any' with the correct type
-  chapterId: string; // Add this line
-  subPages: any; // Replace 'any' with the correct type
-}
-
 export default function Chapter({
-  title, // Add this line
+  title,
   content,
   chapterId,
   subPages,
 }: ChapterProps) {
-  const pageId = `${chapterId.padStart(2, "0")}0`; // Ensure this is correct for chapter intros
-
+  const pageId = `${chapterId.padStart(2, "0")}0`;
   const router = useRouter();
-  const { chapterId: chapterIdQuery } = router.query;
+  // Remove the unused chapterIdQuery
+  // const { chapterId: chapterIdQuery } = router.query;
 
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -76,13 +80,6 @@ export default function Chapter({
       </div>
     </div>
   );
-}
-
-// Define the interface for the page object
-interface Page {
-  id: string;
-  title: string;
-  // Add other properties as needed
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
