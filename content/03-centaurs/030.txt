@@ -1,6 +1,5 @@
-3. Centaurs
-
-Bicycles for our minds.
+# Centaurs
+## Bicycles for our minds.
 
 * Human-AI synergy instead of replacement.
 * Superior performance in collaboration.

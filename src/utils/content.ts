@@ -12,15 +12,15 @@ export async function getChapters() {
       const chapterPath = path.join(contentDir, dir);
       const mainFile = fs.readdirSync(chapterPath).find(file => file.startsWith(`${chapterId}0.`)) || '';
       
-      let title = `Chapter ${chapterId}`;
+      let title = '';
       let subtitle = '';
 
       if (mainFile) {
         try {
           const fileContent = fs.readFileSync(path.join(chapterPath, mainFile), 'utf-8');
-          const { data, content } = matter(fileContent);
-          title = data.title || title;
-          subtitle = data.subtitle || content.split('\n')[0].trim();
+          const lines = fileContent.split('\n');
+          title = lines[0].replace('# ', '');
+          subtitle = lines[1]?.replace('## ', '') || '';
         } catch (error) {
           console.error(`Error reading chapter ${chapterId}:`, error);
         }
@@ -28,6 +28,7 @@ export async function getChapters() {
 
       return {
         id: chapterId,
+        number: chapterId,
         title,
         subtitle,
       };

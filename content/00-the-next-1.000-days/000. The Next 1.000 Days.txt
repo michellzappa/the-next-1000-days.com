@@ -1,5 +1,7 @@
 # The Next 1.000 Days
 ## A human-readable guide for navigating our transition toward artificial general intelligence. 
+
+Welcome to ...
 the-next-1000-days.com
 
 

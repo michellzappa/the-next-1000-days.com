@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 
 interface Chapter {
   id: string;
+  number: string;
   title: string;
   subtitle: string;
 }
@@ -41,7 +42,7 @@ export default function Home({ chapters }: HomeProps) {
                   href={`/${chapter.id}/`}
                   className="text-xl font-medium hover:underline"
                 >
-                  {chapter.title}
+                  {chapter.number}. {chapter.title}
                 </Link>
                 <p className="text-gray-600 dark:text-gray-400 mt-1">
                   {chapter.subtitle}

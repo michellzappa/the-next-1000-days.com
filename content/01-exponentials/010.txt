@@ -1,5 +1,5 @@
-1. Exponentials
-Everything is accelerating.
+# Exponentials
+## Everything is accelerating.
 
 Slide-10.webp
 
