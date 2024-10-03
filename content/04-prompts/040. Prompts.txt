@@ -1,0 +1,83 @@
+# Prompts
+## How to talk with machines.
+
+* Foundational skill for generative AI.
+* Why it's important to get your hands dirty in order to sense the future.
+* Interacting with AI for ideation and growth.
+
+Slide-49.png
+
+Here's a brief intro and overview for chapter 4 on prompts, written in your style:
+
+Prompts
+
+How to talk with machines. Prompting is a foundational skill for generative AI, and its importance cannot be overstated. It's the interface between our intentions and the AI's capabilities.
+
+Natural language vs. computer language - prompting sits at this intersection. It's about learning to communicate effectively with AI models, understanding their quirks and limitations, and coaxing out the best possible outputs.
+
+The structure of a prompt matters immensely. A weak prompt like "Write something about AI in education" will yield weak results. A strong prompt defines a persona, provides context, specifies a task, and outlines a desired format. It's about doing the thinking upfront to guide the AI effectively.
+
+Iteration is key. Don't settle for the first response. Compare different models, try variations of your prompt, and build on successful outputs. Remember, these models are stochastic - results can vary, so persistence often pays off.
+
+Custom instructions are another powerful tool in your prompting arsenal. They allow you to shape the AI's behavior more broadly, influencing tone, style, and approach across multiple interactions.
+
+This chapter will dive into practical prompting techniques, common pitfalls to avoid, and strategies for getting the most out of your AI interactions. Mastering this skill is crucial for anyone looking to leverage AI effectively in their work or creative pursuits.
+
+But keep in mind - prompting might be a temporary skill. As these models evolve, we may see a shift where machines learn to better understand and interpret human intent. For now, though, it remains an essential capability for working with AI.
+
+
+
+1. Introduction to Prompts
+   - Definition and importance of prompts in AI interaction
+   - Prompting as a foundational skill for generative AI
+   - The role of natural language in communicating with machines
+
+2. Understanding Prompt Structure
+   - Components of a prompt: System Prompt, Custom Instructions, User Prompt
+   - The concept of the Context Window
+   - How different parts of the prompt affect AI responses
+
+3. Prompt Blueprint
+   - Key elements: Persona, Task, Context, Format
+   - Comparison of weak vs. strong prompts
+   - Examples of effective prompt structuring
+
+4. Advanced Prompting Techniques
+   - Branching: Exploring different conversation directions
+   - Iteration: Refining prompts for better results
+   - Comparing models: Leveraging strengths of different AI systems
+
+5. Custom Instructions and System Prompts
+   - Importance of setting up custom instructions
+   - Examples of effective custom instructions
+   - How system prompts influence AI behavior
+
+6. Practical Prompting Strategies
+   - Being specific and providing context
+   - Using natural language effectively
+   - Iterative approach to prompt refinement
+
+7. Common Pitfalls in Prompting
+   - Vague or ambiguous instructions
+   - Overlooking the importance of context
+   - Failing to specify desired output format
+
+8. Prompts for Different AI Tasks
+   - Writing and content creation
+   - Code generation and debugging
+   - Image and creative prompts
+
+9. The Future of Prompting
+   - Evolving interfaces for AI interaction
+   - Potential for more intuitive, conversational interactions
+   - The role of prompting skills in a world of increasingly capable AI
+
+10. Exercise: Crafting Effective Prompts
+    - Hands-on practice with prompt writing
+    - A/B testing weak vs. strong prompts
+    - Group discussion on prompt effectiveness
+
+11. Transition to Next Chapter
+    - Link between effective prompting and unleashing AI creativity
+
+This outline covers the essential aspects of prompting, from basic concepts to advanced techniques. It emphasizes the practical application of prompting skills and includes exercises to help the audience develop their ability to communicate effectively with AI systems. The chapter sets the foundation for exploring more complex AI applications in subsequent sections.

@@ -1,0 +1,61 @@
+# My Experience with Image Generation
+
+Creating images with diffusion models is as much an art as it is a science.
+
+In principle you can recreate any combination of symbols the models have been trained on, and by using precise prompts and advanced techniques, you can shape outputs with surprising accuracy and creativity.
+
+As a visual thinker and experimenter, I  estimate to  have generated tens of thousands of pictures on various projects. Since 2022 I have spent countless hours mainly in MidJourney, StableDiffusion, Dall-E and Flux but also smaller more experimental ones. 
+
+### MidJourney Slides
+One of my first experiments was replacing all photos from a keynote presentation to MidJourney images. In the past I tried crediting the image sources on my slides or in the presentation notes, but keeping track of image licenses is a lot of work and prone to mistakes. Instead I decided to go through every slide of an upcoming keynote presentation by generating an alternative image in MidJourney, all sorts of photos representing concepts.  These were given a unifying aesthetic by inserting keywords (like "artificial" or "digital") to the image prompts, which helps bring the deck together. 
+
+everything-we-make.webp
+
+Over a month I spent a dozen hours experimenting with different approaches for making sure the pictures turned out coherent & original and can now distribute my slides without worrying about image rights. This experiment taught me a great deal about specificity, or getting the model to accurately represent what you need, such as for example picturing a small fish attached to the underside of a shark (representing a form of symbiosis). No combination of keywords could coax MidJourney for that exact image, likely because no  such training data was ever labeled. Spending time with any image model helps you understand the border between what is possible and what is not. 
+
+commensalism.jpg
+
+
+### Dall-E Tarot
+
+Another deep dive into image models came about when OpenAI released Dall-E 3 in late 2023. Unlike StableDiffusion and MidJourney, Dall-E uses a language model to adjust the user's input before sending it to the diffusion model.
+
+In other words, a typical image model requires you to be literal with the symbols and concepts represented, whereas with an intercepting language model, you can leverage the language intelligence to create image prompts which you can't even describe in the first place. In order to explore this latent space I decided to test Dall-E on a set of known symbols: the 22 major arcana of the Tarot. 
+
+Tarot is two set of cards: the 22 major and 56 minor arcana. The major arcana represent human archetypes using a symbolic language. Different artists have interpreted each card uniquely, and no design can be said to be correct. Suspecting the language model to be knowledgeable about different card designs, I asked ChatGPT to:
+
+> Consider ALL existing Tarot cards for THE MAGICIAN.
+> Design vertical tarot cards which show their meanings and associated symbols.
+
+Slide-58.png
+
+The result was astounding. 
+Instead of a traditional magician standing behind a table, this one stood atop of it waving a magic wand towards the horizon. The symbols, the design - all were immediately arresting and managed to capture part of what gives that particular card its meaning. 
+
+Slide-59.png
+
+Hallucinations are expected, leaving details like numbers and text prone to misinterpretation. Instead of asking for corrections or even fixing them in post, I felt the vibe of the card wasn't hurt by the models imagination, but enriched by it. 
+
+I expanded the test by generating a few more cards using the exact syntax. Both additional Magicians and adjacent ones like the Fool and High Priestess. With light cherry picking I ended up with a handful of candidates for new cards. Each generation required between one and twenty or thirty repetitions to create an ideal design. At the time, Dall-E would generate four images in different aesthetics, from which you could select one, and then request a new input to be generated in a similar style. I exploited this to keep the design of the Tarot cards somewhat consistent. 
+
+Slide-60.png
+
+[img magician]
+
+
+Once I felt confident with the approach, I went all out on creating the full set of cards. Together they tell a story of machine imagination and serve as a provocation about what it means to be original. They are available as a free download on www.gptarot.ai. 
+
+
+
+### Flux Weekly Newsletter Images
+Part of the challenge of writing a weekly newsletter about the cutting edge of AI includes experimenting with different tools and narrative methods. One of these has been generating unique images weekly meant to either comment on the news or reflect something that I’ve experienced. There are many ways of doing this, and I can recommend the practice of giving yourself a tight deadline to experiment with and publish your creations. 
+
+3980d444-89ac-49c9-950d-474e95d8a562_1024x672.webp
+
+3b3c864e-9f3e-4604-988b-54fd350903eb_1024x672.webp
+
+12606049-bb38-4706-a616-12df73a3f492_1024x576.webp
+
+
+
+

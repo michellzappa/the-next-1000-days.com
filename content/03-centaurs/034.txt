@@ -1,0 +1,32 @@
+# Increased Capabilities
+...
+...
+...
+
+
+Slide-38.png
+
+
+Slide-45.png
+
+
+
+
+
+# how can people combine their intelligence with computers
+
+There are several ways that people can combine their intelligence with computers:
+
+- Human-computer collaboration: This involves working together with a computer program to achieve a common goal. For example, in chess, a human player may use a computer program to analyze different positions and help them make decisions.
+
+- Human-in-the-loop: This approach involves using a computer to assist with certain tasks, but with a human overseeing the process and making the final decisions. For example, in image recognition, a computer may be able to identify objects in a picture, but a human may be needed to verify that the objects are correctly identified.
+
+- Human-computer interaction: This involves using a computer as a tool to enhance human capabilities. For example, in education, a computer program may be used to provide personalized learning experiences and to give students instant feedback on their progress.
+
+- Human-computer co-creation: This approach involves working together with a computer to create something new. For example, in the field of music composition, a computer program may be used to generate new melodies, but a human composer may be needed to arrange them into a coherent piece of music.
+
+- Human-computer augmentation: This approach is based on the idea that computers can enhance human cognitive capabilities. For example, a computer program that can assist with memory recall and organization, can help people with memory impairments.
+
+Overall, the key to effectively combining human intelligence with computer intelligence is to find ways to leverage the strengths of both in order to achieve a common goal.
+
+

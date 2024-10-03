@@ -1,0 +1,3 @@
+Environmental Risk
+
+AI's environmental impact: Discussion on the energy consumption and carbon footprint of training large AI models, and potential solutions for more sustainable AI.

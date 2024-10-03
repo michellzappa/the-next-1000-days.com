@@ -1,0 +1,31 @@
+# The AI Avalanche 
+## When Progress Becomes a Blur
+
+Slide-19.png
+
+Slide-21.png
+
+Imagine you're standing at the base of a mountain, watching a snowball roll down. At first, it's small, moving slowly. But as it descends, it grows larger, picking up speed, until it's a massive, unstoppable force hurtling towards you.
+
+This, my friends, is the perfect metaphor for the progression of AI over the past decade.
+Take a look at the image before you. It's not just a collection of esoteric acronyms and dates. It's a visual representation of an intellectual avalanche that's been gaining momentum since 2012.
+
+Let's start at the beginning. AlexNet, a humble convolutional neural network that revolutionized image recognition. It seems almost quaint now, doesn't it? But at the time, it was groundbreaking. It was our snowball, starting its journey down the mountain.
+
+As we move through the years, notice how the breakthroughs start to pile up. GANs in 2014, making it possible for AI to not just recognize images, but create them. ResNet in 2015, allowing for deeper neural networks than ever before. AlphaGo in 2016, defeating a world champion at one of the most complex games humans have ever devised.
+
+But here's where it gets really interesting. Look at the years 2022 to 2024. The bubbles are stacked three, even four high. We're not just seeing one major breakthrough a year anymore. We're seeing several.
+
+ChatGPT, DALL-E, Stable Diffusion, GPT-4, Claude, Gemini, Sora - these aren't just incremental improvements. Each of these represents a quantum leap in AI capabilities. And they're all happening in the span of just a few years.
+
+This is what exponential progress looks like. It's not a steady climb. It's a curve that starts slow and then suddenly goes nearly vertical.
+
+Consider this: the time between the introduction of Word Embeddings (2013) and GPT-2 (2019) was six years. The time between GPT-3 (2020) and GPT-4 (2023)? Just three years. And the capabilities improved by orders of magnitude.
+We're no longer in the realm of slow, steady progress. We're in an era where breakthroughs are happening faster than we can fully understand their implications.
+It's exhilarating. It's terrifying. And it's only going to accelerate from here.
+So, what does this mean for us? For one, it means that the future is arriving faster than we can prepare for it. By the time we've wrapped our heads around one AI breakthrough, three more have already happened.
+
+It also means that our traditional ways of thinking about technological progress may no longer apply. We're used to having time to adapt, to gradually integrate new technologies into our lives and societies. But AI isn't giving us that luxury. It's evolving at a pace that outstrips our ability to philosophize, legislate, or moralize about it.
+As we stand here in 2024, looking at this cascade of innovations, one thing is clear: we're no longer watching a snowball roll down a mountain. We're in the middle of an avalanche. And the question isn't whether it will reach us, but how we'll ride it out when it does.
+
+Because make no mistake, that avalanche of progress? We're already in it. And it's only picking up speed.

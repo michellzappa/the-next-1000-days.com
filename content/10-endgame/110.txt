@@ -1,0 +1,36 @@
+110 
+
+How to start
+
+Here’s how you can leverage your existing platforms to begin addressing the critical points about AGI:
+
+### 1. **Use Your Newsletter as a Thought Leadership Platform**
+   - **Immediate Focus**: Start with the most **foundational concepts** like **paradigm shifts**, **power distribution**, and **governance**. Introduce the idea that AGI development needs to be viewed through the lens of collective good rather than corporate or national competition.
+   - **Action**: Write a series of articles that explore:
+     - The **importance of decentralizing AGI control**.
+     - The **moral and existential risks** of AGI.
+     - Case studies of past general-purpose technologies, linking their failures (like inequality or environmental degradation) to the potential impacts of AGI.
+     - Outline why AGI governance needs to be treated like the climate crisis, with **global coordination** and long-term thinking.
+   - **Next Steps**: Gradually introduce the concept of **feedback loops** and **adaptive governance**. Make readers aware that regulation isn’t static and that they should demand oversight frameworks capable of evolving alongside AGI.
+
+### 2. **Engage City and Government Innovation Teams**
+   - **Immediate Focus**: Position yourself as an **advisor** on AGI's **societal impact** and how to embed AGI into public sector innovation efforts.
+   - **Action**:
+     - Propose to cities and governments the need for **local AI governance models** that address specific community impacts and opportunities. These could act as blueprints for larger scale implementations.
+     - Advocate for **public participation in AGI regulation**—suggest initiatives like **citizen assemblies** on AI policy, helping governments understand local values and concerns.
+     - Help these teams build frameworks to address **employment shifts**, **education gaps**, and **infrastructure dependencies** that AGI will bring.
+   - **Next Steps**: Work with federal and city teams to establish **pilot projects** focused on the **equitable deployment of AGI**. Suggest that they start small (for example, **AI-assisted governance** in specific departments) but scale with future readiness.
+
+### 3. **Shape Public Discourse**
+   - **Immediate Focus**: **Narrative control**—start discussions around **ethical AI** and **human-centered AGI**.
+   - **Action**: 
+     - Use your newsletter to **highlight initiatives** that are doing AGI responsibly, but also call out potential dangers where they arise (e.g., unregulated AGI experiments, centralized control).
+     - Include thought pieces about the **AGI generational schism**—focus on how governments, schools, and organizations should prepare for a world where AGI reshapes **education, labor**, and **cultural dynamics**.
+   - **Next Steps**: Collaborate with media outlets, influencers, and industry leaders to **popularize these ideas**. Be the voice pushing for **new AGI narratives** centered around **collective human flourishing** rather than purely economic growth.
+
+### 4. **Organize Roundtables and Workshops**
+   - **Immediate Focus**: Engage your networks to host **discussion panels** on AGI governance and ethics, inviting stakeholders from **policy, academia, and industry**.
+   - **Action**:
+     - Use your position with governments to facilitate **multi-stakeholder dialogues** on the future of AGI. Work towards creating a **city-level AI ethics council** that advises local governments.
+     - Organize workshops to brainstorm **local governance frameworks** for AI technologies.
+   - **Next Steps**: Scale these roundtables to **federal and international levels**, where they can inform **national AI policies**.

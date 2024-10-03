@@ -12,6 +12,15 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontSize: {
+        base: '18px', // Set the base font size to 18px
+      },
+      lineHeight: {
+        normal: '1.6', // Adjust the default line height
+      },
+      spacing: {
+        'paragraph': '0.75rem', // Reduced from 1rem
+      },
     },
   },
   plugins: [],

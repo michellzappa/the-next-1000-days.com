@@ -1,0 +1,11 @@
+# Sparks of AGI
+
+
+Slide-80.png
+
+Slide-81.png
+
+8. The "Sparks of AGI" Debate
+   - Discussion of the Microsoft research paper on GPT-4
+   - Critiques and counterarguments in the AI community
+   - Implications for our understanding of progress towards AGI

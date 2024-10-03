@@ -1,0 +1,24 @@
+# Blind Matches
+...
+...
+...
+
+
+Slide-36.png
+
+Slide-37.png
+
+
+
+
+
+# how are centaur players better than humans and computers
+
+Centaur players, which are teams of human and computer players working together, are better than either humans or computers playing alone because they are able to combine the strengths of both.
+
+Humans are good at strategic thinking and creativity, which allows them to come up with unconventional ideas and to understand the overall big picture of the game. They also have a good understanding of the importance of certain positions and are able to make decisions based on the psychology of the opponent.
+
+Computers, on the other hand, are able to analyze large numbers of possible moves very quickly and accurately. They can also find hidden tactical opportunities that humans might miss.
+
+By working together, the human player can guide the computer's analysis towards the most promising lines of play, while the computer can help the human player to evaluate the best move in a given position. This allows the centaur team to make more accurate decisions, and to outplay their opponents by using a combination of human intuition and computer precision.
+

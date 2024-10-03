@@ -1,0 +1,66 @@
+The Age of Spiritual Machines.
+
+Slide-73.png
+
+* Should we start designing for a post-AGI society?
+* What happens when our lives change because of AGI?
+* Are we already there?
+
+
+Here's a brief intro and overview for chapter 8 on AGI, written in your style:
+
+AGI
+
+Artificial General Intelligence. Should we start designing for post-AGI? What happens when our lives change because of AGI? Are we already there?
+
+The big takeaway is this: we don't have a chart for AGI. There's no clear map between here and there. It's extremely open-ended what we even mean by it and how it's different from our current levels of AI.
+
+What we can be certain of is that AGI will likely be a combination of AI modalities. It won't just be language models or image generation or predictive AI - it will be all of these and more, working together with agency.
+
+OpenAI defines AGI as "highly autonomous systems that outperform humans at most economically valuable work." But other thinkers, like Joscha Bach, see it as a system that reaches human level or beyond across all capability dimensions.
+
+These capability dimensions are crucial. We're not just talking about narrow skills, but a broad spectrum including perception, reasoning, learning, representation, self-knowledge, language, and collaboration. For an AI to be truly "general", it needs to be capable across all these areas.
+
+Prediction markets currently suggest we'll have AGI around 2032. But this entirely depends on how we define AGI and how we'll even know when we've achieved it. Some argue we've already seen "sparks of AGI" in models like GPT-4.
+
+This chapter will explore various perspectives on AGI, its potential implications, and the ethical considerations we need to grapple with. We'll look at the current state of research, the challenges ahead, and what it might mean for humanity if and when we achieve AGI.
+
+Remember, as Edsger W. Dijkstra said, "The question of whether machines can think is about as relevant as the question of whether submarines can swim." Perhaps we need to reframe how we think about intelligence altogether.
+
+
+Slide-74.png
+
+
+
+1. Introduction to AGI
+   - Definition of Artificial General Intelligence
+   - How AGI differs from narrow AI
+   - The challenge of defining and measuring general intelligence
+
+2. Current State of AGI Research
+   - Lack of consensus on the path to AGI
+   - Different approaches and philosophies in AGI development
+   - The role of current AI advancements in progressing towards AGI
+
+
+
+9. Challenges in AGI Development
+   - Technical hurdles (e.g., transfer learning, common sense reasoning)
+   - Ethical and safety concerns
+   - Regulatory and governance issues
+
+10. Preparing for a Post-AGI World
+    - Potential scenarios and their implications
+    - The importance of AI alignment and value learning
+    - Strategies for coexistence with highly capable AI systems
+
+11. Philosophical Considerations
+    - The nature of consciousness and intelligence
+    - Whether AGI is achievable or desirable
+    - Edsger W. Dijkstra's quote on machines thinking
+
+12. The Role of Current AI Advancements
+    - How narrow AI and current models contribute to AGI research
+    - The potential for unexpected breakthroughs
+    - The importance of responsible development practices
+

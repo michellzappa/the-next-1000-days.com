@@ -1,0 +1,60 @@
+# Practical Tips for Generating Images
+
+
+## Aspect Ratios
+Consider how you want to use the output image in terms of its aspect ratio. Generate tall images for smartphones, wide images for desktops or square images when you don’t know - because a single prompt will generate differently framed images depending on its aspect ratio.
+- In Dall-E you can ask for horizontal, vertical or square images.
+- In MidJourney and Flux you use --aspect 3:2, for example.
+
+Notice how these three images of trees use the available space differently [Flux Pro]
+
+e769cd7378481eda6196fc860297996ef9f4616166312c4b9c78c8c1335ae7fc.jpg
+
+d2287c11ca090ec99d88645914466e9fbb311bcec2c8dbe019ad1889f3e15863.jpg
+
+4215fc99df9da0400fa497682924870990387be670992fbca522c0951dacdc31.jpg
+
+
+## Style References
+MidJourney accepts the command "sref" to specify a particular style reference, or visual style for one or several generated images. You can use this to explore different looks or lock down a particular aesthetic for a set of images.
+
+Examples: different MidJourney images for “a tree” using various srefs found on Twitter.
+
+envisioning.io_a_tree_e8791ed0-3590-4479-9997-07203a6acaf5.webp
+envisioning.io_a_tree_b57ae9bf-dd8e-4968-96c3-b3f87b4073f5.webp
+envisioning.io_a_tree_38cd55c3-ee3d-40de-b921-764262c30f82.webp
+envisioning.io_a_tree_c242a348-1572-4a07-8165-8827ba12398f.webp
+envisioning.io_a_tree_615f2c34-d6cc-42b2-8067-695c3c13ad6f.webp
+envisioning.io_a_tree_d03d1ebd-fcb3-4cba-8630-c63e5c914e84.webp
+envisioning.io_a_tree_05280545-24cc-47b3-9ca6-3187aeda62b0.webp
+envisioning.io_a_tree_f28c0ceb-dce5-4672-8171-e96af2408173.webp
+
+
+## One-Shot Repetition
+For images more than text, it's worth repeating the prompt to allow the diffusion model to create a different output. The amount of variation from one generation to the next can be staggering and go in different directions every time.
+
+dalle-3-5122579dde6ae5e85902bded8778f0c533a58f5be2dd007f9e8598c0755f69ce.png
+
+flux-pro-9774fe75d546ba0ed621be29705012becee6307d5580b5047dea0e9a562122cb.jpg
+
+ideogram-2-aefa5889cb724187bc9590ba0bfb3a9bb3a6f13656b063d2ecfee51e1f38631f.png
+
+midjourney-6-envisioning.io_image_of_a_garden_eeb8e62e-885f-42ed-80a7-3996a96101d4.webp
+
+playground-v3-35fe9c73064d9febb48ec904aab44e0727c6a92633a091b8c3a74291c334cd5c.png
+
+stablediffusion-3-3aaa8fc40c0210437a5829742ff3548d966964b393d11950a4aa725c7a709359.jpg
+
+
+
+## Prompt Engineering
+The importance of crafting clear, detailed prompts to guide the model. This includes using descriptive adjectives, specifying composition elements, and providing context.
+
+## Negative Prompts
+Mentioning what you don't want in the image can be as important as what you do want. This helps avoid unwanted elements.
+
+## Inpainting and Outpainting
+Techniques for modifying specific parts of an image or expanding its boundaries.
+
+# Latent Space Manipulation
+Discuss manipulating latent vectors directly to influence subtle details, like composition, structure, or aesthetics.

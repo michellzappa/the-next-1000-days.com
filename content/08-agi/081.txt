@@ -1,0 +1,9 @@
+081.
+
+
+Slide-75.png
+
+3. Definitions and Perspectives on AGI
+   - OpenAI's definition: "Highly autonomous systems that outperform humans at most economically valuable work"
+   - Joscha Bach's perspective: "System that reaches human level or beyond at all capability dimensions"
+   - Other notable definitions and viewpoints in the field

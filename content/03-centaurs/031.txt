@@ -1,0 +1,17 @@
+# Kasparov and Deep Blue
+...
+...
+...
+
+
+Slide-32.png
+
+Slide-33.png
+
+
+
+
+# what do you know about centaur chess
+
+Centaur chess refers to a type of chess play that involves both human and computer players working together as a team. The human player provides strategic insight and creativity, while the computer provides tactical precision and the ability to analyze large numbers of possible moves. Centaur chess has been shown to be more successful than either humans or computers playing alone, and it is seen as a potential way to bridge the gap between the two. Some notable examples of centaur chess teams are Garry Kasparov and the supercomputer Deep Blue, and the team of GM Rybka and IM Levy.
+

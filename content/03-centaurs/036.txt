@@ -1,0 +1,40 @@
+# Plateaus
+...
+...
+...
+
+
+Slide-46.png
+
+
+# Upskilling Humans
+
+
+
+# which skills should humans focus on, considering a future with more centaurs
+
+As the use of centaurs (human-computer teams) becomes more prevalent in the future, it's likely that certain skills will become more important for humans to focus on in order to be effective team members. Some of these skills include:
+
+- Strategic thinking: The ability to think about the big picture and understand the long-term goals of the team.
+- Creativity: The ability to come up with new and unconventional ideas that can help the team achieve its goals.
+- Problem solving: The ability to identify and solve problems that arise during the course of the team's work.
+- Communication: The ability to effectively communicate with both human and computer team members, and to clearly convey the team's goals and progress.
+- Adaptability: The ability to adjust to new technologies and workflows as they are developed and implemented.
+- Interdisciplinary skills: The ability to work effectively across different fields such as computer science, mathematics, statistics, and other relevant fields.
+- Human-computer interaction: The ability to effectively interact with computer systems, to understand their strengths and limitations and to use them to achieve the team's goals.
+- Ethical and legal considerations: The ability to understand and navigate the ethical and legal implications of the work that the team is doing.
+
+Overall, the key is for humans to focus on developing a combination of technical and soft skills that will enable them to work effectively with computer team members, to understand and leverage the strengths of the computer, and to make the best use of their own unique strengths as well.
+
+
+
+# how can we train people to become better users of artificial intelligence tools
+
+There are several ways to train people to become better users of artificial intelligence (AI) tools:
+
+- Education and training: Offering courses and training programs in AI and related fields, such as machine learning, data science, and computer science, can help people gain the knowledge and skills needed to use AI tools effectively.
+- Hands-on experience: Providing people with opportunities to work with AI tools in a real-world setting, such as through internships or projects, can help them gain practical experience and develop a deeper understanding of how to use the tools effectively.
+- Collaboration: Encouraging collaboration between people with different areas of expertise, such as AI experts and domain experts, can help people learn from each other and develop a broader understanding of how AI tools can be used in different contexts.
+- Adaptive learning: Using AI tools to create personalized learning experiences that adapt to individual needs and learning styles can help people learn more effectively.
+- Continual learning: Encouraging people to stay current with new developments in AI and related fields by providing access to relevant resources, such as online courses, tutorials, and research papers, can help them continue to improve their skills over time.
+- Ethical considerations: As AI is becoming more prevalent it's important to include ethical considerations in the training, for example, understanding the potential biases in data, the impact of AI on society and the importance of

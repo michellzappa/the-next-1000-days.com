@@ -1,0 +1,116 @@
+2. Frontiers
+What's happening at the cutting edge?
+
+* Because of exponentials, AI capabilities are changing all the time.
+* Paying attention to the cutting edge helps adjust expectation about near-term possibilities.
+
+Slide-25.png
+
+Here's a brief intro and overview for chapter 2 on frontiers, written in your style:
+
+Frontiers
+
+What's happening at the cutting edge? Because of exponentials, AI capabilities are changing all the time. Paying attention to the frontier helps adjust our expectations about near-term possibilities.
+
+We're dealing with a "jagged edge" of capabilities. It's hard to predict where AI will excel and where it will fall short. Models often display abilities they weren't explicitly designed for, surprising even their creators. This unpredictability is both exciting and challenging.
+
+Recent developments are pushing boundaries in multiple domains. We're seeing advancements in multimodal AI, combining text, image, and video generation. Embodied AI and robotics are making strides. Language models are becoming more capable and easier to deploy.
+
+But it's not just about technical capabilities. The frontier is also about novel applications and integrations. How are these tools being used in creative fields, in business, in science? What new possibilities are emerging?
+
+Staying informed about these cutting-edge developments isn't just academic - it's crucial for understanding the near-future landscape we'll be operating in. This chapter will explore some of the most interesting recent advancements and their potential implications.
+
+
+1. Mismatch between expectations and reality
+   - Roy Moore's law: Overestimating short-term effects, underestimating long-term effects
+   - AI progress after multiple "AI winters"
+
+2. Rapid improvement in AI capabilities
+   - Language models competing and improving (example: Hugging Face rankings)
+   - Image generation advancements (example: Midjourney versions over time)
+
+3. Adoption vs. retention of AI tools
+   - Quick uptake of AI apps (e.g., ChatGPT reaching 100 million users rapidly)
+   - Lower retention rates compared to other technologies (e.g., Spotify, Netflix)
+   - Gap between trying AI and finding consistent use cases
+
+4. Various types of AI
+   - Generative AI as the current focus
+   - Other forms: reactive machines, reinforcement learning, etc.
+   - Example: AI in rice cookers as a form of reactive machine
+
+5. AI implementation across different layers
+   - From infrastructure to experience layer
+   - Opportunities at each level, not just consumer-facing applications
+
+6. Jagged edge of capabilities
+   - Difficulty in predicting AI performance across different tasks
+   - Examples of unexpected performance (e.g., GPT vs. Siri)
+
+7. Current state-of-the-art examples
+   - Image generation improvements
+   - Video models advancements
+   - Robotics progress
+
+This chapter explores the current frontiers of AI technology, highlighting rapid improvements, adoption patterns, and the various forms and applications of AI across different domains. It emphasizes the unpredictable nature of AI capabilities and the need to continually reassess our expectations.
+
+
+
+
+
+
+Certainly! I'll create an outline for Chapter 2: Frontiers, based on the information provided in your transcript and project notes.
+
+
+
+Chapter 2: Frontiers
+
+1. Introduction to AI Frontiers
+   - Definition of "frontier models"
+   - The constantly evolving nature of AI capabilities
+   - Larry Tesler's quote: "AI is whatever hasn't been done yet"
+
+2. Types of AI
+   - Overview of different AI categories (Reactive Machines, Limited Memory, etc.)
+   - Emphasis on Generative AI as the current focus
+
+3. The Jagged Edge of AI Performance
+   - Revisiting the concept from Chapter 1
+   - Examples of unexpected AI capabilities and limitations
+   - The challenge of predicting AI performance
+
+4. Current Cutting-Edge AI Applications
+   - Image generation advancements (e.g., DALL-E, Midjourney)
+   - Video generation capabilities (e.g., Sora)
+   - AI in wearables (e.g., Meta Ray-Ban, Hume)
+
+5. Robotics and Embodied AI
+   - Recent developments in humanoid robots
+   - Integration of AI with physical systems
+   - Examples: Boston Dynamics' Atlas, Figure 02, Astribot S1
+
+6. AI in Creative Fields
+   - Advancements in AI-generated art and design
+   - Video creation and manipulation
+   - Implications for creative industries
+
+7. Emerging Trends in AI Interfaces
+   - Conversational AI improvements
+   - Multimodal AI systems (combining text, image, audio)
+   - The future of human-AI interaction
+
+8. Challenges at the Frontier
+   - Ethical considerations of advanced AI
+   - Technical hurdles in achieving human-like performance
+   - The role of data and computing power in pushing boundaries
+
+9. Exercise: Exploring Frontier AI
+   - Hands-on experience with a cutting-edge AI tool
+   - Discussion of potential applications and implications
+
+10. Looking Ahead
+   - The rapid pace of AI development
+   - Preparing for future advancements
+   - Transition to the concept of Centaurs (human-AI collaboration)
+
+This outline covers the current state of AI technology, highlighting the most recent and impressive developments. It provides a comprehensive overview of where AI stands today and sets the stage for discussing how humans can effectively collaborate with these advanced systems.
