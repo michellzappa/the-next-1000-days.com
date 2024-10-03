@@ -10,9 +10,10 @@ import Footer from "../../components/Footer";
 interface PageProps {
   title: string;
   content: string;
+  chapterTitle: string;
 }
 
-export default function Page({ title, content }: PageProps) {
+export default function Page({ title, content, chapterTitle }: PageProps) {
   const router = useRouter();
   const { chapterId, pageId } = router.query;
 
@@ -21,22 +22,27 @@ export default function Page({ title, content }: PageProps) {
   }
 
   return (
-    <div className="min-h-screen flex flex-col p-8 pb-20 gap-16 sm:p-20 bg-white dark:bg-gray-900 text-black dark:text-white">
-      <Head>
-        <title>{title || "Untitled Page"} - The Next 1,000 Days</title>
-      </Head>
-      <Link
-        href={`/${chapterId}`}
-        className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
-      >
-        ← Back to Chapter
-      </Link>
-      <Markdown
-        content={content}
-        chapterId={chapterId as string}
-        pageId={pageId as string}
-      />
-      <Footer />
+    <div className="min-h-screen flex flex-col items-center bg-white dark:bg-gray-900 text-black dark:text-white">
+      <div className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12">
+        <Head>
+          <title>
+            {title} - {chapterTitle} - The Next 1,000 Days
+          </title>
+        </Head>
+        <Link
+          href={`/${chapterId}`}
+          className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
+        >
+          ← Back to Chapter
+        </Link>
+        <h1 className="text-4xl font-bold mb-8">{title}</h1>
+        <Markdown
+          content={content}
+          chapterId={chapterId as string}
+          pageId={pageId as string}
+        />
+        <Footer />
+      </div>
     </div>
   );
 }
@@ -48,14 +54,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
     .filter((dir) => /^\d{2}-/.test(dir));
 
   const paths = chapters.flatMap((chapterDir) => {
-    const chapterId = chapterDir.split("-")[0];
     const chapterPath = path.join(contentDir, chapterDir);
     const pages = fs
       .readdirSync(chapterPath)
-      .filter((file) => file.endsWith(".txt"));
+      .filter((file) => file.endsWith(".txt") && file !== "00.txt");
 
     return pages.map((page) => ({
-      params: { chapterId, pageId: page.replace(".txt", "") },
+      params: {
+        chapterId: chapterDir.split("-")[0],
+        pageId: page.replace(".txt", ""),
+      },
     }));
   });
 
@@ -75,20 +83,31 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 
   const chapterPath = path.join(contentDir, chapterDir);
-  const filePath = path.join(chapterPath, `${pageId}.txt`);
+  const pageFile = `${pageId}.txt`;
+  const pagePath = path.join(chapterPath, pageFile);
 
-  if (!fs.existsSync(filePath)) {
+  if (!fs.existsSync(pagePath)) {
     return { notFound: true };
   }
 
-  const content = fs.readFileSync(filePath, "utf-8");
+  const content = fs.readFileSync(pagePath, "utf-8");
   const lines = content.split("\n");
-  const title = lines[0].replace("# ", "").trim() || null;
+  const title = lines[0].replace("# ", "");
+
+  // Get chapter title from the first file in the chapter directory
+  const chapterFiles = fs.readdirSync(chapterPath).sort();
+  const firstChapterFile = chapterFiles[0];
+  const chapterContent = fs.readFileSync(
+    path.join(chapterPath, firstChapterFile),
+    "utf-8"
+  );
+  const chapterTitle = chapterContent.split("\n")[0].replace("# ", "");
 
   return {
     props: {
       title,
-      content: lines.slice(1).join("\n").trim(),
+      content: lines.slice(1).join("\n"),
+      chapterTitle,
     },
   };
 };

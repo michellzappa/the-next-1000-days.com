@@ -89,22 +89,31 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
         code: ({
           node,
           inline,
+          className,
+          children,
           ...props
         }: {
           node: any;
           inline?: boolean;
-          [key: string]: any;
-        }) =>
-          inline ? (
+          className?: string;
+          children: React.ReactNode;
+        }) => {
+          const match = /language-(\w+)/.exec(className || "");
+          return !inline ? (
+            <pre className="bg-gray-100 dark:bg-gray-800 rounded p-4 overflow-x-auto">
+              <code className={className} {...props}>
+                {children}
+              </code>
+            </pre>
+          ) : (
             <code
               className="bg-gray-100 dark:bg-gray-800 rounded px-1 py-0.5"
               {...props}
-            />
-          ) : (
-            <pre className="bg-gray-100 dark:bg-gray-800 rounded p-4 overflow-x-auto">
-              <code {...props} />
-            </pre>
-          ),
+            >
+              {children}
+            </code>
+          );
+        },
         img: customImageRenderer,
       }}
     >

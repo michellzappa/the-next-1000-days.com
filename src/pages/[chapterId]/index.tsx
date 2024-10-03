@@ -27,37 +27,40 @@ export default function Chapter({ title, content, subPages }: ChapterProps) {
   }
 
   return (
-    <div className="min-h-screen flex flex-col p-8 pb-20 gap-16 sm:p-20 bg-white dark:bg-gray-900 text-black dark:text-white">
-      <Head>
-        <title>{title} - The Next 1,000 Days</title>
-      </Head>
-      <Link
-        href="/"
-        className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
-      >
-        ← Back to Home
-      </Link>
-      <Markdown content={content} chapterId={chapterId as string} />
+    <div className="min-h-screen flex flex-col items-center bg-white dark:bg-gray-900 text-black dark:text-white">
+      <div className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12">
+        <Head>
+          <title>{title} - The Next 1,000 Days</title>
+        </Head>
+        <Link
+          href="/"
+          className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
+        >
+          ← Back to Home
+        </Link>
+        <h1 className="text-4xl font-bold mb-8">{title}</h1>
+        <Markdown content={content} chapterId={chapterId as string} />
 
-      {subPages.length > 0 && (
-        <section className="mt-12">
-          <h2 className="text-2xl font-semibold mb-4">Pages</h2>
-          {subPages.map((page, index) => (
-            <div key={page.id} className="mb-6">
-              <Link
-                href={`/${chapterId}/${page.id}`}
-                className="text-xl font-medium hover:underline"
-              >
-                <span className="inline-block w-12 font-mono text-gray-500">
-                  {String(index + 1).padStart(3, "0")}
-                </span>
-                {page.title}
-              </Link>
-            </div>
-          ))}
-        </section>
-      )}
-      <Footer />
+        {subPages.length > 0 && (
+          <section className="mt-12">
+            <h2 className="text-2xl font-semibold mb-4">Pages</h2>
+            {subPages.map((page) => (
+              <div key={page.id} className="mb-6">
+                <Link
+                  href={`/${chapterId}/${page.id}`}
+                  className="text-xl font-medium hover:underline"
+                >
+                  <span className="inline-block w-12 font-mono text-gray-500">
+                    {page.id}
+                  </span>
+                  {page.title}
+                </Link>
+              </div>
+            ))}
+          </section>
+        )}
+        <Footer />
+      </div>
     </div>
   );
 }
