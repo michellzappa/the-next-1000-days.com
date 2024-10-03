@@ -13,14 +13,22 @@ interface SubPage {
 }
 
 interface ChapterProps {
-  title: string;
-  content: string;
-  subPages: SubPage[];
+  title: string; // Add this line
+  content: any; // Replace 'any' with the correct type
+  chapterId: string; // Add this line
+  subPages: any; // Replace 'any' with the correct type
 }
 
-export default function Chapter({ title, content, subPages }: ChapterProps) {
+export default function Chapter({
+  title, // Add this line
+  content,
+  chapterId,
+  subPages,
+}: ChapterProps) {
+  const pageId = `${chapterId.padStart(2, "0")}0`; // Ensure this is correct for chapter intros
+
   const router = useRouter();
-  const { chapterId } = router.query;
+  const { chapterId: chapterIdQuery } = router.query;
 
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -30,7 +38,8 @@ export default function Chapter({ title, content, subPages }: ChapterProps) {
     <div className="min-h-screen flex flex-col items-center bg-white dark:bg-gray-900 text-black dark:text-white">
       <div className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12">
         <Head>
-          <title>{title} - The Next 1,000 Days</title>
+          <title>{title || pageId} - The Next 1,000 Days</title>{" "}
+          {/* Update this line */}
         </Head>
         <Link
           href="/"
@@ -38,9 +47,13 @@ export default function Chapter({ title, content, subPages }: ChapterProps) {
         >
           ← Back to Home
         </Link>
-        <h1 className="text-4xl font-bold mb-8">{title}</h1>
-        <Markdown content={content} chapterId={chapterId as string} />
-
+        <h1 className="text-4xl font-bold mb-8">{title || pageId}</h1>{" "}
+        {/* Update this line */}
+        <Markdown
+          content={content}
+          chapterId={chapterId}
+          pageId={pageId} // Pass the correct pageId for chapter intros
+        />
         {subPages.length > 0 && (
           <section className="mt-12">
             <h2 className="text-2xl font-semibold mb-4">Pages</h2>
@@ -80,6 +93,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const chapterId = params?.chapterId as string;
+  const pageId = `${chapterId.padStart(2, "0")}0`; // Ensure this is correct for chapter intros
+
   const contentDir = path.join(process.cwd(), "content");
   const chapterDir = fs
     .readdirSync(contentDir)
@@ -98,7 +113,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const mainFile = chapterFiles[0];
   const content = fs.readFileSync(path.join(chapterPath, mainFile), "utf-8");
   const lines = content.split("\n");
-  const title = lines[0].replace("# ", "");
+  const title = lines[0].startsWith("# ") ? lines[0].replace("# ", "") : pageId; // Update this line
 
   const subPages = chapterFiles.slice(1).map((file) => {
     const pageContent = fs.readFileSync(path.join(chapterPath, file), "utf-8");
@@ -108,8 +123,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      title,
+      title, // Add this line
       content: lines.slice(1).join("\n"),
+      chapterId,
+      pageId, // Include pageId in the props
       subPages,
     },
   };

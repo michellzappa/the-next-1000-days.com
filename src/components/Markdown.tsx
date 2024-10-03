@@ -10,23 +10,19 @@ interface MarkdownProps {
 }
 
 const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
-  // Pre-process the content to replace image placeholders and add chapter/page indicator
   const processedContent = React.useMemo(() => {
     const chapterNumber = chapterId.padStart(3, "0");
-    const pageNumber = pageId ? pageId.padStart(3, "0") : null;
+    // Ensure pageId is always set, defaulting to chapterNumber + "0" if not provided
+    const pageNumber = pageId || `${chapterNumber}0`;
 
-    const indicator = pageNumber
-      ? `**Page ${pageNumber}**`
-      : `**Chapter ${chapterNumber}**`;
+    const indicator = `**${pageId ? "Page" : "Chapter"} ${pageNumber}**`;
 
     const processedContent = `${indicator}\n\n${content}`;
 
     return processedContent.replace(
       /^(.+\.(webp|jpg|png|gif))$/gm,
       (match, fileName) => {
-        const imagePath = `/images/chapters/${
-          pageNumber || chapterNumber
-        }/${fileName}`;
+        const imagePath = `/images/chapters/${pageNumber}/${fileName}`;
         return `![${fileName}](${imagePath})`;
       }
     );

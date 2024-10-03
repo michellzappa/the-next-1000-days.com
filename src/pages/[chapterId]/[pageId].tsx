@@ -6,14 +6,23 @@ import path from "path";
 import Link from "next/link";
 import Markdown from "../../components/Markdown";
 import Footer from "../../components/Footer";
+import { getChapters } from "../../utils/content";
 
 interface PageProps {
   title: string;
   content: string;
   chapterTitle: string;
+  nextPage: { id: string; title: string } | null;
+  nextChapter: { id: string; title: string } | null;
 }
 
-export default function Page({ title, content, chapterTitle }: PageProps) {
+export default function Page({
+  title,
+  content,
+  chapterTitle,
+  nextPage,
+  nextChapter,
+}: PageProps) {
   const router = useRouter();
   const { chapterId, pageId } = router.query;
 
@@ -30,6 +39,13 @@ export default function Page({ title, content, chapterTitle }: PageProps) {
           </title>
         </Head>
         <Link
+          href="/"
+          className="text-blue-200 dark:text-blue-800 hover:underline mb-2 inline-block"
+        >
+          ← Back to Home
+        </Link>
+        <br />
+        <Link
           href={`/${chapterId}`}
           className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
         >
@@ -41,6 +57,25 @@ export default function Page({ title, content, chapterTitle }: PageProps) {
           chapterId={chapterId as string}
           pageId={pageId as string}
         />
+        {nextPage ? (
+          <div className="mt-8">
+            <Link
+              href={`/${chapterId}/${nextPage.id}`}
+              className="text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              Next Page: {nextPage.title} ({nextPage.id}) →
+            </Link>
+          </div>
+        ) : nextChapter ? (
+          <div className="mt-8">
+            <Link
+              href={`/${nextChapter.id}`}
+              className="text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              Next Chapter: {nextChapter.title} →
+            </Link>
+          </div>
+        ) : null}
         <Footer />
       </div>
     </div>
@@ -95,7 +130,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const title = lines[0].replace("# ", "");
 
   // Get chapter title from the first file in the chapter directory
-  const chapterFiles = fs.readdirSync(chapterPath).sort();
+  const chapterFiles = fs
+    .readdirSync(chapterPath)
+    .filter((file) => file.endsWith(".txt"))
+    .sort();
   const firstChapterFile = chapterFiles[0];
   const chapterContent = fs.readFileSync(
     path.join(chapterPath, firstChapterFile),
@@ -103,11 +141,39 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   );
   const chapterTitle = chapterContent.split("\n")[0].replace("# ", "");
 
+  // Determine next page or next chapter
+  const currentPageIndex = chapterFiles.indexOf(pageFile);
+  let nextPage = null;
+  let nextChapter = null;
+
+  if (currentPageIndex < chapterFiles.length - 1) {
+    const nextPageFile = chapterFiles[currentPageIndex + 1];
+    const nextPageContent = fs.readFileSync(
+      path.join(chapterPath, nextPageFile),
+      "utf-8"
+    );
+    const nextPageTitle = nextPageContent.split("\n")[0].replace("# ", "");
+    nextPage = {
+      id: nextPageFile.replace(".txt", ""),
+      title: nextPageTitle,
+    };
+  } else {
+    const chapters = await getChapters();
+    const currentChapterIndex = chapters.findIndex(
+      (chapter) => chapter.id === chapterId
+    );
+    if (currentChapterIndex < chapters.length - 1) {
+      nextChapter = chapters[currentChapterIndex + 1];
+    }
+  }
+
   return {
     props: {
       title,
       content: lines.slice(1).join("\n"),
       chapterTitle,
+      nextPage,
+      nextChapter,
     },
   };
 };
