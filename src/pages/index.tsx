@@ -34,19 +34,24 @@ export default function Home({ chapters }: HomeProps) {
             artificial general intelligence.
           </p>
 
-          <section className="mt-12">
-            <h2 className="text-2xl font-semibold mb-4">Chapters</h2>
+          <section className="mt-8">
+            <h2 className="text-2xl font-semibold mb-3">Chapters</h2>
             {chapters.map((chapter) => (
-              <div key={chapter.id} className="mb-6">
+              <div key={chapter.id} className="mb-2">
                 <Link
                   href={`/${chapter.id}/`}
-                  className="text-xl font-medium hover:underline"
+                  className="block hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-2 transition duration-150 ease-in-out"
                 >
-                  {chapter.number}. {chapter.title}
+                  <div className="flex items-baseline">
+                    <span className="inline-block w-8 font-mono text-gray-500 dark:text-gray-400">
+                      {chapter.number.padStart(2, "0")}
+                    </span>
+                    <span className="text-lg font-medium">{chapter.title}</span>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-0.5 ml-8">
+                    {chapter.subtitle}
+                  </p>
                 </Link>
-                <p className="text-gray-600 dark:text-gray-400 mt-1">
-                  {chapter.subtitle}
-                </p>
               </div>
             ))}
           </section>
