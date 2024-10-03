@@ -3,8 +3,6 @@
 
 Slide-67.webp
 
-Slide-68.webp
-
 
 ReAct
 LangChain
