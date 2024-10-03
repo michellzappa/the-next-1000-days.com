@@ -12,18 +12,19 @@ interface MarkdownProps {
 
 const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
   const router = useRouter();
-  const { pageId: queryPageId } = router.query;
+  // Removed unused queryPageId
+  // const { pageId: queryPageId } = router.query;
 
   // Pre-process the content to replace image placeholders and add chapter/page indicator
   const processedContent = React.useMemo(() => {
     const chapterNumber = chapterId.padStart(3, "0");
     const pageNumber = pageId ? pageId.padStart(3, "0") : null;
 
-    let indicator = pageNumber
+    const indicator = pageNumber
       ? `**Page ${pageNumber}**`
       : `**Chapter ${chapterNumber}**`;
 
-    let processedContent = `${indicator}\n\n${content}`;
+    const processedContent = `${indicator}\n\n${content}`;
 
     return processedContent.replace(
       /^(.+\.(webp|jpg|png|gif))$/gm,
@@ -50,37 +51,41 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
       );
     }
     // For other image formats, use default rendering
-    return <img src={src} alt={alt} />;
+    return (
+      <Image
+        src={src || ""}
+        alt={alt || ""}
+        width={800}
+        height={600}
+        layout="responsive"
+      />
+    );
   };
 
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
       components={{
-        h1: ({ node, ...props }) => (
+        h1: (props) => (
           <h1 className="text-3xl font-bold mt-6 mb-4" {...props} />
         ),
-        h2: ({ node, ...props }) => (
+        h2: (props) => (
           <h2 className="text-2xl font-semibold mt-5 mb-3" {...props} />
         ),
-        h3: ({ node, ...props }) => (
+        h3: (props) => (
           <h3 className="text-xl font-medium mt-4 mb-2" {...props} />
         ),
-        p: ({ node, ...props }) => <p className="mb-3" {...props} />,
-        ul: ({ node, ...props }) => (
-          <ul className="list-disc pl-5 mb-4" {...props} />
-        ),
-        ol: ({ node, ...props }) => (
-          <ol className="list-decimal pl-5 mb-4" {...props} />
-        ),
-        li: ({ node, ...props }) => <li className="mb-1" {...props} />,
-        a: ({ node, ...props }) => (
+        p: (props) => <p className="mb-3" {...props} />,
+        ul: (props) => <ul className="list-disc pl-5 mb-4" {...props} />,
+        ol: (props) => <ol className="list-decimal pl-5 mb-4" {...props} />,
+        li: (props) => <li className="mb-1" {...props} />,
+        a: (props) => (
           <a
             className="text-blue-600 dark:text-blue-400 hover:underline"
             {...props}
           />
         ),
-        blockquote: ({ node, ...props }) => (
+        blockquote: (props) => (
           <blockquote
             className="border-l-4 border-gray-300 dark:border-gray-700 pl-4 italic my-4"
             {...props}
