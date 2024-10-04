@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/unist": "^3.0.3",
     "gray-matter": "^4.0.3",
     "next": "14.2.14",
     "next-images": "^1.8.5",
@@ -19,7 +20,9 @@
     "react-markdown": "^9.0.1",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.0",
-    "remark-html": "^16.0.1"
+    "remark-html": "^16.0.1",
+    "unist": "^0.0.1",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.16.10",

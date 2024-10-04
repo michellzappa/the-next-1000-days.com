@@ -6,17 +6,30 @@ interface VocabCardProps {
 }
 
 const VocabCard: React.FC<VocabCardProps> = ({ name, vocabData }) => {
-  const vocabEntry = vocabData[name];
+  if (
+    !vocabData ||
+    typeof vocabData !== "object" ||
+    Object.keys(vocabData).length === 0
+  ) {
+    console.warn("vocabData is invalid in VocabCard");
+    return <span className="text-yellow-500">{name}</span>;
+  }
+
+  const lowercaseName = name.toLowerCase();
+  const vocabEntry = vocabData[lowercaseName];
 
   if (!vocabEntry) {
-    return <div>Vocab entry not found for {name}</div>;
+    console.warn(`No vocab entry found for "${lowercaseName}"`);
+    return <span className="text-yellow-500">{name}</span>;
   }
 
   return (
-    <div className="vocab-card">
-      <h3 className="font-bold">{vocabEntry.title}</h3>
-      <p>{vocabEntry.summary}</p>
-    </div>
+    <span
+      className="vocab-card inline-block bg-gray-100 dark:bg-gray-800 rounded px-1 py-0.5 cursor-help"
+      title={vocabEntry.summary}
+    >
+      {vocabEntry.title}
+    </span>
   );
 };
 

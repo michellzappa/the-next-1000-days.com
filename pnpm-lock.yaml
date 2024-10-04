@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@types/unist':
+    specifier: ^3.0.3
+    version: 3.0.3
   gray-matter:
     specifier: ^4.0.3
     version: 4.0.3
@@ -38,6 +41,12 @@ dependencies:
   remark-html:
     specifier: ^16.0.1
     version: 16.0.1
+  unist:
+    specifier: ^0.0.1
+    version: 0.0.1
+  unist-util-visit:
+    specifier: ^5.0.0
+    version: 5.0.0
 
 devDependencies:
   '@types/node':
@@ -4068,6 +4077,11 @@ packages:
       '@types/unist': 3.0.3
       unist-util-is: 6.0.0
       unist-util-visit-parents: 6.0.1
+    dev: false
+
+  /unist@0.0.1:
+    resolution: {integrity: sha512-bnzuF8b6d47WubA4a5yLqFbuZz/v/NS6eRwUIdOaDmsqzwTlyv8yS1g3M7ISdtBQrigPD3qKK87Cu7zhEfCF3A==}
+    deprecated: Use @types/unist instead
     dev: false
 
   /update-browserslist-db@1.1.1(browserslist@4.24.0):

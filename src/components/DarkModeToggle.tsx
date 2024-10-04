@@ -7,7 +7,6 @@ const DarkModeToggle = () => {
 
   useEffect(() => {
     setMounted(true);
-    console.log("Component mounted, theme:", theme);
   }, [theme]);
 
   if (!mounted) return null;
