@@ -58,7 +58,7 @@ export default function Home({ chapters }: HomeProps) {
                       className="block hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-2 transition duration-150 ease-in-out"
                     >
                       <div className="flex items-baseline">
-                        <span className="inline-block w-8 font-mono text-gray-500 dark:text-gray-400">
+                        <span className="inline-block w-8 font-mono text-sm font-bold text-gray-500 dark:text-gray-400">
                           {page.id.padStart(3, "0")}
                         </span>
                         <span className="text-lg font-medium">
@@ -80,8 +80,10 @@ export default function Home({ chapters }: HomeProps) {
                   className="block hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-2 transition duration-150 ease-in-out"
                 >
                   <div className="flex items-baseline">
-                    <span className="inline-block w-8 font-mono text-gray-500 dark:text-gray-400">
-                      {chapter.number.padStart(2, "0")}
+                    <span className="inline-block w-8 text-sm font-bold font-mono text-gray-500 dark:text-gray-400">
+                      {(parseInt(chapter.number) * 10)
+                        .toString()
+                        .padStart(3, "0")}
                     </span>
                     <span className="text-lg font-medium">{chapter.title}</span>
                   </div>

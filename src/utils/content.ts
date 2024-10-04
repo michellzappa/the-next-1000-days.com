@@ -15,7 +15,7 @@ export async function getChapters() {
       let title = '';
       let subtitle = '';
       let content = '';
-      let pages = [];
+      let pages: any[] = [];
 
       if (mainFile) {
         try {
