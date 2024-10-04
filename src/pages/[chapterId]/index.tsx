@@ -9,6 +9,7 @@ import Footer from "../../components/Footer";
 
 interface ChapterProps {
   title: string;
+  subtitle: string; // Added subtitle property
   content: string; // Replace 'any' with 'string'
   chapterId: string;
   subPages: Page[]; // Replace 'any' with 'Page[]'
@@ -31,6 +32,7 @@ function getDisplayTitle(pageId: string, chapterId: string) {
 
 export default function Chapter({
   title,
+  subtitle,
   content,
   chapterId,
   subPages,
@@ -41,8 +43,6 @@ export default function Chapter({
   if (router.isFallback) {
     return <div>Loading...</div>;
   }
-
-  console.log("pageId:", pageId, "chapterId:", chapterId, "title:", title);
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-white dark:bg-gray-900 text-black dark:text-white">
@@ -62,23 +62,34 @@ export default function Chapter({
         <div className="text-sm text-gray-500 mb-2">
           {getDisplayTitle(pageId, chapterId)}
         </div>
-        <h1 className="text-4xl font-bold mb-8">{title}</h1>
+        <h1 className="text-4xl font-bold mb-2">{title}</h1>
+        {subtitle && (
+          <h2 className="text-2xl font-semibold mb-6">{subtitle}</h2>
+        )}
         <Markdown content={content} chapterId={chapterId} pageId={pageId} />
         {subPages.length > 0 && (
           <section className="mt-12">
             <h2 className="text-2xl font-semibold mb-4">Pages</h2>
             {subPages.map((page: Page) => (
-              <div key={page.id} className="mb-6">
-                <Link
-                  href={`/${chapterId}/${page.id}`}
-                  className="text-xl font-medium hover:underline"
-                >
-                  <span className="inline-block w-12 font-mono text-gray-500">
+              <Link
+                key={page.id}
+                href={`/${chapterId}/${page.id}`}
+                className="block mb-6 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-4 transition duration-150 ease-in-out"
+              >
+                <div className="flex items-start">
+                  <span className="inline-block w-12 text-sm font-mono text-gray-500 dark:text-gray-400 font-bold mr-4">
                     {page.id}
                   </span>
-                  {page.title}
-                </Link>
-              </div>
+                  <div>
+                    <h3 className="text-xl font-medium">{page.title}</h3>
+                    {page.subtitle && (
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                        {page.subtitle}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </Link>
             ))}
           </section>
         )}
@@ -118,7 +129,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const chapterFiles = fs
     .readdirSync(chapterPath)
     .filter((file) => file.endsWith(".txt"))
-    .sort((a, b) => a.localeCompare(b));
+    .sort();
 
   const mainFile = chapterFiles[0];
   const content = fs.readFileSync(path.join(chapterPath, mainFile), "utf-8");
@@ -129,19 +140,33 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     ? lines[0].replace("# ", "").trim()
     : pageId;
 
-  // Remove the subtitle line from the content
-  const contentWithoutSubtitle = lines.slice(2).join("\n");
+  // Extract the subtitle
+  const subtitle = lines[1].startsWith("## ")
+    ? lines[1].replace("## ", "").trim()
+    : null;
+
+  // Remove the title and subtitle lines from the content
+  const contentWithoutTitleAndSubtitle = lines.slice(2).join("\n");
 
   const subPages = chapterFiles.slice(1).map((file) => {
     const pageContent = fs.readFileSync(path.join(chapterPath, file), "utf-8");
-    const pageTitle = pageContent.split("\n")[0].replace("# ", "").trim();
-    return { id: file.replace(".txt", ""), title: pageTitle };
+    const lines = pageContent.split("\n");
+    const pageTitle = lines[0].replace("# ", "").trim();
+    const pageSubtitle = lines[1]?.startsWith("## ")
+      ? lines[1].replace("## ", "").trim()
+      : null;
+    return {
+      id: file.replace(".txt", ""),
+      title: pageTitle,
+      subtitle: pageSubtitle,
+    };
   });
 
   return {
     props: {
       title,
-      content: contentWithoutSubtitle,
+      subtitle,
+      content: contentWithoutTitleAndSubtitle,
       chapterId,
       pageId,
       subPages,

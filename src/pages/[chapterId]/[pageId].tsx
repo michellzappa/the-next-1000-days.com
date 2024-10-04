@@ -10,6 +10,7 @@ import { getChapters } from "../../utils/content";
 
 interface PageProps {
   title: string;
+  subtitle: string | null; // Add this line
   content: string;
   chapterTitle: string;
   nextPage: { id: string; title: string } | null;
@@ -18,6 +19,7 @@ interface PageProps {
 
 export default function Page({
   title,
+  subtitle, // Add this line
   content,
   chapterTitle,
   nextPage,
@@ -52,7 +54,10 @@ export default function Page({
         >
           ← Back to Chapter: {chapterTitle}
         </Link>
-        <h1 className="text-4xl font-bold mb-8">{title}</h1>
+        <h1 className="text-4xl font-bold mb-2">{title}</h1>
+        {subtitle && (
+          <h2 className="text-2xl font-semibold mb-6">{subtitle}</h2>
+        )}
         <Markdown
           content={content}
           chapterId={chapterId as string}
@@ -132,6 +137,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const content = fs.readFileSync(pagePath, "utf-8");
   const lines = content.split("\n");
   const title = lines[0].replace("# ", "");
+  const subtitle = lines[1].startsWith("## ")
+    ? lines[1].replace("## ", "")
+    : null;
 
   // Get chapter title from the first file in the chapter directory
   const chapterFiles = fs
@@ -181,7 +189,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       title,
-      content: lines.slice(1).join("\n"),
+      subtitle, // Add this line
+      content: lines.slice(subtitle ? 2 : 1).join("\n"), // Modify this line
       chapterTitle,
       nextPage,
       nextChapter,
