@@ -30,23 +30,24 @@ export default function ChapterOverview({ chapters }: ChapterOverviewProps) {
         <h1 className="text-4xl font-bold mb-8">Chapter Overview</h1>
 
         <div className="overflow-x-auto">
-          <table className="w-full table-fixed border-collapse">
+          <table className="w-full table-fixed">
             <thead>
               <tr>
                 {chapters.map((chapter) => (
                   <th
                     key={chapter.id}
-                    className="border p-2 text-center align-top"
+                    className="p-1 text-center"
                     style={{ width: columnWidth }}
                   >
-                    <div className="mt-2">
-                      <Link href={`/${chapter.id}`} className="hover:underline">
-                        {chapter.number}
-                      </Link>
+                    <Link
+                      href={`/${chapter.id}`}
+                      className="block hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-2 transition duration-150 ease-in-out"
+                    >
+                      <div className="font-bold">{chapter.number}</div>
                       <div className="text-xs mt-1 font-normal">
                         {chapter.title}
                       </div>
-                    </div>
+                    </Link>
                   </th>
                 ))}
               </tr>
@@ -59,21 +60,19 @@ export default function ChapterOverview({ chapters }: ChapterOverviewProps) {
                     return (
                       <td
                         key={`${chapter.id}-${index}`}
-                        className="border p-2 text-center align-top"
+                        className="p-1 text-center"
                         style={{ width: columnWidth }}
                       >
                         {page && (
-                          <div className="mt-2">
-                            <Link
-                              href={`/${chapter.id}/${page.id}`}
-                              className="hover:underline"
-                            >
-                              {page.id}
-                            </Link>
+                          <Link
+                            href={`/${chapter.id}/${page.id}`}
+                            className="block hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-2 transition duration-150 ease-in-out"
+                          >
+                            <div className="font-bold">{page.id}</div>
                             <div className="text-xs mt-1 font-normal">
                               {page.title}
                             </div>
-                          </div>
+                          </Link>
                         )}
                       </td>
                     );

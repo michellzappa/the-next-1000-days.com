@@ -1,4 +1,5 @@
-# Using Intelligent Technologies Responsibly (Becoming a Centaur)
+# Becoming a Centaur
+## Using Intelligent Technologies Responsibly
 
 Generative AI tools took off like wildfire in 2022 and are likely to keep growing in relevance and disruptive potential in 2023. More organizations will dedicate resources towards developing in-house AI strategies, and more investment is likely to be allocated towards R&D than ever before. What does this mean for leaders who are responsible for acquiring human and technological resources towards innovative, sustainable projects?
 
