@@ -19,6 +19,7 @@ interface ChapterProps {
 interface Page {
   id: string;
   title: string;
+  subtitle: string; // Added subtitle property
 }
 
 function getDisplayTitle(pageId: string, chapterId: string) {
