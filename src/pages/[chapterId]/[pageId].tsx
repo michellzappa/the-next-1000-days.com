@@ -22,7 +22,8 @@ export default function Page({
   chapterTitle,
   nextPage,
   nextChapter,
-}: PageProps) {
+  lastUpdated,
+}: PageProps & { lastUpdated: string }) {
   const router = useRouter();
   const { chapterId, pageId } = router.query;
 
@@ -57,6 +58,9 @@ export default function Page({
           chapterId={chapterId as string}
           pageId={pageId as string}
         />
+        <div className="text-sm text-gray-500 dark:text-gray-400 mt-4">
+          Last updated: {lastUpdated}
+        </div>
         {nextPage ? (
           <div className="mt-8">
             <Link
@@ -167,6 +171,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
   }
 
+  const stats = fs.statSync(pagePath);
+  const lastUpdated = new Date(stats.mtime).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
   return {
     props: {
       title,
@@ -174,6 +185,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       chapterTitle,
       nextPage,
       nextChapter,
+      lastUpdated,
     },
   };
 };

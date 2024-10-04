@@ -1,0 +1,58 @@
+The Risk To America’s AI Dominance Is Algorithmic Stagnation – Analysis
+eurasiareview.com · May 20, 2024
+By Vincent Carchidi
+
+Imagine an artificial intelligence (AI) application that you can meaningfully communicate with during moments of careful deliberation. I do not mean the mimicry of communication popularized by chatbots powered by Large Language Models (LLMs), most recently embodied in OpenAI’s GPT-4o. I envision an AI model that can productively engage with specialized literature, extract and re-formulate key ideas, and engage in a meaningful back-and-forth with a human expert. One easily imagines the applicability of such a model in domains like medical research. Yet, the machine learning systems that have captured the world’s attention—generative AIs like ChatGPT, Gemini, and Claude—lack the intellectual resources and autonomy necessary to support such applications. Our lofty AI vision remains a matter of science fiction—for now.
+
+The drive to master AI in geopolitics is undeterred by this reality. Indeed, the geopolitical “scramble” for AI triggered in 2023—represented by states as diverse as Britain, France, Germany, India, Saudi Arabia, the United Arab Emirates, the United States, and China—was undoubtedly sparked by generative AI and machine learning more broadly. However, some corners of the AI world conceive of machine learning as merely the current stage of state-of-the-art AI—but not its final stage.
+
+Paradigms beyond the learning strategies bound up machine learning are sought out, for one, by the state-backed Beijing Institute for General Artificial Intelligence (BIGAI) established in 2020. As a 2023 Center for Security & Emerging Technology report illustrates, BIGAI is founded in part by researchers disillusioned with “big data” approaches—including American-educated Director Zhu Songchun—in the pursuit of “brain-inspired” AI models. The theme of BIGAI’s research is “small data, big task.”
+
+The strategic importance of “small data” AI is recognized, as well, by Australia’s Kingston AI Group, comprised of AI scholars who aim to coordinate Australia’s national AI research and education strategies. In a February 2023 statement, the Group recognized Australia’s comparative disadvantage in economic size and access to large datasets used to train machine learning models. They therefore identify the need to develop a ‘small data capability’ that allows Australia to compete in “designing AI systems from small datasets.”
+
+Moreover, Indian efforts to embrace technological innovation were highlighted by Prime Minister Narendra Modi in his June 2023 address to the U.S. Congress, while also appealing to his country’s collaboration with America through the Initiative on Critical and Emerging Technology (iCET). Equally worthy of mention, however, is Modi’s meetingwith AI researcher Amit Sheth, Director of the Artificial Intelligence Institute of the University of South Carolina.
+
+In December 2023, Sheth presented the following AI vision to India’s Third Annual Conference of Chief Secretaries: the U.S. led the initial two phases of AI. “Symbolic” AI ruled the first wave whereas the currently fashionable “statistical” AI (i.e., machine learning) rules the second wave. India can and should, Sheth argues, “dominate AI Phase III.” The third wave refers to AI models capable of contextual adaptation, with one emerging paradigm in this vein known as Neuro-Symbolic AI, which combines techniques from both waves to obtain new capabilities. While generative AI is important for India, Sheth told Indian officials that “neurosymbolic AI…will drive the next, third phase of AI.”
+
+If this conceptualization of AI’s development sounds familiar, it is worth a reminder that it traces back to the U.S. Defense Advanced Research Projects Agency (DARPA). DARPA distinguishes between the first two AI waves in which models are first governed by rules and then learn via statistical associations of data. In both waves, however, models lack robust reasoning abilities in novel situations. DARPA’s “third wave” envisions models capable of “contextual reasoning,” an effort embodied in its 2018 AI Next campaign to “push beyond second-wave machine learning techniques” (and evident in its 2022 Assured Neuro Symbolic Learning and Reasoning program).
+
+DARPA’s efforts are continuously evolving. Still, the tripartite conceptualization of AI is a relic of the pre-ChatGPT era, and American policymakers risk losing sight of its strategic significance.
+
+American Entrenchment in the Second Wave
+
+Although machine learning will remain for some time indispensable to those state actors interested in becoming leading players in AI, the reason why states like China, Australia, and India incentivize such research is because state-of-the-art techniques in machine learning do not afford the capabilities required to support applications like our hypothetical medical agent.
+
+Yet, much of American policymakers’ focus on AI is anchored in the era and substance of “big data” AI. President Biden’s 2023 Executive Order on Safe, Secure, and Trustworthy AI, for example, invokes the Defense Production Act to mandate that companies planning to develop or actively developing “dual-use foundational models” whose training breaches the computational threshold of 1026 Floating-point Operations (FLOP) report on such development and testing therein to the Department of Commerce. The idea, as Paul Scharre puts it, is that computational power is a “crude proxy” for the model’s capabilities. The mandate reflects a broader belief in the efficacy of increasing the size of models and the datasets on which they are trained and the computing power this requires.
+
+Moreover, the Biden administration’s slew of October 2022 advanced computing export controls on Chinese firms—and subsequent, continuously evolving restrictions—is premised on the idea that that American semiconductor designs and manufacturing equipment cannot enable the Chinese development of advanced AI models. The implicit assumption is that state-of-the-art AI will indefinitely rely on the massive data and computing power that characterize machine learning models today.
+
+Of the early criticisms of the October 2022 export controls, Martijn Rasser and Kevin Wolf—arguing in their favor—noted that such controls are a “calculated risk” in that they could increase the “potential for breakthroughs in AI that address some of the shortcomings of deep learning…by pursuing so-called hybrid AI,” referencing Neuro-Symbolic AI.
+
+The criticism was apt, but late. BIGAI was established to move beyond machine learning in 2020, well before the Biden administration’s expanded slate of export controls. Australia and India, for their part, recognize the importance of hybrid AI research while enjoying comparatively more harmonious relations with the U.S.
+
+The use of export controls to shore up America’s AI lead in certain subfields of AI—most prominently, in Natural Language Processing—effectively entrenches the U.S. in the second and currently dominant wave of AI (statistical machine learning). The pitfall of this entrenchment is that whatever benefits it reaps American industry and defense in the short- and medium-terms, the long-term future of AI may belong to those states that adopt a more active and deliberate path beyond machine learning. Reliance on restricting access to advanced computing tools and workers, then, is insufficient for the U.S. to retain its AI dominance.
+
+A concerted effort to harmonize research both domestically and with select international partners in an emerging paradigm like Neuro-Symbolic AI is needed.
+
+Preserving and Expanding American AI Dominance
+
+There is tentative evidence that American policymakers understand the need to engage with the indigenous AI efforts of partner states, including those whose links with China have hedged closer than comfort allows. A case-in-point is Microsoft’s recent agreement to invest $1.5 billion in Abu Dhabi-based AI conglomerate G42, preceded by negotiations with the Biden administration. The Middle East Institute’s Mohammed Soliman, in an April 2024 testimony to the U.S.-China Economic and Security Review Commission, argues that this is in part a frank recognition that states like the United Arab Emirates intend to become AI leaders.
+
+This recognition is only part of the necessary effort by American policymakers, however. Much of the second wave of AI’s basic research is occurring in the private sector, where companies like Google and OpenAI achieved new milestones in Natural Language Processing. Microsoft, in its partnership with OpenAI—and now also with G42—cannot be expected to take the steps necessary to secure new techniques for third wave AI that support high-stakes applications during a corporate AI arms race over Generative AI.
+
+Cohesive U.S. government action must therefore be undertaken to balance the scales, including harmonizing and expanding upon existing initiatives.
+
+A useful model is the Department of Defense’s 2023 partnership with the National Science Foundation to fund the AI Institute for Artificial and Natural Intelligence (ARNI). The partnership helps fund an effort to link “the major progress made in [AI] systems to the revolution in our understanding of the brain.” ARNI’s interdisciplinarity echoes a chorus of voices on the potential fruits of Neuro-Symbolic AI: it is inspired by the human mind’s ability to reason, analogize, and engage in long-term planning, with an emphasis on constructing algorithms that support explainable applications; it potentially offers “performance guarantees” absent in deep learning; and it offers adaptability not seen in deep learning. Policymakers may thus look to ARNI’s interdisciplinary research and funding scheme as an example for future research tailored the needs of third wave AI.
+
+Additionally, smaller yet forward-looking industry actors should be engaged. These include companies like Symbolica as its team aims to leverage an applied branch of mathematics to build an explainable model capable of structured reasoning on less training data and computing power and Verses AI whose Chief Scientist Karl Friston says the company “aims to deliver 99% smaller models” without sacrificing quality.” Such work may contribute to the foundations of third wave AI.
+
+Finally, the U.S. should selectively recruit its partnerships to promote hybrid AI research that targets deficiencies in contemporary AI models. Notably, the rise of “minilaterals” like the Quadrilateral Security Dialogue and AUKUS are facilitating cooperation on emerging technologies. While restraint must be exercised to prevent advanced technology from falling into adversarial hands, the U.S. should consider initiatives that target specified areas of hybrid AI research—especially as partnerships like AUKUS entertain the participation of Japan in (at least) Pillar II activities and as South Korea weighs sharing its advanced military technology.
+
+America, should it wish to do more than simply retain its competitive edge in the second wave of AI, must take these steps to create and harness its third wave.
+
+About the author: Vincent J. Carchidi is a Non-Resident Scholar at the Middle East Institute’s Strategic Technologies and Cyber Security Program. He is also a member of Foreign Policy for America’s 2024 NextGen Initiative. His opinions are his own. You can follow him on LinkedIn and X.
+The views expressed in this article belong to the author(s) alone and do not necessarily reflect those of Geopoliticalmonitor.com.
+eurasiareview.com · May 20, 2024
+SUMMARY
+HIGHLIGHTS
+Loading...

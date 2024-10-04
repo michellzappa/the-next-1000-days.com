@@ -1,0 +1,73 @@
+Why AI Isn’t a Tech Revolution Yet
+Medium · by MIT IDE · March 25, 2024
+Economist argues that context matters when evaluating the impact of a new technology. AI is one part of a larger transformation, she says.
+
+
+
+Published in
+MIT Initiative on the Digital Economy
+
+·
+6 min read
+·
+Mar 25, 2024
+--
+
+
+Photo by Growtika on Unsplash
+By Irving Wladawsky-Berger
+
+“Artificial intelligence is almost certainly revolutionary in the sense that it will spawn new technology platforms, transform or eliminate many industries, and create new ones,” wrote British-Venezuelan economic historian Carlota Perez in a recent article, “What Is AI’s Place in History?” “But it must be understood as belonging to a larger, more mature technological revolution that began a half-century ago.”
+
+In her influential 2002 book, “Technological Revolutions and Financial Capital,” Perez wrote that technological revolutions have long been engines of growth, rejuvenating and transforming economies and societies. Since the advent of the Industrial Revolution, we’ve had a major technological revolution approximately every 60 years. First was the age of machines and factories starting in Britain in the 1770s. It was followed by the age of steam, coal and iron in the1830s; electricity, steel, and heavy engineering in the 1870s; automobiles, oil and mass production in the 1900s; and the information and communications technology (ICT) and digital revolution in the 1970s.
+
+I’ve been in touch with Perez since first learning about her work in 2005. I have repeatedly asked her when we would be entering the deployment period of the ICT and digital revolution. Her ongoing reply is that despite the financial crash of the dot-com bubble in the early 2000s, and the housing bubble crash in the late 2000s, the financial corrections necessary to usher the deployment period had not yet taken place. Investments continue to be focused on short-term gain instead of on long-term production and growth.
+
+In a 2017 roundtable discussion Perez was asked to comment on the difference between the present digital era and the four previous technological revolutions, given that it’s been over 45 years since the advent of the ICT revolutions — the longest such period, according to her research. Perez answered that the ICT and digital revolution has been the deepest transformation of everyday life, and the one that has spread the furthest around the world. But, “given our longer life span, the older generation has taken longer to hand over power — in this case, to younger digital natives. Even after 40 years, the information and communications revolution is far from complete. It hasn’t fully changed our way of life, as previous technological revolutions had done.”
+
+
+How about our emerging AI revolution, I recently asked her. Can it be viewed as the start of a sixth technological revolution? Perez replied that so-called the AI revolution is actually a continuation of the ICT and internet revolution. The new article, “What Is AI’s Place in History?” which will be expanded on in an upcoming book, offers further defense of her argument. Let me summarize the key points in her article.
+
+Why doesn’t AI represent a new technological revolution?
+
+We’re Not There Yet
+“Everyone is talking about artificial intelligence as though it represents the next technological revolution.
+
+In fact, it is better understood as a key development within the still-evolving information-communications-technology (ICT) revolution, which started in the 1970s with the microprocessor,” wrote Perez. “It then made a big leap in the 1990s when the U.S. government handed the internet over to the private sector, and with the intensification of both innovation and globalization. AI may plausibly evolve as a third leap.”
+
+While ICT, and now AI, are bringing us closer to the threshold of a golden age of long-term economic growth and improved social outcomes — as has been the case with the deployment period of all previous technological revolutions —
+
+we’re not there yet because both ICT and AI have still fallen short of delivering the necessary social, economic, and environmental progress.
+The distinction is important. “This question is not as pedantic as it may seem. Whether we are in the middle of a technological revolution or at the beginning of one has major implications for managing development strategies and shaping public policy.” The early decades of a technological revolution are turbulent times “when the state gets out of the way and allows financial markets to support experimentation by those who are journeying into the unknown. During such periods of creative destruction, new technologies both create and eliminate jobs and demand for certain skills. We generally witness the rise of whole industries and regions alongside the demise of others.”
+
+
+After decades of promise and hype, AI has now emerged as the defining technology of our era. “But a revolutionary technology is not the same thing as a technological revolution, explained Perez.
+
+“AI is almost certainly revolutionary in the sense that it will spawn new technology platforms, transform or eliminate many industries, and create new ones. But it belongs to a much larger technological revolution that is still in the middle of its diffusion process,
+having already passed through two major stages of innovation, the first being based on microprocessors and software, and the second on the internet.
+
+All three stages are highly interrelated. “AI depends on the internet, which in turn depends on powerful microprocessors and computers. They are all part of the digital transformation which centers around technologies that are mechanizing mental, rather than manual, work. Extrapolating into the future, one can imagine that
+
+the next technological revolution could be a wave of innovation combining AI with biotech and a constellation of new materials.
+But we can still see them evolving within the context of an ICT golden age.”
+
+2. AI falls short of a technological revolution
+
+“A technological revolution can be defined as a powerful and highly visible cluster of new and dynamic technologies, products and industries, capable of bringing about an upheaval in the whole fabric of the economy and of propelling a long-term upsurge of development. It is a strongly interrelated constellation of technical innovations, generally including an important all-pervasive low-cost input, often a source of energy, sometimes a crucial material, plus significant new products and processes and a new infrastructure. The latter usually changes the frontier in speed and reliability of transportation and communications, while drastically reducing their cost.”
+
+“No single technology, however powerful, can propel a long-term upsurge in development.”
+For example, while electricity played a major role in the third technological revolution starting in the 1870s, electrification was dependent on inexpensive steel for building long-distance distribution cables, as well as on major advances in heavy engineering, including electrical, metallurgical, chemical and civil. Similarly, automobiles played a central role in the fourth revolution in the early part of the 20th century, but so did mass production innovations like the assembly line, and petrochemicals-based synthetic material like plastics, nylon, and synthetic rubbers for car tires.
+
+In addition, technological revolutions are about a lot more than technology.
+“They also involve major transformations within government and society. In today’s context, the widespread rise of populism is typical of a midway turning point in the diffusion of a technological revolution.” Periods of creative destruction are quite turbulent. New technologies transform jobs and industries, and populism thrives on the resentment of those feeling left behind.
+
+‘Support for fascism and communism were extreme cases of this basic phenomenon: they flourished in the 1930s, during the mass-production revolution, which began in 1913 with Henry Ford’s assembly line and reached its full deployment in the welfare state during the post-war boom (1945–71). No single innovation, however powerful, can produce such wide-ranging effects.”
+
+“It is understandable that most people regard the new AIs as the start of a new revolution,” wrote Perez. “AI is certain to become an integral part of the current digital revolution, and it could also lay the groundwork for breakthroughs in biotech, nanotech, and other fields that may be at the center of an eventual sixth revolution.
+
+“The maturity of the ICT revolution implies that we should know how to manage it now. But its trajectory remains highly contingent because technologies can always evolve in unforeseen directions. In some cases, they can help direct an economy toward more sustainable and inclusive growth. But if they are not properly directed, they can yield increasingly dysfunctional results.”
+
+Medium · by MIT IDE · March 25, 2024
+SUMMARY
+HIGHLIGHTS
+Loading...

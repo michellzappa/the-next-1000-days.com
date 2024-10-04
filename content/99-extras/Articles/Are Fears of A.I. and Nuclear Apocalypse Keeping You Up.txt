@@ -1,0 +1,56 @@
+Are Fears of A.I. and Nuclear Apocalypse Keeping You Up? Blame Prometheus.
+NY Times · by A.O. Scott · October 21, 2023
+Essay
+
+How an ancient Greek myth explains our terrifying modern reality.
+
+
+“Since the beginning of the Industrial Revolution, Prometheus has served as a symbol of progress and peril, an avatar of both the liberating power of knowledge and the dangers of technological overreach.”
+
+By
+
+Oct. 21, 2023
+Prometheus was the Titan who stole fire from the gods of Olympus and gave it to human beings, setting us on a path of glory and disaster and incurring the jealous wrath of Zeus. In the modern world, especially since the beginning of the Industrial Revolution, he has served as a symbol of progress and peril, an avatar of both the liberating power of knowledge and the dangers of technological overreach.
+
+Mary Shelley subtitled “Frankenstein,” her Gothic tale of a prototypical mad scientist and his monster, “The Modern Prometheus,” underlining the hubris of the monster’s inventor as well as his idealism — while also emphasizing the fragile humanity of his creation. Shelley’s husband, the poet Percy Bysshe Shelley, was less ambivalent. In the preface to his verse drama “Prometheus Unbound,” he described his hero as “the type of the highest perfection of moral and intellectual nature, impelled by the purest and the truest motives to the best and noblest ends.” Prometheus was an emancipator, a rebel on behalf of humanity against Zeus’ tyranny.
+
+More than 200 years after the Shelleys, Prometheus is having another moment, one closer in spirit to Mary’s terrifying ambivalence than to Percy’s fulsome gratitude. As technological optimism curdles in the face of cyber-capitalist villainy, climate disaster and what even some of its proponents warn is the existential threat of A.I., that ancient fire looks less like an ember of divine ingenuity than the start of a conflagration. Prometheus is what we call our capacity for self-destruction.
+
+“Oppenheimer,” Christopher Nolan’s chronologically fragmented portrait of the physicist often called the father of the atomic bomb, begins with a quote evoking the punishment Zeus inflicted on his rebellious fellow immortal. (Since he could not die, Prometheus underwent the same torment every day, his liver devoured by an eagle.) The analogy is an established part of Oppenheimer’s legend: Nolan’s film is based on “American Prometheus,” Kai Bird and Martin J. Sherwin’s gripping and authoritative biography.
+
+Annie Dorsen’s theater piece “Prometheus Firebringer,” which was performed at Theater for a New Audience in September, updates the Greek myth for the age of artificial intelligence, using A.I. to weave a cautionary tale that my colleague Laura Collins-Hughes called “forcefully beneficial as an examination of our obeisance to technology.” Something similar might be said about “The Maniac,” Benjamín Labatut’s new novel, whose designated Prometheus is the Hungarian-born polymath John von Neumann, a pioneer of A.I. as well as an originator of game theory.
+
+Labatut’s book is classified as fiction. Nolan’s “Oppenheimer,” like every Hollywood biopic, takes some liberties with the literal record. But both narratives are grounded in fact, using the lives and ideas of real people as fodder for allegory and attempting to write a new mythology of the modern world.
+
+J. Robert Oppenheimer and John von Neumann in 1952.
+Von Neumann and Oppenheimer were close contemporaries, born a year apart to prosperous, assimilated Jewish families in Budapest and New York. Von Neumann, conversant in theoretical physics, mathematics and analytic philosophy, worked for Oppenheimer at Los Alamos during the Manhattan Project. He spent most of his career at the Institute for Advanced Study, where Oppenheimer served as director after the war.
+
+It may seem curious that two such geniuses — twin progenitors of potential human annihilation — should have occupied the same campus, but it’s also fitting. Not only because the institute, tucked into a few hundred pastoral acres in the shadow of Princeton University, gathered so many brilliant thinkers into its orbit — Albert Einstein and Kurt Gödel most famously. More than most intellectual bastions, the institute is a house of theory. The Promethean mad scientists of the 19th century were creatures of the laboratory, tinkering away at their infernal machines and homemade monsters. Their 20th-century counterparts were more likely to be found at the chalkboard, scratching out our future in charts, equations and lines of code.
+
+The consequences are real enough, of course. The bombs dropped on Hiroshima and Nagasaki killed at least 100,000 people. Their successor weapons, which Oppenheimer opposed, threatened to kill everybody else. But the intellectual drama of “Oppenheimer” — as distinct from the dramas of his personal life and his political fate — is about how abstraction becomes reality. The atomic bomb may be, for the soldiers and politicians, a powerful strategic tool in war and diplomacy. For the scientists, it’s something else: a proof of concept, a concrete manifestation of quantum theory.
+
+Oppenheimer wasn’t a principal author of that theory. Those scientists, among them Niels Bohr, Erwin Schrödinger and Werner Heisenberg, were characters in Labatut’s previous novel, “When We Cease to Understand the World.” That book provides harrowing illumination of a zone where scientific insight becomes indistinguishable from madness or, perhaps, divine inspiration. The basic truths of the new science seem to explode all common sense: A particle is also a wave; one thing can be in many places at once; “scientific method and its object could no longer be prised apart.”
+
+At their congresses and conferences, debating in train cars and cafes, these quantum revolutionaries are like the gods of Olympus: consumed with their own rivalries and passions, all but oblivious to the ordinary mortal world around them. Oppenheimer’s designation as Prometheus is precise. He snatched a spark of quantum insight from those divinities and handed it to Harry S. Truman and the U.S. Army Air Forces.
+
+His punishment came not at the hands of those he had robbed, but rather from the recipients of his gift. In “Oppenheimer,” during the hearings that will cost him his security clearance and exile him from the center of American public life, most of his scientific colleagues remain by his side. (The notable exception is Edward Teller, the father of the hydrogen bomb and as such another potential Prometheus.) It’s the lawyers, bureaucrats and Washington courtiers who bring him down. Like the original Prometheus, Oppenheimer survives his disgrace, and ends the movie as a flawed, haunted, regretful creature, carrying a flicker of inextinguishable, theoretical guilt. If we blow up the world, it might still be his fault.
+
+Labatut’s account of von Neumann is, if anything, more unsettling than “Oppenheimer.” We had decades to get used to the specter of nuclear annihilation, and since the end of the Cold War it has been overshadowed by other terrors. A.I., on the other hand, seems newly sprung from science fiction, and especially terrifying because we can’t quite grasp what it will become.
+
+“The Maniac” is an origin story of sorts, one that resembles the story of the bomb. An idea — in this case the idea of a thinking machine, with Alan Turing as its primary theorist — slips into reality, not with a bang, but with the clicking of counters in a game of Go. That exquisitely complicated, deceptively simple game is for Labatut where the full, jarring potential of A.I. takes shape; its combination of logic, intuition, strategy and surprise makes it the kind of activity that seems both definitively human and almost superhuman, a bit like quantum physics itself.
+
+Von Neumann, who died in 1957, did not teach machines to play Go. But when asked “what it would take for a computer, or some other mechanical entity, to begin to think and behave like a human being,” he replied that “it would have to play, like a child.” His Promethean transgression, conducted in a computer lab in Princeton, involved a contraption called MANIAC. The name was an acronym for “Mathematical Analyzer, Numerical Integrator and Computer,” which doesn’t sound like much of a threat. But von Neumann saw no limit to its potential. “If you tell me precisely what it is a machine cannot do,” he declared, “then I can always make a machine which will do just that.” MANIAC didn’t just represent a powerful new kind of machine, but “a new type of life.”
+
+If Oppenheimer took hold of the sacred fire of atomic power, von Neumann’s theft was bolder and perhaps more insidious: He stole a piece of the human essence. He’s not only a modern Prometheus; he’s a second Frankenstein, creator of an all but human, potentially more than human monster.
+
+Should we be afraid of it? The myths don’t provide much reassurance, at least in their modern retelling. “Technological power as such is always an ambivalent achievement,” Labatut’s von Neumann writes toward the end of his life, “and science is neutral all through, providing only means of control applicable to any purpose, and indifferent to all. It is not the particularly perverse destructiveness of one specific invention that creates danger. The danger is intrinsic. For progress there is no cure.”
+
+A.O. Scott is a critic at large for the Book Review. He joined The Times in 2000 and was a film critic until early 2023. He is also the author of “Better Living Through Criticism." More about A.O. Scott
+
+A version of this article appears in print on , Page 11 of the Sunday Book Review with the headline: Essay / Blame Prometheus
+See more on: Christopher Nolan, Oppenheimer, Mary Shelley
+328
+NY Times · by A.O. Scott · October 21, 2023
+SUMMARY
+HIGHLIGHTS
+Loading...

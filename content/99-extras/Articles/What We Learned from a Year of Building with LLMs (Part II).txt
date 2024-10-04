@@ -1,0 +1,229 @@
+What We Learned from a Year of Building with LLMs (Part II)
+O'Reilly · by Eugene Yan, Bryan Bischof, Charles Frye, Hamel Husain, Jason Liu, Shreya Shankar · May 31, 2024
+To hear directly from the authors on this topic, sign up for the upcoming virtual event on June 20th, and learn more from the Generative AI Success Stories Superstream on June 12th.
+Part I of this series can be found here and part III can be found here.
+
+A possibly apocryphal quote attributed to many leaders reads: “Amateurs talk strategy and tactics. Professionals talk operations.” Where the tactical perspective sees a thicket of sui generis problems, the operational perspective sees a pattern of organizational dysfunction to repair. Where the strategic perspective sees an opportunity, the operational perspective sees a challenge worth rising to.
+
+ 
+Learn faster. Dig deeper. See farther.
+
+Join the O'Reilly online learning platform. Get a free trial today and find answers on the fly, or master something new and useful.
+
+Learn more
+In part 1 of this essay, we introduced the tactical nuts and bolts of working with LLMs. In the next part, we will zoom out to cover the long-term strategic considerations. In this part, we discuss the operational aspects of building LLM applications that sit between strategy and tactics and bring rubber to meet roads.
+
+Operating an LLM application raises some questions that are familiar from operating traditional software systems, often with a novel spin to keep things spicy. LLM applications also raise entirely new questions. We split these questions, and our answers, into four parts: data, models, product, and people.
+
+For data, we answer: How and how often should you review LLM inputs and outputs? How do you measure and reduce test-prod skew?
+
+For models, we answer: How do you integrate language models into the rest of the stack? How should you think about versioning models and migrating between models and versions?
+
+For product, we answer: When should design be involved in the application development process, and why is it “as early as possible”? How do you design user experiences with rich human-in-the-loop feedback? How do you prioritize the many conflicting requirements? How do you calibrate product risk?
+
+And finally, for people, we answer: Who should you hire to build a successful LLM application, and when should you hire them? How can you foster the right culture, one of experimentation? How should you use emerging LLM applications to build your own LLM application? Which is more critical: process or tooling?
+
+As an AI language model, I do not have opinions and so cannot tell you whether the introduction you provided is “goated or nah.” However, I can say that the introduction properly sets the stage for the content that follows.
+
+Operations: Developing and Managing LLM Applications and the Teams That Build Them
+
+Data
+
+Just as the quality of ingredients determines the dish’s taste, the quality of input data constrains the performance of machine learning systems. In addition, output data is the only way to tell whether the product is working or not. All the authors focus tightly on the data, looking at inputs and outputs for several hours a week to better understand the data distribution: its modes, its edge cases, and the limitations of models of it.
+
+Check for development-prod skew
+
+A common source of errors in traditional machine learning pipelines is train-serve skew. This happens when the data used in training differs from what the model encounters in production. Although we can use LLMs without training or fine-tuning, hence there’s no training set, a similar issue arises with development-prod data skew. Essentially, the data we test our systems on during development should mirror what the systems will face in production. If not, we might find our production accuracy suffering.
+
+LLM development-prod skew can be categorized into two types: structural and content-based. Structural skew includes issues like formatting discrepancies, such as differences between a JSON dictionary with a list-type value and a JSON list, inconsistent casing, and errors like typos or sentence fragments. These errors can lead to unpredictable model performance because different LLMs are trained on specific data formats, and prompts can be highly sensitive to minor changes. Content-based or “semantic” skew refers to differences in the meaning or context of the data.
+
+As in traditional ML, it’s useful to periodically measure skew between the LLM input/output pairs. Simple metrics like the length of inputs and outputs or specific formatting requirements (e.g., JSON or XML) are straightforward ways to track changes. For more “advanced” drift detection, consider clustering embeddings of input/output pairs to detect semantic drift, such as shifts in the topics users are discussing, which could indicate they are exploring areas the model hasn’t been exposed to before.
+
+When testing changes, such as prompt engineering, ensure that holdout datasets are current and reflect the most recent types of user interactions. For example, if typos are common in production inputs, they should also be present in the holdout data. Beyond just numerical skew measurements, it’s beneficial to perform qualitative assessments on outputs. Regularly reviewing your model’s outputs—a practice colloquially known as “vibe checks”—ensures that the results align with expectations and remain relevant to user needs. Finally, incorporating nondeterminism into skew checks is also useful—by running the pipeline multiple times for each input in our testing dataset and analyzing all outputs, we increase the likelihood of catching anomalies that might occur only occasionally.
+
+Look at samples of LLM inputs and outputs every day
+
+LLMs are dynamic and constantly evolving. Despite their impressive zero-shot capabilities and often delightful outputs, their failure modes can be highly unpredictable. For custom tasks, regularly reviewing data samples is essential to developing an intuitive understanding of how LLMs perform.
+
+Input-output pairs from production are the “real things, real places” (genchi genbutsu) of LLM applications, and they cannot be substituted. Recent research highlighted that developers’ perceptions of what constitutes “good” and “bad” outputs shift as they interact with more data (i.e., criteria drift). While developers can come up with some criteria upfront for evaluating LLM outputs, these predefined criteria are often incomplete. For instance, during the course of development, we might update the prompt to increase the probability of good responses and decrease the probability of bad ones. This iterative process of evaluation, reevaluation, and criteria update is necessary, as it’s difficult to predict either LLM behavior or human preference without directly observing the outputs.
+
+To manage this effectively, we should log LLM inputs and outputs. By examining a sample of these logs daily, we can quickly identify and adapt to new patterns or failure modes. When we spot a new issue, we can immediately write an assertion or eval around it. Similarly, any updates to failure mode definitions should be reflected in the evaluation criteria. These “vibe checks” are signals of bad outputs; code and assertions operationalize them. Finally, this attitude must be socialized, for example by adding review or annotation of inputs and outputs to your on-call rotation.
+
+Working with models
+
+With LLM APIs, we can rely on intelligence from a handful of providers. While this is a boon, these dependencies also involve trade-offs on performance, latency, throughput, and cost. Also, as newer, better models drop (almost every month in the past year), we should be prepared to update our products as we deprecate old models and migrate to newer models. In this section, we share our lessons from working with technologies we don’t have full control over, where the models can’t be self-hosted and managed.
+
+Generate structured output to ease downstream integration
+
+For most real-world use cases, the output of an LLM will be consumed by a downstream application via some machine-readable format. For example, Rechat, a real-estate CRM, required structured responses for the frontend to render widgets. Similarly, Boba, a tool for generating product strategy ideas, needed structured output with fields for title, summary, plausibility score, and time horizon. Finally, LinkedIn shared about constraining the LLM to generate YAML, which is then used to decide which skill to use, as well as provide the parameters to invoke the skill.
+
+This application pattern is an extreme version of Postel’s law: be liberal in what you accept (arbitrary natural language) and conservative in what you send (typed, machine-readable objects). As such, we expect it to be extremely durable.
+
+Currently, Instructor and Outlines are the de facto standards for coaxing structured output from LLMs. If you’re using an LLM API (e.g., Anthropic, OpenAI), use Instructor; if you’re working with a self-hosted model (e.g., Hugging Face), use Outlines.
+
+Migrating prompts across models is a pain in the ass
+
+Sometimes, our carefully crafted prompts work superbly with one model but fall flat with another. This can happen when we’re switching between various model providers, as well as when we upgrade across versions of the same model.
+
+For example, Voiceflow found that migrating from gpt-3.5-turbo-0301 to gpt-3.5-turbo-1106 led to a 10% drop on their intent classification task. (Thankfully, they had evals!) Similarly, GoDaddy observed a trend in the positive direction, where upgrading to version 1106 narrowed the performance gap between gpt-3.5-turbo and gpt-4. (Or, if you’re a glass-half-full person, you might be disappointed that gpt-4’s lead was reduced with the new upgrade)
+
+Thus, if we have to migrate prompts across models, expect it to take more time than simply swapping the API endpoint. Don’t assume that plugging in the same prompt will lead to similar or better results. Also, having reliable, automated evals helps with measuring task performance before and after migration, and reduces the effort needed for manual verification.
+
+Version and pin your models
+
+In any machine learning pipeline, “changing anything changes everything“. This is particularly relevant as we rely on components like large language models (LLMs) that we don’t train ourselves and that can change without our knowledge.
+
+Fortunately, many model providers offer the option to “pin” specific model versions (e.g., gpt-4-turbo-1106). This enables us to use a specific version of the model weights, ensuring they remain unchanged. Pinning model versions in production can help avoid unexpected changes in model behavior, which could lead to customer complaints about issues that may crop up when a model is swapped, such as overly verbose outputs or other unforeseen failure modes.
+
+Additionally, consider maintaining a shadow pipeline that mirrors your production setup but uses the latest model versions. This enables safe experimentation and testing with new releases. Once you’ve validated the stability and quality of the outputs from these newer models, you can confidently update the model versions in your production environment.
+
+Choose the smallest model that gets the job done
+
+When working on a new application, it’s tempting to use the biggest, most powerful model available. But once we’ve established that the task is technically feasible, it’s worth experimenting if a smaller model can achieve comparable results.
+
+The benefits of a smaller model are lower latency and cost. While it may be weaker, techniques like chain-of-thought, n-shot prompts, and in-context learning can help smaller models punch above their weight. Beyond LLM APIs, fine-tuning our specific tasks can also help increase performance.
+
+Taken together, a carefully crafted workflow using a smaller model can often match, or even surpass, the output quality of a single large model, while being faster and cheaper. For example, this post shares anecdata of how Haiku + 10-shot prompt outperforms zero-shot Opus and GPT-4. In the long term, we expect to see more examples of flow-engineering with smaller models as the optimal balance of output quality, latency, and cost.
+
+As another example, take the humble classification task. Lightweight models like DistilBERT (67M parameters) are a surprisingly strong baseline. The 400M parameter DistilBART is another great option—when fine-tuned on open source data, it could identify hallucinations with an ROC-AUC of 0.84, surpassing most LLMs at less than 5% of latency and cost.
+
+The point is, don’t overlook smaller models. While it’s easy to throw a massive model at every problem, with some creativity and experimentation, we can often find a more efficient solution.
+
+Product
+
+While new technology offers new possibilities, the principles of building great products are timeless. Thus, even if we’re solving new problems for the first time, we don’t have to reinvent the wheel on product design. There’s a lot to gain from grounding our LLM application development in solid product fundamentals, allowing us to deliver real value to the people we serve.
+
+Involve design early and often
+
+Having a designer will push you to understand and think deeply about how your product can be built and presented to users. We sometimes stereotype designers as folks who take things and make them pretty. But beyond just the user interface, they also rethink how the user experience can be improved, even if it means breaking existing rules and paradigms.
+
+Designers are especially gifted at reframing the user’s needs into various forms. Some of these forms are more tractable to solve than others, and thus, they may offer more or fewer opportunities for AI solutions. Like many other products, building AI products should be centered around the job to be done, not the technology that powers them.
+
+Focus on asking yourself: “What job is the user asking this product to do for them? Is that job something a chatbot would be good at? How about autocomplete? Maybe something different!” Consider the existing design patterns and how they relate to the job-to-be-done. These are the invaluable assets that designers add to your team’s capabilities.
+
+Design your UX for Human-in-the-Loop
+
+One way to get quality annotations is to integrate Human-in-the-Loop (HITL) into the user experience (UX). By allowing users to provide feedback and corrections easily, we can improve the immediate output and collect valuable data to improve our models.
+
+Imagine an e-commerce platform where users upload and categorize their products. There are several ways we could design the UX:
+
+The user manually selects the right product category; an LLM periodically checks new products and corrects miscategorization on the backend.
+The user doesn’t select any category at all; an LLM periodically categorizes products on the backend (with potential errors).
+An LLM suggests a product category in real time, which the user can validate and update as needed.
+While all three approaches involve an LLM, they provide very different UXes. The first approach puts the initial burden on the user and has the LLM acting as a postprocessing check. The second requires zero effort from the user but provides no transparency or control. The third strikes the right balance. By having the LLM suggest categories upfront, we reduce cognitive load on the user and they don’t have to learn our taxonomy to categorize their product! At the same time, by allowing the user to review and edit the suggestion, they have the final say in how their product is classified, putting control firmly in their hands. As a bonus, the third approach creates a natural feedback loop for model improvement. Suggestions that are good are accepted (positive labels) and those that are bad are updated (negative followed by positive labels).
+
+This pattern of suggestion, user validation, and data collection is commonly seen in several applications:
+
+Coding assistants: Where users can accept a suggestion (strong positive), accept and tweak a suggestion (positive), or ignore a suggestion (negative)
+Midjourney: Where users can choose to upscale and download the image (strong positive), vary an image (positive), or generate a new set of images (negative)
+Chatbots: Where users can provide thumbs ups (positive) or thumbs down (negative) on responses, or choose to regenerate a response if it was really bad (strong negative)
+Feedback can be explicit or implicit. Explicit feedback is information users provide in response to a request by our product; implicit feedback is information we learn from user interactions without needing users to deliberately provide feedback. Coding assistants and Midjourney are examples of implicit feedback while thumbs up and thumb downs are explicit feedback. If we design our UX well, like coding assistants and Midjourney, we can collect plenty of implicit feedback to improve our product and models.
+
+Prioritize your hierarchy of needs ruthlessly
+
+As we think about putting our demo into production, we’ll have to think about the requirements for:
+
+Reliability: 99.9% uptime, adherence to structured output
+Harmlessness: Not generate offensive, NSFW, or otherwise harmful content
+Factual consistency: Being faithful to the context provided, not making things up
+Usefulness: Relevant to the users’ needs and request
+Scalability: Latency SLAs, supported throughput
+Cost: Because we don’t have unlimited budget
+And more: Security, privacy, fairness, GDPR, DMA, etc.
+If we try to tackle all these requirements at once, we’re never going to ship anything. Thus, we need to prioritize. Ruthlessly. This means being clear what is nonnegotiable (e.g., reliability, harmlessness) without which our product can’t function or won’t be viable. It’s all about identifying the minimum lovable product. We have to accept that the first version won’t be perfect, and just launch and iterate.
+
+Calibrate your risk tolerance based on the use case
+
+When deciding on the language model and level of scrutiny of an application, consider the use case and audience. For a customer-facing chatbot offering medical or financial advice, we’ll need a very high bar for safety and accuracy. Mistakes or bad output could cause real harm and erode trust. But for less critical applications, such as a recommender system, or internal-facing applications like content classification or summarization, excessively strict requirements only slow progress without adding much value.
+
+This aligns with a recent a16z report showing that many companies are moving faster with internal LLM applications compared to external ones. By experimenting with AI for internal productivity, organizations can start capturing value while learning how to manage risk in a more controlled environment. Then, as they gain confidence, they can expand to customer-facing use cases.
+
+Team & Roles
+
+No job function is easy to define, but writing a job description for the work in this new space is more challenging than others. We’ll forgo Venn diagrams of intersecting job titles, or suggestions for job descriptions. We will, however, submit to the existence of a new role—the AI engineer—and discuss its place. Importantly, we’ll discuss the rest of the team and how responsibilities should be assigned.
+
+Focus on process, not tools
+
+When faced with new paradigms, such as LLMs, software engineers tend to favor tools. As a result, we overlook the problem and process the tool was supposed to solve. In doing so, many engineers assume accidental complexity, which has negative consequences for the team’s long-term productivity.
+
+For example, this write-up discusses how certain tools can automatically create prompts for large language models. It argues (rightfully IMHO) that engineers who use these tools without first understanding the problem-solving methodology or process end up taking on unnecessary technical debt.
+
+In addition to accidental complexity, tools are often underspecified. For example, there is a growing industry of LLM evaluation tools that offer “LLM Evaluation in a Box” with generic evaluators for toxicity, conciseness, tone, etc. We have seen many teams adopt these tools without thinking critically about the specific failure modes of their domains. Contrast this to EvalGen. It focuses on teaching users the process of creating domain-specific evals by deeply involving the user each step of the way, from specifying criteria, to labeling data, to checking evals. The software leads the user through a workflow that looks like this:
+
+
+Shankar, S., et al. (2024). Who Validates the Validators? Aligning LLM-Assisted Evaluation of LLM Outputs with Human Preferences. Retrieved from https://arxiv.org/abs/2404.12272
+EvalGen guides the user through a best practice of crafting LLM evaluations, namely:
+
+Defining domain-specific tests (bootstrapped automatically from the prompt). These are defined as either assertions with code or with LLM-as-a-Judge.
+The importance of aligning the tests with human judgment, so that the user can check that the tests capture the specified criteria.
+Iterating on your tests as the system (prompts, etc.) changes.
+EvalGen provides developers with a mental model of the evaluation building process without anchoring them to a specific tool. We have found that after providing AI engineers with this context, they often decide to select leaner tools or build their own.
+
+There are too many components of LLMs beyond prompt writing and evaluations to list exhaustively here. However, it is important that AI engineers seek to understand the processes before adopting tools.
+
+Always be experimenting
+
+ML products are deeply intertwined with experimentation. Not only the A/B, randomized control trials kind, but the frequent attempts at modifying the smallest possible components of your system and doing offline evaluation. The reason why everyone is so hot for evals is not actually about trustworthiness and confidence—it’s about enabling experiments! The better your evals, the faster you can iterate on experiments, and thus the faster you can converge on the best version of your system.
+
+It’s common to try different approaches to solving the same problem because experimentation is so cheap now. The high-cost of collecting data and training a model is minimized—prompt engineering costs little more than human time. Position your team so that everyone is taught the basics of prompt engineering. This encourages everyone to experiment and leads to diverse ideas from across the organization.
+
+Additionally, don’t only experiment to explore—also use them to exploit! Have a working version of a new task? Consider having someone else on the team approach it differently. Try doing it another way that’ll be faster. Investigate prompt techniques like chain-of-thought or few-shot to make it higher quality. Don’t let your tooling hold you back on experimentation; if it is, rebuild it, or buy something to make it better.
+
+Finally, during product/project planning, set aside time for building evals and running multiple experiments. Think of the product spec for engineering products, but add to it clear criteria for evals. And during roadmapping, don’t underestimate the time required for experimentation—expect to do multiple iterations of development and evals before getting the green light for production.
+
+Empower everyone to use new AI technology
+
+As generative AI increases in adoption, we want the entire team—not just the experts—to understand and feel empowered to use this new technology. There’s no better way to develop intuition for how LLMs work (e.g., latencies, failure modes, UX) than to, well, use them. LLMs are relatively accessible: You don’t need to know how to code to improve performance for a pipeline, and everyone can start contributing via prompt engineering and evals.
+
+A big part of this is education. It can start as simple as the basics of prompt engineering, where techniques like n-shot prompting and CoT help condition the model toward the desired output. Folks who have the knowledge can also educate about the more technical aspects, such as how LLMs are autoregressive in nature. In other words, while input tokens are processed in parallel, output tokens are generated sequentially. As a result, latency is more a function of output length than input length—this is a key consideration when designing UXes and setting performance expectations.
+
+We can also go further and provide opportunities for hands-on experimentation and exploration. A hackathon perhaps? While it may seem expensive to have an entire team spend a few days hacking on speculative projects, the outcomes may surprise you. We know of a team that, through a hackathon, accelerated and almost completed their three-year roadmap within a year. Another team had a hackathon that led to paradigm shifting UXes that are now possible thanks to LLMs, which are now prioritized for the year and beyond.
+
+Don’t fall into the trap of “AI engineering is all I need”
+
+As new job titles are coined, there is an initial tendency to overstate the capabilities associated with these roles. This often results in a painful correction as the actual scope of these jobs becomes clear. Newcomers to the field, as well as hiring managers, might make exaggerated claims or have inflated expectations. Notable examples over the last decade include:
+
+Machine learning engineer (MLE): a software engineering-centric view of machine learning
+Initially, many assumed that data scientists alone were sufficient for data-driven projects. However, it became apparent that data scientists must collaborate with software and data engineers to develop and deploy data products effectively.
+
+This misunderstanding has shown up again with the new role of AI engineer, with some teams believing that AI engineers are all you need. In reality, building machine learning or AI products requires a broad array of specialized roles. We’ve consulted with more than a dozen companies on AI products and have consistently observed that they fall into the trap of believing that “AI engineering is all you need.” As a result, products often struggle to scale beyond a demo as companies overlook crucial aspects involved in building a product.
+
+For example, evaluation and measurement are crucial for scaling a product beyond vibe checks. The skills for effective evaluation align with some of the strengths traditionally seen in machine learning engineers—a team composed solely of AI engineers will likely lack these skills. Coauthor Hamel Husain illustrates the importance of these skills in his recent work around detecting data drift and designing domain-specific evals.
+
+Here is a rough progression of the types of roles you need, and when you’ll need them, throughout the journey of building an AI product:
+
+First, focus on building a product. This might include an AI engineer, but it doesn’t have to. AI engineers are valuable for prototyping and iterating quickly on the product (UX, plumbing, etc.).
+Next, create the right foundations by instrumenting your system and collecting data. Depending on the type and scale of data, you might need platform and/or data engineers. You must also have systems for querying and analyzing this data to debug issues.
+Next, you will eventually want to optimize your AI system. This doesn’t necessarily involve training models. The basics include steps like designing metrics, building evaluation systems, running experiments, optimizing RAG retrieval, debugging stochastic systems, and more. MLEs are really good at this (though AI engineers can pick them up too). It usually doesn’t make sense to hire an MLE unless you have completed the prerequisite steps.
+Aside from this, you need a domain expert at all times. At small companies, this would ideally be the founding team—and at bigger companies, product managers can play this role. Being aware of the progression and timing of roles is critical. Hiring folks at the wrong time (e.g., hiring an MLE too early) or building in the wrong order is a waste of time and money, and causes churn. Furthermore, regularly checking in with an MLE (but not hiring them full-time) during phases 1–2 will help the company build the right foundations.
+
+About the authors
+
+Eugene Yan designs, builds, and operates machine learning systems that serve customers at scale. He’s currently a Senior Applied Scientist at Amazon where he builds RecSys serving users at scale and applies LLMs to serve customers better. Previously, he led machine learning at Lazada (acquired by Alibaba) and a Healthtech Series A. He writes and speaks about ML, RecSys, LLMs, and engineering at eugeneyan.com and ApplyingML.com.
+
+Bryan Bischof is the Head of AI at Hex, where he leads the team of engineers building Magic—the data science and analytics copilot. Bryan has worked all over the data stack leading teams in analytics, machine learning engineering, data platform engineering, and AI engineering. He started the data team at Blue Bottle Coffee, led several projects at Stitch Fix, and built the data teams at Weights and Biases. Bryan previously co-authored the book Building Production Recommendation Systems with O’Reilly, and teaches Data Science and Analytics in the graduate school at Rutgers. His Ph.D. is in pure mathematics.
+
+Charles Frye teaches people to build AI applications. After publishing research in psychopharmacology and neurobiology, he got his Ph.D. at the University of California, Berkeley, for dissertation work on neural network optimization. He has taught thousands the entire stack of AI application development, from linear algebra fundamentals to GPU arcana and building defensible businesses, through educational and consulting work at Weights and Biases, Full Stack Deep Learning, and Modal.
+
+Hamel Husain is a machine learning engineer with over 25 years of experience. He has worked with innovative companies such as Airbnb and GitHub, which included early LLM research used by OpenAI for code understanding. He has also led and contributed to numerous popular open-source machine-learning tools. Hamel is currently an independent consultant helping companies operationalize Large Language Models (LLMs) to accelerate their AI product journey.
+
+Jason Liu is a distinguished machine learning consultant known for leading teams to successfully ship AI products. Jason’s technical expertise covers personalization algorithms, search optimization, synthetic data generation, and MLOps systems. His experience includes companies like Stitch Fix, where he created a recommendation framework and observability tools that handled 350 million daily requests. Additional roles have included Meta, NYU, and startups such as Limitless AI and Trunk Tools.
+
+Shreya Shankar is an ML engineer and PhD student in computer science at UC Berkeley. She was the first ML engineer at 2 startups, building AI-powered products from scratch that serve thousands of users daily. As a researcher, her work focuses on addressing data challenges in production ML systems through a human-centered approach. Her work has appeared in top data management and human-computer interaction venues like VLDB, SIGMOD, CIDR, and CSCW.
+
+Contact Us
+
+We would love to hear your thoughts on this post. You can contact us at contact@applied-llms.org. Many of us are open to various forms of consulting and advisory. We will route you to the correct expert(s) upon contact with us if appropriate.
+
+Acknowledgements
+
+This series started as a conversation in a group chat, where Bryan quipped that he was inspired to write “A Year of AI Engineering.” Then, ✨magic✨ happened in the group chat, and we were all inspired to chip in and share what we’ve learned so far.
+
+The authors would like to thank Eugene for leading the bulk of the document integration and overall structure in addition to a large proportion of the lessons. Additionally, for primary editing responsibilities and document direction. The authors would like to thank Bryan for the spark that led to this writeup, restructuring the write-up into tactical, operational, and strategic sections and their intros, and for pushing us to think bigger on how we could reach and help the community. The authors would like to thank Charles for his deep dives on cost and LLMOps, as well as weaving the lessons to make them more coherent and tighter—you have him to thank for this being 30 instead of 40 pages! The authors appreciate Hamel and Jason for their insights from advising clients and being on the front lines, for their broad generalizable learnings from clients, and for deep knowledge of tools. And finally, thank you Shreya for reminding us of the importance of evals and rigorous production practices and for bringing her research and original results to this piece.
+
+Finally, the authors would like to thank all the teams who so generously shared your challenges and lessons in your own write-ups which we’ve referenced throughout this series, along with the AI communities for your vibrant participation and engagement with this group.
+
+O'Reilly · by Eugene Yan, Bryan Bischof, Charles Frye, Hamel Husain, Jason Liu, Shreya Shankar · May 31, 2024
+SUMMARY
+HIGHLIGHTS
+Loading...
