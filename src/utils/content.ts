@@ -14,6 +14,8 @@ export async function getChapters() {
       
       let title = '';
       let subtitle = '';
+      let content = '';
+      let pages = [];
 
       if (mainFile) {
         try {
@@ -21,6 +23,16 @@ export async function getChapters() {
           const lines = fileContent.split('\n');
           title = lines[0].replace('# ', '');
           subtitle = lines[1]?.replace('## ', '') || '';
+          if (chapterId === '00') {
+            content = lines.slice(2).join('\n');
+            pages = fs.readdirSync(chapterPath)
+              .filter(file => file.endsWith('.txt') && file !== mainFile)
+              .map(file => {
+                const pageContent = fs.readFileSync(path.join(chapterPath, file), 'utf-8');
+                const pageTitle = pageContent.split('\n')[0].replace('# ', '');
+                return { id: file.replace('.txt', ''), title: pageTitle };
+              });
+          }
         } catch (error) {
           console.error(`Error reading chapter ${chapterId}:`, error);
         }
@@ -31,6 +43,8 @@ export async function getChapters() {
         number: chapterId,
         title,
         subtitle,
+        content,
+        pages,
       };
     });
 
