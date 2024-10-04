@@ -14,7 +14,7 @@ export async function getChapters() {
       
       let title = '';
       let subtitle = '';
-      let content = '';
+      const content = ''; // Changed to const
       let pages: { id: string; title: string }[] = [];
 
       if (mainFile) {
