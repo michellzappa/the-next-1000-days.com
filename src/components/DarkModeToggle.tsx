@@ -5,14 +5,20 @@ const DarkModeToggle = () => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    setMounted(true);
+    console.log("Component mounted, theme:", theme);
+  }, [theme]);
 
   if (!mounted) return null;
 
   return (
     <button
       className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={() => {
+        console.log(`Button clicked, current theme: ${theme}`);
+        setTheme(theme === "dark" ? "light" : "dark");
+      }}
     >
       {theme === "dark" ? "🌞" : "🌙"}
     </button>
