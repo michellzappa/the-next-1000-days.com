@@ -7,6 +7,13 @@
 
 Slide-49.webp
 
+
+"With LLMs, how you choose to approach them will greatly determine the quality of their responses
+Banal questions will receive banal answers
+For extraordinary conversations, try to create a space of openness and curiosity"
+
+
+
 Here's a brief intro and overview for chapter 4 on prompts, written in your style:
 
 Prompts
