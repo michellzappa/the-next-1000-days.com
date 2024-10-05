@@ -7,6 +7,7 @@ import Link from "next/link";
 import Markdown from "../../components/Markdown";
 import Footer from "../../components/Footer";
 import { getChapters } from "../../utils/content";
+import { useEffect } from "react";
 
 interface PageProps {
   title: string;
@@ -17,17 +18,46 @@ interface PageProps {
   nextChapter: { id: string; title: string } | null;
 }
 
+interface PageNavigation {
+  previousPage: { id: string; title: string } | null;
+  nextPage: { id: string; title: string } | null;
+  previousChapter: { id: string; title: string } | null;
+  nextChapter: { id: string; title: string } | null;
+}
+
 export default function Page({
   title,
   subtitle, // Add this line
   content,
   chapterTitle,
-  nextPage,
-  nextChapter,
+  navigation,
   lastUpdated,
-}: PageProps & { lastUpdated: string }) {
+}: PageProps & { lastUpdated: string; navigation: PageNavigation }) {
   const router = useRouter();
   const { chapterId, pageId } = router.query;
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft") {
+        if (navigation.previousPage) {
+          router.push(`/${chapterId}/${navigation.previousPage.id}`);
+        } else if (navigation.previousChapter) {
+          router.push(`/${navigation.previousChapter.id}`);
+        }
+      } else if (event.key === "ArrowRight") {
+        if (navigation.nextPage) {
+          router.push(`/${chapterId}/${navigation.nextPage.id}`);
+        } else if (navigation.nextChapter) {
+          router.push(`/${navigation.nextChapter.id}`);
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [router, chapterId, navigation]);
 
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -66,25 +96,42 @@ export default function Page({
         <div className="text-sm text-gray-500 dark:text-gray-400 mt-4">
           Last updated: {lastUpdated}
         </div>
-        {nextPage ? (
-          <div className="mt-8">
+        <div className="flex justify-between mt-8">
+          {navigation.previousPage ? (
             <Link
-              href={`/${chapterId}/${nextPage.id}`}
+              href={`/${chapterId}/${navigation.previousPage.id}`}
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              Next Page: {nextPage.title} ({nextPage.id}) →
+              ← Previous: {navigation.previousPage.title}
             </Link>
-          </div>
-        ) : nextChapter ? (
-          <div className="mt-8">
+          ) : navigation.previousChapter ? (
             <Link
-              href={`/${nextChapter.id}`}
+              href={`/${navigation.previousChapter.id}`}
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              Next Chapter: {nextChapter.title} →
+              ← Previous Chapter: {navigation.previousChapter.title}
             </Link>
-          </div>
-        ) : null}
+          ) : (
+            <span></span>
+          )}
+          {navigation.nextPage ? (
+            <Link
+              href={`/${chapterId}/${navigation.nextPage.id}`}
+              className="text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              Next: {navigation.nextPage.title} →
+            </Link>
+          ) : navigation.nextChapter ? (
+            <Link
+              href={`/${navigation.nextChapter.id}`}
+              className="text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              Next Chapter: {navigation.nextChapter.title} →
+            </Link>
+          ) : (
+            <span></span>
+          )}
+        </div>
         <Footer />
       </div>
     </div>
@@ -152,31 +199,39 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   );
   const chapterTitle = chapterContent.split("\n")[0].replace("# ", "");
 
-  // Determine next page or next chapter
-  const currentPageIndex = chapterFiles.indexOf(pageFile);
-  let nextPage = null;
-  let nextChapter = null;
+  // Determine previous and next pages/chapters
+  const chapters = await getChapters();
+  const currentChapterIndex = chapters.findIndex(
+    (chapter) => chapter.id === chapterId
+  );
+  const currentChapter = chapters[currentChapterIndex];
 
-  if (currentPageIndex < chapterFiles.length - 1) {
-    const nextPageFile = chapterFiles[currentPageIndex + 1];
-    const nextPageContent = fs.readFileSync(
-      path.join(chapterPath, nextPageFile),
-      "utf-8"
-    );
-    const nextPageTitle = nextPageContent.split("\n")[0].replace("# ", "");
-    nextPage = {
-      id: nextPageFile.replace(".txt", ""),
-      title: nextPageTitle,
-    };
-  } else {
-    const chapters = await getChapters();
-    const currentChapterIndex = chapters.findIndex(
-      (chapter) => chapter.id === chapterId
-    );
-    if (currentChapterIndex < chapters.length - 1) {
-      nextChapter = chapters[currentChapterIndex + 1];
-    }
-  }
+  const currentPageIndex = currentChapter.pages.findIndex(
+    (page) => page.id === pageId
+  );
+  const previousPage =
+    currentPageIndex > 0 ? currentChapter.pages[currentPageIndex - 1] : null;
+  const nextPage =
+    currentPageIndex < currentChapter.pages.length - 1
+      ? currentChapter.pages[currentPageIndex + 1]
+      : null;
+  const previousChapter =
+    currentChapterIndex > 0 ? chapters[currentChapterIndex - 1] : null;
+  const nextChapter =
+    currentChapterIndex < chapters.length - 1
+      ? chapters[currentChapterIndex + 1]
+      : null;
+
+  const navigation: PageNavigation = {
+    previousPage,
+    nextPage,
+    previousChapter: previousChapter
+      ? { id: previousChapter.id, title: previousChapter.title }
+      : null,
+    nextChapter: nextChapter
+      ? { id: nextChapter.id, title: nextChapter.title }
+      : null,
+  };
 
   const stats = fs.statSync(pagePath);
   const lastUpdated = new Date(stats.mtime).toLocaleDateString("en-GB", {
@@ -191,8 +246,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       subtitle, // Add this line
       content: lines.slice(subtitle ? 2 : 1).join("\n"), // Modify this line
       chapterTitle,
-      nextPage,
-      nextChapter,
+      navigation,
       lastUpdated,
     },
   };

@@ -6,28 +6,33 @@ import fs from "fs";
 import path from "path";
 import Markdown from "../../components/Markdown";
 import Footer from "../../components/Footer";
+import { useEffect } from "react";
+import { getChapters } from "../../utils/content";
 
 interface ChapterProps {
   title: string;
-  subtitle: string; // Added subtitle property
-  content: string; // Replace 'any' with 'string'
+  subtitle: string;
+  content: string;
   chapterId: string;
-  subPages: Page[]; // Replace 'any' with 'Page[]'
+  subPages: Page[];
+  navigation: ChapterNavigation;
 }
 
-// Move the Page interface definition up here
 interface Page {
   id: string;
   title: string;
-  subtitle: string; // Added subtitle property
+  subtitle: string;
+}
+
+interface ChapterNavigation {
+  previousChapter: { id: string; title: string } | null;
+  nextChapter: { id: string; title: string } | null;
 }
 
 function getDisplayTitle(pageId: string, chapterId: string) {
-  // Check if the pageId is a chapter intro page (e.g., 010, 020)
   if (pageId.endsWith("0")) {
     return `Chapter ${parseInt(chapterId, 10)}`;
   }
-  // Return the page number for other pages
   return `Page ${pageId}`;
 }
 
@@ -37,9 +42,26 @@ export default function Chapter({
   content,
   chapterId,
   subPages,
+  navigation,
 }: ChapterProps) {
-  const pageId = `${chapterId.padStart(2, "0")}0`;
   const router = useRouter();
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft" && navigation.previousChapter) {
+        router.push(`/${navigation.previousChapter.id}`);
+      } else if (event.key === "ArrowRight" && subPages.length > 0) {
+        router.push(`/${chapterId}/${subPages[0].id}`);
+      } else if (event.key === "ArrowRight" && navigation.nextChapter) {
+        router.push(`/${navigation.nextChapter.id}`);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [router, navigation, chapterId, subPages]);
 
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -50,7 +72,7 @@ export default function Chapter({
       <div className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12">
         <Head>
           <title>{`${getDisplayTitle(
-            pageId,
+            chapterId.padStart(2, "0") + "0",
             chapterId
           )} - The Next 1,000 Days`}</title>
         </Head>
@@ -61,13 +83,17 @@ export default function Chapter({
           ← Back to Home
         </Link>
         <div className="text-sm text-gray-500 mb-2">
-          {getDisplayTitle(pageId, chapterId)}
+          {getDisplayTitle(chapterId.padStart(2, "0") + "0", chapterId)}
         </div>
         <h1 className="text-4xl font-bold mb-2">{title}</h1>
         {subtitle && (
           <h2 className="text-2xl font-semibold mb-6">{subtitle}</h2>
         )}
-        <Markdown content={content} chapterId={chapterId} pageId={pageId} />
+        <Markdown
+          content={content}
+          chapterId={chapterId}
+          pageId={chapterId.padStart(2, "0") + "0"}
+        />
         {subPages.length > 0 && (
           <section className="mt-12">
             <h2 className="text-2xl font-semibold mb-4">Pages</h2>
@@ -94,6 +120,32 @@ export default function Chapter({
             ))}
           </section>
         )}
+        <div className="flex justify-between mt-8">
+          {navigation.previousChapter && (
+            <Link
+              href={`/${navigation.previousChapter.id}`}
+              className="text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              ← Previous Chapter: {navigation.previousChapter.title}
+            </Link>
+          )}
+          {subPages.length > 0 && (
+            <Link
+              href={`/${chapterId}/${subPages[0].id}`}
+              className="text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              Next: {subPages[0].title} →
+            </Link>
+          )}
+          {subPages.length === 0 && navigation.nextChapter && (
+            <Link
+              href={`/${navigation.nextChapter.id}`}
+              className="text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              Next Chapter: {navigation.nextChapter.title} →
+            </Link>
+          )}
+        </div>
         <Footer />
       </div>
     </div>
@@ -136,17 +188,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const content = fs.readFileSync(path.join(chapterPath, mainFile), "utf-8");
   const lines = content.split("\n");
 
-  // Extract the title and ensure it's a single string
   const title = lines[0].startsWith("# ")
     ? lines[0].replace("# ", "").trim()
     : pageId;
 
-  // Extract the subtitle
   const subtitle = lines[1].startsWith("## ")
     ? lines[1].replace("## ", "").trim()
     : null;
 
-  // Remove the title and subtitle lines from the content
   const contentWithoutTitleAndSubtitle = lines.slice(2).join("\n");
 
   const subPages = chapterFiles.slice(1).map((file) => {
@@ -163,14 +212,36 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     };
   });
 
+  const chapters = await getChapters();
+  const currentChapterIndex = chapters.findIndex(
+    (chapter) => chapter.id === chapterId
+  );
+
+  const navigation: ChapterNavigation = {
+    previousChapter:
+      currentChapterIndex > 0
+        ? {
+            id: chapters[currentChapterIndex - 1].id,
+            title: chapters[currentChapterIndex - 1].title,
+          }
+        : null,
+    nextChapter:
+      currentChapterIndex < chapters.length - 1
+        ? {
+            id: chapters[currentChapterIndex + 1].id,
+            title: chapters[currentChapterIndex + 1].title,
+          }
+        : null,
+  };
+
   return {
     props: {
       title,
       subtitle,
       content: contentWithoutTitleAndSubtitle,
       chapterId,
-      pageId,
       subPages,
+      navigation,
     },
   };
 };

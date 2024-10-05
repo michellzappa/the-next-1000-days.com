@@ -7,6 +7,8 @@ import Footer from "../../components/Footer";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { useEffect } from "react";
+import { getChapters } from "../../utils/content";
 
 interface Page {
   id: string;
@@ -15,14 +17,44 @@ interface Page {
   subtitle: string;
 }
 
+interface ChapterNavigation {
+  previousChapter: { id: string; title: string } | null;
+  nextChapter: { id: string; title: string } | null;
+}
+
 interface ChapterProps {
   title: string;
   content: string;
   pages: Page[];
+  navigation: ChapterNavigation;
 }
 
-export default function Chapter({ title, content, pages }: ChapterProps) {
+export default function Chapter({
+  title,
+  content,
+  pages,
+  navigation,
+}: ChapterProps) {
   const router = useRouter();
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft" && navigation.previousPage) {
+        router.push(
+          `/${navigation.previousPage.chapterId}/${navigation.previousPage.pageId}`
+        );
+      } else if (event.key === "ArrowRight" && navigation.nextPage) {
+        router.push(
+          `/${navigation.nextPage.chapterId}/${navigation.nextPage.pageId}`
+        );
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [router, navigation]);
 
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -59,6 +91,26 @@ export default function Chapter({ title, content, pages }: ChapterProps) {
             </div>
           ))}
         </section>
+
+        <div className="flex justify-between mt-8">
+          {navigation.previousPage && (
+            <Link
+              href={`/${navigation.previousPage.chapterId}/${navigation.previousPage.pageId}`}
+              className="text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              ← Previous: {navigation.previousPage.title}
+            </Link>
+          )}
+          {navigation.nextPage && (
+            <Link
+              href={`/${navigation.nextPage.chapterId}/${navigation.nextPage.pageId}`}
+              className="text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              Next: {navigation.nextPage.title} →
+            </Link>
+          )}
+        </div>
+
         <Footer />
       </div>
     </div>
@@ -121,11 +173,51 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       };
     });
 
+  const chapters = await getChapters();
+  const currentChapterIndex = chapters.findIndex(
+    (chapter) => chapter.id === chapterId
+  );
+  const currentChapter = chapters[currentChapterIndex];
+
+  const previousChapter =
+    currentChapterIndex > 0 ? chapters[currentChapterIndex - 1] : null;
+  const nextChapter =
+    currentChapterIndex < chapters.length - 1
+      ? chapters[currentChapterIndex + 1]
+      : null;
+
+  const navigation: ChapterNavigation = {
+    previousPage: previousChapter
+      ? {
+          chapterId: previousChapter.id,
+          pageId: previousChapter.pages[previousChapter.pages.length - 1].id,
+          title: `${previousChapter.title} - ${
+            previousChapter.pages[previousChapter.pages.length - 1].title
+          }`,
+        }
+      : null,
+    nextPage:
+      currentChapter.pages.length > 0
+        ? {
+            chapterId: currentChapter.id,
+            pageId: currentChapter.pages[0].id,
+            title: currentChapter.pages[0].title,
+          }
+        : nextChapter
+        ? {
+            chapterId: nextChapter.id,
+            pageId: nextChapter.pages[0].id,
+            title: `${nextChapter.title} - ${nextChapter.pages[0].title}`,
+          }
+        : null,
+  };
+
   return {
     props: {
       title,
       content: mainContent,
       pages,
+      navigation,
     },
   };
 };
