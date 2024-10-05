@@ -1,9 +1,6 @@
 const Footer = () => {
   return (
     <footer className="mt-auto py-4">
-      <div className="container mx-auto flex items-left mt-4 text-sm">
-        The Next 1.000 Days
-      </div>
       <div className="container mx-auto flex items-left mt-4">
         <a href="/chapter-index" className="text-sm mr-2">
           Chapter Index

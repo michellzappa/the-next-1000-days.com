@@ -45,7 +45,7 @@ export default function ChapterOverview({ chapters }: ChapterOverviewProps) {
                 {/* Generate header cells for each page number */}
                 {[...Array(maxPages)].map((_, index) => (
                   <th key={index} className="p-1 text-center align-top">
-                    <div className="font-bold">Page {index + 1}</div>
+                    <div className="font-bold">{index + 1}</div>
                   </th>
                 ))}
               </tr>
