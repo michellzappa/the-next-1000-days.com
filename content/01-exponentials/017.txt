@@ -3,6 +3,12 @@
 
 Slide-23.webp
 
+Another thing to keep in mind is there are many types of AI. We often talk about it as a global universal thing, but my rice cooker uses the same kind of AI as Deep Blue. It's called a reactive machine—a predictable, procedural approach to AI. This is massively different from the generative AI (GenAI) we're looking at currently, which is used for content creation and other types of creativity, such as drug discovery or marketing. 
+There are many other kinds of AI, right? You could learn so much more about automation or predictive AI elsewhere. The idea here is to have a satellite view of the field and acknowledge that each one of these models has a different set of capabilities and its own research going on. Let's not conflate GenAI with all of AI or vice versa. 
+
+
+---
+
 Imagine, for a moment, that you're visiting a peculiar zoo. But instead of lions, tigers, and bears, the exhibits are filled with different types of artificial intelligence. Welcome to the AI Zoo, where not all intelligence is created equal.
 
 As you stroll past the exhibits, you might be surprised to learn that the humble rice cooker in your kitchen shares a cage with IBM's Deep Blue, the chess champion that defeated Garry Kasparov. These are the Reactive Machines, the simplest form of AI. They're like the reptiles of our AI zoo - primitive, yet perfectly adapted for their specific tasks.

@@ -21,6 +21,10 @@ const config: Config = {
       spacing: {
         'paragraph': '0.75rem', // Reduced from 1rem
       },
+      fontFamily: {
+        serif: ['Noto Serif', 'serif'],
+        mono: ['Roboto Mono', 'monospace'],
+      },
     },
   },
   plugins: [],
