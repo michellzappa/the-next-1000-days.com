@@ -36,8 +36,7 @@ export default function Home({ chapters }: HomeProps) {
         <main className="flex-grow">
           <h1 className="text-4xl font-bold mb-8">The Next 1,000 Days</h1>
           <p className="text-xl mb-8">
-            A guide for navigating our transition toward artificial general
-            intelligence.
+            Your guide for navigating the transition toward AGI.
           </p>
 
           {introChapter && (
@@ -77,17 +76,17 @@ export default function Home({ chapters }: HomeProps) {
               <div key={chapter.id} className="mb-2">
                 <Link
                   href={`/${chapter.id}/`}
-                  className="block hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-2 transition duration-150 ease-in-out"
+                  className="block rounded-lg p-2 transition duration-150 ease-in-out hover:outline hover:outline-2 hover:outline-gray-300 dark:hover:outline-gray-600"
                 >
                   <div className="flex items-baseline">
-                    <span className="inline-block w-8 text-sm font-bold font-mono text-gray-500 dark:text-gray-400">
+                    <span className="inline-block w-12 text-base font-mono text-gray-500 dark:text-gray-400">
                       {(parseInt(chapter.number) * 10)
                         .toString()
                         .padStart(3, "0")}
                     </span>
-                    <span className="text-lg font-medium">{chapter.title}</span>
+                    <span className="text-lg font-bold">{chapter.title}</span>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-0.5 ml-8">
+                  <p className="text-base text-gray-600 dark:text-gray-400 mt-0.5 ml-12">
                     {chapter.subtitle}
                   </p>
                 </Link>
