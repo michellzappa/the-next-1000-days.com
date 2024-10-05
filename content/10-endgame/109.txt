@@ -1,16 +1,14 @@
 # Proceeding with uncertainty
+## Exercises and questions to ask yourself.
 
-
-Slide-92.webp
-
-
-Which data is available?
+### Which data is available?
 What data sources and structures can you use for training?
 
 
-What are you looking to automate?
+### What are you looking to automate?
 Which functions and capabilities are best served by automation?
 
 
-How can I augment my abilities?
+### How can I augment my abilities?
 Where do I need to grow with the help of AI?
+

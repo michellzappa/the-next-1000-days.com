@@ -4,6 +4,7 @@
 
 Slide-68.webp
 
+An agent is a decision-making intelligence that observes things about the environment and then makes changes or acts differently depending on what it sees and the outcome it wants to optimize for. This goes into a feedback loop. We don't have many examples of agents right now. There are a few things in business automation, but within creative AIs, there’s not much. I think that edge is being explored as we speak. They’re trying to achieve certain goals and optimize for certain problems using whatever means are available.
 
 
 
@@ -76,8 +77,6 @@ Slide-68.webp
     - Group activity to conceptualize an AI agent for a specific task or industry
     - Discussion on potential benefits, challenges, and ethical considerations
 
-14. Transition to Next Chapter
-    - Link between increasingly sophisticated AI agents and the concept of AGI
 
 This outline covers the key aspects of AI agents, from basic concepts to current applications and future possibilities. It includes personal examples and emphasizes the potential impact of agents on various industries. The chapter aims to provide a comprehensive view of how AI agents are evolving and what their increasing capabilities might mean for society and the workforce.
 

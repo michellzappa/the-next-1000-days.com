@@ -1,6 +1,9 @@
 # Sparks of AGI
 
 
+There have allegedly been sparks of AGI even in GPT-4. This was featured literally in the first edition of the newsletter, which talks about how GPT-4 is showing initial capabilities of having a generalized capability set. For example, understanding complex instructions and being able to direct the output in novel or unexpected directions.
+
+
 Slide-80.webp
 
 Slide-81.webp

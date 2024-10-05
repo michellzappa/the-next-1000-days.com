@@ -4,6 +4,10 @@
 Slide-64.webp
 
 
+It's worth mentioning that I'm not a programmer; I don't code. I've tried studying software engineering repeatedly and frequently failed, mostly due to impatience. Suddenly, with an infinitely capable, infinitely patient assistant like ChatGPT, you can build things step by step. You learn a lot about what it's like to build with these systems by using them to build the thing you want to see.
+At a high level, it's 100% feasible to build something, like an app or a website, using these systems. However, you need to know quite a bit because the bits you're going to learn will not get you there on their own. I would assume you need to know about 20% of what you want to do, and the LLM can fill you in with the other 80%. But you still need to know how to ask the right questions. Eventually, there's going to be one or two percent that you need your programmer buddies to help you out with. It's almost inevitable, but you can get a long way only with the models. It helps if you have someone to fall back on.
+
+
 
 
 

@@ -1,4 +1,10 @@
 # Vectors of Intelligence
+## Capability Dimensions
+
+Intelligence is not a single, monolithic capability but a combination of various dimensions, spanning across different levels from task-specific abilities to broad.
+
+To develop truly intelligent systems, a comprehensive approach addressing all these vectors is crucial, ensuring balanced progress across all dimensions.
+
 
 Slide-76.webp
 
@@ -6,3 +12,5 @@ Slide-76.webp
    - Overview of Joscha Bach's capability vectors
    - The multifaceted nature of intelligence (perception, reasoning, learning, etc.)
    - Challenges in replicating human-like general intelligence
+
+Joscha Bach, one of my favorite thinkers in the space, talks a lot about capability dimensions. Here are his capability dimensions: this is based on other research, but basically, we're not capable in a single direction. We have skills in a single direction, but we're capable at a much larger scale. We have to be embodied; we have to have perception, reason, learn, represent, self-knowledge, language, and the ability to collaborate. For an AGI to be generally intelligent, it should be capable in all these directions.

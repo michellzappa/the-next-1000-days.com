@@ -2,6 +2,8 @@
 
 Slide-79.webp
 
+Experts or rather prediction markets think that we'll have AGI in the next decade. The current prediction on Metaculus is around 2032. This again becomes entirely a question of how we define AGI and how we even know we have it. It's definitely something to keep observing because there's great division even between people building these systems as to how capable they actually are. I'm not here to resolve that but rather to throw some attention on it.
+
 
 6. Prediction Markets and Expert Opinions
    - Current predictions for AGI development timelines

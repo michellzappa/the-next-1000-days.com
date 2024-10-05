@@ -24,6 +24,11 @@ Remember, the ecosystem is rapidly improving. Tools that allow you to input loos
 ---
 
 
+An application of creativity and so the next step after making stuff is coding things. I mean, computer language is fascinating because it is provable. If the code compiles and runs, it means it's valid. With normal language, anything goes; anything can be a poem. At the same time, not anything can be code. Code is a type of language with rules, and AI LLMs are extremely good at following rules—not all of them all the time, but generally, it gets it right.
+
+
+---
+
 
 
 

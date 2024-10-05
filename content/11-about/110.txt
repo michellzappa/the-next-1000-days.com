@@ -1,17 +1,9 @@
 # About
-## ...
-
-
-
-
-
-
-# How I Wrote This Book
+## How I wrote this book.
 
 How I'm using AI to write this book
 - iA Writer: keeps track of generative text
 - Claude project to augment thinking
-
 
 
 ---

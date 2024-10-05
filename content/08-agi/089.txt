@@ -1,3 +1,13 @@
 # AGI Exercise
 
+- What are your AGI scenarios and opportunities?
+- Track signals of change (like trends) and decide about how to respond to each.
+- Establish how to prepare workforce for AI augmentation (Centaurs).
+- Foster culture of continuous learning and adaptability.
+- Establish AI ethics guidelines.
+- Technology transcends IT: it needs to be part of business strategy.
+- Form strategic partnerships with AI developers.
+- What does it mean to be in your industry after AGI?
+
+
 Slide-82.webp

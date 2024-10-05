@@ -7,19 +7,58 @@ AI and job market impact: A deeper dive into how AI might reshape employment, in
 
 AI in specific industries: More detailed examples of how AI is transforming particular sectors like healthcare, finance, education, or manufacturing.
 
+---
+
 Agents: call centers https://x.com/rohanpaul_ai/status/1841833425432449066
 
+---
 
 Slide-71.webp
 
+An AI-driven voice assistant for drive-thru orders, which automates the ordering process, reduces labor costs, and improves order accuracy. It can handle up to 95% of orders without human intervention, operating 24/7.
+
+---
+
+Waymo
+
 Slide-72.webp
+
+---
 
 https://compute.hyper.space
 Agent-driven research engine for power AI users
 
+---
+
 Robot Kitchens
 https://x.com/MarioNawfal/status/1827912252265021925
 
+---
+
 Salesforce Agents
 https://x.com/LinusEkenstam/status/1826856902866674082
+
+---
+
+image162-357.webp
+
+Size of ANT Financial (Ant Group):
+	•	Valuation: Ant Group was valued at around $200 billion during its attempted IPO in 2020, although estimates can vary.
+	•	Revenue: As of 2023, Ant Group’s revenue is estimated to be in the range of $20-30 billion annually.
+	•	Assets: Ant Group manages significant financial assets, with its payment platform Alipay processing trillions of dollars in transactions annually.
+
+Effectiveness:
+	•	Market Dominance: Alipay, owned by Ant Group, holds a dominant position in China’s mobile payment market, with a significant market share, competing primarily with Tencent’s WeChat Pay.
+	•	Innovation: Ant Group is known for its innovative financial products and services, such as the Yu’e Bao money market fund and its credit scoring system, Sesame Credit.
+	•	Regulatory Challenges: Ant Group has faced regulatory challenges in China, particularly around its lending practices, which has affected its business operations and valuation.
+
+Number of Employees:
+	•	Workforce: Ant Group employs approximately 10,000 to 15,000 people globally, with a significant portion based in China.
+
+Use of AI:
+	•	Credit Scoring: AI powers Ant Group’s Sesame Credit system, which assesses users’ creditworthiness based on their digital footprint and behavior.
+	•	Fraud Detection: AI algorithms are employed to detect fraudulent activities and enhance transaction security across their platforms.
+	•	Personalized Services: AI is used to tailor financial products an
+
+As of the latest available data, Ant Group serves over 1 billion users globally through its various services, with Alipay being the primary platform. Additionally, it has over 80 million small businesses using its financial services. These numbers position Ant Group as one of the largest financial technology companies in the world by client base.
 
