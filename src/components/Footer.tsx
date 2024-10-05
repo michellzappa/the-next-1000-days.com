@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom"; // Add this import at the top
+
 const Footer = () => {
   return (
     <footer className="mt-auto py-4">
       <div className="container mx-auto flex items-left mt-4">
-        <a href="/chapter-index" className="text-sm mr-2">
+        <Link to="/chapter-index" className="text-sm mr-2">
           Chapter Index
-        </a>
+        </Link>
       </div>
 
       <div className="container mx-auto flex items-left">
