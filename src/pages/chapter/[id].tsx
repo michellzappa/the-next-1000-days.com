@@ -29,7 +29,7 @@ export default function Chapter({ title, content, pages }: ChapterProps) {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-white dark:bg-gray-900 text-black dark:text-white">
+    <div className="min-h-screen flex flex-col items-center bg-white text-black">
       <div className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12">
         <Head>
           <title>{title} - The Next 1,000 Days</title>
