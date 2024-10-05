@@ -7,3 +7,79 @@ Slide-12.webp
 Slide-13.webp
 
 Slide-20.webp
+
+
+
+
+
+
+
+
+1. Fundamental concept: Exponential change in technology
+    * Things get faster faster and cheaper faster
+    * Moore's Law: Doubling of computing capacity every two years
+2. AI-specific exponential trends
+    * New AI models are more capable and more affordable than previous versions
+    * Only industry where new models are cheaper than last year's models
+3. Changing expectations and capabilities
+    * Example: AI image generation improvements (handshakes, salmon jumping)
+    * Need for specificity in prompts due to literal interpretation by AI
+4. Technology's predictable trajectory
+    * Moves towards greater ubiquity and lower cost
+    * Every technology has a visible history leading to the present
+5. Technological somnambulism
+    * Technology changes our expectations and perceptions of the world
+    * Example: Hunting vs. tapping for food
+6. AI as a culmination of various technologies
+    * Writing, agriculture, money as examples of technological progress
+    * AI sitting atop a "tall pancake stack" of previous technologies
+7. Intersection of multiple fields in AI
+    * Computer science, math, statistics, psychology, etc.
+    * No single "expert" due to the breadth of required knowledge
+
+
+
+Certainly! I'll create an outline for Chapter 1: Exponentials, based on the information provided in your transcript and project notes.
+
+
+
+Chapter 1: Exponentials
+
+1. Introduction to Exponential Change
+   - Definition of exponential growth
+   - Moore's Law and its implications for AI
+   - "Things get faster faster, Things get cheaper faster"
+
+2. Impact on Technology and AI
+   - Increased computational capacity over decades
+   - Decreasing costs of computation
+   - How this fuels AI development
+
+3. Managing Expectations
+   - Mismatch between perception of change and reality
+   - Roy Amara's law: overestimating short-term and underestimating long-term effects
+   - Example: AI image generation capabilities (handshake meme)
+
+
+5. Current State of AI Capabilities
+   - Overview of recent advancements (e.g., image and video generation)
+   - Brief mention of wearables and robotics
+
+6. Exponential Slope Blindness
+   - Definition and explanation
+   - Why it's hard to perceive exponential growth
+   - Implications for AI development and adoption
+
+7. AI Adoption and Retention
+   - Rapid user adoption of AI apps
+   - Challenges with user retention
+   - What this means for the future of AI integration
+
+8. Exercise: Thinking in Exponentials
+   - How would you use 10× compute?
+   - Implications for business and personal capabilities
+
+9. Transition to Next Chapter
+   - Link between exponential growth and the current frontiers of AI
+
+This outline covers the key aspects of exponential growth in technology and AI, setting the foundation for understanding the rapid pace of change in the field. It combines theoretical concepts with practical examples and includes an exercise to engage the audience in thinking about the implications of exponential growth.

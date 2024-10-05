@@ -7,3 +7,43 @@ Slide-75.webp
    - OpenAI's definition: "Highly autonomous systems that outperform humans at most economically valuable work"
    - Joscha Bach's perspective: "System that reaches human level or beyond at all capability dimensions"
    - Other notable definitions and viewpoints in the field
+
+
+
+
+
+
+
+
+1. Introduction to AGI
+   - Definition of Artificial General Intelligence
+   - How AGI differs from narrow AI
+   - The challenge of defining and measuring general intelligence
+
+2. Current State of AGI Research
+   - Lack of consensus on the path to AGI
+   - Different approaches and philosophies in AGI development
+   - The role of current AI advancements in progressing towards AGI
+
+
+
+9. Challenges in AGI Development
+   - Technical hurdles (e.g., transfer learning, common sense reasoning)
+   - Ethical and safety concerns
+   - Regulatory and governance issues
+
+10. Preparing for a Post-AGI World
+    - Potential scenarios and their implications
+    - The importance of AI alignment and value learning
+    - Strategies for coexistence with highly capable AI systems
+
+11. Philosophical Considerations
+    - The nature of consciousness and intelligence
+    - Whether AGI is achievable or desirable
+    - Edsger W. Dijkstra's quote on machines thinking
+
+12. The Role of Current AI Advancements
+    - How narrow AI and current models contribute to AGI research
+    - The potential for unexpected breakthroughs
+    - The importance of responsible development practices
+
