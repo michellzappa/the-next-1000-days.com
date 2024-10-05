@@ -5,6 +5,13 @@ Slide-50.webp
 Slide-51.webp
 
 
+Knowing that there's a system prompt is valuable because it helps build up the skills we'll see here. For example, what makes up a good prompt? What's the blueprint for generating the response you're expecting? It boils down to these four things: strictly defining a persona or role, giving it a task, being specific about what you want it to do, giving it some context, and giving it a format.
+
+---
+
+A weak prompt, like "help me write something about using AI in education," will give a weak response because it has little to go on. A strong prompt, however, will give you something much closer to what you're expecting because you've defined these things and written them out. As you create the context, format, and task, you do the thinking, which leads to better centaurs.
+
+---
 
 
 

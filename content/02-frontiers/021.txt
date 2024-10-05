@@ -10,7 +10,30 @@ The Jagged Edge of Capabilities
 
 
 
+All types of AI suffer from something called the "jagged edge" or "ragged edge." This refers to the discrepancy between how we think these systems should perform and how they actually do. We expect AI to be fairly smart, as it has "intelligence" in the name. Yet, it isn't always necessarily that. If we were to plot this on a two-by-two grid, we'd put the expected performance on the horizontal axis and the actual performance on the vertical. 
+For instance, Siri would be somewhere where the actual performance is pretty crummy, though we expect it to be high because of the company behind it. Conversely, ChatGPT and AlphaGo might be in the opposite quadrant. We expected them to be fairly low in terms of capability, but they turned out to be super high. 
 
+jagged edge
+The models have capabilities that they were not explicitly designed to have. Even the creators are surprised by their abilities. 
+
+Expectation gap
+why some tasks are easy to perform and others difficult. Difficult to anticipate where they excel and where they fall apart.
+How well AI performs each task.
+Different models perform similarly.
+Trial and error and exchange experiences online. 
+
+User expectations are often shaped by the novelty of the technology, media coverage, and personal experiences. Each of these models offers varying performance depending on tasks like natural language understanding, image generation, or strategic gameplay.
+
+---
+
+
+Why are some tasks easy to perform and others difficult?
+
+AI models often display capabilities that they were not explicitly designed to have – even the creators are sometimes surprised by their abilities.
+
+AI can outperform expectations in unforeseen ways.
+
+---
 
 
 

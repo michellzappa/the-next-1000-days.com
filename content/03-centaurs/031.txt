@@ -3,10 +3,24 @@
 ...
 ...
 
+---
 
 Slide-32.webp
 
+The landmark matches between Garry Kasparov and IBM’s Deep Blue showcased the potential and limits of human vs. machine competition.
+
+A couple of decades ago, there was a famous chess match between the then Grandmaster in chess, Gary Kasparov, and IBM's Deep Blue supercomputer. IBM's marketing team wanted to promote this as a human versus machine event. 
+https://en.m.wikipedia.org/wiki/Deep_Blue_versus_Garry_Kasparov
+
+
+---
+
 Slide-33.webp
+
+After Deep Blue’s victory, the chess world began exploring collaborations between human grandmasters and AI.
+
+
+The takeaway from the match was that Kasparov lost to Deep Blue. They had played before, and the previous year he played again, but this time he walked out. The story of human versus machine quickly became the dominant narrative.
 
 
 
@@ -79,5 +93,3 @@ This chapter will explore the concept of centaurs in depth, looking at successfu
 
 11. Transition to Next Chapter
     - Link between Centaur concept and the importance of effective communication with AI (Prompts)
-
-This outline provides a comprehensive overview of the Centaur concept, its historical context, current applications, and future implications. It emphasizes the synergistic potential of human-AI collaboration and sets the stage for discussing how to effectively interact with AI systems in the following chapters.

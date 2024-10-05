@@ -1,3 +1,6 @@
 # Compare Models
 
 Slide-52.webp
+
+Practical things to do include comparing different models. The latest isn't always the best. GPT-4.0, for instance, is faster but not necessarily better than GPT-4, depending on what you're asking it to do. Comparing models helps you learn a lot, so don't feel too locked into any particular solution.
+Always iterate. The answers or completions being stochastic means they're unpredictable, so every time you ask the same question, you get a slightly different result. Spend time with it and be purposeful in how you embrace the models.

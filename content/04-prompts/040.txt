@@ -12,6 +12,9 @@ For extraordinary conversations, try to create a space of openness and curiosity
 
 - how clearly can you articulate your goals
 
+Moving on from centaurs to something a bit more practical, there's been a lot of talk about prompting from the context of LLMs. These language models are extremely capable of predicting the next token or the next word, and it seems as if they're intelligent when we interact with them. The places where that intelligence falls apart are really fascinating. Let's look at how we can make the most of these conversations and how we can get more out of the systems.
+
+
 
 How to talk with machines. Prompting is a foundational skill for generative AI, and its importance cannot be overstated. It's the interface between our intentions and the AI's capabilities.
 

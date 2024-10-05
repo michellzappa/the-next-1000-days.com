@@ -1,13 +1,29 @@
 # Increased Capabilities
-...
-...
-...
 
 
 Slide-38.webp
 
+One way to think about why we use centaurs is that it helps extend our capabilities. It grows our capacity to do different things and upskills us in areas we could barely imagine. We'll look at a few examples of that.
+
+---
 
 Slide-45.webp
+
+
+The gain is not necessarily at the upper edge of intelligence or capability. If you imagine a skill distribution like a normal distribution, you are probably on the right side of a handful of skills, whether it's leadership, research, or whatever you do very well. But there are many things where most of us are on the left or in the middle. That's where we see the biggest gain.
+Don't ask the AI to do what you do well; evaluate its capability. The likelihood is it isn't as good as you if you're good at it, but it gets you up to average quickly. For all the stuff you're mediocre at, AI can significantly upskill you. This is where the majority of the benefit lies: getting people up to average quickly and bumping up the right side of higher skills. However, the latter seems to be a lower priority right now compared to getting people up to average.
+
+
+
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4573321
+
+Highest skilled → most devalued. 
+The Economic Impacts of Frontier Artificial Intelligence on Digital Platforms
+The study examined the impact of ChatGPT on labor market outcomes for freelancers on two digital platforms, Zhubajie (ZBJ) and Upwork, focusing on writing and programming tasks.
+After ChatGPT's release, the number of completed writing jobs on ZBJ decreased by 31.6%, and the average price dropped by 4.5%.
+On Upwork, the number of completed writing jobs decreased by 21.7%, and the average price dropped by 6.3% post-ChatGPT.
+For programming tasks, the number of completed jobs decreased by 13.8% on ZBJ and 16.5% on Upwork, while the average price dropped by 3.2% on ZBJ and 3.5% on Upwork.
+Higher-skilled freelancers (top 10% in earnings) experienced larger negative impacts compared to lower-skilled freelancers.
 
 
 

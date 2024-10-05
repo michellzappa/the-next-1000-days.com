@@ -1,8 +1,17 @@
 # Freestyle Chess
-...
-...
-...
+
 
 Slide-34.webp
 
+Freestyle, or centaur chess emerged when Kasparov and fellow players created the first chess championship where computers were welcome.
+
+In reality, Kasparov went back to the drawing board and only a year later, he organized the first championship of something called advanced chess or freestyle chess. Instead of playing against a computer, you play with a computer against another human-computer pair. In León, Spain, the first game of advanced chess was played. Kasparov described it as both disturbing and exciting.
+
+https://en.wikipedia.org/wiki/Advanced_chess
+
+
+---
+
 Slide-35.webp
+
+This concept of a centaur, or a collaborative system where you're working alongside an AI, is crucial. It's the metaphor for how we should be using AI in the first place. As we'll see, there are many ways of doing this, but practically, the best chess players in the world quickly became centaur players.

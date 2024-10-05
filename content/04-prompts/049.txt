@@ -7,5 +7,11 @@ prompt exercise: create a cookbook
 - write down the tips and snippets that work for you
 - share with team
 
+---
+
+- **Skill development**: Get your hands dirty - USE the systems to ideate and learn about their capabilities.
+- **Productivity enhancement**: Knowing systems' limitations can help you see opportunities and strategic advantages.
+- **Competitive advantage**: All companies will be employing AI to some degree, so know your strategic advantages and use it resourcefully.
+
 
 Slide-54.webp

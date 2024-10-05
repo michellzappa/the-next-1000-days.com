@@ -5,6 +5,8 @@
 * Creative tools as idea generators.
 * Learning the underlying skills to understand the transition ahead.
 
+We will look a little bit at the creative aspect or component of these systems, what it actually means that they are creative, and what they're capable of doing. Ideally, we'll ask ourselves a few questions about what role we want to play when these systems are more and more prevalent.
+
 
 
 What does it mean for a machine to generate creative output? Will we recognize AI-created content? What is our role in a hybrid creative environment?
