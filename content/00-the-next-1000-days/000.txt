@@ -3,8 +3,6 @@
 
 I am convinced that in the next few years, we will all be experiencing the effects of Artificial General Intelligence. 
 
-{Centaur}
-
 AI is having a moment. Decades of fundamental discoveries and years of quiet revolutions are giving rise to a sudden explosion of applications in unexpected places.
 
 Unlike other hype-heavy technologies of recent years, AI is already useful. While it’s acceleration might taper off, the genie isn’t going back into the bottle. This leaves us with an infinitude of questions to grapple with, by people of all levels of technical literacy, which will impact generations to come. That is why this newsletter exists: to inform the curious and help more people understand the underlying principles and possible outcomes of our collective transition towards artificial general intelligence.
