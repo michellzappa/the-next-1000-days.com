@@ -1,7 +1,13 @@
 # Agents
 ## What used to take weeks can now take minutes.
 
-Slide-67.webp
+
+* What are agents?
+* How can you use them?
+* How do you build one?
+* What happens when they coordinate among each other?
+
+---
 
 
 ReAct
@@ -21,12 +27,6 @@ Full control of cognitive architecture of your application.
 McKinsey Job Loss
 https://x.com/aaditsh/status/1826635692648329427
 
-
-
-* What are agents?
-* How can you use them?
-* How do you build one?
-* What happens when they coordinate among each other?
 
 
 When systems know and act. This is where we start to see AI moving towards greater independence, a direct extension of the coding capabilities we've just explored.

@@ -5,9 +5,6 @@
 * Why it's important to get your hands dirty in order to sense the future.
 * Interacting with AI for ideation and growth.
 
-Slide-49.webp
-
-
 "With LLMs, how you choose to approach them will greatly determine the quality of their responses
 Banal questions will receive banal answers
 For extraordinary conversations, try to create a space of openness and curiosity"

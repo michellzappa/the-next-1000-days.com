@@ -14,7 +14,7 @@ export async function getChapters() {
       
       let title = '';
       let subtitle = '';
-      const content = ''; // Changed to const
+      let content = '';
       let pages: { id: string; title: string }[] = [];
 
       if (mainFile) {
@@ -23,6 +23,7 @@ export async function getChapters() {
           const lines = fileContent.split('\n');
           title = lines[0].replace('# ', '');
           subtitle = lines[1]?.replace('## ', '') || '';
+          content = lines.slice(2).join('\n'); // Add this line to get the content
           pages = fs.readdirSync(chapterPath)
             .filter(file => file.endsWith('.txt') && file !== mainFile)
             .map(file => {

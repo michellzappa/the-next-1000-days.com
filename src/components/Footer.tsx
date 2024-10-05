@@ -7,10 +7,6 @@ const Footer = () => {
         <Link href="/chapter-index" className="text-sm mr-2">
           Chapter Index
         </Link>
-        {/* Add additional internal links here */}
-        <Link href="/contact" className="text-sm mr-2">
-          Contact Us
-        </Link>
       </div>
 
       <div className="container mx-auto flex items-left">

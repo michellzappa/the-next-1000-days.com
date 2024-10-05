@@ -2,6 +2,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Image from "next/image";
+import rehypeRaw from "rehype-raw"; // Import rehypeRaw
 
 interface MarkdownProps {
   content: string;
@@ -15,7 +16,10 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
     // Ensure pageId is always set, defaulting to chapterNumber + "0" if not provided
     const pageNumber = pageId || `${chapterNumber}0`;
 
-    const indicator = `**${pageId ? "Page" : "Chapter"} ${pageNumber}**`;
+    // Wrap the indicator in a span with a custom class for monospace font
+    const indicator = `<span class="mono">${
+      pageId ? "Page" : "Chapter"
+    } ${pageNumber}</span>`;
 
     const processedContent = `${indicator}\n\n${content}`;
 
@@ -56,6 +60,7 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeRaw]} // Add rehypeRaw to process HTML
       components={{
         h1: (props) => (
           <h1 className="text-3xl font-bold mt-6 mb-4" {...props} />
@@ -92,7 +97,6 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
           className?: string;
           children?: React.ReactNode; // Make children optional
         }) => {
-          // Removed the 'match' variable
           return !inline ? (
             <pre className="bg-gray-100 dark:bg-gray-800 rounded p-4 overflow-x-auto">
               <code className={className} {...props}>
@@ -109,6 +113,16 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
           );
         },
         img: customImageRenderer,
+        span: ({ className, ...props }) => {
+          if (className === "mono") {
+            return (
+              <span className="mono" {...props}>
+                {props.children}
+              </span>
+            );
+          }
+          return <span {...props}>{props.children}</span>;
+        },
       }}
     >
       {processedContent}

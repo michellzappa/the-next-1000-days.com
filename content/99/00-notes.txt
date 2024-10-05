@@ -1,5 +1,25 @@
 # 00 Notes
 
+Ethical considerations beyond alignment and bias - Include discussions on privacy, job displacement, and democratic implications of AI.
+
+WHAT TO EXPECT:
+- Contextualizing AI into your business and the environment today
+- Finding your first AI use case
+- Methods to evaluate and prioritize use cases
+- My favorite AI examples for enterprise and personal productivity
+- Real-world tactics of ML execution, including business trade-offs
+- Change management for AI
+- Responsible AI deployment and risk mitigation
+- How building responsible AI can enhance customer trust and value
+- My favorite AI tools and resources for business leaders
+
+ABOUT:
+- For: CTOs, AI R&D, corps.
+- how AI can benefit you and your organization
+- alleviate your fears around the subject.
+- Leadership / Management.
+- Technical for non-technical people but non-technical for technical people.
+- clearly define who it's for:
 
 - technology doesn't make our lives easier. It makes them faster and more crammed with stuff.
 - Indistinguishable from magic

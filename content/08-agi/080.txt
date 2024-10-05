@@ -1,16 +1,11 @@
 # AGI
 ## The age of spiritual machines.
 
-Slide-73.webp
-
 * Should we start designing for a post-AGI society?
 * What happens when our lives change because of AGI?
 * Are we already there?
 
-
-Here's a brief intro and overview for chapter 8 on AGI, written in your style:
-
-AGI
+---
 
 Artificial General Intelligence. Should we start designing for post-AGI? What happens when our lives change because of AGI? Are we already there?
 

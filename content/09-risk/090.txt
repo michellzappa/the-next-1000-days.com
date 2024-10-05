@@ -3,13 +3,7 @@
 
 * Five concepts you need to understand in order to assess risk of AI and AGI.
 
-
-Slide-84.webp
-
-
-Here's a brief intro and overview for chapter 9 on risk, written in your style:
-
-Risk
+---
 
 What could possibly go wrong? As we progress towards more advanced AI systems, it's crucial to consider the potential risks and challenges. This isn't about fear-mongering, but about being prepared and proactive.
 

@@ -1,18 +1,11 @@
 # Code
 ## Programming is language.
 
-Slide-63.webp
-
 * Prototyping and piloting new ideas with GenAI.
 * Software is another language which GenAI excels at.
 * Foundational skill to understand how AI develops from here.
 
-
-
-
-Here's a brief intro and overview for chapter 6 on code, written in your style:
-
-Code
+---
 
 Programming is language. How to develop using LLMs. This is the next step after generative creation, and it's transforming the landscape of software development.
 
