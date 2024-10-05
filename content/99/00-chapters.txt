@@ -1,0 +1,12 @@
+00-chapters
+
+0. Introduction
+1. Going Deeper
+2. Principles
+3. Controversy
+4. Implications / Practical Applications 
+5. Personal Experience
+6. Future Directions 
+7. Critique
+8. Examples
+9. Exercises

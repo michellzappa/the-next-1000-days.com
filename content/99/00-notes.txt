@@ -1,17 +1,9 @@
 # 00 Notes
 
-0 Introduction OK
-1 Going Deeper
-2 Principles
-3 Controversy
-4 Implications / Practical Applications 
-5 Personal Experience
-6 Future Directions 
-7 Critique
-8 Examples
-9 Exercises OK
+Missing:
+- Ethical considerations beyond alignment and bias - Include discussions on privacy, job displacement, and democratic implications of AI.
+- AI in scientific research: How AI is accelerating discoveries in fields like drug discovery, materials science, or climate modeling.
 
-Ethical considerations beyond alignment and bias - Include discussions on privacy, job displacement, and democratic implications of AI.
 
 # WHAT TO EXPECT:
 - Contextualizing AI into your business and the environment today

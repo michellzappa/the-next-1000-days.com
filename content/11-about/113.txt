@@ -1,6 +1,10 @@
 # Artificial Insights
 ## Weekly newsletter about our transition toward AGI
 
+Newsletter & Community documenting our transition toward AGI.
+Features CEO interviews, podcasts, lectures, and commentary on what's happening in AI.
+
+
 Every Monday morning, I hit "publish" on another issue of *Artificial Insights*. The goal is simple: to keep pace with the flood of AI developments, without getting swept up in the hype. This newsletter is a way for me—and for all of us—to stay grounded while the world spins faster and faster around the advances in artificial intelligence. It’s a way to filter through the noise and focus on what really matters, what’s useful, and what’s worth paying attention to. We’re all in the thick of this, and we need clarity more than we need sensationalism.
 
 I’ve been tracking the transition toward AGI for some time now. The promise of AI has always been out there—decades of slow, incremental advances followed by a sudden explosion of applications. We went from wondering if AI would be useful in our lifetime to realizing that it’s reshaping industries in real-time. The speed of that transition has been staggering. But the focus here isn’t just on the technology; it’s on what AI actually means for people like us who are navigating this shift. What happens when automation becomes so integrated into daily workflows that we stop noticing it? How do we decide which technologies to adopt and which to ignore? These are the questions I explore every week, and they are the reason this newsletter exists.

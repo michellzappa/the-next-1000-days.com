@@ -1,6 +1,21 @@
 # About
 ## ...
 
+
+
+
+
+
+# How I Wrote This Book
+
+How I'm using AI to write this book
+- iA Writer: keeps track of generative text
+- Claude project to augment thinking
+
+
+
+---
+
 How to start
 
 Here’s how you can leverage your existing platforms to begin addressing the critical points about AGI:
