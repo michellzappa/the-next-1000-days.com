@@ -8,7 +8,7 @@ interface Chapter {
   id: string;
   number: string;
   title: string;
-  subtitle: string;
+  subtitle: string; // Remains unchanged as per current requirements
   pages: { id: string; title: string }[];
 }
 
@@ -17,8 +17,13 @@ interface ChapterOverviewProps {
 }
 
 export default function ChapterOverview({ chapters }: ChapterOverviewProps) {
+  // Determine the maximum number of pages across all chapters
   const maxPages = Math.max(...chapters.map((chapter) => chapter.pages.length));
-  const columnWidth = `${100 / chapters.length}%`;
+
+  // Utility function to add a "0" to chapter numbers, e.g., "02" -> "020"
+  const formatChapterNumber = (number: string): string => {
+    return number.padEnd(3, "0");
+  };
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-white dark:bg-gray-900 text-black dark:text-white">
@@ -33,46 +38,60 @@ export default function ChapterOverview({ chapters }: ChapterOverviewProps) {
           <table className="w-full table-fixed">
             <thead>
               <tr>
-                {chapters.map((chapter) => (
-                  <th
-                    key={chapter.id}
-                    className="p-1 text-center"
-                    style={{ width: columnWidth }}
-                  >
-                    <Link
-                      href={`/${chapter.id}`}
-                      className="block hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-2 transition duration-150 ease-in-out"
-                    >
-                      <div className="font-bold">{chapter.number}</div>
-                      <div className="text-xs mt-1 font-normal">
-                        {chapter.title}
-                      </div>
-                    </Link>
+                {/* Header cell for "Chapter" with shaded background */}
+                <th className="p-1 text-center align-top bg-gray-200 dark:bg-gray-700">
+                  <div className="font-bold">Chapter</div>
+                </th>
+                {/* Generate header cells for each page number */}
+                {[...Array(maxPages)].map((_, index) => (
+                  <th key={index} className="p-1 text-center align-top">
+                    <div className="font-bold">Page {index + 1}</div>
                   </th>
                 ))}
               </tr>
             </thead>
             <tbody>
-              {[...Array(maxPages)].map((_, index) => (
-                <tr key={index}>
-                  {chapters.map((chapter) => {
+              {chapters.map((chapter) => (
+                <tr key={chapter.id}>
+                  {/* Chapter cell with shaded background */}
+                  <td className="p-1 text-center border align-top bg-gray-100 dark:bg-gray-800">
+                    <Link
+                      href={`/${chapter.id}`}
+                      className="block hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg p-2 transition duration-150 ease-in-out"
+                    >
+                      <div className="font-bold">
+                        {/* Formatted Chapter Number */}
+                        <span className="font-mono">
+                          {formatChapterNumber(chapter.number)}
+                        </span>
+                      </div>
+                      {/* Chapter Title on a New Line */}
+                      <div className="text-xs mt-1 font-normal">
+                        {chapter.title}
+                      </div>
+                      {/* Subtitle removed */}
+                    </Link>
+                  </td>
+                  {/* Page cells */}
+                  {[...Array(maxPages)].map((_, index) => {
                     const page = chapter.pages[index];
                     return (
                       <td
-                        key={`${chapter.id}-${index}`}
-                        className="p-1 text-center"
-                        style={{ width: columnWidth }}
+                        key={`${chapter.id}-page-${index}`}
+                        className="p-1 text-center border align-top"
                       >
-                        {page && (
+                        {page ? (
                           <Link
                             href={`/${chapter.id}/${page.id}`}
                             className="block hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-2 transition duration-150 ease-in-out"
                           >
-                            <div className="font-bold">{page.id}</div>
+                            <div className="font-bold font-mono">{page.id}</div>
                             <div className="text-xs mt-1 font-normal">
                               {page.title}
                             </div>
                           </Link>
+                        ) : (
+                          <div></div>
                         )}
                       </td>
                     );
