@@ -1,16 +1,25 @@
-import { Link } from "react-router-dom"; // Add this import at the top
+import Link from "next/link"; // Correct import from next/link
 
 const Footer = () => {
   return (
     <footer className="mt-auto py-4">
       <div className="container mx-auto flex items-left mt-4">
-        <Link to="/chapter-index" className="text-sm mr-2">
+        <Link href="/chapter-index" className="text-sm mr-2">
           Chapter Index
+        </Link>
+        {/* Add additional internal links here */}
+        <Link href="/contact" className="text-sm mr-2">
+          Contact Us
         </Link>
       </div>
 
       <div className="container mx-auto flex items-left">
-        <a href="https://www.envisioning.io" className="text-sm mr-2">
+        <a
+          href="https://www.envisioning.io"
+          className="text-sm mr-2"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Envisioning
         </a>
         <span className="text-sm text-gray-500 dark:text-gray-400 mr-8">
