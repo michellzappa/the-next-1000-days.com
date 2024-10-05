@@ -1,8 +1,9 @@
 # Bibliography
-## Books and articles
+## Recommended books and articles
 
 
 - [AI 2041](https://bookshop.org/p/books/ai-2041-ten-visions-for-our-future-kai-fu-lee/15911526) (Kai-Fu Lee & Chen Qiufan)
+- [Co-Intelligence](https://bookshop.org/p/books/co-intelligence-living-and-working-with-ai-ethan-mollick/20812081) (Ethan Mollick)
 - [Artificial Intelligence](https://bookshop.org/p/books/artificial-intelligence-a-guide-for-thinking-humans-melanie-mitchell/10357873) (Melanie Mitchell)
 - [The Alignment Problem](https://bookshop.org/p/books/the-alignment-problem-machine-learning-and-human-values-brian-christian/16099409) (Brian Christian)
 - [The Worlds I See](https://bookshop.org/p/books/the-worlds-i-see-curiosity-exploration-and-discovery-at-the-dawn-of-ai-li-fei-fei/19546984) (Fei-Fei Li)

@@ -2,4 +2,10 @@
 ## Business Implications
 
 
+prompt exercise: create a cookbook
+- text file anywhere
+- write down the tips and snippets that work for you
+- share with team
+
+
 Slide-54.webp

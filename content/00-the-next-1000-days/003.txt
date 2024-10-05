@@ -1,4 +1,5 @@
-# The Purpose of this Book
+# What will you learn?
+## The purpose of this book.
 
 **Strategic Insights**
 - Understand the practical applications of AI in business contexts.

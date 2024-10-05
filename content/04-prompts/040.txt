@@ -10,10 +10,8 @@ Banal questions will receive banal answers
 For extraordinary conversations, try to create a space of openness and curiosity"
 
 
+- how clearly can you articulate your goals
 
-Here's a brief intro and overview for chapter 4 on prompts, written in your style:
-
-Prompts
 
 How to talk with machines. Prompting is a foundational skill for generative AI, and its importance cannot be overstated. It's the interface between our intentions and the AI's capabilities.
 

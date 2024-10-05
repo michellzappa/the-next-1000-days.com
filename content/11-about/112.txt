@@ -1,42 +1,11 @@
-Michell Zappa
+# Vocab
+## Terms and concepts to understand AI 
 
-Who am I - why I care about tech - how i grew up online
+I have been consumed by a research project mentioned earlier, the creation of an index of AI related concepts and terminology. A significant aspect of learning a subject is knowing the terms used to define the field. AI has evolved to include hundreds of ideas over the decades, and it seems we each know a small part of the whole. It turns out LLMs have tremendous self-knowledge, so I have been leveraging lots of GPT to develop and fact-check over 200 AI-related concepts and terms. Currently published as an Obsidian vault, and we are also working on non-linear methods for visualizing and navigating these ideas. 
 
+The primary reason I’m doing this is to help more people learn about the theory underpinning the largest technological revolution of our lifetimes, and maybe help us make sense of what we are experiencing.
 
+...
 
+...
 
-Slide-02.webp
-
-How do you think about technology futures?
-
-I've spent 15+ years analyzing the cutting edge of technology, and worked in research, strategy and consulting for clients worldwide. Mostly, that means helping people understand which questions to ask.
-
-I write and speak about areas of research I'm trying to understand, publish a weekly newsletter and give presentations pulling together these ideas.
-
-Contact
-My username is [michellzappa] on most social networks. You can connect with me on LinkedIn or follow me on Twitter or Instagram.
-
-I'm available for speaking engagements, consulting, or just a friendly chat. You can schedule a 30' call with me on Calendly.
-
-Biography
-Michell Zappa is a renowned technology futurist, founder, and CEO of Envisioning, a technology research institute. Known for his insight on technological trends, Michell is a frequent speaker and consultant on emerging technologies and their impact on society. His work guides organizations and governments in understanding future technological landscapes. With a global perspective shaped by living and working in numerous countries, Michell's newsletter and presentations challenge and inspire audiences to think deeply about the future of technology and humanity.
-
-
-
-
-# Envisioning
-Founder + CEO (2011 — Present)
-
-verb: "To picture a future event"
-
-Envisioning is a research institute focused on helping businesses and public entities navigate technological advancements. We specialize in futures literacy, offering insights and strategic guidance to understand and anticipate the impacts of emerging technologies.
-
-Our services include analyzing global tech developments and providing tailored foresight to assist clients in making informed decisions for future innovations. Envisioning collaborates closely with clients to enhance their understanding and readiness for the rapidly evolving technological landscape.
-
-Experience
-
-
-Credibility
-
-
-Research

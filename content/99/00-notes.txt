@@ -1,8 +1,19 @@
 # 00 Notes
 
+0 Introduction OK
+1 Going Deeper
+2 Principles
+3 Controversy
+4 Implications / Practical Applications 
+5 Personal Experience
+6 Future Directions 
+7 Critique
+8 Examples
+9 Exercises OK
+
 Ethical considerations beyond alignment and bias - Include discussions on privacy, job displacement, and democratic implications of AI.
 
-WHAT TO EXPECT:
+# WHAT TO EXPECT:
 - Contextualizing AI into your business and the environment today
 - Finding your first AI use case
 - Methods to evaluate and prioritize use cases
@@ -13,14 +24,33 @@ WHAT TO EXPECT:
 - How building responsible AI can enhance customer trust and value
 - My favorite AI tools and resources for business leaders
 
-ABOUT:
+# ABOUT:
 - For: CTOs, AI R&D, corps.
 - how AI can benefit you and your organization
 - alleviate your fears around the subject.
 - Leadership / Management.
 - Technical for non-technical people but non-technical for technical people.
-- clearly define who it's for:
+- clearly define who it's for: ??
 
+
+# Notes:
+- Prediction Machines
+- What is AGI motivated by?
+- threw myself into the deep end of ai
+- Electric Dreams
+- Conclusion: this is the single most important tech - why - what to do - leave with a bang
+- After money? Marxism with machines
+- Enslaved gods vs. loss of control
+- ImgGen how it started how it's going
+- ImaGen3: using AI to improve prompts
+- agents (crewAI) 10M agents functioning → use cases? Marketing, lead qualification, code documentation 
+- learn how to BUILD things
+- What change would happen in the world if this book is successful
+- Communicating with an LLM is like communicating with the Internet instead of communication through the internet
+- How will future generations, human and digital, remember us?
+- Control / alignment
+- Weirdness chapter / otherness
+- Key players: Companies and countries 
 - technology doesn't make our lives easier. It makes them faster and more crammed with stuff.
 - Indistinguishable from magic
 - Summarization chapter → tools like Granola
@@ -70,7 +100,6 @@ ABOUT:
 - AGI: uploading / cloud humans / who will AGI be? Mind transfer? 
 - Tradeoffs / Compromises / How to avoid long term doom
 - coding: 80/20 graph + 99/1 graph
-- 
 - which tools am i spending on?
 	- chatgpt teams 20
 	- github copilot 10
@@ -81,8 +110,11 @@ ABOUT:
 - robots → do you notice anything? all western
 - Mushroom Example
 	- https://www.404media.co/google-serves-ai-generated-images-of-mushrooms-putting-foragers-at-risk/
-- Kinds of Intelligence Chart
-	- A commonly understood framework for categorizing human intelligence is Howard Gardner’s Theory of Multiple Intelligences. It suggests that humans possess different kinds of intelligences, often classified into the following categories:
+
+
+
+# Kinds of Intelligence Chart
+A commonly understood framework for categorizing human intelligence is Howard Gardner’s Theory of Multiple Intelligences. It suggests that humans possess different kinds of intelligences, often classified into the following categories:
 	1.	Linguistic Intelligence – sensitivity to spoken and written language.
 	2.	Logical-Mathematical Intelligence – ability to analyze problems logically and handle mathematical operations.
 	3.	Spatial Intelligence – capacity to think in images and visualize accurately.
