@@ -1,7 +1,1 @@
-# Code Examples
-
-Slide-65.webp
-
-Devin
-V0
-Etc.
+# Code Exercise
