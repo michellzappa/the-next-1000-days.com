@@ -36,16 +36,16 @@ export default function ChapterOverview({ chapters }: ChapterOverviewProps) {
 
         <div className="overflow-x-auto">
           <div className="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
-            <table className="min-w-full">
+            <table className="min-w-full table-fixed">
               <thead>
                 <tr>
                   {/* Header cell for "Chapter" with shaded background */}
-                  <th className="p-1 text-center align-top bg-gray-200 dark:bg-gray-700">
+                  <th className="p-1 text-center align-top bg-gray-200 dark:bg-gray-700 w-20">
                     <div className="font-bold">Chapter</div>
                   </th>
                   {/* Generate header cells for each page number */}
                   {[...Array(maxPages)].map((_, index) => (
-                    <th key={index} className="p-1 text-center align-top">
+                    <th key={index} className="p-1 text-center align-top w-20">
                       <div className="font-bold">{index + 1}</div>
                     </th>
                   ))}
@@ -55,7 +55,7 @@ export default function ChapterOverview({ chapters }: ChapterOverviewProps) {
                 {chapters.map((chapter) => (
                   <tr key={chapter.id}>
                     {/* Chapter cell with shaded background */}
-                    <td className="p-1 text-center border align-top bg-gray-100 dark:bg-gray-800">
+                    <td className="p-1 text-center border align-top bg-gray-100 dark:bg-gray-800 w-20">
                       <Link
                         href={`/${chapter.id}`}
                         className="block hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg p-2 transition duration-150 ease-in-out"
@@ -79,7 +79,7 @@ export default function ChapterOverview({ chapters }: ChapterOverviewProps) {
                       return (
                         <td
                           key={`${chapter.id}-page-${index}`}
-                          className="p-1 text-center border align-top"
+                          className="p-1 text-center border align-top w-20"
                         >
                           {page ? (
                             <Link
