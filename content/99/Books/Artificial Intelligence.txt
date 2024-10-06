@@ -1,0 +1,22 @@
+Artificial Intelligence
+Melanie Mitchell
+
+Symbolic AI of the kind illustrated by GPS ended up dominating the field for its first three decades, most notably in the form of expert systems, in which human experts devised rules for computer programs to use in tasks such as medical diagnosis and legal decision-making.
+
+Ray Kurzweil, who is now director of engineering at Google, believes that a properly designed version of the Turing test will indeed reveal machine intelligence; he predicts that a computer will pass this test by 2029, a milestone event on the way to Kurzweil’s forecasted Singularity.
+
+Given that the extensive training required by ConvNets is feasible only with specialized computer hardware—typically, powerful graphical processing units (GPUs)—it is not surprising that the stock price of the NVIDIA Corporation, the most prominent maker of GPUs, increased by over 1,000 percent between 2012 and 2017.
+
+AI is a field that includes a broad set of approaches, with the goal of creating machines with intelligence. Deep learning is only one such approach. Deep learning is itself one method among many in the field of machine learning, a subfield of AI in which machines “learn” from data or from their own “experiences.”
+
+Frank Rosenblatt’s primary contribution to AI was his design of a specific algorithm, called the perceptron-learning algorithm, by which a perceptron could be trained from examples to determine the weights and threshold that would produce correct answers.
+
+“If such minds of infinite subtlety and complexity and emotional depth could be trivialized by a small chip, it would destroy my sense of what humanity is about.”
+
+In short, while these deep Q-learning systems have achieved superhuman performance in some narrow domains, and even exhibit what resembles “intuition” in these domains, they are lacking something absolutely fundamental to human intelligence. Whether it is called abstraction, domain generalization, or transfer learning, imbuing systems with this ability is still one of AI’s most important open problems.
+
+Neuroscientists believe that adjustments to the strength of connections between neurons is a key part of how learning takes place in the brain.
+
+Rosenblatt’s idea was that the perceptron should similarly be trained on examples: it should be rewarded when it fires correctly and punished when it errs. This form of conditioning is now known in AI as supervised learning.
+
+On the practical side, AI proponents simply want to create computer programs that perform tasks as well as or better than humans, without worrying about whether these programs are actually thinking in the way humans think.

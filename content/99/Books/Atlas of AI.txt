@@ -1,0 +1,22 @@
+Atlas of AI
+Kate Crawford
+
+At a fundamental level, AI is technical and social practices, institutions and infrastructures, politics and culture. Computational reason and embodied work are deeply interlinked: AI systems both reflect and produce social relations and understandings of the world.
+
+To understand how AI is fundamentally political, we need to go beyond neural nets and statistical pattern recognition to instead ask what is being optimized, and for whom, and who gets to decide. Then we can trace the implications of those choices.
+
+The story of Hans is now used in machine learning as a cautionary reminder that you can’t always be sure of what a model has learned from the data it has been given.6 Even a system that appears to perform spectacularly in training can make terrible predictions when presented with novel data in the world.
+
+Artificial intelligence, then, is an idea, an infrastructure, an industry, a form of exercising power, and a way of seeing; it’s also a manifestation of highly organized capital backed by vast systems of extraction and logistics, with supply chains that wrap around the entire planet.
+
+We need a theory of AI that accounts for the states and corporations that drive and dominate it, the extractive mining that leaves an imprint on the planet, the mass capture of data, and the profoundly unequal and increasingly exploitative labor practices that sustain it.
+
+This colonizing impulse centralizes power in the AI field: it determines how the world is measured and defined while simultaneously denying that this is an inherently political activity.
+
+Instead, this is an expanded view of artificial intelligence as an extractive industry. The creation of contemporary AI systems depends on exploiting energy and mineral resources from the planet, cheap labor, and data at scale.
+
+The first myth is that nonhuman systems (be it computers or horses) are analogues for human minds. This perspective assumes that with sufficient training, or enough resources, humanlike intelligence can be created from scratch, without addressing the fundamental ways in which humans are embodied, relational, and set within wider ecologies. The second myth is that intelligence is something that exists independently, as though it were natural and distinct from social, cultural, historical, and political forces.
+
+Since antiquity, the business of mining has only been profitable because it does not have to account for its true costs: including environmental damage, the illness and death of miners, and the loss to the communities it displaces.
+
+China supplies 95 percent of the world’s rare earth minerals. China’s market domination, as the writer Tim Maughan observes, owes far less to geology than to the country’s willingness to take on the environmental damage of extraction.

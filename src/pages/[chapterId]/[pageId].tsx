@@ -8,6 +8,9 @@ import Markdown from "../../components/Markdown";
 import Footer from "../../components/Footer";
 import { getChapters } from "../../utils/content";
 import { useEffect } from "react";
+import { existsSync } from "fs";
+import { join } from "path";
+import dynamic from "next/dynamic";
 
 interface PageProps {
   title: string;
@@ -32,9 +35,18 @@ export default function Page({
   chapterTitle,
   navigation,
   lastUpdated,
-}: PageProps & { lastUpdated: string; navigation: PageNavigation }) {
+  hasCustomComponent, // Add this line
+}: PageProps & {
+  lastUpdated: string;
+  navigation: PageNavigation;
+  hasCustomComponent: boolean;
+}) {
   const router = useRouter();
   const { chapterId, pageId } = router.query;
+
+  const CustomComponent = hasCustomComponent
+    ? dynamic(() => import(`../../components/chapter/${pageId}`))
+    : null;
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -88,6 +100,7 @@ export default function Page({
         {subtitle && (
           <h2 className="text-2xl font-semibold mb-6">{subtitle}</h2>
         )}
+        {CustomComponent && <CustomComponent />}
         <Markdown
           content={content}
           chapterId={chapterId as string}
@@ -240,6 +253,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     year: "numeric",
   });
 
+  const componentPath = join(
+    process.cwd(),
+    "src",
+    "components",
+    "chapter",
+    `${pageId}.tsx`
+  );
+  const hasCustomComponent = existsSync(componentPath);
+
   return {
     props: {
       title,
@@ -248,6 +270,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       chapterTitle,
       navigation,
       lastUpdated,
+      hasCustomComponent, // Add this line
     },
   };
 };

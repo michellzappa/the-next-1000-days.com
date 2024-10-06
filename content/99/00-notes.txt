@@ -26,6 +26,7 @@ Missing:
 
 
 # Notes:
+- Training vs. Inference
 - Prediction Machines
 - What is AGI motivated by?
 - threw myself into the deep end of ai

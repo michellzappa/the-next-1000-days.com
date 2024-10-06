@@ -1,0 +1,22 @@
+Ai 2041
+Kai-Fu Lee and Chen Qiufan
+
+According to Amara’s law, “We tend to overestimate the effect of a technology in the short run and underestimate the effect in the long run.”
+
+AI is an omni-use technology that will penetrate virtually all industries. Its effects are being felt in four waves, beginning with Internet applications, followed by applications in business (e.g. financial services), perception (think smart cities), and autonomous applications, like vehicles.
+
+AlphaGo, like most of the commercial breakthroughs in AI, was built on deep learning, a technology that draws on large data sets to teach itself things. Deep learning was invented many years ago, but only recently has there been enough computing power to demonstrate its efficacy, and sufficient training data to achieve exceptional results.
+
+AI will also create efficient services that will give us back our most valuable resource—time. It will take over routine tasks and liberate us to do more stimulating or challenging jobs. Lastly, humans will work symbiotically with AI, with AI performing quantitative analysis, optimization, and routine work, while we humans contribute our creativity, critical thinking, and passion.
+
+IT IS BETTER TO LIVE YOUR OWN DESTINY IMPERFECTLY THAN TO IMITATE SOMEBODY ELSE’S PERFECTLY.
+
+By contrast, in order for deep learning to function well, the following are required: massive amounts of relevant data, a narrow domain, and a concrete objective function to optimize.
+
+Science fiction has the capacity to serve as a warning, but speculative storytelling also has a unique ability to transcend time-space limitations, connect technology and humanities, blur the boundary between fiction and reality, and spark empathy and deep thinking within its reader. Historian and bestselling author Yuval Noah Harari has called science fiction “the most important artistic genre” of our time.
+
+In other words, with every future we wish to create, we must first learn to imagine it.
+
+In 2020, AI solved a fifty-year-old riddle of biology called protein folding. The technology has surpassed humans in speech and object recognition, served up “digital humans” with uncanny realism in both appearance and speech, and earned passing marks on college entrance and medical licensing exams. AI is outperforming judges in fair and consistent sentencing, and radiologists in diagnosing lung cancer, as well as powering drones that will change the future of delivery, agriculture, and warfare. Finally, AI is enabling autonomous vehicles that drive more safely on the highway than humans.
+
+Deep learning requires much more data than humans, but once trained on big data, it will outperform humans by far for a given task, especially in dealing with quantitative optimization (like picking an ad to maximize likelihood of purchase, or recognizing a face out of a million possible faces).

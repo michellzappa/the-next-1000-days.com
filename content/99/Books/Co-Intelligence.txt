@@ -1,0 +1,22 @@
+Co-Intelligence
+Ethan Mollick
+
+The Transformer solved these issues by utilizing an “attention mechanism.” This technique allows the AI to concentrate on the most relevant parts of a text, making it easier for the AI to understand and work with language in a way that seemed more human.
+
+AI is what those of us who study technology call a General Purpose Technology (ironically, also abbreviated GPT). These advances are once-in-a-generation technologies, like steam power or the internet, that touch every industry and every aspect of life. And, in some ways, generative AI might even be bigger.
+
+That feedback is then used to do additional training, fine-tuning the AI’s performance to fit the preferences of the human, providing additional learning that reinforces good answers and reduces bad answers, which is why the process is called Reinforcement Learning from Human Feedback (RLHF).
+
+Principle 3: Treat AI like a person (but tell it what kind of person it is).
+
+The search for high-quality content for training material has become a major topic in AI development, since information-hungry AI companies are running out of good, free sources.
+
+Principle 4: Assume this is the worst AI you will ever use.
+
+We have invented technologies, from axes to helicopters, that boost our physical capabilities; and others, like spreadsheets, that automate complex tasks; but we have never built a generally applicable technology that can boost our intelligence.
+
+ChatGPT reached 100 million users faster than any previous product in history, driven by the fact that it was free to access, available to individuals, and incredibly useful.
+
+Principle 1: Always invite AI to the table.
+
+Principle 2: Be the human in the loop.
