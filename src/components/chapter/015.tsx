@@ -5,13 +5,13 @@ const milestoneData = [
   { year: 2012, milestones: ["AlexNet"] },
   { year: 2013, milestones: ["Word Embeddings"] },
   { year: 2014, milestones: ["GANs"] },
-  { year: 2015, milestones: ["ResNet"] },
-  { year: 2016, milestones: ["AlphaGo"] },
-  { year: 2017, milestones: ["Attention Is All You Need"] },
+  { year: 2015, milestones: ["ResNet", "DRL"] },
+  { year: 2016, milestones: ["AlphaGo", "TensorFlow"] },
+  { year: 2017, milestones: ["Attention Is All You Need", "Transformers"] },
   { year: 2018, milestones: ["BERT"] },
   { year: 2019, milestones: ["GPT-2"] },
-  { year: 2020, milestones: ["GPT-3", "DALL-E"] },
-  { year: 2021, milestones: ["Codex", "AlphaFold 2"] },
+  { year: 2020, milestones: ["GPT-3", "AlphaFold 2"] },
+  { year: 2021, milestones: ["Codex", "DALL-E"] },
   { year: 2022, milestones: ["ChatGPT", "Stable Diffusion", "Midjourney"] },
   { year: 2023, milestones: ["GPT-4", "Claude", "LLaMA", "Bard"] },
   {
@@ -98,7 +98,7 @@ const AITimelineComponent = () => {
           {milestoneData.map(({ year }, index) => (
             <text
               key={year}
-              x={xScale(year)}
+              x={xScale(year)} // Removed index
               y={graphHeight + 20}
               textAnchor="middle"
               fontSize="10"
