@@ -95,10 +95,10 @@ const AITimelineComponent = () => {
             y2={graphHeight}
             stroke="black"
           />
-          {milestoneData.map(({ year }, index) => (
+          {milestoneData.map(({ year }) => (
             <text
               key={year}
-              x={xScale(year)} // Removed index
+              x={xScale(year)}
               y={graphHeight + 20}
               textAnchor="middle"
               fontSize="10"
@@ -110,10 +110,9 @@ const AITimelineComponent = () => {
           {/* Milestones */}
           {milestoneData.map(({ year, milestones }, yearIndex) => (
             <g key={year}>
-              {milestones.map((milestone) => {
-                // Removed unused index
-                const x = xScale(year); // Remove yearIndex
-                const y = getYPosition(milestone, milestones.length);
+              {milestones.map((milestone, milestoneIndex) => {
+                const x = xScale(year);
+                const y = getYPosition(milestoneIndex, milestones.length);
                 const shouldShow =
                   animationProgress > yearIndex / (milestoneData.length - 1);
                 const wrappedText = wrapText(milestone);
