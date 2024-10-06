@@ -5,13 +5,12 @@ import {
   BarChart3,
   Scale,
   MessageSquare,
-  Brain,
   Database,
   User,
 } from "lucide-react";
 
 const disciplines = [
-  { name: "Math-ematics", Icon: Calculator },
+  { name: "Mathematics", Icon: Calculator },
   { name: "Computer Science", Icon: Monitor },
   { name: "Statistics", Icon: BarChart3 },
   { name: "Linguistics", Icon: MessageSquare },
@@ -49,10 +48,7 @@ const AIDisciplinesDiagram = () => {
             />{" "}
             {/* Semi-transparent */}
             <foreignObject x={x - 40} y={y - 40} width="80" height="80">
-              <div
-                xmlns="http://www.w3.org/1999/xhtml"
-                className="flex flex-col items-center justify-center h-full"
-              >
+              <div className="flex flex-col items-center justify-center h-full">
                 <discipline.Icon className="w-8 h-8 mb-1" />
                 <span className="text-xs text-center font-semibold">
                   {discipline.name}

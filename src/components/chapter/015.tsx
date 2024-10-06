@@ -67,7 +67,7 @@ const AITimelineComponent = () => {
   const wrapText = (text: string, maxLength = 10) => {
     if (text.length <= maxLength) return [text];
     const words = text.split(" ");
-    let lines = [];
+    const lines = []; // Changed from let to const
     let currentLine = "";
 
     words.forEach((word) => {
@@ -110,9 +110,10 @@ const AITimelineComponent = () => {
           {/* Milestones */}
           {milestoneData.map(({ year, milestones }, yearIndex) => (
             <g key={year}>
-              {milestones.map((milestone, index) => {
+              {milestones.map((milestone) => {
+                // Removed unused index
                 const x = xScale(year); // Remove yearIndex
-                const y = getYPosition(index, milestones.length);
+                const y = getYPosition(milestone, milestones.length);
                 const shouldShow =
                   animationProgress > yearIndex / (milestoneData.length - 1);
                 const wrappedText = wrapText(milestone);
