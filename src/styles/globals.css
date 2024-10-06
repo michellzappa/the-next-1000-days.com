@@ -38,3 +38,8 @@ p {
 pre, code {
   font-family: 'Roboto Mono', monospace;
 }
+
+.full-width {
+  width: 100%;
+  max-width: none;
+}

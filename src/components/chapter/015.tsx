@@ -47,7 +47,7 @@ const AITimelineComponent = () => {
     requestAnimationFrame(animateProgress);
   }, []);
 
-  const xScale = (year, index) => {
+  const xScale = (index: number) => {
     const totalYears = milestoneData.length;
     const effectiveWidth = circleRadius * 2 * (1 - circleOverlap);
     const totalWidth =
@@ -56,7 +56,7 @@ const AITimelineComponent = () => {
     return startX + index * effectiveWidth;
   };
 
-  const getYPosition = (milestoneIndex, totalMilestones) => {
+  const getYPosition = (milestoneIndex: number, totalMilestones: number) => {
     const effectiveCircleHeight = circleRadius * 2 * (1 - circleOverlap);
     const stackHeight =
       effectiveCircleHeight * totalMilestones +
@@ -64,7 +64,7 @@ const AITimelineComponent = () => {
     return graphHeight - stackHeight + milestoneIndex * effectiveCircleHeight;
   };
 
-  const wrapText = (text, maxLength = 10) => {
+  const wrapText = (text: string, maxLength = 10) => {
     if (text.length <= maxLength) return [text];
     const words = text.split(" ");
     let lines = [];
@@ -98,7 +98,7 @@ const AITimelineComponent = () => {
           {milestoneData.map(({ year }, index) => (
             <text
               key={year}
-              x={xScale(year, index)}
+              x={xScale(year)}
               y={graphHeight + 20}
               textAnchor="middle"
               fontSize="10"
@@ -111,7 +111,7 @@ const AITimelineComponent = () => {
           {milestoneData.map(({ year, milestones }, yearIndex) => (
             <g key={year}>
               {milestones.map((milestone, index) => {
-                const x = xScale(year, yearIndex);
+                const x = xScale(year); // Remove yearIndex
                 const y = getYPosition(index, milestones.length);
                 const shouldShow =
                   animationProgress > yearIndex / (milestoneData.length - 1);

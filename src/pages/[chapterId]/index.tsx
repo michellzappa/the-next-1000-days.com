@@ -82,9 +82,6 @@ export default function Chapter({
         >
           ← Back to Home
         </Link>
-        <div className="text-sm text-gray-500 mb-2">
-          {getDisplayTitle(chapterId.padStart(2, "0") + "0", chapterId)}
-        </div>
         <h1 className="text-4xl font-bold mb-2">{title}</h1>
         {subtitle && (
           <h2 className="text-2xl font-semibold mb-6">{subtitle}</h2>
@@ -94,6 +91,10 @@ export default function Chapter({
           chapterId={chapterId}
           pageId={chapterId.padStart(2, "0") + "0"}
         />
+        <div className="text-sm text-gray-500 mb-2 font-mono">
+          {getDisplayTitle(chapterId.padStart(2, "0") + "0", chapterId)}
+        </div>
+
         {subPages.length > 0 && (
           <section className="mt-12">
             <h2 className="text-2xl font-semibold mb-4">Pages</h2>
@@ -101,7 +102,7 @@ export default function Chapter({
               <Link
                 key={page.id}
                 href={`/${chapterId}/${page.id}`}
-                className="block mb-6 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-4 transition duration-150 ease-in-out"
+                className="block mb-6 border border-transparent hover:border-gray-300 dark:hover:border-gray-700 border-2 rounded-lg p-4 transition duration-150 ease-in-out"
               >
                 <div className="flex items-start">
                   <span className="inline-block w-12 text-sm font-mono text-gray-500 dark:text-gray-400 font-bold mr-4">

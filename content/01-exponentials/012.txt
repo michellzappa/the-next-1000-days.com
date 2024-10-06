@@ -1,8 +1,11 @@
+# Technology has a visible direction
+## It evolves toward greater ubiquity and complexity.
+
+
+---
+
 # Everything We Make
 ## How Technology Shapes Our Reality
-
-Slide-14.webp
-
 
 
 Picture this: A Sumerian scribe, painstakingly etching cuneiform characters into a clay tablet. Fast forward a few millennia, and you'll find me, tapping away on a sleek e-reader, consuming entire libraries with a swipe of my finger. What connects these two moments, separated by thousands of years? The inexorable march of technology.

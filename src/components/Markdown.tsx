@@ -13,18 +13,19 @@ interface MarkdownProps {
 const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
   const processedContent = React.useMemo(() => {
     const chapterNumber = chapterId.padStart(3, "0");
-    // Ensure pageId is always set, defaulting to chapterNumber + "0" if not provided
     const pageNumber = pageId || `${chapterNumber}0`;
 
-    // Wrap the indicator in a span with a custom class for monospace font
-    const indicator = `<span class="mono">${
-      pageId ? "Page" : "Chapter"
-    } ${pageNumber}</span>`;
+    // Wrap indicators in <p> tags with a monospace class
+    const chapterIndicator = `<p className="font-mono">Chapter ${chapterNumber}</p>`;
+    const pageIndicator = pageId
+      ? `<p className="font-mono">Page ${pageNumber}</p>`
+      : "";
 
-    const processedContent = `${indicator}\n\n${content}`;
+    // Append indicators after the content
+    const processedContent = `${content}\n\n${chapterIndicator}\n${pageIndicator}`;
 
     return processedContent.replace(
-      /^(.+\.(webp|jpg|png|gif))$/gm,
+      /^(.+\.(webp|jpg|jpeg|png|gif))$/gm,
       (match, fileName) => {
         const imagePath = `/images/chapters/${pageNumber}/${fileName}`;
         return `![${fileName}](${imagePath})`;
@@ -116,7 +117,7 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
         span: ({ className, ...props }) => {
           if (className === "mono") {
             return (
-              <span className="mono" {...props}>
+              <span className="font-mono" {...props}>
                 {props.children}
               </span>
             );

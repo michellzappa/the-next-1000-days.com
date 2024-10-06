@@ -100,13 +100,13 @@ export default function Page({
         {subtitle && (
           <h2 className="text-2xl font-semibold mb-6">{subtitle}</h2>
         )}
-        {CustomComponent && <CustomComponent />}
+        <div className="w-full">{CustomComponent && <CustomComponent />}</div>
         <Markdown
           content={content}
           chapterId={chapterId as string}
           pageId={pageId as string}
         />
-        <div className="text-sm text-gray-500 dark:text-gray-400 mt-4">
+        <div className="text-sm text-gray-500 dark:text-gray-400 mt-4 hidden">
           Last updated: {lastUpdated}
         </div>
         <div className="flex justify-between mt-8">

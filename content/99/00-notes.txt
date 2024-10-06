@@ -26,6 +26,12 @@ Missing:
 
 
 # Notes:
+- energy use will keep going up, whether for training or inference
+- the arrival of an alien intelligence
+- “first contact"
+- Creative: product photography
+- Dev: Replit
+- Can we share our state of consciousness with machines
 - Training vs. Inference
 - Prediction Machines
 - What is AGI motivated by?

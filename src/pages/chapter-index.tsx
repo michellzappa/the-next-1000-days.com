@@ -58,7 +58,7 @@ export default function ChapterOverview({ chapters }: ChapterOverviewProps) {
                     <td className="p-1 text-center border align-top bg-gray-100 dark:bg-gray-800 w-20">
                       <Link
                         href={`/${chapter.id}`}
-                        className="block hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg p-2 transition duration-150 ease-in-out"
+                        className="block rounded-lg p-2 transition duration-150 ease-in-out hover:outline hover:outline-2 hover:outline-gray-300 dark:hover:outline-gray-600"
                       >
                         <div className="font-bold">
                           {/* Formatted Chapter Number */}
@@ -67,7 +67,7 @@ export default function ChapterOverview({ chapters }: ChapterOverviewProps) {
                           </span>
                         </div>
                         {/* Chapter Title on a New Line */}
-                        <div className="text-xs mt-1 font-normal">
+                        <div className="text-sm mt-1 font-normal">
                           {chapter.title}
                         </div>
                         {/* Subtitle removed */}
@@ -84,7 +84,7 @@ export default function ChapterOverview({ chapters }: ChapterOverviewProps) {
                           {page ? (
                             <Link
                               href={`/${chapter.id}/${page.id}`}
-                              className="block hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-2 transition duration-150 ease-in-out"
+                              className="block rounded-lg p-2 transition duration-150 ease-in-out hover:outline hover:outline-2 hover:outline-gray-300 dark:hover:outline-gray-600"
                             >
                               <div className="font-bold font-mono">
                                 {page.id}

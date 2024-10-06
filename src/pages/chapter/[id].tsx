@@ -18,8 +18,9 @@ interface Page {
 }
 
 interface ChapterNavigation {
-  previousChapter: { id: string; title: string } | null;
+  previousPage?: { chapterId: string; pageId: string };
   nextChapter: { id: string; title: string } | null;
+  nextPage?: { chapterId: string; pageId: string };
 }
 
 interface ChapterProps {
@@ -98,7 +99,7 @@ export default function Chapter({
               href={`/${navigation.previousPage.chapterId}/${navigation.previousPage.pageId}`}
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              ← Previous: {navigation.previousPage.title}
+              ← Previous: {navigation.previousPage.pageId}
             </Link>
           )}
           {navigation.nextPage && (
@@ -195,7 +196,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
             previousChapter.pages[previousChapter.pages.length - 1].title
           }`,
         }
-      : null,
+      : undefined, // Change from null to undefined
     nextPage:
       currentChapter.pages.length > 0
         ? {
@@ -209,7 +210,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
             pageId: nextChapter.pages[0].id,
             title: `${nextChapter.title} - ${nextChapter.pages[0].title}`,
           }
-        : null,
+        : undefined, // Change from null to undefined
   };
 
   return {

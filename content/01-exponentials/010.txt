@@ -1,8 +1,12 @@
-# Exponentials
-## Everything is accelerating.
+# Things get faster faster
+## And they get cheaper faster.
 
-Slide-10.webp
+Increased capacity and decreased costs over decades.
 
+image22-54.webp
+image26-56.webp
+
+---
 
 The Exponential March of Technology
 
@@ -57,3 +61,6 @@ As leaders and individuals, we must constantly recalibrate our expectations. Tod
 
 This chapter explores exponential growth in AI, its impact on industries, and its implications for our future. The only certainty is that change will continue to accelerate.
 
+---
+
+Source: Our world in data
