@@ -25,7 +25,12 @@ interface Page {
 }
 
 interface ChapterNavigation {
-  previousChapter: { id: string; title: string } | null;
+  previousChapter: {
+    id: string;
+    title: string;
+    lastPage: string | null;
+    lastPageTitle: string | null;
+  } | null;
   nextChapter: { id: string; title: string } | null;
 }
 
@@ -48,12 +53,22 @@ export default function Chapter({
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowLeft" && navigation.previousChapter) {
-        router.push(`/${navigation.previousChapter.id}`);
-      } else if (event.key === "ArrowRight" && subPages.length > 0) {
-        router.push(`/${chapterId}/${subPages[0].id}`);
-      } else if (event.key === "ArrowRight" && navigation.nextChapter) {
-        router.push(`/${navigation.nextChapter.id}`);
+      if (event.key === "ArrowLeft") {
+        if (navigation.previousChapter) {
+          if (navigation.previousChapter.lastPage) {
+            router.push(
+              `/${navigation.previousChapter.id}/${navigation.previousChapter.lastPage}`
+            );
+          } else {
+            router.push(`/${navigation.previousChapter.id}`);
+          }
+        }
+      } else if (event.key === "ArrowRight") {
+        if (subPages.length > 0) {
+          router.push(`/${chapterId}/${subPages[0].id}`);
+        } else if (navigation.nextChapter) {
+          router.push(`/${navigation.nextChapter.id}`);
+        }
       }
     };
 
@@ -124,10 +139,17 @@ export default function Chapter({
         <div className="flex justify-between mt-8">
           {navigation.previousChapter && (
             <Link
-              href={`/${navigation.previousChapter.id}`}
+              href={
+                navigation.previousChapter.lastPage
+                  ? `/${navigation.previousChapter.id}/${navigation.previousChapter.lastPage}`
+                  : `/${navigation.previousChapter.id}`
+              }
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              ← Previous Chapter: {navigation.previousChapter.title}
+              ← Previous:{" "}
+              {navigation.previousChapter.lastPageTitle
+                ? navigation.previousChapter.lastPageTitle
+                : navigation.previousChapter.title}
             </Link>
           )}
           {subPages.length > 0 && (
@@ -224,6 +246,18 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         ? {
             id: chapters[currentChapterIndex - 1].id,
             title: chapters[currentChapterIndex - 1].title,
+            lastPage:
+              chapters[currentChapterIndex - 1].pages.length > 0
+                ? chapters[currentChapterIndex - 1].pages[
+                    chapters[currentChapterIndex - 1].pages.length - 1
+                  ].id
+                : null,
+            lastPageTitle:
+              chapters[currentChapterIndex - 1].pages.length > 0
+                ? chapters[currentChapterIndex - 1].pages[
+                    chapters[currentChapterIndex - 1].pages.length - 1
+                  ].title
+                : null,
           }
         : null,
     nextChapter:

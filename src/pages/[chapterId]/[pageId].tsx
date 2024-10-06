@@ -24,8 +24,16 @@ interface PageProps {
 interface PageNavigation {
   previousPage: { id: string; title: string } | null;
   nextPage: { id: string; title: string } | null;
-  previousChapter: { id: string; title: string } | null;
-  nextChapter: { id: string; title: string } | null;
+  previousChapter: {
+    id: string;
+    title: string;
+    pages: { id: string; title: string }[];
+  } | null;
+  nextChapter: {
+    id: string;
+    title: string;
+    pages: { id: string; title: string }[];
+  } | null;
 }
 
 export default function Page({
@@ -51,7 +59,14 @@ export default function Page({
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowLeft") {
-        if (navigation.previousPage) {
+        if (
+          typeof pageId === "string" &&
+          pageId.endsWith("1") &&
+          pageId !== "01"
+        ) {
+          // If it's the second page of a chapter (e.g., 051, 061), go to the main chapter page
+          router.push(`/${chapterId}`);
+        } else if (navigation.previousPage) {
           router.push(`/${chapterId}/${navigation.previousPage.id}`);
         } else if (navigation.previousChapter) {
           router.push(`/${navigation.previousChapter.id}`);
@@ -69,7 +84,7 @@ export default function Page({
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [router, chapterId, navigation]);
+  }, [router, chapterId, pageId, navigation]);
 
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -110,7 +125,16 @@ export default function Page({
           Last updated: {lastUpdated}
         </div>
         <div className="flex justify-between mt-8">
-          {navigation.previousPage ? (
+          {typeof pageId === "string" &&
+          pageId.endsWith("1") &&
+          pageId !== "01" ? (
+            <Link
+              href={`/${chapterId}`}
+              className="text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              ← Back to Chapter: {chapterTitle}
+            </Link>
+          ) : navigation.previousPage ? (
             <Link
               href={`/${chapterId}/${navigation.previousPage.id}`}
               className="text-blue-600 dark:text-blue-400 hover:underline"
@@ -236,14 +260,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       : null;
 
   const navigation: PageNavigation = {
-    previousPage,
-    nextPage,
-    previousChapter: previousChapter
-      ? { id: previousChapter.id, title: previousChapter.title }
+    previousPage: previousPage
+      ? { id: previousPage.id, title: previousPage.title }
       : null,
-    nextChapter: nextChapter
-      ? { id: nextChapter.id, title: nextChapter.title }
-      : null,
+    nextPage: nextPage ? { id: nextPage.id, title: nextPage.title } : null,
+    previousChapter: currentPageIndex === 0 ? previousChapter : null,
+    nextChapter:
+      currentPageIndex === currentChapter.pages.length - 1 ? nextChapter : null,
   };
 
   const stats = fs.statSync(pagePath);
