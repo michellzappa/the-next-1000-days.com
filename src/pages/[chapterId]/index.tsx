@@ -8,6 +8,7 @@ import Markdown from "../../components/Markdown";
 import Footer from "../../components/Footer";
 import { useEffect } from "react";
 import { getChapters } from "../../utils/content";
+import { usePageNavigation } from "../../hooks/usePageNavigation";
 
 interface ChapterProps {
   title: string;
@@ -50,6 +51,12 @@ export default function Chapter({
   navigation,
 }: ChapterProps) {
   const router = useRouter();
+  const { chapterId: chapterIdQuery } = router.query;
+
+  const swipeHandlers = usePageNavigation({
+    chapterId: chapterIdQuery as string,
+    navigation,
+  });
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -84,7 +91,10 @@ export default function Chapter({
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-background text-foreground">
-      <div className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12">
+      <div
+        {...swipeHandlers}
+        className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12"
+      >
         <Head>
           <title>{`${getDisplayTitle(
             chapterId.padStart(2, "0") + "0",

@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { existsSync } from "fs";
 import { join } from "path";
 import dynamic from "next/dynamic";
+import { usePageNavigation } from "../../hooks/usePageNavigation";
 
 interface PageProps {
   title: string;
@@ -56,6 +57,12 @@ export default function Page({
     ? dynamic(() => import(`../../components/chapter/${pageId}`))
     : null;
 
+  const swipeHandlers = usePageNavigation({
+    chapterId: chapterId as string,
+    pageId: pageId as string,
+    navigation,
+  });
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowLeft") {
@@ -92,7 +99,10 @@ export default function Page({
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-background text-foreground">
-      <div className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12">
+      <div
+        {...swipeHandlers}
+        className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12"
+      >
         <Head>
           <title>
             {title} - {chapterTitle} - The Next 1,000 Days

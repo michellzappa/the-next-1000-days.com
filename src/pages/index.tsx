@@ -4,6 +4,7 @@ import Link from "next/link";
 import { getChapters } from "../utils/content";
 import Footer from "../components/Footer";
 import Markdown from "../components/Markdown";
+import { usePageNavigation } from "../hooks/usePageNavigation"; // Add this import
 
 interface Chapter {
   id: string;
@@ -22,9 +23,25 @@ export default function Home({ chapters }: HomeProps) {
   const introChapter = chapters.find((chapter) => chapter.id === "00");
   const mainChapters = chapters.filter((chapter) => chapter.id !== "00");
 
+  // Correct the navigation setup
+  const navigation = {
+    nextPage: introChapter?.pages?.[0]
+      ? { id: "001", title: introChapter.pages[0].title }
+      : null,
+    nextChapter: !introChapter?.pages?.length ? mainChapters[0] : null,
+  };
+
+  const swipeHandlers = usePageNavigation({
+    chapterId: "00",
+    navigation,
+  });
+
   return (
     <div className="min-h-screen flex flex-col items-center bg-background text-foreground">
-      <div className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12">
+      <div
+        {...swipeHandlers} // Add this line to enable swipe gestures
+        className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12"
+      >
         <Head>
           <title>The Next 1,000 Days</title>
           <meta
