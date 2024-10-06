@@ -18,11 +18,9 @@ interface Page {
 }
 
 interface ChapterNavigation {
-  previousPage:
-    | { chapterId: string; pageId: string; title: string }
-    | undefined;
-  nextPage: { chapterId: string; pageId: string; title: string } | undefined;
-  nextChapter: { chapterId: string; pageId: string; title: string } | undefined;
+  previousPage: { chapterId: string; pageId: string; title: string } | null;
+  nextPage: { chapterId: string; pageId: string; title: string } | null;
+  nextChapter: { chapterId: string; pageId: string; title: string } | null;
 }
 
 interface ChapterProps {
@@ -198,7 +196,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
             previousChapter.pages[previousChapter.pages.length - 1].title
           }`,
         }
-      : undefined, // Change from null to undefined
+      : null,
     nextPage:
       currentChapter.pages.length > 0
         ? {
@@ -212,14 +210,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
             pageId: nextChapter.pages[0].id,
             title: `${nextChapter.title} - ${nextChapter.pages[0].title}`,
           }
-        : undefined, // Change from null to undefined
+        : null,
     nextChapter: nextChapter
       ? {
           chapterId: nextChapter.id,
           pageId: nextChapter.pages[0].id,
           title: nextChapter.title,
         }
-      : undefined,
+      : null,
   };
 
   return {
