@@ -47,7 +47,7 @@ export function usePageNavigation({ chapterId, pageId, navigation }: NavigationP
   const swipeHandlers = useSwipeable({
     onSwipedLeft: () => handleNavigation('right'),
     onSwipedRight: () => handleNavigation('left'),
-    preventDefaultTouchmoveEvent: true,
+    delta: 10,
     trackMouse: true
   });
 
