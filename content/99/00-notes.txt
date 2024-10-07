@@ -26,6 +26,14 @@ Missing:
 
 
 # Notes:
+- How well will your AI know you?
+- Science and education chapters 
+- code: formal structured language
+- Strange failure modes -> weirdness 
+- centaur versus human list
+    - ai systems see things we don’t
+    - ai systems are faster than us (machine time)
+    - ...
 - energy use will keep going up, whether for training or inference
 - the arrival of an alien intelligence
 - “first contact"

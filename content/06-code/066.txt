@@ -1,1 +1,16 @@
 # Practical Tips for Generating Code
+
+- reverse-engineer something you like
+- finish debugging one feature before starting to build another
+- Learn enough to know which questions to ask
+- restart often - go back and do again and again using different approaches until it works
+- ask for something smaller until it works
+- Few things work upfront (but it happens!)
+- Compare use different models
+- finish debugging one task before starting another
+- look out for changes in amount of lines when generating new code.
+- always learn from what the model is doing
+- log as much as possible, to learn what is being done
+- small increments → commit often so you have somewhere to go back to 
+- Copy existing instructions into prompt when necessary (like when integrating a plugin)
+- Tech specs and file structure overview.
