@@ -1,0 +1,14 @@
+# What is originality?
+
+low level: interpolation - averaging of every position you see
+
+extrapolation → alphago → played millions of games 
+move 37
+brilliant new strategies 
+
+out of the box thinking: true innovation
+could you invent go, should you invent chess? or something as good.
+
+how would you even specify that task?
+
+we are missing the capacity to generalize

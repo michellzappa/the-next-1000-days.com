@@ -1,0 +1,154 @@
+Hey, digit, take the box with the heaviest animal and
+move it to tower four. This is digit, a robot who sort of looks like a
+person, hence the name Humanoid Robot. Technically, these are called bipedal humanoid robots. Using semantic intelligence, it's able to interpret
+commands from people and then make its own decisions about how to act. So the goal is for him to be able to interpret normal
+human language, to say, hey, I need you to pick this box up, help me out in this instance, is
+that where you see this going? Yeah. And I think it will generally be probably less of a I
+need you to do this one thing for me and more of a do this for me forever. In the corner of the facility. Robots like this one are catching the attention and
+billions of investment dollars from big tech companies like Amazon, Google, Nvidia and Microsoft. Elon Musk is betting the future of Tesla on these
+machines. As you see Optimus develop, it's really going to
+transform the world, I think to a degree even greater than the cars. Some also argue robots like digit can solve the world's
+labor crisis, filling jobs that are too dangerous or that people simply don't want. They may even replace an aging workforce, as people
+around the world have fewer kids. Today in manufacturing, we are short about 300,000
+people, and it's something very similar in warehousing and logistics. So we're somewhere around 6 or 700,000 jobs we can't
+fill. The idea of robots isn't exactly new. Here I am, sir. So why all of a sudden attention? The big driver, artificial intelligence. These bots have seen quantum leaps in what they're
+capable of in just the past few years, thanks to AI. Generative AI is really a key unlock overall for what
+you can get a robot to do, let alone a humanoid robot. Robotics is where AI meets reality. We are really at the cusp of solving one of the grand
+challenges of humanity. It will change labor forever. There is probably a need in the future once the
+humanoids get a bit more clever, a bit more perhaps autonomy. But until that point, I think the market
+will be fairly limited to PR spectacles. It all sounds great, but will we ever trust robots
+working in our houses, schools and nursing homes? Will they ever be safe enough? And how lifelike is too lifelike? And how should the US think about global adversaries
+building similar fleets of humanoids? CNBC explores the rise of these AI driven humanoids. And if they're really a cure all for our global
+workforce problems, or if this is another tech bubble. This hardware has been around for decades. Companies like Boston Dynamics, Honda, Sony and others
+have wowed the public with early versions of these robots. Why would we want humanoids? The prevailing sort of answer has been the world is
+built to be occupied by humans, so. We want robots that are versatile, that can do a wide
+range of things. Then having it adopt the humanoid form factor always
+made a lot of sense. Recent leaps in artificial intelligence have resulted
+in leaps for robotics. The data that they use to train these robots is based
+in real world scenarios. Now, a robot can be trained the same way a human is. We have this technology called Teleoperation. The person does the thing 200 times, we record all
+that data, and then we use that data to train these models. And the AI models are very similar to the GPT
+style generative AI models. You feed in the 200 trajectories and the system learns
+how the task is being done, and then the robot will do the task autonomously. If I go into a new space, I'm now not looking at
+spending months trying to code that problem. I can potentially just generate it straight out of gen
+AI and be able to have digit interact with new objects and new environments without having to develop at all. AI models require massive quantities of data to train
+off of, and this is no different. If you show the robot enough things, it starts to be
+able to do things that it hasn't been shown before. Big tech is very interested in the big potential this
+technology promises. If you're going to do AI at the frontier, you need to
+be partnered with Microsoft or Nvidia or Google or one of the big players. There's just no other way. They have resources that nobody else has, even
+governments. Nvidia's been a great partner up until this point. We're using everything from their hardware to their
+simulation, and then recently have started working with them on foundation models as well. One of this industry's biggest proponents is Elon Musk. He's made some bold predictions that Tesla's robot,
+Optimus could propel it to a $25 trillion market cap, and that it will amount to a majority of Tesla's
+long term value, with demand as high as 10 to 20 billion units. Tesla is arguably the world's biggest robotics company
+because our cars are like semi-sentient robots on wheels. And with the full self-driving computer and
+all the neural nets, it kind of makes sense to put that onto a humanoid form. And it's intended to be friendly, of course, and
+navigate through a world built for humans and eliminate dangerous, repetitive and boring tasks. Musk isn't alone in believing humanoid robots could
+change the world. Investors are pouring millions into startups, with the
+market expected to grow to $38 billion by 2035. The funding that has gone into these, some of these
+companies has been absolutely huge. And I think that's kind of the parallel with the AI
+funding. This is the biggest market in the world. I mean, effectively this has the potential to change
+the way we live and work pretty dramatically. Humanoid robots are closer to being a real part of our
+workforce than you might think. Some companies are already deploying them in factories
+and warehouses. Tesla claims it has two Optimus humanoid robots in its
+factory. During Tesla's 2024 first quarter earnings call, Musk
+said he believes Optimus will be performing tasks in Tesla's factories by the end of the year, and that
+it could start selling the robot to outside customers by the end of 2025. At the company's 2024 investor day in June, Musk
+predicted it could have over a thousand or a few thousand robots working at Tesla next year. Musk saying that Optimus will be bigger than the cars. So I  presume that means that they are spending huge
+amounts of this. I wouldn't underestimate them. Digit, created by Oregon based Agility Robotics, is
+helping Amazon in early stage testing at its Sumner, Washington, fulfillment center and innovation
+lab. We've been working with them recycling totes. The arms are capable of handling a wide variety of
+different payloads, up to about 33 ish pounds. Agility says it plans to keep expanding the scope of
+work that digit is capable of. We envision an app store for robots out in the future
+where if you need Tote recycling app, you can go into the App Store and
+download that onto your robot. And according to the company, there is plenty of
+demand. Agility is building a factory in Salem, Oregon to keep
+up with orders. We call it robo fab. Will be open online this summer, and in a few years,
+have a capacity of about 10,000 robots per year. And where will those go? For the most part. To many, many customers, but largely initially in the
+logistics warehousing space. The next big market we see is automotive, retail and
+then eventually into markets like healthcare. Several other startups are developing similar humanoid
+robots. Sanctuary AI launched in 2018, in Vancouver, Canada
+unveiled its latest robot last year. Phoenix, a five foot seven robot capable of lifting up
+to 55 pounds. It looks a bit different from other humanoid designs,
+trading its legs for wheels. Robots with legs. The upper body, including the hands,
+have to be very weak and light. So instead of doing that, we put our product on a
+wheeled base and because we made that trade off, we can build very powerful, very precise, very fast
+motors in the upper body. The company deployed early iterations of its robot with
+Canadian Tire, completing front and back of store tasks such as picking and packing merchandise. Robots were asked to do everything from greeting people
+when they come through the door to actually putting things on trucks. Sanctuary says it's close to releasing its eighth
+generation robot in the next few months, and has partnered with automotive manufacturer Magna to help
+build its robots at scale. Optronics started in 2016 as a spin out from the Human
+Centered Robotics Lab at the University of Texas at Austin. It began with an initial project to help NASA
+build a generalized humanoid robot. The company says it's now on its eighth version of a
+humanoid. All of that has culminated in building the robot that
+we essentially always dreamed of building a robot called Apollo, which is a mass manufacturable
+commercial humanoid robot. With a max payload of 55 pounds and a swappable four
+hour battery. Apollo is designed to help support logistics and
+manufacturing to start, with retail as its next focus. We've got to prove out sort of the simpler tasks, but
+my dream is for Apollo, hopefully to be ready in time to help my parents, hopefully to help me as I
+get old. The company says it has deployed Apollo in pilots with
+Mercedes-Benz, GXO and others. We started with pretty simple tasks things like moving
+boxes or moving cases from one place to another. What we're moving into is doing more dexterity and
+more end to end tasks, and then hope to be in full commercial launch by the end of next year. It's no wonder tech companies have taken notice. Some Wall Street analysts predict these robots are the
+next must have device, not unlike a smartphones or EVs, but they also say such robots would be vital
+for manufacturing and dangerous work. But they would also help with elderly care and fill in
+labor shortages in factories. There's already too few workers to fill all of the
+world's manufacturing jobs. It's an estimated shortage of 500,000 people, and by
+2030, Goldman Sachs thinks that will grow to a shortage of 2 million workers. Imagine I could give you a labor force that costs the
+price of electricity, you know, a few cents an hour per worker. And they were equipped with the kinds of
+general intelligence that you might imagine comes like in science fiction. There's going to be things that
+you think of that will dramatically improve your life no matter who you are. We've only automated 10% of automotive manufacturing. If we can automate a much higher degree, it would
+dramatically change the economy. We have the ability to add new tools. You can imagine if you needed to put a rivet into a
+car or something, you could actually have the screw produced in the hand. But robots taking human jobs can be a contentious
+topic. What would you tell those people who you know there
+are certain jobs that might be lost as a result of this? Actually, we've heard from some of those people, and
+what their jobs start to evolve into is the manager of the robot fleet. They can be deployed in coal mines, in fires, for
+rescue efforts, where it might not be as safe for a human being. There are just some jobs that people don't want. Proponents say a humanoid can help fill those. There's about 10 million open jobs in the United States
+alone. We could build and maintain 10 million of the robots
+that we're talking about, without touching a single job. If you have to lift sort of 55 pounds, somewhere
+between 50 and 100 times an hour, that's a serious workout. So we're taking these dirty, dull and dangerous jobs
+first. How far away are we from digit doing your laundry? That's probably more along the lines of, you know, a
+decade or more. Is there a kill switch? For lack of a better term? There is a kill switch. It's the big red button over there. The big red button over there. These are 140 pounds. They have a lot of torque in their hands and arms and
+legs. And so you have to be very conscious of the situation
+when robots are interfacing with humans. The biggest sort of short term obstacle we have is
+safety. The UN has sort of put together a committee that's
+called AI for good, which is basically coming up with policy
+recommendations at a UN level for how should countries think about AI and also think
+about robotics. For Agility's deployment of digit, its robots operate
+away from human workers for safety reasons. So right now digit is Non-collaborative and we're
+working to what's called collaborative safety, which is being able to formally verify, according to
+international standards that digit is safe to be in close proximity to a
+person. We have very tight safety regulations today. And then eventually OSHA is the workplace safety
+organization that actually has to approve any deployment. So it's very regulated to make sure that
+we don't get bad accidents. Another big roadblock: the cost. Humanoid robots are expensive, complex pieces of
+machinery. For them to go mainstream, that's going to have to
+change. It's really expensive to even try to do this, and you
+have to have investors who are willing to take risks because, you know, nobody's done this before. Elon Musk came out with this idea that it should cost
+less than $20,000, and that would be a level where mass adoption would be possible. I think we'll have to wait quite a few years, probably
+a decade at least. Agility says its robots can be purchased up front, with
+an additional software as a service fee, or a bundled monthly fee for robots as a service. As long as they have the robot, we help maintain it,
+take care of it, keep the software updated and they just pay on a monthly basis. What does one of these robots cost? How should people think about it? Is it like buying a car or a boat? I'd say it's like buying an expensive car, but the
+costs are coming down very, very quickly. While the US has seen activity in humanoid robots
+explode, China is giving the West a run for its money. It already dominates the industry, surpassing Japan in
+2013 as the world's largest installer of industrial robots, and now accounts for more than half
+of the global total. China, the market is absolutely huge. For example, in mobile robots, this the biggest in the
+world. The only other company in the West that has anything
+similar to the quantities that the companies have in China is Amazon. But Chinese companies are catching up
+fast. If you just count the number of humanoid robots that
+have come onto the scene over the last year, about half of them are from Chinese companies. Interestingly, you've seen companies like BYD also
+invest. There's a broader effort to get the capital into this
+industry in China. One of China's biggest competitive advantages is cost. They need to source these parts almost custom made. Being based in China, they're closer to the factories
+that can make these parts potentially at a lower cost. Unitary in China. They came out with this $16,000 humanoid, which is a
+very exciting development. But what can the robot actually do? That's a huge question. I think an interesting space to watch will be in the
+components once there are more standards, and potentially the factories that have been making some
+of these components for the humanoid startups in China, they could also sell those parts overseas. Competitiveness in this space is crucial for the US,
+which has been seeking to keep its edge over China as geopolitical tensions rise. Even though the US invented the very first robot, 100%
+of all major industrial robots were produced outside of the US by
+foreign companies. I think of the humanoid race as effectively the next
+space race, and it has major implications for both national competitiveness and
+national security. In terms of large economics, it is China versus the US. We need to make sure that the big applications for
+this are in the US and in Europe, because if it's not, then we're going to lose that arms race. This is a real arms race and we better make sure we
+win it. There are still very real roadblocks. Cost and safety are the biggest near-term issues. Finally, there's questions over how to regulate the
+space, similar to questions on how to regulate AI. Even the robot's biggest advocates say they want to
+put up guardrails to make sure those eventually working alongside humanoids aren't put in harm's way. But they're also competitive, and they want this
+industry to innovate with an ability to move quickly enough to keep up with rapid progress abroad. This is really the beginning of a new industry. Think of this like the personal computer in the early
+80s. It will have potentially bigger impacts than the
+personal computer. These robots are going to give us all back time.

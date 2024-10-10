@@ -1,0 +1,80 @@
+There's kind of an illusion with
+generative AI. "This promises to be the viral sensation that could completely reset how we do things." According to all the headlines, it's on
+the brink of solving all business problems automatically with the slight side effect of displacing
+huge amounts of the workforce. It seems so amazing. It's potentially
+a panacea. No. It's hyperbole. It's hype. What we get with generative AI
+is extremely impressive, but it's not going to run the world. It does have the ability to
+create efficiencies, but it's more limited. Whereas predictive AI, which is older, very much still has great amounts of
+untapped value. I'm Eric Siegel. I'm the co-founder and CEO
+of Goodr AI, the founder of the Machine Learning Week
+conference series, and the author of "The AI Playbook: Mastering the Rare Art of Machine Learning Deployment." I became fascinated with the concept of
+artificial intelligence as a kid in the late seventies and then in the early eighties. Eventually, my education led me to machine learning,
+and I've been in the field since nineteen ninety-one. "Whoa, Kasparov, after the move c4, has resigned." Now I was sort of semi-horrified with the
+AI hype for a few decades, and it just got a lot worse in
+recent years because of generative AI. It's going to feed that frenzy because
+it's so seemingly human-like. Generative AI, something like chatGPT, a large language model, it is capable of communicating about any topic and often giving responses that seem to
+understand what you're saying. And I grant that on some level, it has captured understanding and the meaning of words and
+phrases and sentences and paragraphs. But I believe that the difference between what it can do
+and what humans can do is going to become increasingly apparent. Generative AI is sort of correct often only as a side effect. When people say
+"hallucinate," they're like, "Well, look. It just makes things up." What impresses me is that it actually gets things right
+sometimes because it's only working on that low level of detail, the per-word level,
+which results in that sort of seemingly human-like capability. There's a big difference between that
+impressive capability and the potential value. It's certainly
+valuable for writing first drafts. So it'll produce a first draft of a letter
+you need to write or a syllabus or something like that. But you can't trust
+it blindly. You have to proofread everything that it gives you. That actually, in a way, makes it less potentially autonomous. The whole point of computers is to
+automate. Right? It does things really fast. And to the degree that we can actually trust
+it well enough to do things automatically, that ultimately helps the economy. It
+helps the efficiencies of the world. Predictive AI, that's the technology you
+turn to when you want to improve your existing largest scale operation. It does have the potential to enjoy the
+benefits of autonomy. So predictive AI or enterprise machine
+learning, that's the technology that learns from data to predict in order to improve any and all of the millions of decisions
+that make up large-scale enterprise operations. And these are the things that make the
+world go round. So predict who's going to buy in order to decide who to contact with
+marketing, which transaction is most likely to be fraudulent to decide which transactions
+to block or audit, which train wheel is most likely to
+fail in order to decide which one to inspect. It's not just train wheels. The
+New York Fire Department does that to predict which buildings are at most risk
+of fire to triage and prioritize inspections, or which healthcare patient should we
+take another look at before discharging because they're predicted very likely to
+be readmitted to the hospital? All of these predictive applications are a form of prioritization or triage, and the computer is systematically making
+those decisions over and over again real fast, fully autonomous. So we have data. We give it to machine
+learning, which is the underlying technology. It generates models that predict, and
+those predictions improve all the large-scale operations that we conduct. Predictive AI is so applicable across industries. Let's take the delivery industry. UPS is
+one of the biggest three delivery companies in the United States, and
+they actually streamlined the efficiency of
+their deliveries by predicting tomorrow's deliveries. That makes such a big difference that in combination with another system
+that actually prescribes the driving directions, to this day, UPS enjoys savings of three hundred and fifty million
+dollars a year and hundreds of thousands of metric tons of emissions. So this is how it works. When they have to
+start planning and then loading the trucks in the late afternoon or early
+evening so that it'll be ready the next morning, they have incomplete information. What they don't know is some of the
+packages that are still coming in later that night. So what they do is they augment the
+known information, which is that they already have a bunch of packages in hand
+that they know are meant to go out tomorrow morning for their final deliveries. And they'll augment that with tentatively presumed predicted deliveries by applying a predictive model for each
+potential delivery address and saying, "Hey, what are the chances that there'll be a
+delivery there tomorrow?" Now they have a more complete picture of all the deliveries needed
+for tomorrow. They can do a better job planning and
+loading the packages overnight so that when the trucks go out in the morning, they'll
+have relatively optimal routes that don't take too many miles of driving, too
+much gasoline, too much time of the drivers. Now some of those predictions will be
+wrong, but they're confident enough that the completeness now actually overweighs some of that uncertainty. This is what you need to do if you want to
+improve existing large-scale operations. You need to work with probability. Assign a number. How likely is
+this outcome? Here's the thing. It doesn't make a difference how good the
+number crunching is unless you act on it. It's not intrinsically valuable. The value
+only comes if you actually deploy it and change your
+existing operations. We have this incredible seemingly human-like capability of
+generative AI, which in one sense, I think is the most
+amazing thing I've ever seen. But underlying the excitement is the idea that
+we are moving steadily towards and potentially very near AGI, Artificial General Intelligence, which is a computer that can do anything a
+person can do. It's this feeling of a computer, kind of, coming alive,
+like Frankenstein, which we see over and over again in
+science fiction movies. In the real world, I do not believe we're going to fully
+replicate humans anytime soon or that we're actively making progress in that
+direction. That is a recipe for mismanaged expectations, otherwise known as hype. The antidote to hype is simple. Focus on concrete value. Discover whether you're using generative
+AI or predictive AI. Determine a very specific, concrete, credible use case of exactly how
+this technology is going to improve some kind of operation
+in the enterprise and deliver value. If you want to just sort of explore how
+close is it to the human mind and why you think it might be getting there, that's
+kind of a philosophical conversation, and that's great. But if you're talking
+about, sort of, improving efficiencies of operations that make the world go around,
+I think we should be a lot more practical and less pie in the sky.

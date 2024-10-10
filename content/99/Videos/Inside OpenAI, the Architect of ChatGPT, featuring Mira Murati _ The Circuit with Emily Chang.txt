@@ -1,0 +1,229 @@
+[Music] inside a nondescript building in the
+heart of San Francisco one of the world's buzziest startups is making our ai-powered
+future feel more real than ever before they're behind two monster Hits chat gbt and Dolly
+and somehow beat the biggest Tech Giants to Market kicking off a competitive race that's
+forced them all to show us what they've got but how did this under the radar startup pull
+it off we're inside open AI and we're going to get some answers is it magic is it just
+algorithms is it going to save us or destroy us let's go find out I love the plants it feels so alive so amazing
+it's giving me very Westworld Spa Vibes it's almost like suspended in space and time a
+little bit yeah it has a little bit of futuristic feel this is one of the most introspective
+Minds at open AI we all know Sam Altman the CEO but Mira Murati is a Chief Architect behind
+open ai's strategy this looks like the uh open AI logo it is Ilya actually painted this
+earlier the chief scientist yes what is the flower meant to symbolize my guess is that
+it's AI that loves Humanity we're very focused on dealing with the challenges of hallucination
+truthfulness reliability alignment of these models has anyone left because they're like
+you know what I disagree there have been over time people that left to start other organizations
+because of disagreements on the strategy around deployment and how do you find common ground
+when disagreements do arise you know you want to be able to have this constant dialogue and figure out how to systematize these concerns
+what is the job of a CTR It's a combination of guiding the teams on the ground thinking
+about longer term strategy figuring out our gaps and making sure that the teams are well
+supported to succeed yeah sounds like a big job solving impossible problems solving impossible
+problems so when you were making the decision about releasing chat GPT into the wild I'm
+sure there was like a go or no-go moment take me back to that day we um headshot GPT for
+a while and we sort of hit a point where we could really benefit from having more feedback
+from how people are using it what are the risks what are the limitations um and learn
+more about this technology that we have created and start bringing it in the public Consciousness
+it became the fastest growing tech product in history I did did that surprise you I mean
+what was your reaction to the world's reaction we were surprised by how much it captured
+the imaginations of the general public and how much people just loved spending time talking
+to this AI system and interacting with it can now mimic a human it can write it can
+code at the most basic level how does this all happen is a neural network that has been
+trained on a huge amount of data on a massive supercomputer and the goal during this training
+process was to predict the next word in a sentence and it turns out that as you train
+larger and larger models add more and more data the capabilities of these models also
+increase they become more powerful more helpful and as you invest more on alignment and safety
+they become more reliable and safe over time openai is kind of turbocharged this competitive
+Frenzy um do you think you can beat Google at its own game do you think you can take
+significant market share and search we didn't set out to dominate search what church GPD
+offers is a different way to understand information and you could be you know searching but you're
+searching in a much more intuitive way versus keyword based I think the whole world is sort
+of now moving in this direction the air of confidence obviously that chat tpd sometimes
+delivers an answer with why not just sometimes say I don't know the goal is not to predict
+the next word reliably or safely when you have such General capabilities it's very difficult
+to handle some of the limitations such as what is correct some of these texts and some
+of the data is biased some of it may be incorrect isn't this going to accelerate the misinformation
+problem I mean we haven't been able to crack it on social media for like a couple of decades
+misinformation is a really complex heart problem right now one of the things that I'm most
+worried about is um the ability of models like gbd4 to make up things we refer to this
+as hallucinations so they will convincingly make up things and it requires you know being
+aware and just really knowing that you cannot fully blindly rely on what the technology
+is providing as an output I want to talk about this term hallucination because it's a very
+human term why use such a human term for basically an AI That's just making mistakes a little
+bit General capabilities are actually quite human-like sometimes when we don't know the
+answer to something we will just make up an answer we will rarely say I don't know and
+so uh there is a lot of human hallucination in a conversation and sometimes we don't do
+it on purpose should we be worried about AI though that feels more and more human like
+should AI have to identify itself as artificial when it's interacting with us I think it's
+a different kind of intelligence it is important to distinguish output that's been provided
+by a machine versus another human but we are moving towards a world where we are collaborating
+with these machines more and more and so output will be hybrid all of the data that you're
+training this AI on it's coming from writers it's coming from artists how do you think
+about giving value back to those people when these are also people who are worried about
+their jobs going away I don't know exactly how we could work in practice that you can
+sort of account for information created by everyone on the internet I think they're definitely
+going to be jobs that will be lost and jobs that will be changed is AI continues to advance
+and integrate in the workforce prompt engineering is a job today that's not something that we
+could have predicted think of prompt Engineers like AI Whispers they're highly skilled at
+selecting the right words to coax AI tools into generating the most accurate and Illuminating
+responses it's a new job born from AI That's fetching hundreds of thousands of dollars
+a year what are some tips to being an ace prompt engineer you know it's this ability
+to really develop an intuition for how to get the most out of the model um how to prompt
+it in the right ways give it enough context for what you're looking for one of the things
+that we talked about earlier was hallucinations and these large language models not having
+the ability to always be highly accurate so I'm asking the model with a browsing plugin
+to fact check this information and it's now browsing the web so there's this report that
+these workers in Kenya were getting paid two dollars an hour to do the work on the back
+end to make answers less toxic and my understanding is this work is it can be difficult right
+because you're reading text that might be disturbing and trying to clean them up so
+we need to use contractors sometimes to scale we chose that particular contractor because
+of their known safety standards and since then we've stopped working with them but as
+you said this is difficult to work and we recognize that and we have mental health standards
+and wellness standards that we share with contractors I think a lot about my kids and
+them having relationships with AI someday how do you think about what the limits should
+be and what the possibilities should be when you're thinking about a child I think we should
+be very careful in general with putting very powerful systems um in front of more vulnerable
+populations there are certainly checks and balances in place because it's still early
+and we still don't understand all the ways in which this could affect people there's
+all this talk about you know relationships and AI like could you see yourself developing
+a relationship with an AI I'd say yes it's a reliable tool that enhances
+my life makes my life better as we Ponder the existential idea that we might all have
+relationships with AI someday there's an AI Gold Rush happening in Silicon Valley Venture
+capitalists are pouring money into anything AI startups hoping to find the next big thing
+Reed Hoffman the co-founder of LinkedIn and an early investor in Facebook knows a thing
+or two about striking gold he was an early open AI backer and is in a way trying to take
+society's hand and guide us all through the age of AI I mean gosh 12 years we've been
+talking maybe longer that's awesome a long time yes you have been on the ground floor
+of some of the biggest Tech platform shifts in history the beginnings of the internet
+mobile do you think AI is going to be even bigger I think so it builds on the internet
+mobile cloud data all of these things come together to make AI work and so that causes
+it to be the crescendo the the addition to all of us I mean one of the problems with
+the current discourse is that it's too much of the fear-based versus hope based imagine
+a tutor on every smartphone for every child in the world that's possible that's line of
+sight from what we see with current AI models today you coined this term Blitz scaling blitzkill
+killing in its precise definition is prioritizing speed over efficiency in an environment of
+uncertainty how do you go as fast as possible in order to be the first to scale does it today does it and I think the speed at
+which we will integrate it into our lives will be faster than we integrated the iPhone
+into our lives there's going to be a co-pilot for every profession and if you think about
+that that's huge and not professional activities because it's going to write my kids papers
+right right it's High School papers uh yes although the hope is that in the interaction
+with it they'll learn to create much more interesting papers you and Elon Musk go way
+back he co-founded openai with Sam Altman the CEO of openai you and I have talked a
+lot over the years about how you have been sort of this node in the PayPal Mafia and
+you can talk to everyone and maybe you disagree but you are all still friends what did Elon
+say that got you interested so early part of the reason I got back in the AI and I was
+part of sitting around the table in the crafting of open AI was that Elon came in and said
+look this AI thing is coming once I started digging into it I realized that this pattern
+that we're going to see the Next Generation of amazing capabilities coming from these
+computational devices and then one of the things I had been arguing with Elon at the
+time about was that Elon was constantly using the word robocalypse which you know we as
+human beings tend to be more easily and quickly motivated by fear than my hope so you're using
+the term robocalypse and everyone imagines the Terminator and all the rest sounds pretty
+scary it sounds very scary doesn't sound like something we want yeah stop saying that because
+because actually in fact the the the the chance that I could see anything like a robot club
+that's happening is so de minimis relative to everything else so how you did come together
+on open AI how did that happen I think it started with Elon and Sam having a bunch of
+conversations uh and then since I know both of them quite well I got called in um and
+I was like look I think this could really uh make sense something should be the counterweight
+to all of the natural work that's going to happen within commercial Realms how do we
+make sure that uh one company doesn't dominate the industry but the tools are provided across
+the industry so Innovation can benefit from startups and all the rest it was like great
+and let's do this thing open AI I did ask chat GPT what questions I should ask you I
+thought its questions were pretty boring yes your answers were pretty boring too so we're
+not getting replaced anytime soon but clearly this is really struck a nerve there are people
+out there who are going to fall for it yes shouldn't we be worried about that okay so
+everyone's encountered a crazy person who's drunk off their ass at a cocktail party who
+says really odd things or at least every adult has and you know that's not like the world
+didn't end right we do have to pay attention areas or harmful likes for example someone's
+depressed the thing about self-harm you want all channels by which they could get in the
+self-harm to be limited that isn't just chat Bots that could be communities of human beings
+that could be search engines you have to pay attention to all the dimensions of it how
+are we overestimating AI still doesn't really do something that I would say is original
+to an expert so for example one of the questions I asked was how would Reid Hoffman make money
+by investing in artificial intelligence and the answer it gave me was a very smart very
+well written answer that would have been written by a professor at a business school who didn't
+understand Venture Capital right so it seems smart would it would would study large markets
+would realize what products would be substituted in the large markets would find teams to go
+do that and invest in them and this is all written very credible and completely wrong
+the newest edge of the information is still Beyond these systems billions of dollars are
+going into AI my inbox is filled with AI pitches last year it was crypto and web three how
+do we know this isn't just the next bubble I do think that the generative AI is the thing
+that has the broadest Touch of everything now which places are the right places to invest
+I think those are still things we're working out now obviously as Venture capitalists part
+of what we do is we kind of figure that out in advance you know years before other people
+seeing coming um but I think that there will be massive new companies built it does seem
+in some ways like a lot of AI is being developed by an elite group of companies and people
+is that something that you see happening in some ideal Universe you'd say for for a technology
+that would impact billions of people somehow billions of people should directly be involved
+in creating it but that's not how any technology anywhere anywhere in history gets built and
+there's reasons you have to build it at speed but the question is how do you get the right
+conversations and the right issues on the table so do you see an AI Mafia for me um
+I definitely think that there is because you're referring the PayPal Mafia of course I definitely
+think that there's a network of folks who have been deeply involved over the last few
+years will have a lot of influence on how the technology happens do you think AI will
+shake up the big Tech hierarchy significantly uh what it certainly does is it creates a
+wave of disruption for example with these large language models in search what do you
+want do you want 10 Blue Links or do you want an answer and a lot of search cases you want
+an answer and a generated answer that's like a mini Wikipedia page is awesome that's a
+shift so I think we'll see a profusion of startups doing interesting things this but
+can the next Google or Facebook really emerge if Google and Facebook or meta and apple and
+Amazon are running the Playbook at Microsoft do I think there will be another one to three
+companies that will be the size of the five big Tech Giants emerging possibly from AI
+absolutely yes now does that mean that you know um one of them is going to collapse no
+not necessarily and it doesn't need to the more that we have the better so what are the
+next big five oh well that's what I'm we're trying to invest in you're on the board of
+Microsoft obviously you know Microsoft is making a big AI push did you bring Satya and
+Sam or have any role in bringing Satya and Sam closer together because Microsoft obviously
+has 10 billion dollars now in open AI um well I think I could uh I probably have a you know
+uh both of them are close to me and know me and trust me well so I I think I I've helped
+facilitate understanding and Communications Elon left open AI years ago and pointed out
+that it's not as open as it used to be he said he wanted it to be a non-profit counterweight
+to Google now it's a closed Source maximum profit company effectively controlled by Microsoft
+does he have a point well he's wrong on a number of levels there um so one is it's run
+by a 501c3 it is a non-profit but it does have a for-profit part the commercial system
+which is all carefully done is to bring in capitalism support the non-profit mission
+now get to the question of for example open so um Dolly was ready for four months before
+it was released why did it delay for four months because it was doing safety training
+it said well we don't want to have this being used to create child sexual material we don't
+want to have this being used or assaulting individuals or or doing deep fakes so we're
+not going to open source it we're going to release it through an API so we can be seeing
+what the results are and making sure it doesn't do any of these harms so it's open because
+it has open access to apis but it's not open because it's open source there are folks out
+there who are angry actually about open AIS branching out from non-profit to four profit
+is there a bit of a bait and switch there the cleverness that Sam and everyone else
+figured out is they could say look we can do a Market Commercial deal where we say we'll
+give you commercial licenses to parts of our technology in various ways and then we can
+continue our mission of beneficial AI the AI graveyard is filled with algorithms that
+got into trouble how can we trust open AI or Microsoft or Google or anyone to do the
+right thing well we need to be more transparent but on the other hand of course our problem
+exactly as you're alluding to is people say well the AI should say that or shouldn't say
+that we can't even really agree on that ourselves so we don't want that to be litigated by other
+people we want that to be a social decision so how does this shake out globally we should
+be trying to build the industries of the future that's what's the most important thing and
+it's one of the reasons why I tend to very much speak against people like oh we should
+be slowing down do you have any intention of slowing down we've been very evocal about
+these risks for many many years one of them is acceleration and I think that's a significant
+risk that we as a society need to Grapple with building safe AI systems that are General
+it's very complex it's incredibly hard so what does responsible Innovation look like
+to you you know like would you support for example a federal agency like the FDA that
+that's technology like it that's drugs having some sort of trusted Authority that can audit
+these systems based on some agreed upon principles would be very helpful I've heard AI experts
+talk about the potential for the good future versus the bad future and the bad future there's
+talk about this leading human extinction are those people wrong there's certainly a risk
+that um when we have these AI systems that are able to set to their own goals they decide
+that their goals are not aligned with ours and they do not benefit from having us around
+and could lead to human extinction that is a risk I don't think this risk has gone up
+or down from the things that have been happening in the past few months I think it's certainly
+been quite hyped and there is a lot of anxiety around it if we're talking about the risk
+for human extinction have you had a moment where you're just like wow this is this is
+big I think a lot of us at open AI um enjoying because we thought that this would be the
+most important technology that Humanity would ever create but of course the risks on the
+other hand are also pretty significant and this is why we're here do open AI employees
+still vote on AGI and when it will happen I actually don't know what is your prediction
+about AGI and how far away it really is we're still quite far away from uh being at a point
+where you know these systems can make decisions autonomously um and discover new knowledge
+but I think I have more certainty around the Advent of having a powerful systems in our
+future should we even be driving towards AGI and do humans really want it advancements
+in Society come from pushing human knowledge now that doesn't mean that we should do so
+in careless and Reckless ways I think there are ways to guide these development versus
+bring it to a screeching hold because of our potential fears so the train has left the
+station and we should stay on it that's one way to put it [Music] [Music] um

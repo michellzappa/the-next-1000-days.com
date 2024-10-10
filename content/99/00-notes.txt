@@ -26,6 +26,18 @@ Missing:
 
 
 # Notes:
+- An eye for AI
+- Metaphor about elephant and blind men → ai zoo
+- Essay about Games & AI → how simulations and winning conditions lead to RL → ML.
+- New aesthetics
+- Combinatorial Evolution
+- Unintended consequences chapter
+- Failure of imagination
+- Ai vison: Amsterdam
+- AI is an “Engineering Science" → you have to build the artifact first, so you can study it.
+- Generational Gap
+	- Carl Sagan once stated, “It is suicidal to create a society dependent on science and technology in which hardly anybody knows anything about the science and technology.”
+- Intelligence is prediction
 - How well will your AI know you?
 - Science and education chapters 
 - code: formal structured language

@@ -1,0 +1,211 @@
+Transcriber: Reka Lorinczy
+Reviewer: Zsuzsa Viola I’m a teacher of reading
+and writing and a novelist. And today, I’m going to talk to you
+about what that means at the dawn of artificial intelligence. I’m going to suggest to you
+that your ability to thrieve as a human depends upon three questions
+AI will never answer. And it’s about you, your community,
+your democracy, and your humanity. But first, of course,
+a story about someone else. In the late 1950s,
+in the Brazilian city of Recife, a Portuguese language teacher
+called Paulo Ferreira asked the local mayor for his support in rolling out a literacy program
+to agricultural workers. He showed the mayor
+how he employed new methods based upon the idea of critical pedagogy to teach writing and reading
+with great success. Paulo claimed that in just a few months he had taught 300 illiterate agricultural
+workers to read and write. The mayor was a radical Democrat. He supported the teacher’s
+literacy teaching, and within two years,
+Ferrera’s success made him head of a national literacy program with the ambition of teaching,
+reading and writing to the 40% of Brazilians then classified
+as functionally illiterate. Then, in 1964, a military junta overthrew
+the democratically elected government. Brazil’s military dictatorship
+ended all free elections, and the national
+literacy program was stopped. Paulo Ferreira was jailed. Released after 75 days in jail,
+he fled the country. The military dictatorship
+had accused him of being a communist, but his real crime was promising to teach
+40% of Brazilians to read and write. You see, Brazil’s oligarchical
+power relations depended upon a law that stopped illiterate
+people from voting. Without reading and writing,
+they had no political voice. I teach reading and writing
+at the University of Salford, where I lead a degree we call
+creative writing multi-discipline. As you would expect, students who come
+to study here are already literate. They can decode, comprehend
+and spell words. But literacy is not a binary proposition; it’s a scale. The kind of reading and writing we teach
+empowers students to continue that journey towards the higher ends
+of the literacy scale, where reading and writing facilitate
+critical and creative thinking, analysis, and self-reflection. When I think about
+my own purpose as a teacher, I think of Paulo Ferreira, because my purpose is most clearly defined by the idea of empowering
+parts of our national and global community to give them a voice, especially the first two university
+students of Salford - many of whom come from generations
+of the working class. I believe the future of a fairer society and human fulfillment
+is in lifelong learning, and for many, the best path
+is the lifelong journey of literacy, a journey so many of us end
+when we leave school. Paulo Ferreira’s story is one
+of the thousands I could use to demonstrate the real connection
+between reading, writing, the health of democratic societies
+and individual freedoms. If you’d like me to tragically reduce
+the work of historians, linguists and evolutionary
+psychologists for one moment, I want to use metaphors to help us
+perceive how crucial to human civilization, language, literacy,
+and the media of communication are. Think of language
+as the source code of civilization, the obscure programming that has enabled
+us to communicate with each other and which regenerates
+and evolves as we do. Think of reading and writing as software
+built upon that source code, enabling societies to store information,
+develop a collective memory, solve new problems, and through self-reflective association
+and inference, develop new thoughts. Think of media from stone hieroglyphs to paper books and prints
+in the digital age as technology disseminating information, and enabling us to read
+and write in different ways. Differences that can accelerate
+change in the human world and even change the way
+reading and writing wire our brains. It’s a horribly reductive metaphor,
+but think of literacy like this, and you understand, not only literacy is
+vital relationship to human civilization to the realms of the social
+and the political, you also understand why humans
+developing artificial intelligence, see the development
+of large language models as a crucial stepping stone towards the goal
+of artificial general intelligence, that is, an artificial intelligence
+capable of performing any task humans can perform. We’re not there yet,
+but it is where we’re heading. And if AI wants to do human,
+it has to be able to do language. In November 2022, the world was exposed
+to its first freely available, fully usable large language model,
+OpenAI's ChatGPT. And along with over
+100 million users to date, literacy teachers around the world
+like myself logged on. It’s fair to say the first reaction
+of the teaching community was panic, and not without good reason. A few months after the launch of ChatGPT, 477 academic misconduct cases
+against students accused of generating essays using AI had been opened
+across 40% of UK universities. Journalists put ChatGPT
+to the task of passing tests. It could A sets. It could even pass a bar exam in law. Beyond education
+in the field of literature, a popular sci-fi magazine
+had to close its submission round when an estimated 500
+out of 700 submissions were made with large language
+model software. Sudowrite, a user program
+based upon ChatGPT software, even claims to have helped you
+write a novel, a non-fiction book, rewriting your first drafts and generating plots
+and character for you. As one friend said to me,
+“What is the point of you now?” It’s okay, he was a friend. I was less worried about the point of me then I was about how well
+people understood the purpose and effect
+of reading and writing in the life of a human brain
+and in the development of civilization. I wondered what would have happened
+if Paulo Ferreira setting up his cultural learning
+circles in rural Brazil had been met by functionally illiterate
+agricultural workers who said, “Hey Paulo, we don’t really need you - and holding up their phones -,
+we have ChatGPT. We ask it what we want to know,
+and it tells the answer. We don’t even have to read
+because it speaks to us. And by the way, reading and writing
+aren’t the only way to be clever. I can speak for myself very well without
+that brother, thank you very much.” As the father of a proudly
+dyslexic daughter who at the age of 11, can outsmart me. I’m no literacy snob. Reading and writing are not the only
+lifelong journey towards wisdom individual agency
+and healthy communities. Not even the only way to develop
+a useful and beautiful brain. But as a writing teacher
+and as a politically concerned citizen, I know the value that an aggregate
+of highly literate citizens in our society can have. Neither I am a luddite. The educated elite who designed
+large language models believe it is in itself
+a democratizing force. There is little argument over the fact that large language models
+and generative AI hold enormous promise to education, science, and technology. But what concerned me in the conversation surrounding
+the release of ChatGPT was the way in which descriptions of what
+large language models can do misconceived the process, purpose
+and value of reading and writing. On one authors forum discussing Sudowrite those writers who swore never to use it
+argued with those who were. One Sudowrite user
+defended herself and said, “I am proud to be a criminal
+against the arts if it means now everyone
+of all abilities can write the book they’ve always dreamed of writing.” For me this statement confuses
+product with process, destination with journey. We would not call ourselves sculptors
+if we machine manufactured statues. The problem is ChatGPT and the software
+programs built on it are not writing. They're not even thinking. They're giving us the impression
+of writing and thinking. And when we use them to answer questions
+and brainstorm, even shape our own lives, we are doubtlessly training
+cognitive faculties. I’ve noticed in my own
+digitally native children how quickly they absorb
+diverse information. But is the process too passive as we get quick answers
+and make quick art? Are we accessing the deep reflection
+and critical awareness that makes us feel a sense
+of our own agency of who we are, of who we want to become? Let me take you somewhere else. There’s a special kind of silence that
+falls over a creative writing classroom where students
+have been set a writing task. That silence is actually a sound. It’s the sound of thought
+and the sound of becoming. Every year I ask my first year students simply to describe the room
+they’re sitting in, and as we read out
+the results of their writing, it dawns upon us that we are sitting
+not in one room, but in 20. No student description is the same because surfing the language associations
+of their own experiences, writing reveals the unique
+consciousness of every writer; who captured the smells
+in the room with disgust, who was lost in the view from the window, who was irritated
+by the sounds of other students, who described their thoughts in the room,
+who noticed none of these things and hid themselves behind
+an inventory of objects. Every detail, every choice of word, every syntactical arrangement
+reveals our consciousness to us. After listening to each other, we rewrite using the techniques
+we observed in the writing of others. And when we rewrite paying
+such close attention to technique, we alter our consciousness,
+we experience a different point of view. But all this can only be achieved
+if we exercise a muscle in our minds. That’s synaptic magic, responsible for setting down
+one word after another in concert with our memory,
+our imagination, our environment. The master of our mind is
+a metaphor, of course, and neuroscientific understanding
+of what is happening in the brain is only just dawning. But imaging has revealed
+how students copying a piece of writing engage a limited part of the brain, and the more areas of the brain
+begin to connect with each other when we write creatively. In one such imaging test, when the brain activity
+of experienced creative writers was compared with novice creative writers, researchers found parts of the brain associated with semantic
+production with meaning were much more active
+in the expert writers. The expert writers
+also employed a part of the brain responsible for learned coordination
+which writers didn’t use. So through writing, the highly literate, experienced writers
+had manifested a conductor for the orchestra of their mind, and they’d also freed up room
+in their brain to think new thoughts. And when a brain is free of the effort of decoding
+basic comprehension and literacy, we become fluent readers
+and fluent writers. Areas of our brain are freed up to think
+at the same time as reading and writing, using the information
+provided by reading, writing to generate original ideas through inference, prediction,
+imagination, association. As some of you will know, Paulo Ferreira, the Brazilian teacher
+who had to flee his country because real literacy is
+so threatening to tyrannical power, became one of the world’s most influential
+educationalists through his book, The Pedagogy of the Oppressed. He wrote of an education
+of reading and writing at its heart, an education that is reflective
+and practice based, like creative writing. Worried about the dehumanizing forces
+of neoliberal capitalism on one hand, and the nature of tyrannical
+societies on the other, he described the purpose of education as humanization for the eternal
+student of the humanities. Ferreira wrote, “The world - no longer something
+to be described with DECEPTIVE WORDS - becomes the object of that
+TRANSFORMING ACTION by men and women which results in their HUMANISATION”. Now, what Ferreira meant by humanization
+has been hotly disputed. In his work the word
+tends to stand as a marker for all that is beneficient
+and progressive in humankind. But this is slightly flawed, depending on
+what you believe about human nature. A strong willed tyrant
+might be just as human, as an oppressed revolutionary leader. Tyrants don’t need to be
+uneducated or illiterate, and sometimes they are highly literate. However, what is not disputed
+is Ferreira’s focus on the potential of education
+to help individuals in the context of their communities, discover a literate voice to ensure
+they are not just shaped by the world, but can shape it themselves. As humans witnessed
+the dawn of artificial intelligence I think the idea
+an education aimed humanization takes on a new, less partisan,
+more universal meaning. Far from wondering what my purpose
+as a writing teacher is - it has never been clearer - in a world where an intelligence
+with no consciousness, trained by corporations beholden
+to profit as much as progress, has this potential to wield so much power. Where artificially assisted writing
+will become part of our daily practice, finding and experiencing what it is
+to possess a human consciousness will be critical for human happiness,
+for the health of democracy, for our ability to meet
+the problems of our age. A Spanish poet called
+Antonio Machado once wrote: “Wanderer, your footsteps
+are the road and nothing more. Wanderer, there is no road. The road is made by walking. By walking one makes the road, and upon glancing back one sees the path
+that will never be trodden again.” I often use these lines
+to encourage writing students as they embark on the task
+of writing a memoir. The seas of memory can be challenging, but if we look into the source code
+of language, we find a guide. The ancient root of the word “memory” can be found in the
+Indo-European word “mermer”, which means what we cannot grasp
+and which also finds itself in the word we use to describe speech
+we cannot hear, like murmuring. Our memories, then, are hard to grasp, but in the process of remembering
+we alter ourselves, and reading and writing offer us one of the best ways
+of authoring our past, and recognizing the road ahead
+is only what we make it. If we take Machado’s poem and replace the words “footsteps”
+and “road” for “words” and “writing” we can better understand
+the essential power of literacy and how it helps us in becoming. “Writer, your words
+are your meaning and nothing more. Writer, there is no meaning;
+meaning is made by words. By writing one makes the meaning, and upon reading
+one sees the meaning made.” But these need to be your words. The words you make to write yourself
+is to train your brain to think better. To think better is
+to explore your consciousness. To possess a self-reflective
+consciousness is to be human. As we progress towards the age
+of an artificial general intelligence, we need to demand
+the right of every person to have the power and pleasure
+of exploring their humanity by authoring themselves because however powerful and useful
+artificial intelligence becomes, there are three questions
+it will never answer for you or me. Questions we must answer ourselves
+by taking the journey. Who are we? What is our meaning? And what is our purpose? Thank you. (Applause)

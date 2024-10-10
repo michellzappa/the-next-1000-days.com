@@ -1,0 +1,976 @@
+Welcome   to the seminar on people computers and Design. I will do a brief introduction 
+today, we started a touch late. I guess Will Wright who's our speaker 
+today is one of these people who makes   me uncomfortably aware of the generation gap. And that's not because of him, he's sort 
+of in between my generation the next one,   but because the things that he's done 
+-- in particular he was the inventor   of SimCity and a whole series of innovative 
+programs and games since then -- are things   which I discovered as a computer science 
+Professor learning about interface design. And when I look out into a 
+classroom full of students nowadays,   they're people who discovered it the 
+way that I discovered model cars, right? They grew up with it. The kind of tools and games and 
+whatever you want to call them he's   producing have really been a major part of life 
+with computers, what it means to be computers   and use computers, for the generation 
+that's just now appearing in college. And my own intuition, which I of course can't 
+validate since I'm in the wrong generation,   is that that's going to lead over time 
+to a real shift in the way not just that   people think about games but people think 
+about computers and computing in general. And today he's going to be talking about his 
+experience and his ideas along those lines. Will Wright: Thank you Terry. Yeah, I guess I'm kind of from 
+that in between generation. I spent a lot of time building 
+models when I was a kid. Way too much time building 
+models when I was a kid. And   I really was fascinated by the idea of these kind 
+of Micro Systems, models, micro worlds, whatever. You go out there now, and you can't 
+find models the way they used to be. Used to be you could find plastic 
+models with models all over the place. And that's what kids did, especially boys. Whereas girls would play with the dolls, 
+which was a different kind of modeling,   more of a social system model. That whole industry seems to have been displaced 
+recently by the video game industry, which to me   is kind of sad in a way, because on the modeling 
+front there was so much creativity involved. You would spend so much time. And there were just infinite 
+levels of progression. I started out with these kind of 
+plastic models you'd glue together. Then I kind of got into the wooden ones, 
+the pre-formed wooden ones where you'd   glue them together and build these 
+airplanes and put the paper over it. And then eventually started building 
+my own just out of scratch wood. And it was really interesting to me, 
+because you could get such a good sense   of the structural definition 
+of a system with these models. So when I got a computer in my early 20s, 
+a friend of mine talked me into buying one,   I very quickly realized how cool 
+the computer was as a modeling tool. The computer all of a sudden allows you to start 
+modeling process in addition to just structure. So my definitions here are kind 
+of loose and freewheeling, but   like a tree the structure might be the 
+leaves and the branches and whatnot,   process might be combustion, 
+structural change in the tree. So for the first time with the computer I had a 
+tool that I could start modeling process with. And as a model builder I just went 
+hog wild and taught myself to program,   and kind of got into the games industry. This is about 15 years ago. Now I was supposed to talk here today about 
+interface design, and I'm going to try to. But really I'm going to touch 
+on three major areas I think: I'm going to talk on simulation design, 
+game design, and interface design. Because those three to me are very tightly linked. I can't just design the interface after the game's   done, or design the game in 
+isolation from the interface. Each one of these supports the other, and a 
+lot of times there'll be a game I want to do,   but I can't design the interface to support it, or 
+the simulation underneath that it needs to have. So to me these three kind of go in this 
+dynamic process and design together. So I'll be talking about all three today. I'm going to be showing you some of our 
+older games, kind of in chronological order. In going through some of the issues we were 
+thinking about why we did things the way we did,   and then lessons learned after it was 
+out there, and hundreds of thousands   of people were complaining about it 
+and telling us how bad a job we did. We'd get some more perspective after time. And then each one after that we would try 
+to address the problems, and usually we'd   overshoot, or we'd go off in a totally different 
+direction and invent new problems for the users. On the simulation side, most of the 
+games we do are about real world systems. So the simulation in a sense is leading 
+the charge on the educational front. We pick a system that we want to educate the user 
+about, and then we look at the simulation design,   and how much of the system do we 
+want to wrap the user's mind around. There are a lot of issues there in terms 
+of how much of a simulation do we put in. How high is the Fidelity of the situation? When does it match reality 
+versus users expectations? On the game design a lot of times we will decide 
+to make the simulation match users expectations,   rather than reality, in certain cases, if 
+otherwise it would destroy the gameplay. On the game design, games are really all about 
+problem solving, constraints, challenges. So simulation is more about 
+modeling the real world. So the simulation is where the 
+problem is usually embedded. We will build a simulation 
+so that the problems come up. As far as the simulation is 
+concerned they're not problems,   it's just data going through some algorithms. It's the game design that 
+basically points you toward a goal. So the game design is actually going to tell you   what is a problem in the simulation, what 
+constraints the user has to deal with that   problem, and those constraints are typically 
+where the gameplay is going to come from. The interface has to support 
+both of these processes. You have to visualize the simulation. There are a lot of issues with how much of the 
+simulation do we make explicit to the user. Sometimes we don't want to show every 
+last detail of the simulation of the user. We want to sometimes prop up this illusion 
+of reality, and that's one of these issues   where the game design is in opposition 
+to the simulation design sometimes. As an educator, a lot of people would 
+rather see simulations that were very   explicit in the way they modeled, or in 
+what the user sees of the modeling process. In other words, they want the users 
+to know exactly how SimCity is   calculating the traffic rate, or why crime 
+appears, what the algorithm for crime is. On a game design front, 
+that's not always desirable. If you make the system too explicit, A: 
+you destroy that illusion of reality,   and B: you take away some of the 
+challenge of the problem solving. One of the things that we think 
+about on the education front is that   when we're designing a model we're not 
+necessarily designing a computer model. Our real end product is the 
+mental model in the player's head. We're trying to give them maybe a more 
+robust model of the way a city works,   or a planet works, or whatever. The computer model really is just an 
+incremental step in that direction. It's like a compiler for the mental model. The actions that the user is allowed to do   in the interface basically define 
+how you can deal with the problems. And these are the constraints. Most of the interfaces I'm going to show you 
+conceptually can be kind of split into the   data output, problem identification side, 
+and the data input problem solving side,   where the tools are applied and the 
+user actually has input to the model. One of the paradigms we've tried to 
+use in designing these simulations   is to think of them a little bit 
+more as toys rather than games. That is, to leave them a little more open-ended. They're not necessarily as goal 
+directed as most games would be. Most games you have a very single-minded 
+goal, you solve that, you win. The kind of simulations we've been 
+moving towards really are a little   more open-ended where in a lot of cases the user 
+is deciding what the goal is before they play. When they play SimCity for instance, we 
+don't necessarily tell them you have to   get the biggest city you can, or you have 
+to make your residents as happy as can be. People will actually take 
+it and play different ways. They'll basically identify, they'll think of,   well what's my goal today, or what 
+kind of city do I want to build? I want to build a city that has 
+the happiest possible residents. And they'll try to meet that goal. So it's a little more open-ended, the way 
+a ball can be used for different games. The user decides what the goal is. If I kick the ball through the goal then I win. That's the way I think of these kind 
+of as software toys, rather than games. There was a really cool short story written 
+by Stanislaw Lem called the Seventh Sally. And he describes this, he's 
+got these robot cultures,   and they go around doing these things, and 
+one of the robots who is an inventor, Trurl,   came across this asteroid where 
+there was this deposed dictator,   all by himself, and he was really sad, 
+because he didn't have a kingdom to rule. And so Trurl invented this magical invention for 
+him, and it was a box with a whole Kingdom inside   that he could rule and enslave, and do bad 
+things to, with little knobs to control them. He never got real explicit 
+about what the interface was. Don Hopkins: Really fancy knobs! Will Wright: Yeah, really fancy knobs. But I mean he could go down to 
+the point of issuing decrees,   and making that guy slip off his horse, and doing 
+these little things in the midst of a battle. And it was just the idea of it is kind of   what's inspired me through the 
+years to build these things. We're nowhere near building Trurl's invention, but   I think to me that's kind 
+of why I do a lot of this. I'm going to start off with an old program, 
+SimEarth, and go through some of the elements. (Annoying music plays.) Let me change the monitor setting real quick here. Now this project was a little bit ambitious. We were trying to do a simulation of the planet. Turn off the annoying music. So we started this project, the intent 
+of this project was to kind of show   how complex planetary systems are,   show the linkages between various systems that 
+most people don't think about -- most people,   up till recently, interdisciplinary study has been 
+kind of a backwater thing, and now it's getting   really in the forefront, but people have been 
+doing for instance climate models, or evolution   models, or biomodels in isolation, without regard 
+for the way these things link together -- so one   of our attempts was to show the inner relationship 
+between these different fields of study. Another was to give a sense of the vast 
+time scales over which the planets evolved. And so our task here was to kind of figure 
+out what would the interface to a planet be? The main window you see here 
+is a map of the planet we have. Let me load Earth, and we'll give you a 
+little bit more sense of the scale here. This is one of the scenarios you 
+can play with the Earth modern day. At this level we're getting 
+an overview of the planet. I can actually open another window here. This is a local window. This is what we use for the 
+local control of the planet. I can actually use this to move that 
+around as a little finder for it. So in the interface here, one of the conceptual 
+things that we've done in most of our products is   that we have a distinction here between the global 
+in this window and the local in this window. That distinction also applies to the controls 
+and the displays that you get from each window. On the illusion of reality, whenever you look   at a map it's hard to imagine that 
+you're really seeing a real system. So after playing with this 
+for a while in development,   we started thinking this looks like a 
+simulation, it doesn't look like a toy planet. How do we make it look more like a toy Planet? So we went through a lot of hoops and kind of came 
+up with this, which is displaying the same data,   actually in a more restrictive format because 
+you're only seeing half the planet at one time. But in some ways it gives you more the 
+feeling of playing with the planet. So this is my little toy planet. This works the same. All the maps 
+the display on this work the same. This actually turned out to be the 
+appropriate place for us to show the core,   because as you play the game, the model of 
+the geosphere includes the core coalescing,   which is changing the continental 
+drift rates and a few other factors. This really, for the amount of 
+effort and time we spent on this,   I think was more of a macho programmer thing. Let's see if we can map this 
+onto a sphere in real time. A horrendous amount of code and time and effort 
+went to that which probably was not worth it. But live and learn. On the bottom here we have controls. I'll go through them very briefly. This is just the terrain, basically. Events show on this map. This is continental drift rates. We can hold the button down and get a view of 
+the plate boundary, what the plate names are. On the continental drift, in this game,   the continents are drifting around at certain 
+time scales, and it actually records the drift. So I can come back over here and 
+replay the current continental drift. This is an internal record that it's 
+keeping of the latest continental drift. One of the inputs you have in the program is 
+creating earthquakes, and you pick out which   way you want to push the plates, and kind 
+of a high level of control in this game. This turns off the oceans, so you 
+can see the ocean floor terrain. We initially had this just toggle on and off. We found that by animating it, 
+people got a much better feel. It's not so much on Earth, because the continental 
+plate boundaries are so distinct, but on other   planets, they've got a much better feel by 
+actually animating the water going up and down. This is the ocean temperatures. It's ocean currents, atmosphere, rainfall, 
+air currents, biome distribution. You'll notice for each of these maps, 
+there's a small key that appears down here,   showing you how to interpret 
+the colors of the vectors. One thing about this interface that we later 
+came back and looked at it and kind of said,   it's so information dense. Primarily when we were designing 
+this game many years ago, this was   pretty much the standard screen size, 640 by 480. Since then, standard screen 
+size has gotten much bigger. At that time, we were very concerned 
+with information density: how much could   we display without the user having to bring up 
+another window, or obscure what they're seeing. So consequently, most of our 
+interfaces came out kind of like these   really fancy car stereos with the 
+billion and a half buttons, you know? And if you're into playing 
+with buttons and all that. In the showroom floor, it's 
+really fun to play with right? It's got all little buttons 
+and modes and lights, and... But then you're driving down the road, 
+you just want to hear music, okay? So you get totally lost with all the buttons. After finishing this program, I started feeling 
+that this was kind of the fancy car stereo. Maybe we could have been 
+a little less dense on it. But part of that again was pulled in 
+by the simulation design, you know. Everything in here is supporting the simulationm 
+and what we were trying to do with that. So perhaps that's as much a criticism 
+of the simulation as anything else. So on that theme, down here where the key is, to   maximize what we can do in this window, 
+we have a toggle for that, even. If we toggle it to this, what we're now getting is   a overtime graph of the map that 
+we're currently seeing up here. So right now we're seeing the biome map up here. And this is the current biomass of the planet. I'm just starting the model, so a lot of 
+these are coming up from zero right now. This is the average air 
+temperature across the planet. Rainfall, etc. So the buttons up here along the top 
+basically are all data output for the player. There are certain things associated with 
+each of these fields that are global. And you can double click, for instance, 
+on this one, which is the biome map. And here you get a global readout of 
+the ratios of biomes on the planet. This is like grassland to forest 
+to jungle to swamp to desert. Same with the other ones. This is the life form display, diversity display. I double click on that, I get global readings 
+on the different life forms on the planet. So we've tried to collapse most of the information   that you can get from the simulation on 
+a global side up here on the top row. Now on the bottom row, we have 
+these buttons: we have geosphere,   atmosphere, biosphere, civilization. These are the global inputs the player has. So we have on the top here again: the outputs. The bottom here: the inputs. These are the factors that the player can control. I can grab the axle tilt of the earth, and right 
+here I can start moving it around, causing chaos. I can bring up the meteorite impacts. I can increase the continental drift rate. These are rather major inputs for a 
+game, but it was kind of aiming high. One of the things that we've tried pretty hard at,   I think we've been pretty successful at, 
+is keeping numbers out of the user's face. So whenever possible, we do 
+these things graphically. So just noticing here how few numbers you see,   but yet we're trying to display a 
+lot of information about the planet. Now the local side: we have 
+the same kind of things. We have down here mostly the information output, 
+except here it's mostly organized as filters,   so this is turning off the ocean, this is 
+turning off the biome display, the city display. These up here are the inputs. These are new life forms I 
+can drop down, or cities. I can put dinosaurs in North America. I can raise and lower terrain with this. I can just grab and move things with this. I can move down to sort of South America. These are events I can actually drop. This is really where most of the 
+control to the player comes in the game. I can drop a meteorite in the Atlantic. Causing tidal waves and destruction. I can pick out an earthquake, and 
+change the vector of the plate boundary. So these are the kind of things 
+the player does in this game. I want to talk a little bit, in each interface 
+I show you here, about the help system. Because our help systems have 
+kind of evolved over the years. We've tried and tried and tried,   and we never can get people to use them 
+basically, is what the short story here. In this one, the shift key turns the icon into a 
+help icon, and any button or control you click on,   we'll come up with a description. Now I know this is really standard stuff 
+now, but this program was designed,   oh, about seven years ago, so back then 
+there weren't that many established,   this is before balloon help, this 
+is before the little pop-up stuff,   and windows and all that, so we didn't really 
+have any established thing to to go by there. Down here you can see, it's 
+a very confusing display. Which is why we put all these in. What basically the users ended up doing,   was turning off most of the displays when they 
+were trying to deal with a certain problem. And then dealing with it 
+on a local or global level. Very rarely did they have all these displays on. We can also turn on overlay things like the 
+heat and rainfall maps on top of this, which   makes it even more confusing. Now, the time scales was one of 
+the major intents of this program. So I'm going to start a new planet here. This game actually runs at four time scales. What we call the Geologic time scale, 
+Evolution, Civilized, and Technology. We were trying to show how the changes 
+on the Earth have accelerated over time,   based on the life primarily. So in this game, it runs at the geologic time 
+scale, until you've evolved multicellular life. And generally it's going by 
+a million years at a click. And then at some point you evolve 
+multicellular life, and then it slows down. And it starts going by a few 
+hundred thousand years at a click. And then once you've evolved intelligent 
+life -- which is not necessarily mammals,   it could be radiates or reptiles or whatever 
+in this game -- it slows down again. Each one of these is dealing 
+with different factors. The simulation itself changes depending 
+on what time scale you're working at. We had a hard time communicating 
+this to the user except through time. I mean they would only really get the sense 
+of this as they played through the whole game. But we did try to organize 
+the interface to support this. For instance, I can start a planet here. Starting a random planet. This is roughly when Earth began. It's really red hot. We're getting a lot of meteorite impacts. The continents are drifting around. The oceans will form soon as the 
+water condenses out of the atmosphere. As the planet's cooling. Down here at the bottom, the information 
+displays I showed you before,   we basically organized those 
+according to time scale. So here, evolving very quickly, the kind 
+of events we're getting: meteorite impacts. This is showing us tidal waves, 
+meteorites, major volcanic eruptions. The continental drift map you can 
+see is changing very quickly here. So roughly the icons on the bottom here are 
+organized from the things that occur over the   longest time scales on the left to the things that 
+occur over the shortest time scales on the right. You see on the right here we have civilization. So basically, as the game is progressing, and 
+you're advancing, if you start with a scratch   planet like this, you're trying to evolve 
+life and promote it to higher intelligence. Your focus will actually be moving down this row. As you move to the evolution time scale, 
+the climate model will get higher fidelity,   and you'll start concerning 
+yourself with these factors. As life evolves, you'll start concerning 
+yourself with the biomes, and the life forms. So basically, what we're trying to do 
+here, and maybe I'll get right now a   little bit -- oh before I do that, 
+let me show you a few more windows. Because this has a little 
+bit to do with my postmortem. And pause the model for a second. Other model, other windows we have in here: We have a history window, which has all the 
+same factors collapsed on the history graph. We have reports, which will give you a report   on the current state of the 
+planet, based on your goals. And then we have our little Gaia window. Now this this is our first stupid 
+attempt at an agent-based interface. Basically this product grew through accretion. Okay, so we started with a simple little 
+climate model, said "oh that's cool,   let's put in a continental drift model", "oh 
+that's cool, let's put in an evolution model",   "oh that's cool, let's put 
+in a civilization model". So of course, us as the 
+designers it made a lot of sense. We were layering this model, and it was building,   and everything was resting on 
+layers below it, it all made sense. but now, we showed this to new users who are 
+looking to buy some quick entertainment, right? And they look at this, and they start 
+opening the windows and all this,   and they were quite overwhelmed. Actually, I got a paper from somebody 
+who was doing learning studies,   and they they proved, they were actually 
+doing some studies on group learning. They proved that it took 
+five people to play SimEarth. One person just couldn't divide up the 
+conceptual things, and make the linkages. So this is our our last ditch attempt 
+at trying to give some point source. It collapse all the data into one score. Give the user some sense of how they were doing. This little face actually kind of 
+changes, depending on how you're doing it. Right now it's kind of in an indeterminate state,   but it'll be really happy sometimes, if 
+the bio biosphere is really thriving. Other times it'll look really mad. We can come in and I can, let's 
+see, turn off the Sun or something. Doesn't like that! Yeah, turn the sun off here. Now we go to this display, I 
+actually got the biome display. Oh just as we evolved life too. So here the planet will 
+freeze up now really quick. Polar Ice capsule, crawl down. You can see the air temperature dropping 
+precipitously on the graph down here. These are the kind of problems that we were 
+trying to get the user to face in this program. In some of like the evolution time scale,   frequently you would get a 
+runaway greenhouse effect. Or the plant would overheat, 
+and the oceans would boil off,   which wasn't really good for your civilizations. But on the postmortem for this one I 
+think we had too much window clutter. We were trying to stretch the user in 
+too many conceptual directions at once. Had we maybe cut down the simulation 
+to just include climate, or geosphere,   or a few other things, I think we probably 
+could have gotten people to get deeper into it. But probably the biggest failure of this 
+had to do with the failure mode itself. Really, if you're dealing with conflicts and 
+challenges in a game, and problems to solve,   the whole game, the whole thing is about failure. Really you want the game, the user, to be 
+failing, continuously, in an entertaining way. The user has to confront problems, fail at 
+them several times, but know why they failed. Generally when you play a really 
+good game, no matter what it is,   even if it's Doom or something like that. I went around this corner, I got 
+blasted, I know why I got blasted. Next time I'm not going to go 
+around that corner so fast,   I'm going to sneak around the 
+corner, and go the other way. It's really important when the user fails, 
+that they understand why they failed,   so that they'll go back to play it again the 
+next time, and then fail further down the line. In this program, people were 
+failing, and they had no idea why. They'd be sitting here playing the game, 
+and all sudden the plant would freeze up. And as designers of the simulation, 
+we had no idea why either. The simulation was just too complex,   and they had a lot of chaotic kind of 
+attractors in the attraction space. And it was kind of like you're rolling 
+this marble through this very flat space,   and every now and then it falls into one of these 
+chaotic attractors, and we can't really say why. So really that was almost a 
+failure of the simulation design. The game design just couldn't convey 
+that to the user even with constraints. We had a few things that worked a little better. One of the things we stuck in here, I'll 
+show you real quick, is you can load Mars. And so on Mars, all you're 
+trying to do is terraform it. You have little things you can drop in 
+the environment on the local level, oops. I can drop down CO2 generators, or 
+I can impact Mars with ice meteors. If I do enough of those, 
+I'll start forming an ocean. One of the other tools we gave 
+the player was a monolith,   which kind of increases the sentience 
+of the little creatures on the planet. On the failure mode, one thing I just want to   mention real briefly is that I've 
+seen two different failure modes. Between kids and adults, there 
+seems to be a big difference. Adults, primarily ones that kind of grew up 
+before the computer generation really got   into full swing, when they're put in front 
+of a computer, they're afraid of failure. Generally they're timid, they're very, they 
+think twice before they click a button. They don't just try anything, 
+whereas kids, they fail all the time. They kind of like failure. The failure doesn't bother them, 
+because they're always failing. When you see a kid build a tower of blocks, 
+they'll build it, and they'll knock it down. Oh it's fun! What's important for the kid is that the 
+failure mode is fun and interesting, okay? What kids don't like is a boring failure mode. Adults are uncomfortable with failure in general. Which is what makes kids so cool, you know? They're just really fun to watch them. And that's, I think, one of 
+the reasons they learn so fast. They're not afraid to fail, and the failure 
+is really the basis of their learning. So when we show games to kids, even 
+something this complex, it's surprising. I've had eight nine-year-olds playing 
+this game that knew everything about it. Every little control in there they 
+knew what it did, and how it worked,   because they just went in there with both guns 
+blazing, pushing everything and playing with it. And they had, their interest 
+level stayed up enough,   and they didn't care that the planet 
+kept freezing up or boiling over. To them, that was cool. To the adults, they do it, the planet 
+freezes up, and "oh no I can't play this,   is too complex!" and so they run away screaming. I'm going to skip to the next one really quick. We decided that that was a little bit 
+too much for the user to bite off,   a little too complex, too many windows. So we kind of swung the other extreme on this one. This is SimAnt. The next one we decided we would instead 
+scale back our expectations a little bit,   and just simulate an ant colony. Once again turn off the annoying music. Now in this one again, we have the interface 
+kind of broken out into local and global areas. This is primarily the local window. This is my little ant, a little yellow ant there. If I click in the window, my little 
+ant crawls around and digs tunnels. This is where most of the global 
+information is on this window. In this game, it's a little different. Instead of having the tools on the side, 
+the primary tool in this game is the ant. So most of what you do in this game 
+is by navigating this ant around. Now I just came out of the ground. Now you'll notice something here:   when you're outside, the viewpoint 
+is straight down, two dimensional. When you're in the nest, it's 
+side view, two-dimensional. We actually had plans at the 
+beginning of this for a very   elaborate three-dimensional display of 
+the nest, and the way it really looks. We did a few prototypes, and most 
+people were just totally baffled. Just the 3D navigation to them 
+just totally confused them. So we decided to fall back on 
+the experience of the users. We really want the users 
+to have direct experience,   and be able to map this into the real experience. So most users experience of seeing 
+an ant nest is in an ant farm,   which is two-dimensional 
+basically side view like this. Most people see ants on the 
+ground, straight down like this. This turned out to be no problem at all, 
+even though you're going through this,   what seemed at the time, a major viewpoint 
+shift, just by going out of the hole. Most people didn't even notice 
+the fact, didn't even mention it. This ant can actually control 
+other ants to some degree. I can recruit ants. I don't think I have too many. Let me speed up the game a little bit here. In this game, what you do is you crawl 
+around, look for food, feed your colony,   establish food trails. Here's some food over here. I can go pick up a piece, 
+bring it back to my Queen. In SimEarth on the local window we 
+had scroll bars as this window has,   but we wanted to have the ant self-centering. I was starting to get a rainstorm here. Yeah, that's what that blue stuff is. I have it on pause. So here's how the user basically plays this game,   is they go get food, establish 
+food trails, start fighting. At the other end of this piece of 
+ground is a red colony of ants. And so what you're doing in this game is you're 
+actually battling the red ants for dominance. Once you destroy the red ants, you win this patch. So this is the local here and this 
+window, this is the global in this window. We have in this game actually kind of a meta game. So this little area of ground here 
+represents about four square feet of ground. This actually is the whole game field,   so this little blinking square on the side 
+here is the current patch of ground we're in. The object of the game here is to 
+actually start breeding new colonies,   and starting to take over the yard, 
+so you actually start spreading out,   as the red ants are spreading out, at this point 
+it becomes kind of a territorial game like Go. And the real reward in this game is 
+if you can get into the house here. And so you're trying to get the ants to invade 
+the house and the the highest food content areas,   like around the fridge and sink and whatever. So this is kind of the 
+strategic game you're playing. The tactical game is down at the local level. Let me pop back to the local level here. In this game we've tried 
+to keep the failure modes,   after the SimEarth experience, 
+very direct and obvious. So if I'm crawling around 
+and die, usually I know why. So in this case, I walk by a 
+spider, and get slurped up. Now in in today's multimedia environment, that 
+would have been a 10-minute video sequence. Again this is way back, they shipped 
+on like one disc kind of a thing. So but we didn't want the emphasis in 
+the game design to be on not dying,   because we really wanted to get the idea across 
+that it doesn't really matter if an ant dies. It's the colony that matters. The ants are more like the cells, 
+the colony is more like the organism. So in the game design, we were trying to support 
+that idea by basically making death free. When you die you just come back as another ant. Your ant colony's lost one 
+ant, that's not a big issue. On the map here, we found that we were going back   and forth to this map a lot just to 
+get an overview of where we were. Which seemed kind of a waste. Generally we wanted to play this 
+with full screen mode like this. So we put the map in here as a little pop-up. So as you're playing the game, if you just 
+want to get bearings on where you are,   if I want to move the screen around, 
+that's what that little map is for. That evolved into the next game we did, 
+which I'll show you in a little bit. One of the real issues we had in 
+the interfaces design on this one   was that we wanted to give the player some 
+global control over the colony behavior. One of the things we want them 
+to control is how many ants were   foraging versus nest building versus other things. Another thing we wanted them to control 
+was how many workers were being born,   versus soldiers, and breeders. We had this elaborate thing at first, 
+where we had like four bar graphs,   and each one represented the 
+percentage of, let's say, workers. One was workers, one was 
+soldiers, one was breeders. You grab one bar, pull it up, 
+the other two would go down. Or you'd pull one down, the other two would go up. It was very confusing to users. We tried it another way with a pie 
+graph, where we were pulling things,   and again it was very confusing to users. What we finally came up with was this triangular 
+control, which actually worked pretty well. In this, you just move this thing around, 
+and it's establishing a three-way percentage. In this case, it's between the amount of different 
+type of castes of ant that are bred in your nest. If I want all breeders, I 
+bring it to this vertices. If I want all workers, I bring it down here. So I can establish a three-way 
+relationship actually pretty quickly. And this is just through testing. We went through I don't know how 
+many prototypes to discover this. And then we have of course, you can do presets. So we have three presets. I might have one set for fighting, one for   making my nest bigger, and that way 
+I can go through those very quickly. Now the help system on 
+SimEarth was the shift click. On this one, we decided to 
+make it a little more basic. We just put little question marks in each window. If you hold down the question mark, 
+it basically shows you all the icons. This is not unlike kind of the current 
+paradigm of the pop-up contact sensitive help. We did that in every window in the product, 
+so in this window we have the same thing,   and in the map window we have the same thing too. There are a couple things we did experimentally 
+in this game, which I, just very briefly... These are the global displays, these are 
+pheromone displays, you see from the ants. One of the main things we 
+were trying to communicate   in this product was why ants are so cool. I mean ants are really really cool. You have these little things that just operate 
+on these local rules, and have no idea what's   going on, but yet when you add them up, you 
+get the surprisingly intelligent colony. And this is really what we were trying 
+to communicate to the user in this game. And that's why it was important they 
+saw the pheromones they were dropping. Because we were actually 
+trying to build the behavior,   we were actually building the simulation 
+fairly close to real rules of ants. As an example, there's a thing that somebody 
+did, I forgot his name, he did a simulation. It was interesting because it 
+was one of the few cases where   the real behavior of an organism 
+was discovered through simulation. And people always wondered how ants were able 
+to effectively sort larva at different stages. In other words, they'll have one little room 
+with the little eggs that were just laid,   another room with the medium-sized larva, 
+another room with almost fully grown ones. These larva at each stage 
+put out a particular odor. These ants apparently -- and he found this through 
+simulation -- have this very local rule, which is   to say: if I'm walking around with nothing 
+in my mandibles, and I come across a larva,   and I haven't smelled its smell in 
+my vicinity, I'll tend to pick it up. On the other hand, if I'm carrying a 
+larva, and its smell matches the area,   the smell in the local area, I'll put it down. Now in simulation, you can just scatter these 
+larva all over the screen, turn this rule on,   and the ants will eventually pick up the 
+larvae that are sitting by themselves,   walk around with them randomly until 
+they get to an area with similar larva,   and drop them, and thereby 
+sort them very efficiently. So this is the kind of thing we were 
+trying to build the simulation out of. Now we didn't want to start the user at this level   with the mechanisms through which this 
+emergent behavior occurs in an ant colony. We wanted to get them into 
+the game first very quickly. Here's how you play the game, 
+here's how you walk around,   get food, here's how you defeat the red ants. So what we were hoping, and was somewhat 
+successful, is that we embedded in this,   we put in this little info system. And this is kind of like a little HyperCard -- 
+whoops -- database about ants and ant behavior. So for instance, these are just little hot 
+buttons, I can click on them, they have pop-up   definitions, and I can kind of explore this 
+at my leisure, and find out more about ants. A lot of the information contained in here 
+relates directly to the game and the gameplay. We have sections in here 
+that actually go into that. So I can back up, I can go to the 
+-- (chomp chomp chomp) -- oops,   I've been eaten! You die a lot 
+in this game, but it's okay. So this is actually a small flow 
+chart of the simulation of the   game -- (squish) -- oops, you get stepped on too. So this is a very simple flow chart, 
+much simpler than the real simulation. But we were trying to give the user the 
+information, and have the user pull the   information out of the system, rather than 
+in most educational products, it's kind of:   present the user with gobs of 
+information, here remember this,   this is cool doesn't matter 
+why, just trust us, it's cool. We want the users to more play this for a while, 
+and start wondering about it, and say "hey that's   kind of cool, I wish I knew more about this", 
+and then pull the information out of the system. So this was I would say, 
+reasonably successful in the game. Another kind of experimental thing we did in this   was this blank icon here, which 
+we call the mystery button. What this does, this does something totally 
+random and unexpected every time you click on it. Sometimes it'll tell you a joke. Sometimes it'll play the entire sound list. Sometimes it'll you, know, wipe 
+out the entire red ant colony. Sometimes it will give you 500 
+more ants in the black ant colony. Or it'll fill the world with food. We have about 50 random things it does. We found this particularly appeal to kids. Kids really like this idea of they've played 
+with something, played with something,   they've gone through a goal directed 
+state, and also they want to get crazy. This is kind of a "let's get crazy" button. Let's do something totally unpredictable. But again, as in most cases, the adults 
+didn't quite relate to it too well. Now on this product, I would say,   I was, we were actually, our failure 
+here was more on the marketing side. We were actually marketing this to a similar   audience than SimCity and 
+SimEarth was marketed at. But what this game really 
+appealed to were the 10 year olds. I mean 10 year old girls and boys love this game. 20 year olds and up thought it was too 
+simplistic, the model was too explicit. Especially when they failed, they 
+knew not only why they failed,   but it was too obvious how to solve it next time. So they generally only failed once or twice. The game was too easy for them. The kids didn't mind that it was too easy,   because the kids tended to 
+approach this more experimentally. One of the features we put 
+in the game that again the   kids seem to appreciate more than 
+the adults was experimental mode. Now in this mode here, I can actually put 
+down little things to play with the ants. I can drop down little walls, 
+so I can make mazes for my ants,   and see if they can figure their way 
+out of them with their pheromones. I can add food, I can feed some ants 
+over here, kill ones over there. I can put an ant in the thing, feed them,   and see if you can find his way 
+out with trails of food to follow. I can get destructive, I can go 
+spraying them with insecticide. The spider's pretty resistant, but the red ants. There we go. The kids would play with this for a 
+long time, it was kind of amazing to me. One of the other failure modes of this, I 
+think, was in the lack of creative input. I mean, you had this local controls, and 
+you were actually building up the colony,   but there wasn't a whole lot of creativity really. The ants would kind of build their colony. And you'd end up with this 
+kind of mishmash of a nest,   and the nest never looked like 
+a designer nest or anything. As a game, it was fine, but it was a little 
+different than most of the products we did. I'm going to go to another one now,   which is um our latest version of SimCity, 
+or the one that was released a few years ago. Gotta change these colors here. Now in SimCity, you're running a city, obviously, 
+rather than the ant colony, or a planet. (Annoying music plays.) Start a new city. Now in this one, we did a few things different. Rather than having the two windows, the local 
+global windows, as in the other two games,   we decided to try and collapse 
+everything into one into one window. And basically to do that we added zoom,   so this basically for the most 
+part is your map view of this game. I can zoom in, and this is pretty much the 
+local view, but it occurs in the same window. Let me load a city. There we go. Because of the isometric perspective we had 
+here, we had to add rotate buttons, which   wasn't too much of a problem for most people. Got to be a little bit of problem 
+on mapping some of the other data. The centering tool actually allows 
+you to browse around the city. I've always had a problem with scroll bars. In SimEarth I first noticed it, which is why we   had the little map thing as you drag 
+it around controls the local window. And in SimAnt we tried to address that with the   local ant that became the 
+center point of the window. In this one we made a special tool, the centering 
+tool, which just allows you to browse around. From any other tool, also, I can hold down the,   oops that's not the right key, to hold down the 
+option key, and go straight to the centering tool. Now this, like SimEarth, was a 
+pretty information dense display. At this point we had kind of 
+changed our minds and gone to   floating pallets rather than an integrated window. So you'll notice this is the toolbar, and 
+it's a separate palette, it never goes behind. We have a lot of other windows that 
+occur in this, that can be opened,   but they're all done as floating pallets, 
+because we basically wanted the user to   just bring them up when they needed 
+them, and closed them when they didn't. And that seemed to work pretty well actually. I was kind of surprised. Another thing we did different was that we tried 
+to collapse as much information as possible   into this main window, rather than having all 
+these hundreds of different display modes. We basically tried to make everything graphic, 
+but in a way to where it kind of made sense. It matched reality, there 
+was an obvious mapping here. So just by looking at this map -- pause you 
+for a second -- just looking at this map here,   the user can get a sense of a lot of 
+the data that's actually going on. I can see the density of 
+development, the population density. I can look at the current 
+zoning in each of these lots. If you look very closely there's a 
+little color-coded thing on the border. Of course where the roads and 
+buildings and terrain are. I can see the traffic levels. I can see the power status, if 
+power goes out to a certain area. The toolbar over here is 
+organized into roughly four areas. This top area up here are the tools in the game. These are the inputs that the user 
+is able to have to the simulation. This is a bulldozer, so I can 
+level train with a bulldozer. This is a road. So each tool is basically one of three types. There's the, basically a point select, 
+which is like drop a tree or drop water. There's a line select, which is the road. And then there's an area select, 
+which would be the zones. That's like a residential zone, or 
+commercial zone, is an area select. Each one of those works as a single click also. So the user doesn't have to 
+worry about what mode they're in. If they just want to single click 
+each one, that works fine too. One of the things, this was actually,   this is a sequel to the original SimCity 
+that we did many years beforehand. One of the things we did in the interface, 
+the interface is much more complex, but we   tried to organize these tools actually in the same 
+order, and using similar icons to the old SimCity. So people have played SimCity before 
+can come into this, and they know the   bulldozer is going to be the top icon, and 
+the road is going to be next to the rail. The additional detail that we added in 
+this, basically we did in pop-up menus. So whereas SimCity had a road, this 
+one has um five different types. Whereas SimCity had one type of 
+residential zone, this has two. This has many different bulldozer modes. Basically, if a user just boots this up, doesn't 
+read the manual, which is what they always do,   they just click on the buttons, and they 
+work kind of like they expect them to. As they start playing with it while, they start 
+realizing that each of these has a pop-up menu. Some of them bring up dialogs. And that's where they can 
+start learning the program. There's nice early, I mean nice easy 
+learning ramp built into the program. These things around here are 
+basically display functions. The rotate world, zoom in, 
+zoom out, centering tool. The sign function allows the user 
+to put new signs in the city. Now these are kind of important a little later on,   because they're used in the 
+newspaper when an event happens. You can sit there and name all the 
+different districts of your city. You can also name the different buildings. And again, we're trying to prop 
+up the illusion of a real city, A. We're also trying to get the 
+user to care about the city. Now the city thing seems to work better than, 
+for instance, the ant colony or the planet,   because the user actually has a lot more creative 
+control over the system that they're dealing with. When I do something in 
+SimEarth no matter what I do,   it's going to be erased in 
+a billion years of erosion. In SimCity, I build a road and 
+it stays there most of the time,   as long as I fund it and repair 
+it after fires and whatnot. There's a lot more permanence to SimCity, so 
+as a consequence after I've been playing the   game a while, what I've got on the screen 
+is something very much that I've created. I've built a model of a city as a player. In SimEarth, I've done the same thing. But the changes I made just are not permanent. The bottom level down here are additional 
+windows, are actually pallets I can bring up. This is the map, which again here we're 
+pretty much replaced with the zoom out   level of this window, but this little map 
+allows us to bring up the data layers. So for instance I can show the crime, and 
+it will be mapped onto this map over here. We actually originally designed this little map as 
+a diamond shape to match the orientation of that. Users found that totally confusing. We changed it to this, it was still confusing, 
+because the user had to make basically a 45 degree   rotation in their mind between what they're seeing 
+on this map and what they're seeing on that map. We almost took it out all together, 
+and just left it as the selection icon,   but for some reason we 
+didn't, I don't remember why. But most people never, you could also grow this 
+and use this as your primary map if you wanted to. Some people felt more comfortable 
+with this map, but not many. Most people brought this up, used it 
+basically just for the icons on the side,   to apply to the bigger map. And you can zoom in and use the same 
+controls, and get a detailed area. I can actually toggle between, so I can look at   where the highest crime areas are, in relation 
+to the buildings and structures there. These are graphs, boring graphs. These are population cohort graphs. And this model, what you do over time is in 
+a lot of ways represented here in terms of,   to bring certain industries into my city, there's 
+actually a national economic model in the game. So around the turn of the century, 
+steel is a big national demand industry. So are textiles. Petrochemical kicks in around the 50s. Media, Electronics kick in a little bit later. So if you want your city to 
+grow on the industrial base,   you actually have to have the 
+right kind of labor force. For instance, if I want to get 
+heavily in the electronics,   I have to have a pretty high education level. This is the education level currently 
+in my city broken down by age grouping. I addressed this actually by 
+building schools, museums, libraries. Each one of those buildings applies to 
+a different age range on this bar graph. If I build primary schools, it's going to boost 
+the bars on the zero to 10 year old range. Over time these bars obviously scroll to the side. The area between 20 years old and 55 
+years old is considered the workforce. That's averaged into this EQ here. That average is going to affect these   industrial, how many of these industries 
+will come into your city, and how fast. So this is the kind of problem we were trying to   get the user to confront in this 
+game: long-term planning issues. Like in SimEarth, on the very bottom here. So we've gone through the tools up here, display 
+items there, additional windows and clutter there,   and at the bottom we have filters. This information information window here was too 
+complex for certain tactical things the users were   trying to do, so these basically allow the user 
+to turn off parts of the data they're being seen. I might just want to see the terrain 
+or just the road network in isolation. Another major part of this game requires 
+that you build underground infrastructure. This shows you the underground infrastructure in   the city, where you're building 
+subways, water mains, and such. Now like the Gaia face in SimEarth, we were 
+trying to find a way to collapse information here. To give the user a very quick 
+thumbnail on how they were doing. And so we spent a lot of time 
+building this, with limited success. What this is, it's the newspaper 
+that you get in your city. As your city gets larger, you can actually 
+subscribe to different newspapers. Each one has a different slant 
+on the news, a different layout. But most of what you see in the newspaper 
+actually is an output from the simulation model. You can actually click on the articles, and 
+it kind of randomly generates an article,   trying to randomly describe a real problem. They also describe the current things that 
+the residents are having problems with. Like this one for instance:   this article is telling us that we need 
+more power, having too many brownouts. This is giving us a sense of the weather 
+weather model, which has certain inputs. Some of the papers have editorial sections, where 
+basically it's a critique of you, in talking about   the major problems you have to deal with. So right now education is 
+probably a major problem. It's probably high on the list of problems 
+that are bubbling up in the thing. So this in essence is another type of data filter. We're trying to take all the 
+data maps inside of the city,   collapse them down in a way that 
+most people are familiar with. Most people find out about the problems 
+in their city by reading the newspaper. I only wish that the technology 
+would have been a lot better,   so that we could have made the 
+newspaper much more interesting to read. What this actually was is 
+kind of a Mad Libs thing,   where we had hundreds of articles like 
+a power shortage article, and we replace   strings like the people and place names and 
+some adjectives to give it some randomness. Most people burned out on this 
+after about, oh, two weeks. They'd read it for two weeks, then 
+they'd play the game without it entirely. So it was kind of limited there. One of the things I noticed when we 
+were working on the original SimCity,   we had basically, you build the city, we had 
+all these tools, we had bulldozer, roads, zones. I showed it to people and said "look, here 
+you can build the city, it's really cool". The first thing they would do is 
+they would find the bulldozer,   because it was the first tool, and they'd try it. Generally it blows something up. You'd be bulldozing your building, 
+and then say "hey that's cool",   and then they'd start attacking the 
+city with a bulldozer, like this. And so, they would sit there, it was kind of like   poking an ant colony with a 
+stick to see what happens. They had to perturb the system to 
+get a sense of is it fragile or not,   or is this a painting, or 
+is it really a simulation? So it was like they were testing the validity of   the simulation by poking at 
+it, and watching it break. And this is almost universal. Kids and adults. And this is just with the bulldozer. So we decided to name that the Calvin Syndrome. These people wanted to go in and 
+cause wreak havoc on these things. Especially if they didn't build it. These are cities I built, and I 
+labored over for hours and hours. "Look at my beautiful city!" "Oh I'll destroy it for you!" And so, that's when we put in the disaster menu. So in this one one of the things a 
+lot of people like to do is they'll   spend hours building up a city, and 
+then kind of like the SimAnt random   mode or experimental mode, except in this 
+case I can bring some disaster on my city. I can call in a tornado, or an earthquake, 
+or a monster, or everything all at once. Usually these are fairly 
+major they destroy the city. But people just kind of like 
+seeing the thing go down in ruins. It's like I guess, Nero on the fiddle or whatever. We did this in the original SimCity. We kind of expanded on it in this one. One of the things you can do before you 
+get into the really full-blown plan out   the city in every little detail, 
+is that you can play scenarios,   which are pre-built cities with certain 
+disasters or problems that you have to solve. This is one of the ones I did that I like, 
+because my home burned down in Oakland   Hills Fire several years ago, and that was about 
+about a year and a half before we released this. So I decided I'd put in the Oakland 
+Hills scenario, and I put in my house. This is my house up here on the hill. That's what it really was, but now I 
+can play the game, and I can go and   I can dispatch all the firefighters save my 
+house, and let the rest of Oakland burn down. So at this level, SimCity becomes very tactical. The time scale actually freezes 
+to real time for the most part. It's really funny the disaster thing, 
+because I think people have to see how   fragile a system is before they 
+really appreciate building it. When people would destroy the 
+cities after I showed it to them,   they'd burn out on that usually 
+after about half an hour. They'd blow them up, burn them 
+down, hit them with an earthquake. Then they'd start rebuilding the city,   and they'd start realizing how 
+much more interesting that was. It's almost like they had to get the 
+destruction out of their system first,   before they appreciated that part. And then once they started building the city, 
+they had invested so much time in building it,   some people would spend 10, 20 hours building 
+one city, that they really empathized with it. Then when the earthquake hit randomly 
+because they do happen randomly also,   they would say "oh I've been hit by an 
+earthquake" they wouldn't say "my city's been   hit by an earthquake", they'd really identify 
+and say "I've been hit by the earthquake". On this side, I think we did a pretty good job, 
+whereas SimEarth was too hard, too complex,   very difficult for the users to understand 
+the conceptual mapping of the simulation,   and SimAnt was too easy. This was kind of the just right, in terms of what   I think the complexity of the simulation 
+turned out, and the visualization of it. Not doing too good saving my house here. The only real criticism we got from 
+this was more from the educational side. A lot of people a lot of educators 
+use these in schools, primarily   K-12, and most of the educators wanted in 
+this game the model to be more explicit. They wanted to know the algorithms for 
+why crime happens, what causes traffic,   what causes pollution. And perhaps it really it needs a different design. I'm thinking that we were really focusing 
+here on maintaining the illusion of reality   with things like the newspapers, and 
+collapsing all the data into one display. And in some sense, that requires 
+almost a more structural view,   as a system more like SimEarth had. So this is again one of these things where 
+you have these two things in opposition. This is most of what I wanted to show you. I'd like to open it up to questions and get 
+a little more interactive at this point. Don? Don Hopkins: Can you tell me about courseware that people   have developed that teach those things 
+that the educators want to know about? Will Wright: Yeah, you're talking about, I assume, 
+like hard copy, as opposed to in software. Yeah, what we have for each one of our products, 
+we have what's called a teacher edition,   and we have lesson manuals for each one, 
+which generally try to take the programs   through bite-sized chunks, usually something that 
+can be accomplished in a 30 minute time period. So the students might concentrate 
+on mapping in one time period,   or traffic in another time period, and then it 
+would be related to a social studies course. One of the difficulties that educators 
+have had with these products is that   we've primarily been going at these 
+with an interdisciplinary approach. And so there's not always an appropriate 
+classroom to teach these subjects in. It usually gets lumped into either the computer 
+science curriculum, or social studies, or in some   cases earth science is becoming lower and lower 
+grade levels, and SimEarth is a little more. But nobody takes ant behavior even though there's 
+a lot of valuable lessons to be learned there. That's kind of one of the other hurdles I think 
+we're hitting in education, but it is being used. Other questions? Yeah. Student: You talked a couple times about trying things   out on groups before you put it into 
+the final design that you released. How did you structure those 
+trials, and who did you use,   what kinds of things did you 
+do, what did you watch for? Will Wright: Very very informally, and 
+we've tried a lot of things. As we've gotten bigger and we have some money 
+in the bank, we can do real focus groups now. We've started doing that both 
+toward the end of a product,   to get a sense of how users would view this, 
+but also at the beginning of the product,   before we've done any code development, and 
+presenting them with concepts and artist sketches. We've avoided I think some 
+costly blenders that way. But most of what we do, 
+and I'd say the most value,   comes from informal testing, showing new people. I've got a nine-year-old daughter, I show 
+her all the time, her friends come in,   I show them, I show it to adults. To me, I kind of look at the the spectrum 
+between kids and adults, how they relate to it. And so in some sense, we're targeting 
+the demographic with these products. And we found that we kind of 
+learned that lesson on SimAnt. That we might have had a really fun game, but 
+if we target the wrong demographic commercially,   it might not be the success it could be, or 
+we might have taken different design paths,   had we known what the real demographic was. So one of the things we try to identify 
+early is the demographic we're targeting,   and then we get into gameplay issues. And the interface issues, in terms of what 
+confuses somebody, that seems to be a lot easier. I can show that to somebody in our accounting 
+department who doesn't even like games,   and I can spend 10 minutes, and if I can't get 
+them to figure it out, I know there's a problem. Generally the kids will sit there and they'll 
+figure it out through trial and error they have   the patience, and they kind of enjoy the failure, 
+but the adults really are a good test for that. Yeah. Hi. Student: Hi. So you use you say "we" here, and 
+I guess I'm interested in a little more   about how you work with your various 
+colleagues, how you set up the group. Do you have an ant expert? You know, what's the team like? Will Wright: Well generally, on all these 
+products I've done the research,   because that's the part I really enjoy. It's evolved over time. The kind of products I'm doing 
+now involve bigger teams. I'm doing very little of any coding on 
+the current projects I'm working on. I'm usually doing conceptual coding, or 
+working out simulator tricks, things like that. And most of these products I've shown you 
+I wrote about half the code in the product,   so I was heavily involved and all the details. I'm still trying to be 
+involved on the design side. On these projects, each one of these I've 
+shown you, SimAnt, SimEarth, and SimCity,   it was me and one other person 
+in a very close collaboration. With SimEarth and SimCity, it was the 
+same person for both those projects. Most of it really was through 
+discussion with the other person. I'd come up with an idea, he'd tell 
+me what a terrible idea it was,   he'd come up with an idea, we did end 
+up with some compromise in between. And that was pretty well targeted toward the 
+final solution, except in a couple cases. If we couldn't figure it out between ourselves,   and it wasn't an obvious solution, that's 
+when we would start showing it to people. We'd both kind of broaden the 
+discussion with more people. That process is evolving as 
+these games get more complex. The current games we're working on are far 
+more complex than what I've shown you today. So now we're into a design process that 
+usually involves three or four, five people. But depending on whose project it is,   there has to be one person with the X on 
+their back that's going to call the shots. So you might have a group discussion over 
+"is this icon blue or red?" or "is this game   about ants or planets?", but some person 
+has got to be pulling that thing through. I've never seen a product design 
+through a committee that came out well. You really have to have one 
+vision, I think, behind it. And it's really hard to communicate that vision. I spend a lot of my time trying to do that. I have this idea in the back of my head 
+about why it would be so cool to have a   simulation of a thunderstorm, 
+and what it would look like,   and what the visuals would be 
+like, and this is a real example. I go around explaining this to people, 
+and they stare at me with a blank stare   because I'm seeing these things in my head, 
+these elaborate three-dimensional displays,   and these, I kind of know 
+what the simulation would be,   and the kind of expected emergent 
+behavior coming out of the system. I just cannot convey that to somebody   to the point where they're going to drop a 
+half million dollars on it to develop a game. Luckily I'm in the point where I can kind 
+of push it through and make it happen. Just because they'll trust me on it but I think 
+in our industry that's kind of a really big issue. You have on the financial side, people 
+want control, they want predictability. They don't know what you're talking about. But you really all have to have one person 
+with that idea, all the way through, from form,   to style, to mechanics, to plumbing, 
+about how to make that idea happen. So yeah. Student: Who are your customers, what are they like, 
+and I'm talking about the people who buy the   product initially, and then also the ones 
+who are repeat, or really committed users. And I'm thinking of demographics, and also 
+other characteristics of these customers. Will Wright: Well obviously it varies by product. We have other products that I haven't 
+shown today which are more kid based. We have SimTown, which is kind 
+of like SimCity for younger. Student: Yeah I'm thinking, say, for the 
+SimCity 2000 that we just saw. Will Wright:
+Like the kind of things I've shown today? Generally our demographic falls 
+between about 20 and 35, or 40. It's actually surprisingly old for computer games. When we do focus groups, we'll invite 
+people who are registered customers. So we recently had a focus group for 
+the next version of SimCity, the next   generation we're working on, and we pulled kind 
+of a random sampling of SimCity 2000 customers. The age ranges were surprisingly high. I mean there were some people in 
+there that were 60, 65 years old   that were avid gamers, which kind of surprised me. In the game field, basically there 
+are almost three major areas. There's kind of the kids early education market,   and that's primarily the purchase decision 
+there is adult based, I mean the parent-based. The parent decides "little 
+Tommy should learn math,   I'll buy him math blaster" or "I want 
+Susie to learn how to read, I'll buy this". Then you get into from about the 10 or 12 to 
+16, it's kind of what we call Nintendo Gulch. Okay, this is the cart machine territory,   this is where the kids are buying 
+Nintendo, Sega, Sony, all that stuff. They're driving the purchase decision. They want Hack And Slash Three, and they're the   ones that'll actually spend their money 
+on Hack And Slash Three in that area. And then you have the adult hardcore gamer market. But across that whole thing in kind of a 
+broad thin veneer is the PC gaming market,   which we actually have a lot of 
+18-year-olds playing SimCity. Either their parent bought it for 
+them, or they wanted to buy it,   or they got it from their friend, or whatever. But we also have the 15-year-olds who aren't   into the Hack And Slash that 
+are buying it and playing it. Student: Yeah, I guess what I'm getting at 
+is what do you know about those   those that rather -- you have a rather 
+unusual or different game with SimCity. What do you know about them 
+besides their age and their sex? Will Wright: Oh, you mean how much information 
+have we collected on them? Student: Yeah, and what what distinguishes the 
+person who gets this and uses it from   another 65-year-old or 30-year-old who isn't? Will Wright:
+Oh I see what you're saying. Well, right now the computer game market is still 
+what I would call kind of the hobbyist market. So these are people that in some 
+sense have some time on their hands,   are willing to devote it to a hobby, and 
+they've decided that hobby is computers. That's kind of how the PC 
+gaming industry has grown,   which is a very different model 
+than from the Nintendo industry. The Nintendo industry has gone in 
+and decimated the model building,   hobby, toy industry, is what it's done. But the people who buy this, we've actually done a 
+lot of things where we ask them what kind of game,   what other games do you have, and we look 
+at the intersections between our games   and the other games, and we haven't 
+come to any really firm conclusions. Actually, if anything, our games have a 
+much broader demographic than most games. We tend to have a lot of players who only play 
+two or three games, and this is one of them. Or these kind of games are the only games 
+that appeal to them, and it's just the fact   that there aren't more of them out there that 
+keeps them from becoming a hardcore gamer. And we get a lot of kids like that too, who 
+maybe don't play that many PC games, but they'll   play SimAnt, because they think it's cool, 
+because their parents gave it to them, maybe. I don't know, yeah. Student: What projects are you working on now, 
+and if you'd rather not talk about that,   what projects or models had you considered before 
+that were kind of interesting that you didn't do? Will Wright: You mean like what systems 
+have I considered modeling? Student:
+Right. Will Wright: Oh God... Student: And also what systems are you currently 
+working on, if you if you can talk about them? Will Wright: Okay, well one thing we're working on, is 
+a -- we've been kind of interested in our   company for a long time about 
+the idea of data portability. Really, let me back up just a little bit here,   and this might be a little bit more of an 
+answer than you were looking for, but... Most of the game industry right now 
+is built on kind of the movie model. So you spend a lot of money developing 
+one big title, you come out with it,   you advertise it, either it goes or it 
+dies, and then you do the next one separate. Except for sequels. There's the one consistent genre that does better   than any other genre in the 
+game industry, it's sequels. Now what we've tried to do, and we're 
+kind of working on slowly over time,   is to build our games more as a hobby model. Where people buy and collect things, but they 
+relate to the last things they collected. It's like a train set. You build this train set, and some people get 
+into the building the hills, and the cliffs,   and the mountains, and the trees, really detailed. They could care less about the train. Other people get into the village, or 
+the track switching, and the scheduling. Everybody can kind of come into that, 
+take their particular slant on it,   their interest, and focus in 
+that area in great detail. I'd like to see the game industry kind of evolve 
+that way, and part of that is I want the games to   actually be able to have persistent data 
+that can move from one game to another,   or have a large data set that 
+I can reuse in different ways. Let me show you something real quick 
+here which is kind of along those lines. This is just a kind of a little -- this is 
+one of the things I'm working on, by the way. But it'll give you some sense 
+of what I'm talking about. This is a game I call Dollhouse. And if this looks familiar, it's because 
+I've just loaded a SimCity file into here. Okay, so what we're seeing is a SimCity file,   but now at this point I can actually 
+zoom down to the street level. This, zoom in here, this little area right 
+there by the street is what I'm zooming into. I can keep zooming in, and 
+now I can get a little person. This is me. I'm actually controlling 
+this person like a puppet. I can wave, and walk around, and do things. I can actually walk anywhere in the city here. We don't have a full database in this, but I have 
+a database for all the roads and the terrain. It's very feasible for us to put a 
+database in for every building in SimCity,   so that I could actually walk anywhere in 
+the city I've created, and into any building. So the tools in this game 
+are more architectural tools. So I can, let's see, real quickly 
+I'll build a foundation here. Oops, yeah there we go. This is a wall tool, I have different wall styles. So what we're trying to do here is we're designing   kind of like a little CAD program that 
+a 10 year old could use, for instance. So very simple tools, kind of like 
+you would build a little dollhouse. So I'll just make a really quick little, 
+quick and dirty architecture here. We also have landscaping tools, so 
+part of this game is planting my yard. We've played around with some L-systems 
+for generating the plants in real time,   which is a little too slow actually. So these are windows. I can zoom into the house. So this right now is not much of a defined game,   but this is almost more of 
+what I would consider a hobby. I could take a city that I built in 
+SimCity and now I can come live in it. I can actually stake a 
+claim, I can build my house,   and I can decorate it, and invite my friends over. We're looking at actually having like 
+a little family model inside of here. So that there will be little 
+personality models for these guys. There's behavior embedded 
+in some of these objects. So the cool thing about this game is that   almost the entire simulation is 
+data driven at a local level. (Puts down toilet -- laughter!)
+So for instance I click on an object. (Sim sits down on toilet -- more laughter!) Now what's interesting here is that that 
+person, in the person's data structure,   there's no knowledge of any objects 
+in this environment whatsoever. The object itself contains the descriptions 
+of how a person interacts with it, and why,   what the animation sequence 
+would be, and the scheduling. So this is my person, this is my little avatar. I can also add, pop in some simulated people 
+that'll walk around and do things right now. They they're kind of ghosts, because 
+they don't know about the walls. They'll walk around, they'll have conversations, 
+some of them will panhandle each other. Well what's cool is that the behavior is 
+entirely distributed in the environment. So a person's in a room, they 
+have certain motivations, needs,   they might be hungry, sleepy, lonely, angry. They scan the room for people and objects, 
+and the objects are all kind of advertising:   "If you're angry, pick up me and throw 
+me!", "If you're hungry, eat me!". And there's a communication there. It's all data driven. And even the animations. So the animation of these people is done 
+through this kind of component driven geometry. So they don't have to know how to 
+ride a bike, or sit on the toilet. The object tells them how to, 
+when they come up and say, "okay,   you're gonna make me less hungry, I'm 
+gonna interact with you, what do I do?". The object tells it what to do. The cool thing about this is that 
+we can drop new objects in later. Maybe it's network based, or 
+maybe it's something else. We can even have tools where 
+the users build these objects. Maybe one person is totally 
+into designing furniture,   or designing exercise equipment, I 
+don't know what, exercise videos. But if we had a tool to where the user could 
+build these things, they could then post them   on the net, and other people could download 
+them, and then the environment gets more rich. And so to me, this is what I want to move towards. More of the hobbyist kind of a 
+thing, distributed environment,   with objects that can move 
+from one game to another. So this might be one game I'm playing here. This is actually a very 
+similar data structure to Doom. I could be in here in a 3D point of view, 
+shooting the person on the toilet if I wanted to. Maybe it's a different game player in a different 
+game, but still running off the same server. So in a way you can think of this as 
+a graphic MUD or something like that. Student: What about from person to person,   you talking about the information that's 
+contained within the objects, so there   can be information in another person, that 
+you want to interact with in the environment. Have you looked at any reasons 
+why you would want to do that? Will Wright:
+Oh yeah, I mean, that's that's the hard problem. I mean, simulating ants is hard enough, when 
+you get to people there's really no hope. There are two issues here. You can look at this as a technology. It's not a product right now. And their are a few directions this could go. I could see this becoming, let's say, a 
+multiplayer network MUD kind of a thing. You might have a thousand people 
+playing SimCity from the bottom up,   each person building their own 
+house in a big multi-user space. In which case that issue 
+is a little less important,   because most of the people are real 
+people, and you're dealing with puppets. As a standalone game, which is 
+probably our our closer target,   we have to deal with the problem you're bringing 
+up, which is how do we deal with people to people? And it's hard, I mean there's just -- I'm sure 
+Terry can elaborate on that more than I can. But the best thing we can do is 
+prop up a convincing illusion. We don't have to be doing a valid 
+simulation of human personality. What we have to do is we have to put 
+up something that's ambiguous enough   to where somebody can read in what they want. Actually in this thing what I have right 
+now are people come up and they converse,   but you don't hear what they're saying, they 
+just gesture, and sometimes they look mad,   sometimes they kind of look contemplative. It's kind of interesting how 
+much people will read into that. This is kind of dynamic that we've seen again and 
+again where something happens in SimCity and they   said "oh I was running my nuclear reactor near 
+the red line, and then there was so much smoke   coming out of it, this plane crashed, and 
+because of that, this and that happened",   and they'll describe this long causal 
+chain of events that I know does not exist. I designed the simulation, I know 
+that there's no linkage between the   power output of the power plant, the planes 
+crashing, but they're convinced it exists. Don Hopkins: They're using it as a medium 
+to tell stories about. Will Wright:
+Yeah! Don Hopkins: Where they're using it as 
+a piece of paper, to write. Will Wright: Yeah, that's exactly right. There's a parallel simulation 
+going on here in the game. Everybody's taking a linear path through this,   and they're basically, most people will attempt 
+to understand things like this with a story. They'll think about "I did this, 
+then that happened, because of that",   and so the story becomes kind of their logical   connection, their logical reverse engineering, 
+of the simulation that they're playing inside of. Now on the people's side, I think we 
+can do a lot in this as a product,   by propping up that illusion of people. Again, if this is a doll house, we don't 
+want the dolls to be sentient things. We want the dolls to be interesting enough 
+to where I can play games with them. There was actually a really interesting 
+doll that this company came out with. Oh, it was Worlds of Wonder,   this really cool doll, I've got a couple 
+of them after they went out of business. It's called the Julie doll. But it was like this $250 doll with voice 
+recognition, and it said all these things. It had just a huge amount of 
+ROM with digitized speech in it,   and so it would sit there and try and 
+have stupid conversations with you. And really it was kind of Eliza,   or had keywords it would recognize, and give 
+you these kind of non-committal responses. But in the testing of that, well 
+first of all it was a $300 doll. Who's going to buy the kid a $300 doll? So it was really more, it was actually the only 
+doll I've ever seen that appealed to grown men. Grown men love this, I mean 
+this is a hacker's doll. But I talked to the guy who 
+was working this project,   and he said they put this 
+in focus groups with girls. And they played with it for a while,   and then after about a half an hour they take 
+the batteries out, and keep playing with it. And what was happening is that the girls were 
+propping up this elaborate fantasy in their play,   and the dolls were supposed to 
+be a structure for that fantasy,   they weren't supposed to be the fantasy. The doll was telling them what the fantasy 
+was, and it was conflicting with what the   girls were saying, and so it was interfering 
+actively with their fantasy and their play. So in that regard, I think we can actually 
+kind of take that path with these people. And all we have to do is deal with them at a 
+very local kind of a state machine, Braitenberg   Machine kind of level, and say that they're 
+angry, and they're hungry, and they're sleepy. And then we can actually do some 
+things where maybe they have a little,   what you might call, structural ambiguity 
+about what they're actually saying. One of the thoughts I had about this 
+project in particular is that you'd   see the people go up and they talk, 
+and there would be some kind of a   flavor to their conversation, but 
+it would be more like Peanuts. When they did the TV show of Peanuts, 
+you'd hear the adults talking,   and the adults would always be like "mwa 
+mwa mwa mwa mwa mwa", or soft, or loud. You can tell if they're mad, or angry, or what, 
+but you wouldn't hear what they were saying. You'd have to read that into it. I think this is the area where we 
+sidestep the issue, just because   as a commercial company we have to ship a 
+game, we're not doing a research project. So that's a long winded answer, sorry. Yeah? Student: If you do do that, and people can read into what 
+people are actually doing in the game, won't that   sort of interfere with their expectations and 
+simulation if the simulation doesn't actually   meet those expectations? If they're reading too much into it, 
+and it's not really happening that way,   won't they be sort of misled 
+in there expectations? Will Wright:
+Yeah it really comes down what the simulation is. That, I think, would be addressed 
+on the game design side. Again, I mean, just in terms of reality,   I don't think there's any way I'm going to 
+come anywhere close to simulating a person. With a lot of tricks, I can have these 
+people walking through the day, getting up,   taking a bath or a shower, fixing breakfast, 
+going to work, while at the same time deciding   that I'm bored, I'm going to sit on 
+the couch, I'm going to turn on the TV. And how you make that into a game design 
+might have a lot to do with how valid   the simulation of the people has to be. If it's a story kind of a game where you 
+want drama to unfold at the right time,   and the conversation between these two people 
+is a crucial thing that happens before he gets   really upset and does that, then yes the 
+model would need to be a real simulation. I really don't think we're anywhere near 
+that though, I mean, really I think,   unless you're in a very very tightly 
+confined domain, you're going to have a   hard time dealing with this open-ended 
+simulation about people in that way. So I think really unfortunately we're 
+not there yet, and I think it'll be   quite a long time before we are, so really 
+we have to constrain what the user is doing. Now maybe it's just a dollhouse, maybe all I do 
+is I have to get two people to meet at a party,   and everything else is kind of 
+indeterminate about what they   say and all that, and I'm moving furniture around. So there are a lot of game design things we can 
+do with this without doing a personality model. Don Hopkins: You're saying   a multi-user game would be easier to design than 
+an AI game, because you can use other people. Will Wright:
+Oh yeah, far easier, I think so. Don Hopkins: It's just the technology of 
+communicating and time lags. Will Wright: This is how you're always building 
+models of the system you're playing with. It's easy to build a model 
+of a stupid computer agent. It's hard to build a model of your 
+head, while I'm talking to you. That's what's interesting, is trying to 
+reverse engineer your thought process. Don Hopkins: Yeah, there's a lot of   commercial services like Worlds Away and 
+Habitat, things that have been done that   only have other people, no robots or anything, and 
+they're pretty successful just because of that. Will Wright:
+Yeah, people are pretty interesting. Student: I had a question related to that which is: The standard modes of gameplay are individual and 
+then competitive, there's more than one person. It seems that your games are the 
+most likely of any to have a mode   of multiplayer cooperative 
+play, where you're working,   you mentioned five people playing SimEarth, and 
+trying to work together to accomplish something. Does that happen very much, or pretty much, when 
+people are playing with them, it's one person? Will Wright: Well yeah, actually it happens a lot, 
+especially more with the kids than the adults. The kids, and not just our 
+games, but other games too. One of the interesting things I've 
+noticed with my daughter is that   she almost never plays computer 
+games or video games by herself. But if a friend's over they'll both play them. And usually it's one at the controls, 
+and the other one is the backseat driver. And it's the dialogue between the two 
+that really makes the game interesting. So really for them, the game is 
+facilitating a social interaction. And the game itself is not interesting enough 
+for them to really spend much time with it. But in terms of it facilitating a social 
+interaction, that's when it really is valuable. And I think to a lot of kids, that's a big 
+attraction of this Nintendo Gulch thing,   is this peer group that's out there. And they maybe have Super Mario Brothers,   and I'm motivated to get better at it and 
+find the hidden level, so I can tell Tommy. And it's kind of like social 
+currency that I'm passing around,   this knowledge I have about the system. And Tommy comes over to my 
+house, and we play it together. So really in some sense I 
+think that's kind of cool,   the social interaction that these systems involve. In our games, it's much easier for players to do 
+that in our games because the time scale involved. It's not like Doom, where I can't stop 
+and think, and every second I'm moving. It's not like driving a car. Our games are more like sitting 
+back and taking a leisurely stroll,   so I think the time scale probably 
+has a lot to do with that. Student: What sort of looking back to where you were 10 or   15 years ago, what have been some of 
+the surprises in how things have gone? Will Wright: Surprises in the industry, or surprises 
+in just the working as a designer? Student: I guess, in the industry, and where where 
+games are, and what direction they've taken. Will Wright: I'm kind of surprised right now 
+that there seems to be a shift   in some sense away from deeper games. And this kind of happened with 
+Doom, and I've played enough Doom   myself that I can't sit here and 
+criticize Doom for not being fun. It's a very different kind of thing than SimCity. Right now, that's driving a lot of the industry. Related to that is the distribution 
+system, which I don't think you want   to hear about distribution because 
+it's an extremely boring topic. But that's really changed a lot in our industry. I think that's probably going to be   the biggest change we're going to see 
+in our industry over the next few years. As also it gets interesting again, 
+and hopefully we get into perhaps   a network-based distribution 
+alternative distribution system. I think that more than anything else 
+will have the biggest impact on the   kind of games that are developed in the 
+economies of developing those games. Right now a lot of things are 
+filtered out in the distribution   process that are really creative and 
+really cool, and you just never see,   and nobody can afford to develop, 
+because they won't get on the shelf. So that's kind of a big surprise, 
+is how quickly that's happening,   this whole net thing, but surprising everybody. On the technology side, 3D seems to be getting,   3D immersive stuff seems to actually have 
+some staying power, which has surprised me. I thought 3D was going to come and go as a fad,   but now I'm thinking it's 
+actually it's going to stay. And a lot of that is just that people have 
+gotten so accustomed to immersive environments   through things like Doom, or some of 
+the current crop of the game consoles,   the PlayStation, the new Nintendo 
+Ultra 64, that's coming out. You're going to have a whole new 
+generation of kids that are going   to be weaned on or grown up on this 
+3D paradigm, used to 3D interfaces,   used to navigating around the 3D space, and so 
+I think that's probably gonna remain with us. More questions? So we finished right on time! Automatic closed captioning by YouTube, 
+cleaned up and clarified by Don Hopkins. Please report typos and synchronization 
+problems to don@donhopkins.com. Use and reproduction: The materials are open for research use 
+and may be used freely for non-commercial   purposes with an attribution. For 
+commercial permission requests,   please contact the Stanford University 
+Archives (universityarchives@stanford.edu). Source:
+https://searchworks.stanford.edu/view/yj113jt5999 Don Hopkins' Notes: Will Wright on Designing User 
+Interfaces to Simulation Games (1996) https://donhopkins.medium.com/designing-user-interfaces-to-simulation-games-bd7a9d81e62d
