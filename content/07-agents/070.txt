@@ -9,6 +9,8 @@
 
 ---
 
+{Agent}
+
 From code, we move to agents. Agents are autonomous AI systems that have a control function and are moving towards greater independence. To me, that's a direct extension of the coding capabilities of all these LLMs currently. What used to take weeks is now done in minutes. This is already true, and it’s not going to reduce any time soon.
 
 ---

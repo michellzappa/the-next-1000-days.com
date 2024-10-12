@@ -8,6 +8,7 @@ We move on to the frontiers of AI or what's happening at the cutting edge. "Fron
 
 ---
 
+{Frontier Models}
 
 What's happening at the cutting edge? Because of exponentials, AI capabilities are changing all the time. Paying attention to the frontier helps adjust our expectations about near-term possibilities.
 

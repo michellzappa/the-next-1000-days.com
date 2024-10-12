@@ -1,5 +1,6 @@
 # Hallucination vs. Robustness
 
+{Hallucination}
 
 Firstly, we are already experiencing the dangers of hallucination in LLMs. It's a feature, not a bug. These systems are stochastic, unpredictable answering machines which will definitely make things up unless we double-check. Whether that's even solvable is a very open question, and you have to remedy it yourself in your work. Currently, you can't trust the system to figure it out for you.
 
@@ -13,7 +14,7 @@ Slide-85.webp
 
 
 
-
+{Robustness}
 
 Ethical considerations: While you touch on some risks, a dedicated section on AI ethics, discussing issues like privacy, accountability, and the societal impact of AI could be valuable.
 

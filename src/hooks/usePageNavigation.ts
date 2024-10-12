@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import { useSwipeable } from 'react-swipeable';
 import { useEffect } from 'react';
 
 interface NavigationProps {
@@ -44,13 +43,6 @@ export function usePageNavigation({ chapterId, pageId, navigation }: NavigationP
     }
   };
 
-  const swipeHandlers = useSwipeable({
-    onSwipedLeft: () => handleNavigation('right'),
-    onSwipedRight: () => handleNavigation('left'),
-    delta: 10,
-    trackMouse: true
-  });
-
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowLeft") {
@@ -66,5 +58,5 @@ export function usePageNavigation({ chapterId, pageId, navigation }: NavigationP
     };
   }, [router, chapterId, pageId, navigation]);
 
-  return swipeHandlers;
+  return {};
 }

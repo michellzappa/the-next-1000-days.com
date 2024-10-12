@@ -9,7 +9,7 @@ The Jagged Edge of Capabilities
    - Examples: Siri vs ChatGPT performance
 
 
-
+{Jagged Frontier}
 
 All types of AI suffer from something called the "jagged edge" or "ragged edge." This refers to the discrepancy between how we think these systems should perform and how they actually do. We expect AI to be fairly smart, as it has "intelligence" in the name. Yet, it isn't always necessarily that. If we were to plot this on a two-by-two grid, we'd put the expected performance on the horizontal axis and the actual performance on the vertical. 
 For instance, Siri would be somewhere where the actual performance is pretty crummy, though we expect it to be high because of the company behind it. Conversely, ChatGPT and AlphaGo might be in the opposite quadrant. We expected them to be fairly low in terms of capability, but they turned out to be super high. 
