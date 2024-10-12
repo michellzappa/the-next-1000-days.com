@@ -1,6 +1,8 @@
 # What’s at stake?
 ## Our impending emergency
 
+{AGI (Artificial General Intelligence)}
+
 We are approaching a crossroads, and it’s not hyperbole to call it an emergency. The arrival of AGI (Artificial General Intelligence) won’t simply be another chapter in technological progress. It will redefine our social fabric, economic systems, and perhaps even the essence of what it means to be human.
 
 We’ve seen major transformations before—the steam engine, electricity, the internet—but none of those hold a candle to what AGI will unleash. What we face is a paradigm shift that we’re ill-prepared for, and yet, there’s still time to take action. This chapter focuses on the urgent need to rethink how we approach the AGI transition and, more importantly, what we need to do about it *right now*.

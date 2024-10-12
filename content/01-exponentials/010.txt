@@ -48,8 +48,8 @@ Increased capacity and decreased costs over decades.
 
 
 Here's a revised version that aims to be more objective and align with your style:
-
-Exponentials 
+ 
+## Exponentials 
 
 Everything is accelerating. We're experiencing unprecedented technological growth, most notably in AI. Moore's Law and other exponential trends are rapidly expanding the boundaries of what's possible.
 
