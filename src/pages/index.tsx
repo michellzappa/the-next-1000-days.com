@@ -4,7 +4,8 @@ import Link from "next/link";
 import { getChapters } from "../utils/content";
 import Footer from "../components/Footer";
 import Markdown from "../components/Markdown";
-import { usePageNavigation } from "../hooks/usePageNavigation"; // Add this import
+import { usePageNavigation } from "../hooks/usePageNavigation";
+import dynamic from "next/dynamic";
 
 interface Chapter {
   id: string;
@@ -23,7 +24,6 @@ export default function Home({ chapters }: HomeProps) {
   const introChapter = chapters.find((chapter) => chapter.id === "00");
   const mainChapters = chapters.filter((chapter) => chapter.id !== "00");
 
-  // Correct the navigation setup
   const navigation = {
     nextPage: introChapter?.pages?.[0]
       ? { id: "001", title: introChapter.pages[0].title }
@@ -36,10 +36,12 @@ export default function Home({ chapters }: HomeProps) {
     navigation,
   });
 
+  const CustomComponent = dynamic(() => import("../components/chapter/000"));
+
   return (
     <div className="min-h-screen flex flex-col items-center bg-background text-foreground">
       <div
-        {...swipeHandlers} // Add this line to enable swipe gestures
+        {...swipeHandlers}
         className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12"
       >
         <Head>
@@ -55,6 +57,12 @@ export default function Home({ chapters }: HomeProps) {
           <h2 className="text-2xl mb-8 italic">
             Your guide for navigating the transition toward AGI.
           </h2>
+
+          <div className="w-full flex justify-center mb-12">
+            <div className="w-full max-w-[70rem]">
+              <CustomComponent />
+            </div>
+          </div>
 
           {introChapter && (
             <section className="mt-8 mb-12">

@@ -39,12 +39,12 @@ interface PageNavigation {
 
 export default function Page({
   title,
-  subtitle, // Add this line
+  subtitle,
   content,
   chapterTitle,
   navigation,
   lastUpdated,
-  hasCustomComponent, // Add this line
+  hasCustomComponent,
 }: PageProps & {
   lastUpdated: string;
   navigation: PageNavigation;
@@ -99,23 +99,17 @@ export default function Page({
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-background text-foreground">
-      <div
-        {...swipeHandlers}
-        className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12"
-      >
-        <Head>
-          <title>{`${title} - ${chapterTitle} - The Next 1.000 Days`}</title>
-        </Head>
+      <div className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12">
         <Link
           href="/"
-          className="text-blue-200 dark:text-blue-800 hover:underline mb-2 inline-block"
+          className="text-gray-500 dark:text-blue-800 hover:underline mb-2 inline-block"
         >
           ← Home
         </Link>
         <br />
         <Link
           href={`/${chapterId}`}
-          className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
+          className="text-gray-700 dark:text-blue-400 hover:underline mb-4 inline-block"
         >
           ← {chapterTitle}
         </Link>
@@ -123,7 +117,20 @@ export default function Page({
         {subtitle && (
           <h2 className="text-2xl font-semibold mb-6">{subtitle}</h2>
         )}
-        <div className="w-full">{CustomComponent && <CustomComponent />}</div>
+      </div>
+
+      {hasCustomComponent && CustomComponent && (
+        <div className="w-full flex justify-center">
+          <div className="w-full max-w-[70rem] px-4 sm:px-6 lg:px-8">
+            <CustomComponent />
+          </div>
+        </div>
+      )}
+
+      <div
+        {...swipeHandlers}
+        className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12"
+      >
         <Markdown
           content={content}
           chapterId={chapterId as string}

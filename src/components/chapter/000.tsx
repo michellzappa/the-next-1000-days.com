@@ -35,17 +35,17 @@ const SunflowerGrowthVisualization = () => {
   };
 
   return (
-    <div className="w-full h-screen bg-transparent flex items-center justify-center overflow-hidden">
+    <div className="w-full h-[75vh] max-h-[400px] min-h-[300px] bg-transparent flex items-center justify-center overflow-hidden">
       {generateSeeds().map((seed, index) => (
         <div
           key={index}
           className="absolute rounded-full bg-black"
           style={{
-            width: "8px",
-            height: "8px",
-            transform: `translate(-50%, -50%) translate(${seed.x * 18}px, ${
-              seed.y * 18
-            }px) scale(${seed.scale})`,
+            width: "0.5vmin",
+            height: "0.5vmin",
+            transform: `translate(-50%, -50%) translate(${seed.x * 1.2}vmin, ${
+              seed.y * 1.2
+            }vmin) scale(${seed.scale})`,
             opacity: seed.scale,
           }}
         />
