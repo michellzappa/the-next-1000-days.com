@@ -104,9 +104,7 @@ export default function Page({
         className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12"
       >
         <Head>
-          <title>
-            {title} - {chapterTitle} - The Next 1,000 Days
-          </title>
+          <title>{`${title} - ${chapterTitle} - The Next 1,000 Days`}</title>
         </Head>
         <Link
           href="/"

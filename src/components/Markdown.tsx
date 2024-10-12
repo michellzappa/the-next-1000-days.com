@@ -2,7 +2,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Image from "next/image";
-import rehypeRaw from "rehype-raw"; // Import rehypeRaw
+import rehypeRaw from "rehype-raw";
 
 interface MarkdownProps {
   content: string;
@@ -15,10 +15,10 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
     const chapterNumber = chapterId.padStart(3, "0");
     const pageNumber = pageId || `${chapterNumber}0`;
 
-    // Wrap indicators in <p> tags with a monospace class
-    const chapterIndicator = `<p className="font-mono">Chapter ${chapterNumber}</p>`;
+    // Wrap indicators in <span> tags with a monospace class
+    const chapterIndicator = `<span className="font-mono">Chapter ${chapterNumber}</span>`;
     const pageIndicator = pageId
-      ? `<p className="font-mono">Page ${pageNumber}</p>`
+      ? `<span className="font-mono">Page ${pageNumber}</span>`
       : "";
 
     // Append indicators after the content
@@ -37,35 +37,32 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
     const { src, alt } = props;
     if (src && src.startsWith("/images/chapters/")) {
       const isMeme = src.split("/").pop()?.startsWith("meme_");
+      const isGif = src.endsWith(".gif");
       return (
-        <div className={isMeme ? "w-2/3 mx-auto mt-12 mb-12" : "w-full"}>
+        <span
+          className={
+            isMeme ? "block w-2/3 mx-auto mt-12 mb-12" : "block w-full"
+          }
+        >
           <Image
             src={src}
             alt={alt || ""}
             width={800}
             height={600}
-            layout="responsive"
             style={{ width: "100%", height: "auto" }}
+            unoptimized={isGif}
           />
-        </div>
+        </span>
       );
     }
     // For other image formats, use default rendering
-    return (
-      <Image
-        src={src || ""}
-        alt={alt || ""}
-        width={800}
-        height={600}
-        layout="responsive"
-      />
-    );
+    return <img src={src || ""} alt={alt || ""} />;
   };
 
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
-      rehypePlugins={[rehypeRaw]} // Add rehypeRaw to process HTML
+      rehypePlugins={[rehypeRaw]}
       components={{
         h1: (props) => (
           <h1 className="text-3xl font-bold mt-6 mb-4" {...props} />
@@ -76,7 +73,17 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
         h3: (props) => (
           <h3 className="text-xl font-medium mt-4 mb-2" {...props} />
         ),
-        p: (props) => <p className="mb-3" {...props} />,
+        p: ({ children }) => {
+          // Check if the paragraph contains only an image
+          if (
+            React.Children.count(children) === 1 &&
+            React.isValidElement(children) &&
+            children.type === "img"
+          ) {
+            return <>{children}</>;
+          }
+          return <p className="mb-3">{children}</p>;
+        },
         ul: (props) => <ul className="list-disc pl-5 mb-4" {...props} />,
         ol: (props) => <ol className="list-decimal pl-5 mb-4" {...props} />,
         li: (props) => <li className="mb-1" {...props} />,
@@ -100,7 +107,7 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
         }: {
           inline?: boolean;
           className?: string;
-          children?: React.ReactNode; // Make children optional
+          children?: React.ReactNode;
         }) => {
           return !inline ? (
             <pre className="bg-gray-100 dark:bg-gray-800 rounded p-4 overflow-x-auto">
