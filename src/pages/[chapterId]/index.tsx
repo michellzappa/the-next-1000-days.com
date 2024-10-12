@@ -99,7 +99,7 @@ export default function Chapter({
           <title>{`${getDisplayTitle(
             chapterId.padStart(2, "0") + "0",
             chapterId
-          )} - The Next 1,000 Days`}</title>
+          )} - The Next 1.000 Days`}</title>
         </Head>
         <Link
           href="/"

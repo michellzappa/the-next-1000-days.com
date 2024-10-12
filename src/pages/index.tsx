@@ -43,7 +43,7 @@ export default function Home({ chapters }: HomeProps) {
         className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12"
       >
         <Head>
-          <title>The Next 1,000 Days</title>
+          <title>The Next 1.000 Days</title>
           <meta
             name="description"
             content="A guide to navigating our transition toward artificial general intelligence"
@@ -51,10 +51,10 @@ export default function Home({ chapters }: HomeProps) {
         </Head>
 
         <main className="flex-grow">
-          <h1 className="text-4xl font-bold mb-8">The Next 1,000 Days</h1>
-          <p className="text-xl mb-8">
+          <h1 className="text-4xl font-bold mb-8">The Next 1.000 Days</h1>
+          <h2 className="text-2xl mb-8 italic">
             Your guide for navigating the transition toward AGI.
-          </p>
+          </h2>
 
           {introChapter && (
             <section className="mt-8 mb-12">
