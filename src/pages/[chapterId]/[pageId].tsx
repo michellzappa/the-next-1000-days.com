@@ -110,14 +110,14 @@ export default function Page({
           href="/"
           className="text-blue-200 dark:text-blue-800 hover:underline mb-2 inline-block"
         >
-          ← Back to Home
+          ← Home
         </Link>
         <br />
         <Link
           href={`/${chapterId}`}
           className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
         >
-          ← Back to Chapter: {chapterTitle}
+          ← {chapterTitle}
         </Link>
         <h1 className="text-4xl font-bold mb-2">{title}</h1>
         {subtitle && (
@@ -140,21 +140,21 @@ export default function Page({
               href={`/${chapterId}`}
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              ← Back to Chapter: {chapterTitle}
+              ← {chapterTitle}
             </Link>
           ) : navigation.previousPage ? (
             <Link
               href={`/${chapterId}/${navigation.previousPage.id}`}
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              ← Previous: {navigation.previousPage.title}
+              ← {navigation.previousPage.title}
             </Link>
           ) : navigation.previousChapter ? (
             <Link
               href={`/${navigation.previousChapter.id}`}
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              ← Previous Chapter: {navigation.previousChapter.title}
+              ← {navigation.previousChapter.title}
             </Link>
           ) : (
             <span></span>
@@ -164,14 +164,14 @@ export default function Page({
               href={`/${chapterId}/${navigation.nextPage.id}`}
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              Next: {navigation.nextPage.title} →
+              {navigation.nextPage.title} →
             </Link>
           ) : navigation.nextChapter ? (
             <Link
               href={`/${navigation.nextChapter.id}`}
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              Next Chapter: {navigation.nextChapter.title} →
+              {navigation.nextChapter.title} →
             </Link>
           ) : (
             <span></span>

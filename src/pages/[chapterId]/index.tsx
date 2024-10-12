@@ -105,7 +105,7 @@ export default function Chapter({
           href="/"
           className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
         >
-          ← Back to Home
+          ← Home
         </Link>
         <h1 className="text-4xl font-bold mb-2">{title}</h1>
         {subtitle && (
@@ -156,7 +156,7 @@ export default function Chapter({
               }
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              ← Previous:{" "}
+              ←
               {navigation.previousChapter.lastPageTitle
                 ? navigation.previousChapter.lastPageTitle
                 : navigation.previousChapter.title}
@@ -167,7 +167,7 @@ export default function Chapter({
               href={`/${chapterId}/${subPages[0].id}`}
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              Next: {subPages[0].title} →
+              {subPages[0].title} →
             </Link>
           )}
           {subPages.length === 0 && navigation.nextChapter && (
@@ -175,7 +175,7 @@ export default function Chapter({
               href={`/${navigation.nextChapter.id}`}
               className="text-blue-600 dark:text-blue-400 hover:underline"
             >
-              Next Chapter: {navigation.nextChapter.title} →
+              {navigation.nextChapter.title} →
             </Link>
           )}
         </div>

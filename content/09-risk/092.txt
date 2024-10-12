@@ -1,7 +1,29 @@
-# Alignment
+# Al needs to align with our value and purpose
+## ...
 
-Slide-86.webp
+
+## The Imperative of AI Alignment
 
 {Alignment}
+
+
+AI alignment is crucial for ensuring that advanced systems adhere to human values and ethical standards. Misalignments can lead to unintended consequences, including societal harm. Proactive alignment strategies, encompassing rigorous testing and value integration, are essential for responsibly advancing AI technology in a way that serves humanity effectively.
+
+
+
+---
+## Bias
+
+{Bias}
+AI bias occurs when artificial intelligence systems produce unfair outcomes due to prejudiced training data or flawed algorithms. This can lead to discrimination in areas like hiring, law enforcement, and lending. Addressing AI bias is essential to ensure equitable treatment and decision-making, promoting fairness and accountability in AI applications.
+
+---
+## Explainability
+
+{Explainability}
+AI explainability helps businesses understand how AI systems make decisions, fostering trust among stakeholders. By using transparent models, companies can ensure compliance with regulations and mitigate risks. Clear explanations of AI outcomes improve decision-making, enhance customer experiences, and enable organizations to communicate effectively with clients about the technology's impact and benefits.
+
+
+---
 
 If we move up the level of abstraction, there is a general intelligence question around how aligned its objectives are with ours. In other words, can we expect the successful outcome of AI to align with what we need as humans? If not, that's a serious problem, and we have absolutely no evidence that it is aligned quite yet.

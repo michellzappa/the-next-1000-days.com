@@ -1,11 +1,9 @@
-# Hallucination vs. Robustness
+# AI does not discern what is “real”
+## Feature, not a bug.
 
 {Hallucination}
 
 Firstly, we are already experiencing the dangers of hallucination in LLMs. It's a feature, not a bug. These systems are stochastic, unpredictable answering machines which will definitely make things up unless we double-check. Whether that's even solvable is a very open question, and you have to remedy it yourself in your work. Currently, you can't trust the system to figure it out for you.
-
-
-Slide-85.webp
 
 ...
 ...
