@@ -11,9 +11,17 @@ export function remarkVocabPlugin(vocabData: VocabData) {
             if (part.startsWith('{') && part.endsWith('}')) {
               const term = part.slice(1, -1);
               if (vocabData[term]) {
+                const simplifiedTerm = term.split('(')[0].trim().replace(/ /g, '_');
+                const imagePath = `/images/vocab/${simplifiedTerm}.webp`;
+                console.log(`remarkVocabPlugin: Generated image path for term "${term}": ${imagePath}`);
                 return {
                   type: 'html',
-                  value: `<div class="vocab-card-wrapper"><vocab-card term="${term}" definition="${vocabData[term]}"></vocab-card></div>`
+                  value: `
+                    <div class="vocab-card-wrapper" data-image-path="${imagePath}">
+                      <vocab-card term="${term}" definition="${vocabData[term]}">
+                      </vocab-card>
+                    </div>
+                  `
                 };
               }
             }

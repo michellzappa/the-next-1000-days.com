@@ -101,13 +101,6 @@ export default function Page({
     <div className="min-h-screen flex flex-col items-center bg-background text-foreground">
       <div className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12">
         <Link
-          href="/"
-          className="text-gray-500 dark:text-blue-800 hover:underline mb-2 inline-block"
-        >
-          ← Home
-        </Link>
-        <br />
-        <Link
           href={`/${chapterId}`}
           className="text-gray-700 dark:text-blue-400 hover:underline mb-4 inline-block"
         >

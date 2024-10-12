@@ -6,6 +6,7 @@ import rehypeRaw from "rehype-raw";
 import { remarkVocabPlugin } from "../utils/remarkVocabPlugin";
 import { getVocabData } from "../utils/getVocabData";
 import VocabCard from "./VocabCard";
+import { useEffect } from "react";
 
 interface MarkdownProps {
   content: string;
@@ -37,6 +38,26 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
       }
     );
   }, [content, chapterId, pageId]);
+
+  useEffect(() => {
+    const vocabCards = document.querySelectorAll(".vocab-card-wrapper");
+    vocabCards.forEach((card) => {
+      const imagePath = card.getAttribute("data-image-path");
+      if (imagePath) {
+        const img = new Image();
+        img.onload = () => {
+          (card as HTMLElement).style.backgroundImage = `url('${imagePath}')`;
+          (card as HTMLElement).style.backgroundSize = "cover";
+          (card as HTMLElement).style.opacity = "1";
+        };
+        img.onerror = () => {
+          console.error(`Failed to load image: ${imagePath}`);
+          (card as HTMLElement).style.opacity = "1";
+        };
+        img.src = imagePath;
+      }
+    });
+  }, [processedContent]);
 
   const customImageRenderer = (props: { src?: string; alt?: string }) => {
     const { src, alt } = props;
@@ -153,14 +174,20 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
           "vocab-card": ({
             term,
             definition,
+            children,
           }: {
             term: string;
             definition: string;
-          }) => <VocabCard term={term} definition={definition} />,
+            children?: React.ReactNode;
+          }) => (
+            <VocabCard term={term} definition={definition}>
+              {children}
+            </VocabCard>
+          ),
           div: ({ className, children, ...props }) => {
             if (className === "vocab-card-wrapper") {
               return (
-                <div className="float-right clear-right ml-4 mb-4 w-64">
+                <div className="float-right clear-right ml-4 mb-4 w-64 h-96 transition-opacity duration-300">
                   {children}
                 </div>
               );
