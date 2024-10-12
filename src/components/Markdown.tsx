@@ -36,14 +36,18 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
   const customImageRenderer = (props: { src?: string; alt?: string }) => {
     const { src, alt } = props;
     if (src && src.startsWith("/images/chapters/")) {
+      const isMeme = src.split("/").pop()?.startsWith("meme_");
       return (
-        <Image
-          src={src}
-          alt={alt || ""}
-          width={800}
-          height={600}
-          layout="responsive"
-        />
+        <div className={isMeme ? "w-2/3 mx-auto mt-12 mb-12" : "w-full"}>
+          <Image
+            src={src}
+            alt={alt || ""}
+            width={800}
+            height={600}
+            layout="responsive"
+            style={{ width: "100%", height: "auto" }}
+          />
+        </div>
       );
     }
     // For other image formats, use default rendering

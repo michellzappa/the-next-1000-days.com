@@ -64,3 +64,7 @@ This chapter explores exponential growth in AI, its impact on industries, and it
 ---
 
 Source: Our world in data
+
+https://ourworldindata.org/grapher/historical-cost-of-computer-memory-and-storage
+
+https://ourworldindata.org/grapher/supercomputer-power-flops

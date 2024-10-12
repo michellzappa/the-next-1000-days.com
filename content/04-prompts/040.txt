@@ -31,4 +31,4 @@ This chapter will dive into practical prompting techniques, common pitfalls to a
 But keep in mind - prompting might be a temporary skill. As these models evolve, we may see a shift where machines learn to better understand and interpret human intent. For now, though, it remains an essential capability for working with AI.
 
 
-image101-229.gif
+meme_040.gif
