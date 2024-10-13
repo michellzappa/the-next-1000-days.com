@@ -7,26 +7,33 @@ interface NavigationProps {
   navigation: {
     previousPage?: { id: string; title: string } | null;
     nextPage?: { id: string; title: string } | null;
-    previousChapter?: { id: string; title: string } | null;
+    previousChapter?: { id: string; title: string; lastPage?: string | null } | null;
     nextChapter?: { id: string; title: string } | null;
   };
+  subPages?: { id: string; title: string }[];
 }
 
-export function usePageNavigation({ chapterId, pageId, navigation }: NavigationProps) {
+export function usePageNavigation({ chapterId, pageId, navigation, subPages }: NavigationProps) {
   const router = useRouter();
 
   const handleNavigation = (direction: 'left' | 'right') => {
     if (direction === 'left') {
       if (pageId) {
-        if (pageId.endsWith("1") && pageId !== "01") {
-          router.push(`/${chapterId}`);
-        } else if (navigation.previousPage) {
+        if (navigation.previousPage) {
           router.push(`/${chapterId}/${navigation.previousPage.id}`);
         } else if (navigation.previousChapter) {
-          router.push(`/${navigation.previousChapter.id}`);
+          if (navigation.previousChapter.lastPage) {
+            router.push(`/${navigation.previousChapter.id}/${navigation.previousChapter.lastPage}`);
+          } else {
+            router.push(`/${navigation.previousChapter.id}`);
+          }
         }
       } else if (navigation.previousChapter) {
-        router.push(`/${navigation.previousChapter.id}`);
+        if (navigation.previousChapter.lastPage) {
+          router.push(`/${navigation.previousChapter.id}/${navigation.previousChapter.lastPage}`);
+        } else {
+          router.push(`/${navigation.previousChapter.id}`);
+        }
       }
     } else if (direction === 'right') {
       if (pageId) {
@@ -35,10 +42,12 @@ export function usePageNavigation({ chapterId, pageId, navigation }: NavigationP
         } else if (navigation.nextChapter) {
           router.push(`/${navigation.nextChapter.id}`);
         }
-      } else if (navigation.nextChapter) {
-        router.push(`/${navigation.nextChapter.id}`);
-      } else if (navigation.nextPage) {
-        router.push(`/${chapterId}/${navigation.nextPage.id}`);
+      } else {
+        if (subPages && subPages.length > 0) {
+          router.push(`/${chapterId}/${subPages[0].id}`);
+        } else if (navigation.nextChapter) {
+          router.push(`/${navigation.nextChapter.id}`);
+        }
       }
     }
   };
@@ -56,7 +65,7 @@ export function usePageNavigation({ chapterId, pageId, navigation }: NavigationP
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [router, chapterId, pageId, navigation]);
+  }, [router, chapterId, pageId, navigation, subPages]);
 
-  return {};
+  return { handleNavigation };
 }

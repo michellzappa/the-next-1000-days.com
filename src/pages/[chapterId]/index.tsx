@@ -6,7 +6,6 @@ import fs from "fs";
 import path from "path";
 import Markdown from "../../components/Markdown";
 import Footer from "../../components/Footer";
-import { useEffect } from "react";
 import { getChapters } from "../../utils/content";
 import { usePageNavigation } from "../../hooks/usePageNavigation";
 import dynamic from "next/dynamic";
@@ -58,50 +57,11 @@ export default function Chapter({
   const router = useRouter();
   const { chapterId: chapterIdQuery } = router.query;
 
-  const swipeHandlers = usePageNavigation({
+  const { handleNavigation } = usePageNavigation({
     chapterId: chapterIdQuery as string,
     navigation,
+    subPages,
   });
-
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowLeft") {
-        if (navigation.previousChapter) {
-          if (navigation.previousChapter.lastPage) {
-            router.push(
-              `/${navigation.previousChapter.id}/${navigation.previousChapter.lastPage}`
-            );
-          } else {
-            router.push(`/${navigation.previousChapter.id}`);
-          }
-        }
-      } else if (event.key === "ArrowRight") {
-        if (subPages.length > 0) {
-          router.push(`/${chapterId}/${subPages[0].id}`);
-        } else if (navigation.nextChapter) {
-          router.push(`/${navigation.nextChapter.id}`);
-        }
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [router, navigation, chapterId, subPages]);
-
-  useEffect(() => {
-    // Mark the current chapter as visited
-    const visitedChapters = JSON.parse(
-      localStorage.getItem("visitedChapters") || "[]"
-    );
-    if (!visitedChapters.includes(chapterId)) {
-      localStorage.setItem(
-        "visitedChapters",
-        JSON.stringify([...visitedChapters, chapterId])
-      );
-    }
-  }, [chapterId]);
 
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -139,8 +99,12 @@ export default function Chapter({
       )}
 
       <div
-        {...swipeHandlers}
         className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-6"
+        onKeyDown={(e) => {
+          if (e.key === "ArrowLeft") handleNavigation("left");
+          if (e.key === "ArrowRight") handleNavigation("right");
+        }}
+        tabIndex={0}
       >
         <Markdown
           content={content}
