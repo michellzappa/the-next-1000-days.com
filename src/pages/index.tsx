@@ -48,14 +48,14 @@ export default function Home({ chapters }: HomeProps) {
           <title>The Next 1.000 Days</title>
           <meta
             name="description"
-            content="A guide to navigating our transition toward artificial general intelligence"
+            content="Your guide to navigating the transition to AGI."
           />
         </Head>
 
         <main className="flex-grow">
           <h1 className="text-4xl font-bold mb-8">The Next 1.000 Days</h1>
           <h2 className="text-2xl mb-8 italic">
-            Your guide for navigating the transition toward AGI.
+            Your guide for navigating the transition to AGI.
           </h2>
 
           <div className="w-full flex justify-center mb-12">
