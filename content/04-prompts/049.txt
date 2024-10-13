@@ -1,6 +1,7 @@
 # Prompts Exercise
 ## Business Implications
 
+meme_049.webp
 
 prompt exercise: create a cookbook
 - text file anywhere
@@ -9,9 +10,9 @@ prompt exercise: create a cookbook
 
 ---
 
+meme_twitter.webp
+
 - **Skill development**: Get your hands dirty - USE the systems to ideate and learn about their capabilities.
 - **Productivity enhancement**: Knowing systems' limitations can help you see opportunities and strategic advantages.
 - **Competitive advantage**: All companies will be employing AI to some degree, so know your strategic advantages and use it resourcefully.
 
-
-Slide-54.webp
