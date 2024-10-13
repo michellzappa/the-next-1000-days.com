@@ -123,11 +123,10 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
             className,
             children,
             ...props
-          }: {
+          }: React.PropsWithChildren<{
             inline?: boolean;
             className?: string;
-            children?: React.ReactNode;
-          }) => {
+          }>) => {
             return !inline ? (
               <pre className="bg-gray-100 dark:bg-gray-800 rounded p-4 overflow-x-auto">
                 <code className={className} {...props}>

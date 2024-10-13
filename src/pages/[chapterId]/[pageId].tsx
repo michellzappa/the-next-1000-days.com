@@ -99,6 +99,13 @@ export default function Page({
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-background text-foreground">
+      <Head>
+        <title>{title} - The Next 1.000 Days</title>
+        <meta
+          name="description"
+          content={subtitle || `${title} - Chapter content`}
+        />
+      </Head>
       <div className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12">
         <Link
           href={`/${chapterId}`}
