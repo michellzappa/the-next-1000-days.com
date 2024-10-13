@@ -1,11 +1,12 @@
 import { visit } from 'unist-util-visit';
 import { VocabData } from './getVocabData';
+import { Node } from 'unist';
 
 export function remarkVocabPlugin(vocabData: VocabData) {
-  return (tree: any) => {
-    visit(tree, 'paragraph', (node, index, parent) => {
-      const children = node.children.flatMap((child: any) => {
-        if (child.type === 'text') {
+  return (tree: Node) => {
+    visit(tree, 'paragraph', (node: Node & { children: Node[] }) => {
+      const children = node.children.flatMap((child: Node & { type: string; value?: string }) => {
+        if (child.type === 'text' && child.value) {
           const parts = child.value.split(/({[^}]+})/);
           return parts.map((part: string) => {
             if (part.startsWith('{') && part.endsWith('}')) {
