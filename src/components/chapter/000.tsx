@@ -47,7 +47,7 @@ const SunflowerGrowthVisualization = () => {
       {generateSeeds().map((seed, index) => (
         <div
           key={index}
-          className="absolute rounded-full bg-black"
+          className="absolute rounded-full bg-black dark:bg-white"
           style={{
             width: "0.5vmin",
             height: "0.5vmin",

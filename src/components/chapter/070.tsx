@@ -32,6 +32,11 @@ const AutonomousAgentsVisualization = () => {
       ctx.imageSmoothingEnabled = true;
       ctx.imageSmoothingQuality = "high";
 
+      // Get the current color based on the color scheme
+      const color = getComputedStyle(document.documentElement)
+        .getPropertyValue("--foreground")
+        .trim();
+
       // Update and draw agents
       agents.forEach((agent) => {
         // Update position
@@ -59,7 +64,7 @@ const AutonomousAgentsVisualization = () => {
         // Draw agent with smoother edges
         ctx.beginPath();
         ctx.arc(agent.x, agent.y, agent.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(0, 0, 0, 0.8)";
+        ctx.fillStyle = `${color}`;
         ctx.fill();
 
         // Add a subtle glow effect
@@ -71,8 +76,8 @@ const AutonomousAgentsVisualization = () => {
           agent.y,
           agent.radius * 2
         );
-        gradient.addColorStop(0, "rgba(0, 0, 0, 0.3)");
-        gradient.addColorStop(1, "rgba(0, 0, 0, 0)");
+        gradient.addColorStop(0, `${color}4D`); // 30% opacity
+        gradient.addColorStop(1, `${color}00`); // 0% opacity
         ctx.beginPath();
         ctx.arc(agent.x, agent.y, agent.radius * 2, 0, Math.PI * 2);
         ctx.fillStyle = gradient;
@@ -91,7 +96,9 @@ const AutonomousAgentsVisualization = () => {
             ctx.moveTo(agent.x, agent.y);
             ctx.lineTo(otherAgent.x, otherAgent.y);
             const alpha = 1 - distance / connectionDistance;
-            ctx.strokeStyle = `rgba(0, 0, 0, ${alpha * 0.5})`;
+            ctx.strokeStyle = `${color}${Math.round(alpha * 0.5 * 255)
+              .toString(16)
+              .padStart(2, "0")}`;
             ctx.lineWidth = 0.75;
             ctx.lineCap = "round";
             ctx.stroke();
@@ -125,8 +132,13 @@ const AutonomousAgentsVisualization = () => {
     window.addEventListener("resize", handleResize);
     animate();
 
+    // Add event listener for color scheme changes
+    const colorSchemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    colorSchemeQuery.addListener(handleResize);
+
     return () => {
       window.removeEventListener("resize", handleResize);
+      colorSchemeQuery.removeListener(handleResize);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }

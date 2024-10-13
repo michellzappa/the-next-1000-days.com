@@ -1,5 +1,5 @@
-# About
-## How I wrote this book.
+# Colophon
+## About this book.
 
 How I'm using AI to write this book
 - iA Writer: keeps track of generative text

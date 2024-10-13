@@ -119,7 +119,7 @@ export default function Page({
 
       {hasCustomComponent && CustomComponent && (
         <div className="w-full flex justify-center">
-          <div className="w-full max-w-[70rem] px-4 sm:px-6 lg:px-8 outline outline-2 outline-white max-h-[70vh] overflow-auto">
+          <div className="w-full max-w-[70rem] px-4 sm:px-6 lg:px-8 max-h-[70vh] overflow-auto">
             <CustomComponent />
           </div>
         </div>

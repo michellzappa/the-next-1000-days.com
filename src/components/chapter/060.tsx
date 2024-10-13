@@ -156,7 +156,7 @@ const AICodeGenerator = () => {
 
   return (
     <div className="p-4 h-screen overflow-hidden">
-      <div className="font-mono text-black text-sm">
+      <div className="font-mono text-black dark:text-white text-sm">
         {lines.map((line, index) => (
           <div
             key={index}

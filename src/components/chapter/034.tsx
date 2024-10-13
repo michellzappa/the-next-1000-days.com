@@ -65,6 +65,12 @@ const SkillDistributionCurve = () => {
               animation: drawLine 2s ease-out forwards; 
             }
             .fade-in { animation: fadeIn 1s ease-out forwards; }
+            .curve-color { stroke: black; }
+            .text-color { fill: black; }
+            @media (prefers-color-scheme: dark) {
+              .curve-color { stroke: white; }
+              .text-color { fill: white; }
+            }
           `}
         </style>
 
@@ -73,9 +79,8 @@ const SkillDistributionCurve = () => {
           <polyline
             points={generateCurvePoints()}
             fill="none"
-            stroke="black"
             strokeWidth="2.4"
-            className="line-animated"
+            className="line-animated curve-color"
           />
         )}
 
@@ -109,13 +114,31 @@ const SkillDistributionCurve = () => {
             strokeDasharray="4,4"
           />
 
-          <text x="80" y="448" fontSize="19" fill="black" textAnchor="middle">
+          <text
+            x="80"
+            y="448"
+            fontSize="19"
+            textAnchor="middle"
+            className="text-color"
+          >
             Low Skill
           </text>
-          <text x="320" y="448" fontSize="19" fill="black" textAnchor="middle">
+          <text
+            x="320"
+            y="448"
+            fontSize="19"
+            textAnchor="middle"
+            className="text-color"
+          >
             Average Skill
           </text>
-          <text x="560" y="448" fontSize="19" fill="black" textAnchor="middle">
+          <text
+            x="560"
+            y="448"
+            fontSize="19"
+            textAnchor="middle"
+            className="text-color"
+          >
             High Skill
           </text>
         </g>
@@ -149,7 +172,7 @@ const SkillDistributionCurve = () => {
               y="272"
               fontSize="19"
               textAnchor="middle"
-              fill="black"
+              className="text-color"
             >
               43%
             </text>
@@ -158,7 +181,7 @@ const SkillDistributionCurve = () => {
               y="296"
               fontSize="19"
               textAnchor="middle"
-              fill="black"
+              className="text-color"
             >
               gain
             </text>
@@ -167,7 +190,7 @@ const SkillDistributionCurve = () => {
               y="272"
               fontSize="19"
               textAnchor="middle"
-              fill="black"
+              className="text-color"
             >
               17%
             </text>
@@ -176,7 +199,7 @@ const SkillDistributionCurve = () => {
               y="296"
               fontSize="19"
               textAnchor="middle"
-              fill="black"
+              className="text-color"
             >
               gain
             </text>
