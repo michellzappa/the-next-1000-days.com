@@ -20,8 +20,14 @@ const milestonesData = [
       "MidJourney",
     ],
   },
-  { year: 2023, milestones: ["GPT-4", "Claude", "Bard", "LLaMA"] },
-  { year: 2024, milestones: ["Gemini", "GPT-4o", "Sora", "Claude 3", "Flux"] },
+  {
+    year: 2023,
+    milestones: ["GPT-4", "Claude", "Bard", "LLaMA", "Perplexity"],
+  },
+  {
+    year: 2024,
+    milestones: ["Gemini", "GPT-4o", "Sora", "Claude 3", "Flux", "GPT-O1"],
+  },
 ];
 
 const AIMilestonesGraph = () => {
@@ -29,9 +35,11 @@ const AIMilestonesGraph = () => {
   const svgWidth = 1000;
   const svgHeight = 500;
   const yearWidth = svgWidth / milestonesData.length;
-  const bubbleRadius = 44;
-  const verticalSpacing = bubbleRadius * 1.4;
+  const bubbleRadius = 38;
+  const textWidth = bubbleRadius * 2; // 80% of bubble diameter
+  const verticalSpacing = bubbleRadius * 1.6;
   const timelineOffset = 120;
+  const textOffsetY = 5; // New constant for vertical text offset
 
   useEffect(() => {
     const totalBubbles = milestonesData.reduce(
@@ -79,38 +87,33 @@ const AIMilestonesGraph = () => {
             {yearData.milestones.map((milestone, milestoneIndex) => {
               bubbleCount++;
               const isVisible = bubbleCount <= visibleBubbles;
+              const centerY =
+                svgHeight - timelineOffset - milestoneIndex * verticalSpacing;
+              const centerX = yearIndex * yearWidth + yearWidth / 2;
               return (
                 <g
                   key={milestone}
                   className={isVisible ? "animate-pop-in" : "opacity-0"}
                 >
                   <circle
-                    cx={yearIndex * yearWidth + yearWidth / 2}
-                    cy={
-                      svgHeight -
-                      timelineOffset -
-                      milestoneIndex * verticalSpacing
-                    }
+                    cx={centerX}
+                    cy={centerY}
                     r={bubbleRadius}
-                    fill="#d4fc79"
-                    fillOpacity="0.8"
-                    stroke="black"
+                    fill="white"
+                    fillOpacity={0.8}
+                    stroke="gray"
                     strokeWidth="1"
                   />
                   <foreignObject
-                    x={
-                      yearIndex * yearWidth + yearWidth / 2 - bubbleRadius * 0.8
-                    }
-                    y={
-                      svgHeight -
-                      timelineOffset -
-                      milestoneIndex * verticalSpacing -
-                      bubbleRadius * 0.8
-                    }
-                    width={bubbleRadius * 1.6}
-                    height={bubbleRadius * 1.6}
+                    x={centerX - textWidth / 2}
+                    y={centerY - bubbleRadius + textOffsetY}
+                    width={textWidth}
+                    height={bubbleRadius * 2}
                   >
-                    <div className="w-full h-full flex items-center justify-center">
+                    <div
+                      xmlns="http://www.w3.org/1999/xhtml"
+                      className="h-full flex items-center justify-center"
+                    >
                       <p className="text-xs font-semibold text-center leading-tight">
                         {milestone}
                       </p>

@@ -106,7 +106,7 @@ export default function Page({
           content={subtitle || `${title} - Chapter content`}
         />
       </Head>
-      <div className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12">
+      <div className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-6">
         <Link
           href={`/${chapterId}`}
           className="text-gray-700 dark:text-blue-400 hover:underline mb-4 inline-block"
@@ -119,7 +119,7 @@ export default function Page({
 
       {hasCustomComponent && CustomComponent && (
         <div className="w-full flex justify-center">
-          <div className="w-full max-w-[70rem] px-4 sm:px-6 lg:px-8">
+          <div className="w-full max-w-[70rem] px-4 sm:px-6 lg:px-8 outline outline-2 outline-white max-h-[80vh] overflow-auto">
             <CustomComponent />
           </div>
         </div>
@@ -127,7 +127,7 @@ export default function Page({
 
       <div
         {...swipeHandlers}
-        className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12"
+        className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-6"
       >
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-none">
           <Markdown

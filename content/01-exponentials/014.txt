@@ -1,11 +1,9 @@
-# AI exists at the intersection of several fields
-## Each field is advancing at a different pace, increasing AI capabilities.
+# There are no AI Experts
+## AI exists at the intersection of several fields.
 
 
 
----
-
-Slide-18.webp
+Each field is advancing at a different pace, increasing AI capabilities.
 
 # The Expert Myth
 ## Why nobody can claim to be an expert on AI.

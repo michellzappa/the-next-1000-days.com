@@ -42,7 +42,7 @@ export default function Home({ chapters }: HomeProps) {
     <div className="min-h-screen flex flex-col items-center bg-background text-foreground">
       <div
         {...swipeHandlers}
-        className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12"
+        className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-6"
       >
         <Head>
           <title>The Next 1.000 Days</title>
