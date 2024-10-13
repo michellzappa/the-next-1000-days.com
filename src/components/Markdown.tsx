@@ -21,16 +21,8 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
     const chapterNumber = chapterId.padStart(3, "0");
     const pageNumber = pageId || `${chapterNumber}0`;
 
-    // Wrap indicators in <span> tags with a monospace class
-    const chapterIndicator = `<span className="font-mono">Chapter ${chapterNumber}</span>`;
-    const pageIndicator = pageId
-      ? `<span className="font-mono">Page ${pageNumber}</span>`
-      : "";
-
-    // Append indicators after the content
-    const processedContent = `${content}\n\n${chapterIndicator}\n${pageIndicator}`;
-
-    return processedContent.replace(
+    // Remove the chapter and page indicators
+    return content.replace(
       /^(.+\.(webp|jpg|jpeg|png|gif))$/gm,
       (match, fileName) => {
         const imagePath = `/images/chapters/${pageNumber}/${fileName}`;

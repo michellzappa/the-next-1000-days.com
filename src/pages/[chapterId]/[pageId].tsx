@@ -107,9 +107,7 @@ export default function Page({
           ← {chapterTitle}
         </Link>
         <h1 className="text-4xl font-bold mb-2">{title}</h1>
-        {subtitle && (
-          <h2 className="text-2xl font-semibold mb-6">{subtitle}</h2>
-        )}
+        {subtitle && <h2 className="text-2xl italic mb-6">{subtitle}</h2>}
       </div>
 
       {hasCustomComponent && CustomComponent && (
@@ -124,11 +122,13 @@ export default function Page({
         {...swipeHandlers}
         className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12"
       >
-        <Markdown
-          content={content}
-          chapterId={chapterId as string}
-          pageId={pageId as string}
-        />
+        <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-none">
+          <Markdown
+            content={content}
+            chapterId={chapterId as string}
+            pageId={pageId as string}
+          />
+        </div>
         <div className="text-sm text-gray-500 dark:text-gray-400 mt-4 hidden">
           Last updated: {lastUpdated}
         </div>

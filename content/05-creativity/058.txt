@@ -21,12 +21,19 @@ MidJourney accepts the command "sref" to specify a particular style reference, o
 Examples: different MidJourney images for “a tree” using various srefs found on Twitter.
 
 envisioning.io_a_tree_e8791ed0-3590-4479-9997-07203a6acaf5.webp
+
 envisioning.io_a_tree_b57ae9bf-dd8e-4968-96c3-b3f87b4073f5.webp
+
 envisioning.io_a_tree_38cd55c3-ee3d-40de-b921-764262c30f82.webp
+
 envisioning.io_a_tree_c242a348-1572-4a07-8165-8827ba12398f.webp
+
 envisioning.io_a_tree_615f2c34-d6cc-42b2-8067-695c3c13ad6f.webp
+
 envisioning.io_a_tree_d03d1ebd-fcb3-4cba-8630-c63e5c914e84.webp
+
 envisioning.io_a_tree_05280545-24cc-47b3-9ca6-3187aeda62b0.webp
+
 envisioning.io_a_tree_f28c0ceb-dce5-4672-8171-e96af2408173.webp
 
 

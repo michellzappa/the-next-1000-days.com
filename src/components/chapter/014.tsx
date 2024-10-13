@@ -1,113 +1,108 @@
-import React from "react";
-import {
-  Calculator,
-  Monitor,
-  BarChart3,
-  Scale,
-  MessageSquare,
-  Database,
-  User,
-} from "lucide-react";
+import React, { useState, useEffect } from "react";
 
-const disciplines = [
-  { name: "Mathematics", Icon: Calculator },
-  { name: "Computer Science", Icon: Monitor },
-  { name: "Statistics", Icon: BarChart3 },
-  { name: "Linguistics", Icon: MessageSquare },
-  { name: "Psychology", Icon: User },
-  { name: "Data Science", Icon: Database },
-  { name: "Ethics", Icon: Scale },
-];
+const BlindMenAndAI = () => {
+  const [spotlights, setSpotlights] = useState(() =>
+    Array(3)
+      .fill(null)
+      .map(() => ({
+        x: Math.random() * 220 + 40, // Ensure initial position is within bounds
+        y: Math.random() * 220 + 40,
+        dx: (Math.random() - 0.5) * 4.5, // Increased from 3 to 4.5 (50% faster)
+        dy: (Math.random() - 0.5) * 4.5, // Increased from 3 to 4.5 (50% faster)
+      }))
+  );
 
-const AIDisciplinesDiagram = () => {
-  const centerX = 200;
-  const centerY = 200;
-  const radius = 120;
-  const circleRadius = 80;
-  const centralCircleRadius = 50; // Reduced size of central circle
+  const updateSpotlights = () => {
+    setSpotlights((prev) =>
+      prev.map((spot) => {
+        let newX = spot.x + spot.dx;
+        let newY = spot.y + spot.dy;
+        let newDx = spot.dx;
+        let newDy = spot.dy;
+
+        // Bounce when edges hit the boundaries
+        if (newX <= 40 || newX >= 260) {
+          newDx = -newDx;
+          newX = Math.max(40, Math.min(260, newX)); // Clamp x position
+        }
+        if (newY <= 40 || newY >= 260) {
+          newDy = -newDy;
+          newY = Math.max(40, Math.min(260, newY)); // Clamp y position
+        }
+
+        return { x: newX, y: newY, dx: newDx, dy: newDy };
+      })
+    );
+  };
+
+  useEffect(() => {
+    const intervalId = setInterval(updateSpotlights, 50);
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
-    <svg width="400" height="400" viewBox="0 0 400 400">
-      {disciplines.map((discipline, index) => {
-        const angle = (index * 2 * Math.PI) / disciplines.length;
-        const x = centerX + radius * Math.cos(angle);
-        const y = centerY + radius * Math.sin(angle);
-
-        return (
-          <g
-            key={discipline.name}
-            className="animate-pop"
-            style={{ animationDelay: `${index * 100}ms` }}
-          >
-            <circle
-              cx={x}
-              cy={y}
-              r={circleRadius}
-              fill="#d9f99d"
-              fillOpacity="0.7"
-            />{" "}
-            {/* Semi-transparent */}
-            <foreignObject x={x - 40} y={y - 40} width="80" height="80">
-              <div className="flex flex-col items-center justify-center h-full">
-                <discipline.Icon className="w-8 h-8 mb-1" />
-                <span className="text-xs text-center font-semibold">
-                  {discipline.name}
-                </span>
-              </div>
-            </foreignObject>
-          </g>
-        );
-      })}
-
-      {/* Central AI circle */}
-      <circle
-        cx={centerX}
-        cy={centerY}
-        r={centralCircleRadius}
-        fill="#4b5563"
-      />
-      <text
-        x={centerX}
-        y={centerY}
-        textAnchor="middle"
-        dominantBaseline="middle"
-        fill="white"
-        fontSize="24"
-        fontWeight="bold"
+    <div
+      style={{
+        width: "100%",
+        height: "50vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <svg
+        width="100%"
+        height="100%"
+        viewBox="0 0 300 300"
+        preserveAspectRatio="xMidYMid meet"
       >
-        AI
-      </text>
-    </svg>
+        <defs>
+          <mask id="spotlightMask">
+            <rect width="300" height="300" fill="black" />
+            {spotlights.map((spot, index) => (
+              <circle key={index} cx={spot.x} cy={spot.y} r="40" fill="white" />
+            ))}
+          </mask>
+        </defs>
+
+        {/* White background for spotlights */}
+        <g mask="url(#spotlightMask)">
+          <rect width="300" height="300" fill="white" />
+        </g>
+
+        {/* AI text, only visible within spotlights */}
+        <text
+          x="150"
+          y="150"
+          fontSize="150"
+          fontWeight="bold"
+          fill="black"
+          textAnchor="middle"
+          dominantBaseline="central"
+          mask="url(#spotlightMask)"
+          style={{
+            userSelect: "none",
+            pointerEvents: "none",
+          }}
+        >
+          AI
+        </text>
+
+        {/* White outlines for spotlights */}
+        {spotlights.map((spot, index) => (
+          <circle
+            key={`outline-${index}`}
+            cx={spot.x}
+            cy={spot.y}
+            r="40"
+            fill="none"
+            stroke="white"
+            strokeWidth="0"
+          />
+        ))}
+      </svg>
+    </div>
   );
 };
 
-const PopAnimation = () => (
-  <style jsx global>{`
-    @keyframes pop {
-      0% {
-        transform: scale(0);
-        opacity: 0;
-      }
-      80% {
-        transform: scale(1.1);
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-    .animate-pop {
-      animation: pop 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-      opacity: 0;
-    }
-  `}</style>
-);
-
-const AnimatedAIDisciplinesDiagram = () => (
-  <>
-    <PopAnimation />
-    <AIDisciplinesDiagram />
-  </>
-);
-
-export default AnimatedAIDisciplinesDiagram;
+export default BlindMenAndAI;

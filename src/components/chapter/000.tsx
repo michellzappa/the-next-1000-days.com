@@ -7,8 +7,8 @@ const SunflowerGrowthVisualization = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime((prevTime) => (prevTime + 1) % (totalElements * 2));
-    }, 20);
+      setTime((prevTime) => (prevTime + 2) % (totalElements * 2));
+    }, 20); // Keep the interval at 20ms, but increment by 2 instead of 1
     return () => clearInterval(interval);
   }, []);
 
@@ -17,8 +17,16 @@ const SunflowerGrowthVisualization = () => {
 
   const generateSeeds = () => {
     const seeds = [];
-    const visibleSeeds = Math.min(time, totalElements);
-    const erasingSeeds = Math.max(0, time - totalElements);
+    const growthFactor = Math.pow(time / totalElements, 1.5);
+    const visibleSeeds = Math.min(
+      Math.floor(totalElements * growthFactor),
+      totalElements
+    );
+
+    // Adjust the erasing process
+    const erasingProgress = Math.max(0, (time - totalElements) / totalElements);
+    const easedErasingProgress = easeInOutCubic(erasingProgress);
+    const erasingSeeds = Math.floor(easedErasingProgress * totalElements);
 
     for (let i = erasingSeeds; i < visibleSeeds; i++) {
       const angle = i * goldenAngle;

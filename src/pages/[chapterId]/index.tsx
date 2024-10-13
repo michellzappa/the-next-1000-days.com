@@ -9,6 +9,9 @@ import Footer from "../../components/Footer";
 import { useEffect } from "react";
 import { getChapters } from "../../utils/content";
 import { usePageNavigation } from "../../hooks/usePageNavigation";
+import dynamic from "next/dynamic";
+import { existsSync } from "fs";
+import { join } from "path";
 
 interface ChapterProps {
   title: string;
@@ -17,6 +20,7 @@ interface ChapterProps {
   chapterId: string;
   subPages: Page[];
   navigation: ChapterNavigation;
+  hasCustomComponent: boolean;
 }
 
 interface Page {
@@ -49,6 +53,7 @@ export default function Chapter({
   chapterId,
   subPages,
   navigation,
+  hasCustomComponent,
 }: ChapterProps) {
   const router = useRouter();
   const { chapterId: chapterIdQuery } = router.query;
@@ -89,18 +94,15 @@ export default function Chapter({
     return <div>Loading...</div>;
   }
 
+  const CustomComponent = hasCustomComponent
+    ? dynamic(
+        () => import(`../../components/chapter/${chapterId.padStart(2, "0")}0`)
+      )
+    : null;
+
   return (
     <div className="min-h-screen flex flex-col items-center bg-background text-foreground">
-      <div
-        {...swipeHandlers}
-        className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12"
-      >
-        <Head>
-          <title>{`${getDisplayTitle(
-            chapterId.padStart(2, "0") + "0",
-            chapterId
-          )} - The Next 1.000 Days`}</title>
-        </Head>
+      <div className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12">
         <Link
           href="/"
           className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
@@ -108,9 +110,21 @@ export default function Chapter({
           ← Home
         </Link>
         <h1 className="text-4xl font-bold mb-2">{title}</h1>
-        {subtitle && (
-          <h2 className="text-2xl font-semibold mb-6">{subtitle}</h2>
-        )}
+        {subtitle && <h2 className="text-2xl italic mb-6">{subtitle}</h2>}
+      </div>
+
+      {hasCustomComponent && CustomComponent && (
+        <div className="w-full flex justify-center">
+          <div className="w-full max-w-[70rem] px-4 sm:px-6 lg:px-8">
+            <CustomComponent />
+          </div>
+        </div>
+      )}
+
+      <div
+        {...swipeHandlers}
+        className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-12"
+      >
         <Markdown
           content={content}
           chapterId={chapterId}
@@ -279,6 +293,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         : null,
   };
 
+  const componentPath = join(
+    process.cwd(),
+    "src",
+    "components",
+    "chapter",
+    `${chapterId.padStart(2, "0")}0.tsx`
+  );
+  const hasCustomComponent = existsSync(componentPath);
+
   return {
     props: {
       title,
@@ -287,6 +310,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       chapterId,
       subPages,
       navigation,
+      hasCustomComponent,
     },
   };
 };

@@ -3,10 +3,7 @@
 
 AI is having a moment. Decades of fundamental discoveries and years of quiet revolutions are giving rise to a sudden explosion of applications in unexpected places.
 
-Unlike other hype-heavy technologies of recent years, AI is useful. While it’s acceleration might taper off, the genie isn’t going back into the bottle.
+Unlike other hype-heavy technologies of recent years, AI is useful. While it’s acceleration might taper off, the genie is not going back into the bottle.
 
-{AGI (Artificial General Intelligence)}
+This leaves us with important questions to grapple with. People of all levels of technical literacy will have to work together in order to direct the evolution of AI for generations to come. 
 
-This leaves us with an infinitude of questions to grapple with, by people of all levels of technical literacy, which will impact generations to come. That is why this newsletter exists: to inform the curious and help more people understand the underlying principles and possible outcomes of our collective transition towards AGI.
-
-Nobody is individually capable of shaping the development of AI. It will manifest as a combination of multiple areas of research combined with nearly infinite different applications. Somewhere at the intersection of computer science, statistics, ethics and linguistics sits AI, almost as a culmination of our capabilities. The sum total of what we know. There is no panic button for something like this. Much like how the internet was designed to withstand nuclear war, AI cannot be unplugged. It will keep developing and extending in vectors we can barely fathom. 

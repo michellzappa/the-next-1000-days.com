@@ -39,8 +39,8 @@ const TechnologyIconsGrid = () => {
           style={{ animationDelay: `${index * 100}ms` }}
         >
           <div
-            className={`w-16 h-16 rounded-full flex items-center justify-center 
-            ${index === icons.length - 1 ? "bg-lime-300" : "bg-gray-200"}
+            className={`w-20 h-20 rounded-full flex items-center justify-center 
+            ${index === icons.length - 1 ? "bg-lime-300" : "bg-white"}
             transition-transform hover:scale-110 duration-300 ease-in-out`}
           >
             <item.Icon className="w-8 h-8" />
