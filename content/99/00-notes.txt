@@ -26,7 +26,18 @@ Missing:
 
 
 # Notes:
-- An eye for AI
+- Ratchet page
+- OG PPT → Prompt Tips
+- AI has entered the chat
+- Agents: things we can delegate to
+- COT → tarot text to image
+- Vocab pages in chapters?
+- Explain title and introduction thousand days
+- Coding tip: First explain what you understood then do what you think 
+- Humans excel at common sense reasoning, creativity, and intuitive judgments, while artificial intelligence shines in data processing, consistency, and pattern recognition. How can we combine these strengths to enhance human intelligence, unlock potential, and improve outcomes?
+- AI superhuman like speed observation seeing details colors sensors etc
+- halluc → curve fitting
+- generality → abstraction
 - Metaphor about elephant and blind men → ai zoo
 - Essay about Games & AI → how simulations and winning conditions lead to RL → ML.
 - New aesthetics

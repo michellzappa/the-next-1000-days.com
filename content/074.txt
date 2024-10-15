@@ -1,0 +1,27 @@
+074
+
+Are we in a bubble?
+
+Will the levels of AI capability plateau around the skillset of average experts, and never go toward general or super intelligence?
+
+Those with insight into unreleased models are convinced we are only scratching the surface of possibility. You would expect this position regardless of capabilities, as much of the industry revolves around hype and future promises.
+
+The gap between internal and public models is somewhere between 18-24 months, meaning that most AI you have access to today was tested internally around two years ago. Ask anyone with access to these models what they think the future holds, and they all circle back to the same questions: AI risk is present and the potential benefits from developing it far outweigh any potential negative consequences. Sure. History tells us this is implausible. I for one hope we don’t end up with a handful of individuals owning the majority of our AIs, as is our experience with social media today.
+
+Instead, the best we can optimize for is making sure AI is distributed and accessible to all. Many of us are learning quickly from what is developing and establishing best practices and guidelines for other to learn from. We should not expect everyone to become technically literate in ML but those who are have a responsibility of sharing and preparing those who are not. I am seeing more companies and public institutions working toward policies around responsible AI, which is reassuring.
+
+On a personal level, that means putting in more effort into finally starting to publish the framework I’ve been tinkering with the past year. I have a hypothesis about how we will arrive at [AGI](https://www.envisioning.io/vocab/agi-artificial-general-intelligence). This ten-part framework is designed to help those with the responsibility of making strategic decisions around AI to skill up their technical understanding. You can find [a recent 50-min recording of this presentation on YouTube](https://www.youtube.com/watch?v=kwQ79E0DyZo). I’ll have a lot more to share around this work in the coming months - thanks for being here for it.
+
+—
+
+Housekeeping:
+
+Meetup was a blast
+
+Online meetup next week - will send recording this week to all registered participants.
+
+TEDAI Vienna
+
+Amsterdam save the date: first Thursday of every month.
+
+Until next week,MZ

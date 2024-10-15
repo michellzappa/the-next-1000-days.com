@@ -7,8 +7,8 @@ const SunflowerGrowthVisualization = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime((prevTime) => (prevTime + 2) % (totalElements * 2));
-    }, 20); // Keep the interval at 20ms, but increment by 2 instead of 1
+      setTime((prevTime) => (prevTime + 4) % (totalElements * 2)); // Increment by 4 instead of 2
+    }, 20); // Keep the interval at 20ms
     return () => clearInterval(interval);
   }, []);
 
