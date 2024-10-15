@@ -32,6 +32,9 @@ dependencies:
   next-themes:
     specifier: ^0.3.0
     version: 0.3.0(react-dom@18.3.1)(react@18.3.1)
+  noisejs:
+    specifier: ^2.1.0
+    version: 2.1.0
   react:
     specifier: ^18.3.1
     version: 18.3.1
@@ -3306,6 +3309,10 @@ packages:
 
   /node-releases@2.0.18:
     resolution: {integrity: sha512-d9VeXT4SJ7ZeOqGX6R5EM022wpL+eWPooLI+5UpWn2jCT1aosUQEhQP214x33Wkwx3JQMvIm+tIoVOdodFS40g==}
+    dev: false
+
+  /noisejs@2.1.0:
+    resolution: {integrity: sha512-sw39KaUS2YBta6apZ0/H+nnCsUyxT/ZRxgv/HnDxx6pWO2e2nUmWgLhpOaQdlxxkFepIpxDrlXy3fHVx0S3SLg==}
     dev: false
 
   /normalize-path@3.0.0:
