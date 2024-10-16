@@ -1,162 +1,201 @@
 import React, { useEffect, useRef } from "react";
 
-const AutonomousAgentsVisualization = () => {
+const SmoothHighDPIDynamicGrayscaleAIAgentCollaborationAnimation = () => {
   const canvasRef = useRef(null);
-  const animationRef = useRef(null);
-  const MAX_HEIGHT = 400; // Set maximum height to 600px
+  const containerRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    const container = containerRef.current;
     const ctx = canvas.getContext("2d");
-    let agents = [];
-    const numAgents = 100;
-    const connectionDistance = 100;
+    let animationFrameId;
+    let dpr = window.devicePixelRatio || 1;
 
-    function initializeAgents() {
-      agents = [];
-      for (let i = 0; i < numAgents; i++) {
-        agents.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 2,
-          vy: (Math.random() - 0.5) * 2,
-          radius: 5,
-        });
-      }
-    }
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Enable anti-aliasing
-      ctx.imageSmoothingEnabled = true;
-      ctx.imageSmoothingQuality = "high";
-
-      // Get the current color based on the color scheme
-      const color = getComputedStyle(document.documentElement)
-        .getPropertyValue("--foreground")
-        .trim();
-
-      // Update and draw agents
-      agents.forEach((agent) => {
-        // Update position
-        agent.x += agent.vx;
-        agent.y += agent.vy;
-
-        // Bounce off the left and right walls
-        if (agent.x - agent.radius <= 0) {
-          agent.vx = Math.abs(agent.vx);
-          agent.x = agent.radius;
-        } else if (agent.x + agent.radius >= canvas.width) {
-          agent.vx = -Math.abs(agent.vx);
-          agent.x = canvas.width - agent.radius;
-        }
-
-        // Bounce off the top and bottom walls
-        if (agent.y - agent.radius <= 0) {
-          agent.vy = Math.abs(agent.vy);
-          agent.y = agent.radius;
-        } else if (agent.y + agent.radius >= canvas.height) {
-          agent.vy = -Math.abs(agent.vy);
-          agent.y = canvas.height - agent.radius;
-        }
-
-        // Draw agent with smoother edges
-        ctx.beginPath();
-        ctx.arc(agent.x, agent.y, agent.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `${color}`;
-        ctx.fill();
-
-        // Add a subtle glow effect
-        const gradient = ctx.createRadialGradient(
-          agent.x,
-          agent.y,
-          0,
-          agent.x,
-          agent.y,
-          agent.radius * 2
-        );
-        gradient.addColorStop(0, `${color}4D`); // 30% opacity
-        gradient.addColorStop(1, `${color}00`); // 0% opacity
-        ctx.beginPath();
-        ctx.arc(agent.x, agent.y, agent.radius * 2, 0, Math.PI * 2);
-        ctx.fillStyle = gradient;
-        ctx.fill();
-
-        // Connect nearby agents with improved line quality
-        agents.forEach((otherAgent) => {
-          if (agent === otherAgent) return; // Avoid connecting the agent to itself
-
-          const dx = otherAgent.x - agent.x;
-          const dy = otherAgent.y - agent.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < connectionDistance) {
-            ctx.beginPath();
-            ctx.moveTo(agent.x, agent.y);
-            ctx.lineTo(otherAgent.x, otherAgent.y);
-            const alpha = 1 - distance / connectionDistance;
-            ctx.strokeStyle = `${color}${Math.round(alpha * 0.5 * 255)
-              .toString(16)
-              .padStart(2, "0")}`;
-            ctx.lineWidth = 0.75;
-            ctx.lineCap = "round";
-            ctx.stroke();
-          }
-        });
-      });
-
-      animationRef.current = requestAnimationFrame(animate);
-    };
-
-    function handleResize() {
-      const container = canvas.parentElement;
-      const { width } = container.getBoundingClientRect();
-      const height = Math.min(width * 0.75, MAX_HEIGHT); // Set height to 3/4 of width, but not exceeding MAX_HEIGHT
-
-      const dpr = window.devicePixelRatio || 1;
-
-      // Reset the transformation matrix before scaling
-      ctx.setTransform(1, 0, 0, 1, 0, 0);
-
+    const resizeCanvas = () => {
+      const rect = container.getBoundingClientRect();
+      const width = rect.width;
+      const height = rect.height;
       canvas.width = width * dpr;
       canvas.height = height * dpr;
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
       ctx.scale(dpr, dpr);
+    };
 
-      initializeAgents();
+    const resizeObserver = new ResizeObserver(resizeCanvas);
+    resizeObserver.observe(container);
+    resizeCanvas();
+
+    const agentCount = 75;
+    let agents = [];
+
+    class Agent {
+      constructor() {
+        const rect = container.getBoundingClientRect();
+        this.x = Math.random() * rect.width;
+        this.y = Math.random() * rect.height;
+        this.vx = (Math.random() * 2 - 1) * 0.5; // Reduced initial velocity
+        this.vy = (Math.random() * 2 - 1) * 0.5; // Reduced initial velocity
+        this.baseRadius = 2; // Reduced from 3.75 to 2.5
+        this.radius = this.baseRadius;
+        this.brightness = Math.random() * 50 + 25;
+        this.attractionTarget = null;
+        this.attractionDuration = 0;
+        this.group = Math.floor(Math.random() * 5); // Assign to one of 5 groups
+        this.groupColor = this.getGroupColor();
+      }
+
+      getGroupColor() {
+        const shades = [
+          [200, 200, 200], // Light gray
+          [160, 160, 160], // Medium light gray
+          [120, 120, 120], // Medium gray
+          [80, 80, 80], // Medium dark gray
+          [40, 40, 40], // Dark gray
+        ];
+        return shades[this.group];
+      }
+
+      update() {
+        const rect = container.getBoundingClientRect();
+
+        if (this.attractionTarget) {
+          // Only attract to agents in the same group
+          if (this.group === this.attractionTarget.group) {
+            this.vx += (this.attractionTarget.x - this.x) * 0.03;
+            this.vy += (this.attractionTarget.y - this.y) * 0.03;
+          }
+
+          // Increased attraction to target
+          this.attractionDuration--;
+          if (this.attractionDuration <= 0) {
+            this.attractionTarget = null;
+          }
+        } else {
+          // Existing center attraction logic
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const distToCenter = Math.hypot(this.x - centerX, this.y - centerY);
+          if (distToCenter > 200) {
+            this.vx += (centerX - this.x) * 0.0001;
+            this.vy += (centerY - this.y) * 0.0001;
+          }
+
+          // Choose a new attraction target from the same group
+          if (Math.random() < 0.05) {
+            const sameGroupAgents = agents.filter(
+              (a) => a.group === this.group
+            );
+            this.attractionTarget =
+              sameGroupAgents[
+                Math.floor(Math.random() * sameGroupAgents.length)
+              ];
+            this.attractionDuration = Math.floor(Math.random() * 150) + 100;
+          }
+        }
+
+        // Reduced max speed
+        const maxSpeed = 1;
+        const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+        if (speed > maxSpeed) {
+          this.vx = (this.vx / speed) * maxSpeed;
+          this.vy = (this.vy / speed) * maxSpeed;
+        }
+
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if (this.x < 0 || this.x > rect.width) this.vx *= -1;
+        if (this.y < 0 || this.y > rect.height) this.vy *= -1;
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        const [r, g, b] = this.groupColor;
+        ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
+        ctx.fill();
+      }
     }
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
+    const init = () => {
+      agents = Array.from({ length: agentCount }, () => new Agent());
+    };
+
+    const animate = () => {
+      const rect = container.getBoundingClientRect();
+      ctx.clearRect(0, 0, rect.width, rect.height);
+
+      agents.forEach((agent) => {
+        agent.update();
+      });
+
+      agents.forEach((agent, i) => {
+        for (let j = i + 1; j < agents.length; j++) {
+          const otherAgent = agents[j];
+          const dx = agent.x - otherAgent.x;
+          const dy = agent.y - otherAgent.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          const maxDistance = 100; // Kept the reduced max distance for connections
+
+          if (distance < maxDistance && agent.group === otherAgent.group) {
+            const opacity = 1 - distance / maxDistance;
+            ctx.beginPath();
+            ctx.moveTo(agent.x, agent.y);
+            ctx.lineTo(otherAgent.x, otherAgent.y);
+            const [r, g, b] = agent.groupColor;
+            ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${opacity * 0.5})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+
+            // Add slight attraction between connected agents in the same group
+            const attractionForce = 0.03;
+            agent.vx += (dx / distance) * attractionForce;
+            agent.vy += (dy / distance) * attractionForce;
+            otherAgent.vx -= (dx / distance) * attractionForce;
+            otherAgent.vy -= (dy / distance) * attractionForce;
+          }
+        }
+      });
+
+      agents.forEach((agent) => {
+        agent.draw();
+      });
+
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    init();
     animate();
 
-    // Add event listener for color scheme changes
-    const colorSchemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    colorSchemeQuery.addListener(handleResize);
-
     return () => {
-      window.removeEventListener("resize", handleResize);
-      colorSchemeQuery.removeListener(handleResize);
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
+      cancelAnimationFrame(animationFrameId);
+      resizeObserver.disconnect();
     };
   }, []);
 
   return (
     <div
-      className="w-full"
-      style={{ maxHeight: `${MAX_HEIGHT}px`, aspectRatio: "4 / 3" }}
+      ref={containerRef}
+      style={{
+        width: "100%",
+        height: "100%",
+        minHeight: "400px",
+        position: "relative",
+      }}
     >
       <canvas
         ref={canvasRef}
-        className="w-full h-full"
-        style={{ background: "transparent" }}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+        }}
       />
     </div>
   );
 };
 
-export default AutonomousAgentsVisualization;
+export default SmoothHighDPIDynamicGrayscaleAIAgentCollaborationAnimation;
