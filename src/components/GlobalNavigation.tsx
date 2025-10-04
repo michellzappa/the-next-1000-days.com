@@ -20,7 +20,13 @@ interface NavigationData {
 export default function GlobalNavigation({ children }: GlobalNavigationProps) {
   const router = useRouter();
   const [navigation, setNavigation] = useState<NavigationData>({});
-  const [chapters, setChapters] = useState<any[]>([]);
+  const [chapters, setChapters] = useState<
+    Array<{
+      id: string;
+      title: string;
+      pages: Array<{ id: string; title: string }>;
+    }>
+  >([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -63,7 +69,7 @@ export default function GlobalNavigation({ children }: GlobalNavigationProps) {
     if (pageId) {
       // We're on a specific page
       const currentPageIndex = currentChapter.pages.findIndex(
-        (page: any) => page.id === pageId
+        (page: { id: string; title: string }) => page.id === pageId
       );
 
       const previousPage =

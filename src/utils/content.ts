@@ -43,7 +43,6 @@ export async function getChapters() {
           subtitle = subtitleLine ? subtitleLine.replace('## ', '').trim() : '';
           
           // Get content starting after the title and subtitle lines
-          const titleIndex = 0;
           const subtitleIndex = lines.findIndex(line => line.trim().startsWith('## '));
           const contentStartIndex = subtitleIndex >= 0 ? subtitleIndex + 1 : 1;
           content = lines.slice(contentStartIndex).join('\n');

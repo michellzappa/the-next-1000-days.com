@@ -20,6 +20,7 @@ interface ChapterProps {
   subPages: Page[];
   navigation: ChapterNavigation;
   hasCustomComponent: boolean;
+  mainPageNumber: string;
 }
 
 interface Page {
@@ -53,6 +54,7 @@ export default function Chapter({
   subPages,
   navigation,
   hasCustomComponent,
+  mainPageNumber,
 }: ChapterProps) {
   const router = useRouter();
   const { chapterId: chapterIdQuery } = router.query;
@@ -331,6 +333,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       subPages,
       navigation,
       hasCustomComponent,
+      mainPageNumber,
     },
   };
 };

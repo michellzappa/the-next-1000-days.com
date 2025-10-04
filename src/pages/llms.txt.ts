@@ -46,6 +46,9 @@ function getAllContent(): string {
           const mainFilePath = path.join(chapterPath, mainFile);
           const mainContent = fs.readFileSync(mainFilePath, 'utf-8');
           
+          // Add canonical page number
+          fullText += `[${mainPageNumber}]\n\n`;
+          
           // Clean up the content (remove frontmatter if any)
           const cleanContent = mainContent.replace(/^---[\s\S]*?---\n/, '');
           fullText += cleanContent.trim() + '\n\n';
@@ -68,10 +71,15 @@ function getAllContent(): string {
           const filePath = path.join(chapterPath, file);
           const content = fs.readFileSync(filePath, 'utf-8');
           
+          // Get the page number from filename
+          const pageNumber = file.replace('.md', '');
+          
           // Clean up the content (remove frontmatter if any)
           const cleanContent = content.replace(/^---[\s\S]*?---\n/, '');
           
           if (cleanContent.trim()) {
+            // Add canonical page number
+            fullText += `[${pageNumber}]\n\n`;
             fullText += cleanContent.trim() + '\n\n';
           }
         } catch (error) {

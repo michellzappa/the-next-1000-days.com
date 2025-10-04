@@ -48,7 +48,15 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
       );
     }
     // For other image formats, use default rendering
-    return <img src={src || ""} alt={alt || ""} />;
+    return (
+      <Image
+        src={src || ""}
+        alt={alt || ""}
+        width={800}
+        height={600}
+        style={{ width: "100%", height: "auto" }}
+      />
+    );
   };
 
   return (
