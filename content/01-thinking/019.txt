@@ -1,3 +1,0 @@
-# Metacognitive Debugging
-
-I sometimes use AI to analyze my own reasoning. I explain a pattern of decisions and ask what cognitive biases might be at play. It surfaces blind spots with detachment, creating distance from my immediate experience and helping refine the way I think, not just what I think.

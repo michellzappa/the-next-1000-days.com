@@ -1,3 +1,0 @@
-# Exploring Ethical Scenarios
-
-I use AI to reason through ethical dilemmas, from AI deployment to data privacy. It lays out structured arguments for each side, showing consequences and tensions. The process does not decide for me but provides a balanced framework for informed judgment.

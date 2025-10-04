@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const SunflowerGrowthVisualization = () => {
   const [time, setTime] = useState(0);
   const totalElements = 1000;
   const goldenAngle = Math.PI * (3 - Math.sqrt(5)); // Golden angle in radians
+  const hasFilledRef = useRef(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime((prevTime) => (prevTime + 4) % (totalElements * 2)); // Increment by 4 instead of 2
+      setTime((prevTime) => prevTime + 4); // Keep increasing; we'll loop erasing via fractional part
     }, 20); // Keep the interval at 20ms
     return () => clearInterval(interval);
   }, []);
@@ -17,24 +18,38 @@ const SunflowerGrowthVisualization = () => {
 
   const generateSeeds = () => {
     const seeds = [];
-    const growthFactor = Math.pow(time / totalElements, 1.5);
-    const visibleSeeds = Math.min(
+
+    // Initial growth up to totalElements, then keep constant count
+    const growthProgress = Math.min(time / totalElements, 1);
+    const growthFactor = Math.pow(growthProgress, 1.5);
+    const visibleDuringGrowth = Math.min(
       Math.floor(totalElements * growthFactor),
       totalElements
     );
 
-    // Adjust the erasing process
-    const erasingProgress = Math.max(0, (time - totalElements) / totalElements);
-    const easedErasingProgress = easeInOutCubic(erasingProgress);
-    const erasingSeeds = Math.floor(easedErasingProgress * totalElements);
+    if (!hasFilledRef.current && visibleDuringGrowth >= totalElements) {
+      hasFilledRef.current = true;
+    }
 
-    for (let i = erasingSeeds; i < visibleSeeds; i++) {
+    const count = hasFilledRef.current ? totalElements : visibleDuringGrowth;
+
+    // After filling, rotate a window continuously using repeating erasing progress
+    const loopTBase = Math.max(0, time - totalElements) / totalElements; // 0..inf
+    const loopT = loopTBase - Math.floor(loopTBase); // fractional part -> 0..1 repeating
+    const easedErasingProgress = easeInOutCubic(loopT);
+    const offset = Math.floor(easedErasingProgress * totalElements);
+
+    for (let k = 0; k < count; k++) {
+      const i = (k + offset) % totalElements;
       const angle = i * goldenAngle;
       const distance = Math.sqrt(i) * 0.6;
       const x = Math.cos(angle) * distance;
       const y = Math.sin(angle) * distance;
-      const ageProgress = (i - erasingSeeds) / (visibleSeeds - erasingSeeds);
-      const scale = easeInOutCubic(ageProgress);
+      const ageProgress = count > 1 ? k / (count - 1) : 1;
+      const biasedAge = hasFilledRef.current
+        ? Math.pow(ageProgress, 1.5)
+        : ageProgress;
+      const scale = easeInOutCubic(biasedAge);
 
       seeds.push({ x, y, scale });
     }

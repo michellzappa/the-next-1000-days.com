@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 import PlausibleProvider from "next-plausible";
+import GlobalNavigation from "../components/GlobalNavigation";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -10,7 +11,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       trackLocalhost={false} // Set to true if you want to track localhost during development
     >
       <ThemeProvider attribute="class">
-        <Component {...pageProps} />
+        <GlobalNavigation>
+          <Component {...pageProps} />
+        </GlobalNavigation>
       </ThemeProvider>
     </PlausibleProvider>
   );

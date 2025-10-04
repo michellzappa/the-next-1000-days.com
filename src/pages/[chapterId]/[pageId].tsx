@@ -236,8 +236,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const content = fs.readFileSync(pagePath, "utf-8");
   const lines = content.split("\n");
   const title = lines[0].replace("# ", "");
-  const subtitle =
-    lines[1] && lines[1].startsWith("## ") ? lines[1].replace("## ", "") : null;
+
+  // Find the first ## subtitle line, skipping any blank lines
+  const subtitleLine = lines.find((line) => line.trim().startsWith("## "));
+  const subtitle = subtitleLine ? subtitleLine.replace("## ", "").trim() : null;
 
   // Get chapter title from the first file in the chapter directory
   const chapterFiles = fs

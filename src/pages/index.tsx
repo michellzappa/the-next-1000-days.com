@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Markdown from "../components/Markdown";
 import { usePageNavigation } from "../hooks/usePageNavigation";
 import dynamic from "next/dynamic";
+import { useState, useEffect } from "react";
 
 interface Chapter {
   id: string;
@@ -37,6 +38,22 @@ export default function Home({ chapters }: HomeProps) {
   });
 
   const CustomComponent = dynamic(() => import("../components/chapter/000"));
+
+  // Days counter for AI milestones
+  const [chatGPTDays, setChatGPTDays] = useState(0);
+  const [gpt4Days, setGpt4Days] = useState(0);
+
+  useEffect(() => {
+    const calculateDays = (launchDate: string) => {
+      const launch = new Date(launchDate);
+      const today = new Date();
+      const difference = today.getTime() - launch.getTime();
+      return Math.floor(difference / (1000 * 60 * 60 * 24));
+    };
+
+    setChatGPTDays(calculateDays("2022-11-30"));
+    setGpt4Days(calculateDays("2023-03-14"));
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-background text-foreground">
@@ -107,9 +124,23 @@ export default function Home({ chapters }: HomeProps) {
                 >
                   <div className="flex items-baseline">
                     <span className="inline-block w-12 text-base font-mono text-gray-500 dark:text-gray-400">
-                      {(parseInt(chapter.number) * 10)
-                        .toString()
-                        .padStart(3, "0")}
+                      {chapter.id === "01"
+                        ? "011"
+                        : chapter.id === "02"
+                        ? "022"
+                        : chapter.id === "03"
+                        ? "033"
+                        : chapter.id === "04"
+                        ? "044"
+                        : chapter.id === "05"
+                        ? "055"
+                        : chapter.id === "06"
+                        ? "066"
+                        : chapter.id === "07"
+                        ? "077"
+                        : chapter.id === "08"
+                        ? "088"
+                        : "000"}
                     </span>
                     <span className="text-lg font-bold">{chapter.title}</span>
                   </div>
@@ -119,6 +150,21 @@ export default function Home({ chapters }: HomeProps) {
                 </Link>
               </div>
             ))}
+          </section>
+
+          <section className="mt-12 mb-8 p-6">
+            <div className="flex justify-center space-x-8 text-center">
+              <div>
+                <div className="text-2xl font-bold">{chatGPTDays}</div>
+                <div className="text-sm">days since ChatGPT launch</div>
+                <div className="text-xs">Nov 30, 2022</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold">{gpt4Days}</div>
+                <div className="text-sm">days since GPT-4 launch</div>
+                <div className="text-xs">Mar 14, 2023</div>
+              </div>
+            </div>
           </section>
         </main>
         <Footer />

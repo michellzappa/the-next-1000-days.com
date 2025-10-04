@@ -68,9 +68,7 @@ export default function Chapter({
   }
 
   const CustomComponent = hasCustomComponent
-    ? dynamic(
-        () => import(`../../components/chapter/${chapterId.padStart(2, "0")}0`)
-      )
+    ? dynamic(() => import(`../../components/chapter/${mainPageNumber}`))
     : null;
 
   return (
@@ -207,12 +205,31 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 
   const chapterPath = path.join(contentDir, chapterDir);
-  const chapterFiles = fs
-    .readdirSync(chapterPath)
-    .filter((file) => file.endsWith(".md"))
-    .sort();
 
-  const mainFile = chapterFiles[0];
+  // Find the main chapter page based on the new numbering system
+  const chapterNumber = parseInt(chapterId);
+  const mainPageNumber =
+    chapterNumber === 0
+      ? "000"
+      : chapterNumber === 1
+      ? "011"
+      : chapterNumber === 2
+      ? "022"
+      : chapterNumber === 3
+      ? "033"
+      : chapterNumber === 4
+      ? "044"
+      : chapterNumber === 5
+      ? "055"
+      : chapterNumber === 6
+      ? "066"
+      : chapterNumber === 7
+      ? "077"
+      : chapterNumber === 8
+      ? "088"
+      : "000";
+
+  const mainFile = `${mainPageNumber}.md`;
   const content = fs.readFileSync(path.join(chapterPath, mainFile), "utf-8");
   const lines = content.split("\n");
 
@@ -220,26 +237,47 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     ? lines[0].replace("# ", "").trim()
     : pageId;
 
-  const subtitle = lines[1].startsWith("## ")
-    ? lines[1].replace("## ", "").trim()
-    : null;
+  // Find the first ## subtitle line, skipping any blank lines
+  const subtitleLine = lines.find((line) => line.trim().startsWith("## "));
+  const subtitle = subtitleLine ? subtitleLine.replace("## ", "").trim() : null;
 
-  const contentWithoutTitleAndSubtitle = lines.slice(2).join("\n");
+  // Get content starting after the title and subtitle lines
+  const subtitleIndex = lines.findIndex((line) =>
+    line.trim().startsWith("## ")
+  );
+  const contentStartIndex = subtitleIndex >= 0 ? subtitleIndex + 1 : 1;
+  const contentWithoutTitleAndSubtitle = lines
+    .slice(contentStartIndex)
+    .join("\n");
 
-  const subPages = chapterFiles.slice(1).map((file) => {
-    const pageContent = fs.readFileSync(path.join(chapterPath, file), "utf-8");
-    const lines = pageContent.split("\n");
-    const pageTitle = lines[0].replace("# ", "").trim();
-    const pageSubtitle =
-      lines[1] && lines[1].startsWith("## ")
-        ? lines[1].replace("## ", "").trim()
+  const chapterFiles = fs
+    .readdirSync(chapterPath)
+    .filter((file) => file.endsWith(".md"))
+    .sort();
+
+  const subPages = chapterFiles
+    .filter((file) => file !== mainFile)
+    .map((file) => {
+      const pageContent = fs.readFileSync(
+        path.join(chapterPath, file),
+        "utf-8"
+      );
+      const lines = pageContent.split("\n");
+      const pageTitle = lines[0].replace("# ", "").trim();
+
+      // Find the first ## subtitle line, skipping any blank lines
+      const pageSubtitleLine = lines.find((line) =>
+        line.trim().startsWith("## ")
+      );
+      const pageSubtitle = pageSubtitleLine
+        ? pageSubtitleLine.replace("## ", "").trim()
         : null;
-    return {
-      id: file.replace(".md", ""),
-      title: pageTitle,
-      subtitle: pageSubtitle,
-    };
-  });
+      return {
+        id: file.replace(".md", ""),
+        title: pageTitle,
+        subtitle: pageSubtitle,
+      };
+    });
 
   const chapters = await getChapters();
   const currentChapterIndex = chapters.findIndex(
