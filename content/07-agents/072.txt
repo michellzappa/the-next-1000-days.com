@@ -1,8 +1,0 @@
-# Where are we heading?
-
-{Multiagent}
-
-Which direction are we heading with these agents? On one hand, there’s a Reddit comment that many people identify with: "ChatGPT is my only good co-worker." This sentiment reflects a common feeling in corporate environments where people find more reliability in AI than in human colleagues. On the right, we have an abstracted graph showing how traditional software becomes more general and autonomous over time, leading eventually to artificial general intelligence (AGI).
-
-
-Slide-69.webp

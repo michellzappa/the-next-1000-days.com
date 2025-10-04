@@ -1,7 +1,0 @@
-Happy Monday and welcome to another week of trying to make sense of our inevitable transition towards greater forms of alternate intelligence. 
-
-My last few days have been all about preparing to launch two exciting new projects: our new company website (envisioning.io) and a brand-new AI concept navigator (envisioning.ai). Both will be presented in the newsletter in coming weeks, but my takeaway is about how much of the content and development workload that has been replaced with the continuous use of LLMs. It feels like Claude and ChatGPT have become team members – ones with tons of expertise but no experience, that are capable of performing 90% of what I can’t do myself. 
-
-In theory this leaves me spending more time on the 10% that are inherently mine, like conceptualizing, writing and curating ideas. Implementation was always a personal bottleneck but today everything that I can formulate as an answerable query is suddenly solvable. It’s remarkable how much can get done with enough focus and the right tools.
-
-#c05

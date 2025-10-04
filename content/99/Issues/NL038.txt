@@ -1,5 +1,0 @@
-This week sees the release of an important new VR consumer device, or as Apple calls it: spatial computing. Whether we’ll all be wearing computers on our faces a decade from now remains unforeseeable, but it sure is exciting to watch a new industry unfold. I am especially interested in how GenAI will inevitably seep into products and user experiences. Chatting with GPT on text or audio isn’t necessarily immersive, but it can be compelling. Stepping into generative environments which respond to our input will probably the next iteration of this, and I’ll be paying close attention to what companies like Midjourney are up to in this space.
-
-I still think augmentation of all kinds is the way forward. Humans are already molded around technology in ways that we barely comprehend and there is no imagining us without our technological superstructure. Everything that happens outside our minds is effectively mediated by some kind of technology - from our writing utensils to our staircases, shoes or sustenance. We are all centaurs already, there is no reversing the course, only a matter of how you embrace it and work with technology to help shape better futures.
-
-#c10

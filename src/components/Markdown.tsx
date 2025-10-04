@@ -3,10 +3,6 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Image from "next/image";
 import rehypeRaw from "rehype-raw";
-import { remarkVocabPlugin } from "../utils/remarkVocabPlugin";
-import { getVocabData } from "../utils/getVocabData";
-import VocabCard from "./VocabCard";
-import { useEffect } from "react";
 
 interface MarkdownProps {
   content: string;
@@ -15,8 +11,6 @@ interface MarkdownProps {
 }
 
 const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
-  const vocabData = React.useMemo(() => getVocabData(), []);
-
   const processedContent = React.useMemo(() => {
     const chapterNumber = chapterId.padStart(3, "0");
     const pageNumber = pageId || `${chapterNumber}0`;
@@ -30,26 +24,6 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
       }
     );
   }, [content, chapterId, pageId]);
-
-  useEffect(() => {
-    const vocabCards = document.querySelectorAll(".vocab-card-wrapper");
-    vocabCards.forEach((card) => {
-      const imagePath = card.getAttribute("data-image-path");
-      if (imagePath) {
-        const img = new Image();
-        img.onload = () => {
-          (card as HTMLElement).style.backgroundImage = `url('${imagePath}')`;
-          (card as HTMLElement).style.backgroundSize = "cover";
-          (card as HTMLElement).style.opacity = "1";
-        };
-        img.onerror = () => {
-          console.error(`Failed to load image: ${imagePath}`);
-          (card as HTMLElement).style.opacity = "1";
-        };
-        img.src = imagePath;
-      }
-    });
-  }, [processedContent]);
 
   const customImageRenderer = (props: { src?: string; alt?: string }) => {
     const { src, alt } = props;
@@ -80,7 +54,7 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
   return (
     <div className="clearfix">
       <ReactMarkdown
-        remarkPlugins={[remarkGfm, [remarkVocabPlugin, vocabData]]}
+        remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw]}
         components={{
           h1: (props) => (
@@ -153,36 +127,7 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
             }
             return <span {...props}>{props.children}</span>;
           },
-          VocabCard: ({
-            term,
-            definition,
-          }: {
-            term: string;
-            definition: string;
-          }) => <VocabCard term={term} definition={definition} />,
-
-          // Add this new renderer for the vocab-card
-          "vocab-card": ({
-            term,
-            definition,
-            children,
-          }: {
-            term: string;
-            definition: string;
-            children?: React.ReactNode;
-          }) => (
-            <VocabCard term={term} definition={definition}>
-              {children}
-            </VocabCard>
-          ),
           div: ({ className, children, ...props }) => {
-            if (className === "vocab-card-wrapper") {
-              return (
-                <div className="float-right clear-right ml-4 mb-4 w-64 h-96 transition-opacity duration-300">
-                  {children}
-                </div>
-              );
-            }
             return <div {...props}>{children}</div>;
           },
         }}

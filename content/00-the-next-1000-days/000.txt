@@ -1,9 +1,0 @@
-# The Next 1.000 Days
-## Your guide for navigating the transition to AGI. 
-
-AI is having a moment. Decades of fundamental discoveries and years of quiet revolutions are giving rise to a sudden explosion of applications in unexpected places.
-
-Unlike other hype-heavy technologies of recent years, AI is useful. While it’s acceleration might taper off, the genie is not going back into the bottle.
-
-This leaves us with important questions to grapple with. People of all levels of technical literacy will have to work together in order to direct the evolution of AI for generations to come. 
-

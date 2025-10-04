@@ -1,8 +1,0 @@
-In other news: AI remains a big deal.
-
-Few arguments can be made against the certainty of increased machine intelligence in our lives. Individually we can always push back – apply a luddite / minimal / Amish approach to our personal technology usage – but collectively the direction is fairly universal. AI will keep bleeding into every part of our institutions. If so many organizations were already struggling with digital transformation, just imagine the number of opportunities ahead when everything we’ve created starts acting intelligent. Few people are making the argument that LLMs are in any way conscious – but we don’t require consciousness to perceive intelligence. Being responsive is enough.
-
-There are many ways of making sense of this transformation. After foundational knowledge (in ML, data science, statistics, etc.), you arguably need three things: keeping track of current developments, applying your skills, and having a map of where the field is heading. We are working on that last part, to be shared soon.
-
-
-#c00 

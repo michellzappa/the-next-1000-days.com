@@ -1,0 +1,36 @@
+# Organizing
+## From fragments to form.
+
+* What is the role of AI creativity in our work?
+* Creative tools as idea generators.
+* Learning the underlying skills to understand the transition ahead.
+
+We will look a little bit at the creative aspect or component of these systems, what it actually means that they are creative, and what they're capable of doing. Ideally, we'll ask ourselves a few questions about what role we want to play when these systems are more and more prevalent.
+
+
+
+What does it mean for a machine to generate creative output? Will we recognize AI-created content? What is our role in a hybrid creative environment?
+
+We used to think AI would take over "easy" jobs. Instead, it has encroached into creative domains, challenging our assumptions about the nature of creativity itself. This isn't just about automation - it's about augmentation and expansion of human creative capabilities.
+
+Understanding how LLMs work is crucial here. These models perceive billions of quantitative relationships between concepts, allowing them to extrapolate and generate information in ways that can appear remarkably creative. But is it truly creative, or just sophisticated pattern matching?
+
+The applications are vast: from marketing and advertising to art and design, music composition to interactive storytelling. AI is not just assisting in these fields - it's actively generating novel content, sometimes indistinguishable from human-created work.
+
+My own experiments, like creating the GPTarot deck, highlight the potential and limitations of AI in creative tasks. The ability to generate coherent, symbolically rich tarot designs in a weekend speaks to the power of these tools. But the process also revealed the importance of human curation and direction.
+
+This chapter will explore the intersection of AI and creativity, examining current capabilities, potential future developments, and the evolving role of human creatives in an AI-augmented landscape. It's not about replacement, but about finding new ways to expand our creative horizons.
+
+Remember, creativity is about novelty and value. AI excels at generating novelty, but determining value remains a deeply human task. Our role is shifting, but far from obsolete.
+
+
+
+
+--
+
+Keeping up with AI can be a lot, so I hope this publication will make sense to everyone who is looking to stay informed and ahead of the curve. In particular, I am trying to explore the intersection of general intelligence and computational creativity, and believe one might actually lead to the other. Creativity is irreducible, fuzzy and difficult to pin down – but maybe the way we create new ideas together with machines holds the key to better intelligence. Let’s find out.
+
+
+--
+
+meme_050.webp

@@ -1,0 +1,95 @@
+# Jagged Edge
+## Why AI skills can be unexpectedly easy or difficult.
+
+Slide-26.webp
+
+The Jagged Edge of Capabilities
+   - Explanation of the concept
+   - Why some AI tasks are unexpectedly easy or difficult
+   - Examples: Siri vs ChatGPT performance
+
+
+All types of AI suffer from something called the "jagged edge" or "ragged edge." This refers to the discrepancy between how we think these systems should perform and how they actually do. We expect AI to be fairly smart, as it has "intelligence" in the name. Yet, it isn't always necessarily that. If we were to plot this on a two-by-two grid, we'd put the expected performance on the horizontal axis and the actual performance on the vertical. 
+For instance, Siri would be somewhere where the actual performance is pretty crummy, though we expect it to be high because of the company behind it. Conversely, ChatGPT and AlphaGo might be in the opposite quadrant. We expected them to be fairly low in terms of capability, but they turned out to be super high. 
+
+jagged edge
+The models have capabilities that they were not explicitly designed to have. Even the creators are surprised by their abilities. 
+
+Expectation gap
+why some tasks are easy to perform and others difficult. Difficult to anticipate where they excel and where they fall apart.
+How well AI performs each task.
+Different models perform similarly.
+Trial and error and exchange experiences online. 
+
+User expectations are often shaped by the novelty of the technology, media coverage, and personal experiences. Each of these models offers varying performance depending on tasks like natural language understanding, image generation, or strategic gameplay.
+
+---
+
+
+Why are some tasks easy to perform and others difficult?
+
+AI models often display capabilities that they were not explicitly designed to have – even the creators are sometimes surprised by their abilities.
+
+AI can outperform expectations in unforeseen ways.
+
+---
+
+
+
+
+Certainly! I'll create an outline for Chapter 2: Frontiers, based on the information provided in your transcript and project notes.
+
+
+
+Chapter 2: Frontiers
+
+1. Introduction to AI Frontiers
+   - Definition of "frontier models"
+   - The constantly evolving nature of AI capabilities
+   - Larry Tesler's quote: "AI is whatever hasn't been done yet"
+
+2. Types of AI
+   - Overview of different AI categories (Reactive Machines, Limited Memory, etc.)
+   - Emphasis on Generative AI as the current focus
+
+3. The Jagged Edge of AI Performance
+   - Revisiting the concept from Chapter 1
+   - Examples of unexpected AI capabilities and limitations
+   - The challenge of predicting AI performance
+
+4. Current Cutting-Edge AI Applications
+   - Image generation advancements (e.g., DALL-E, Midjourney)
+   - Video generation capabilities (e.g., Sora)
+   - AI in wearables (e.g., Meta Ray-Ban, Hume)
+
+5. Robotics and Embodied AI
+   - Recent developments in humanoid robots
+   - Integration of AI with physical systems
+   - Examples: Boston Dynamics' Atlas, Figure 02, Astribot S1
+
+6. AI in Creative Fields
+   - Advancements in AI-generated art and design
+   - Video creation and manipulation
+   - Implications for creative industries
+
+7. Emerging Trends in AI Interfaces
+   - Conversational AI improvements
+   - Multimodal AI systems (combining text, image, audio)
+   - The future of human-AI interaction
+
+8. Challenges at the Frontier
+   - Ethical considerations of advanced AI
+   - Technical hurdles in achieving human-like performance
+   - The role of data and computing power in pushing boundaries
+
+9. Exercise: Exploring Frontier AI
+   - Hands-on experience with a cutting-edge AI tool
+   - Discussion of potential applications and implications
+
+10. Looking Ahead
+   - The rapid pace of AI development
+   - Preparing for future advancements
+   - Transition to the concept of Centaurs (human-AI collaboration)
+
+This outline covers the current state of AI technology, highlighting the most recent and impressive developments. It provides a comprehensive overview of where AI stands today and sets the stage for discussing how humans can effectively collaborate with these advanced systems.
+

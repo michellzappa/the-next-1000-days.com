@@ -53,9 +53,11 @@ export default function Home({ chapters }: HomeProps) {
         </Head>
 
         <main className="flex-grow">
-          <h1 className="text-4xl font-bold mb-8">The Next 1.000 Days</h1>
+          <h1 className="text-4xl font-bold mb-8">
+            Field Notes from a Centaur
+          </h1>
           <h2 className="text-2xl mb-8 italic">
-            Your guide for navigating the transition to AGI.
+            Learnings from one thousand days using AI.
           </h2>
 
           <div className="w-full flex justify-center mb-12">

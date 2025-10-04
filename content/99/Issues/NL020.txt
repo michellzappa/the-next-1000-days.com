@@ -1,9 +1,0 @@
-Greetings from Amsterdam where I’ve been invited to speak about the impending explosion in different kinds of augmented intelligence. I have been exploring this particular intersection of combining, rather than replacing humans with AI since around 2016, and have spoken & written about this approach as openly as possible ever since. While the topic never felt compelling enough to warrant a book or long-form writing, I also feel it is becoming more important than ever to consider this middle ground as the most fertile space for deploying your personal or collective AI strategy.
-Unless you work in data science, natural language processing, machine learning or are directly involved with programming these algorithms, you are likely best off strenghtening your AI skills as a complement to your existing job, or value-creating role in society. There is plenty of space for those wanting to go all-in with their ML skills and maybe even change career, but most of us will be left incorporating many kinds of adjacent intelligences into our routines and workflows regardless of industry, sector or field. 
-
-In fact, the unimitable Ethan Mollick together with BCG last week concluded that consultants complete more tasks more quickly and with higher quality when using AI augmentation. Centaurs act like a “skill leveler” with the lowest performing consultants improving the most with Al, but even top consultants improve using such tools. Researchers at DeepMind and Oxford had previously observed a nearly 3x increase in accuracy of historians restoring damaged texts when using a Centaur approach, moreso than using AI alone.
-
-I have a lot more to say on this and will be fleshing out new ideas and experiments in public through this very newsletter. As some of you have found out, we at Envisioning are building a tool to act in this very intersection, and are learning a ton in deploying AI-augmented creative sessions with workshop participants every week.
-
-
-#c03 

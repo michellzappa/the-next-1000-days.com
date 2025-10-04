@@ -1,0 +1,59 @@
+# Creating
+## Making meaning through conversation.
+
+* Because of exponentials, AI capabilities are changing all the time.
+* Paying attention to the cutting edge helps adjust expectation about near-term possibilities.
+
+We move on to the frontiers of AI or what's happening at the cutting edge. "Frontier models" is the term used to describe the most cutting-edge technology available. We're going to look a little bit at what these capabilities are and where they're currently at. 
+
+---
+
+What's happening at the cutting edge? Because of exponentials, AI capabilities are changing all the time. Paying attention to the frontier helps adjust our expectations about near-term possibilities.
+
+We're dealing with a "jagged edge" of capabilities. It's hard to predict where AI will excel and where it will fall short. Models often display abilities they weren't explicitly designed for, surprising even their creators. This unpredictability is both exciting and challenging.
+
+Recent developments are pushing boundaries in multiple domains. We're seeing advancements in multimodal AI, combining text, image, and video generation. Embodied AI and robotics are making strides. Language models are becoming more capable and easier to deploy.
+
+But it's not just about technical capabilities. The frontier is also about novel applications and integrations. How are these tools being used in creative fields, in business, in science? What new possibilities are emerging?
+
+Staying informed about these cutting-edge developments isn't just academic - it's crucial for understanding the near-future landscape we'll be operating in. This chapter will explore some of the most interesting recent advancements and their potential implications.
+
+
+1. Mismatch between expectations and reality
+   - Roy Moore's law: Overestimating short-term effects, underestimating long-term effects
+   - AI progress after multiple "AI winters"
+
+2. Rapid improvement in AI capabilities
+   - Language models competing and improving (example: Hugging Face rankings)
+   - Image generation advancements (example: Midjourney versions over time)
+
+3. Adoption vs. retention of AI tools
+   - Quick uptake of AI apps (e.g., ChatGPT reaching 100 million users rapidly)
+   - Lower retention rates compared to other technologies (e.g., Spotify, Netflix)
+   - Gap between trying AI and finding consistent use cases
+
+4. Various types of AI
+   - Generative AI as the current focus
+   - Other forms: reactive machines, reinforcement learning, etc.
+   - Example: AI in rice cookers as a form of reactive machine
+
+5. AI implementation across different layers
+   - From infrastructure to experience layer
+   - Opportunities at each level, not just consumer-facing applications
+
+6. Jagged edge of capabilities
+   - Difficulty in predicting AI performance across different tasks
+   - Examples of unexpected performance (e.g., GPT vs. Siri)
+
+7. Current state-of-the-art examples
+   - Image generation improvements
+   - Video models advancements
+   - Robotics progress
+
+This chapter explores the current frontiers of AI technology, highlighting rapid improvements, adoption patterns, and the various forms and applications of AI across different domains. It emphasizes the unpredictable nature of AI capabilities and the need to continually reassess our expectations.
+
+
+
+
+
+meme_020.webp
