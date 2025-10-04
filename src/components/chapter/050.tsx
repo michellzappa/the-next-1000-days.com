@@ -1,14 +1,16 @@
 import React, { useEffect, useRef } from "react";
 
 const RhythmicMLCreativityAnimation = () => {
-  const canvasRef = useRef(null);
-  const containerRef = useRef(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const container = containerRef.current;
+    if (!canvas || !container) return;
     const ctx = canvas.getContext("2d");
-    let animationFrameId;
+    if (!ctx) return;
+    let animationFrameId: number;
 
     const resizeCanvas = () => {
       const dpr = window.devicePixelRatio || 1;
@@ -25,47 +27,59 @@ const RhythmicMLCreativityAnimation = () => {
     resizeCanvas();
 
     const particleCount = 200; // Doubled from 100
-    let particles = [];
-    let fadeEffect = 1;
-    let lastFadeTime = 0;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let particles: any[] = [];
+    // let fadeEffect = 1;
+    // let lastFadeTime = 0;
 
     class Particle {
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      size: number;
+      opacity: number;
+
+      constructor(canvasWidth: number, canvasHeight: number) {
+        this.x = Math.random() * canvasWidth;
+        this.y = Math.random() * canvasHeight;
         this.vx = Math.random() * 2 - 1;
         this.vy = Math.random() * 2 - 1;
-        this.radius = Math.random() * 2 + 1;
+        this.size = Math.random() * 2 + 1;
+        this.opacity = Math.random() * 0.5 + 0.5;
       }
 
-      update() {
+      update(canvasWidth: number, canvasHeight: number) {
         this.x += this.vx;
         this.y += this.vy;
 
-        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        if (this.x < 0 || this.x > canvasWidth) this.vx *= -1;
+        if (this.y < 0 || this.y > canvasHeight) this.vy *= -1;
       }
 
-      draw() {
+      draw(ctx: CanvasRenderingContext2D) {
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(0, 0, 0, 0.7)`; // Removed fadeEffect
         ctx.fill();
       }
     }
 
     const init = () => {
-      particles = Array.from({ length: particleCount }, () => new Particle());
+      particles = Array.from(
+        { length: particleCount },
+        () => new Particle(canvas.width, canvas.height)
+      );
     };
 
-    const animate = (timestamp) => {
+    const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Removed: Fade effect logic
 
       particles.forEach((particle) => {
-        particle.update();
-        particle.draw();
+        particle.update(canvas.width, canvas.height);
+        particle.draw(ctx);
 
         particles.forEach((other) => {
           const dx = particle.x - other.x;
@@ -86,7 +100,7 @@ const RhythmicMLCreativityAnimation = () => {
     };
 
     init();
-    animate(0);
+    animate();
 
     return () => {
       cancelAnimationFrame(animationFrameId);

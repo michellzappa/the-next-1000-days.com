@@ -3,7 +3,6 @@
 
 Generative AI tools took off like wildfire in 2022 and are likely to keep growing in relevance and disruptive potential in 2023. More organizations will dedicate resources towards developing in-house AI strategies, and more investment is likely to be allocated towards R&D than ever before. What does this mean for leaders who are responsible for acquiring human and technological resources towards innovative, sustainable projects?
 
-https://i.imgur.com/12qv74p.jpg
 
 
 ## Changing Times
@@ -18,7 +17,6 @@ Generative models are solving the “blank page problem” for creating images, 
 
 Some are quick to learn and incorporate AI tools in their workflow. For creatives this might mean using Dall-E to quickly compose first drafts, while a data analyst might be using Power BI’s text analytics to automatically map database fields or using Github CoPilot to accelerate development. Having access to on-demand intelligence is augmenting our creative and analytical skills, and will soon include other types of intelligence.
 
-c1.webp
 
 ## Master Your Tools
 
@@ -73,7 +71,6 @@ This goes without saying, but know your liability and that of your tools. Find t
 
 —
 
-ai_accepting_the_job.jpg
 
 
 # Mental Models
@@ -85,7 +82,6 @@ Consider all technology as symbiotic with humanity. The same way we cannot live 
 
 Decide for yourself the kind of relationship you’d like develop with intelligent tools. Are you looking for a teacher, or someone to instruct and help shape your understanding? Are you looking for a coach, or someone to guide you through difficult choices and help set priorities? Or are you looking for a partner, someone to deeply trust and rely on through thick and thin? Knowing what you need is the first step toward choosing the right tools.
 
-https://i.imgur.com/VilcXHV.jpg
 > Symbiosis takes many forms, with different balance of benefits for each species.
 
 
@@ -139,7 +135,6 @@ Finally, I believe we’ll see a lot more people “winging it” with AI tools 
 
 —
 
-https://i.imgur.com/QNVH75g.jpg
 > “We tend to overestimate the effects of technology in the short  run and underestimate their effect in the long run.” (Roy Amara, Institute for the Future)
 
 

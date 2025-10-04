@@ -7,7 +7,6 @@ One way to think about why we use centaurs is that it helps extend our capabilit
 
 ---
 
-Slide-45.webp
 
 
 The gain is not necessarily at the upper edge of intelligence or capability. If you imagine a skill distribution like a normal distribution, you are probably on the right side of a handful of skills, whether it's leadership, research, or whatever you do very well. But there are many things where most of us are on the left or in the middle. That's where we see the biggest gain.

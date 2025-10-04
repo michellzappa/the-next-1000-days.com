@@ -19,7 +19,7 @@ const SkillDistributionCurve = () => {
     };
   }, []);
 
-  const normalDistribution = (x, mean = 0, stdDev = 1) => {
+  const normalDistribution = (x: number, mean = 0, stdDev = 1) => {
     return (
       Math.exp(-0.5 * Math.pow((x - mean) / stdDev, 2)) /
       (stdDev * Math.sqrt(2 * Math.PI))
@@ -35,7 +35,7 @@ const SkillDistributionCurve = () => {
   };
 
   // New light gray color
-  const lightGray = "#D3D3D3";
+  // const lightGray = "#D3D3D3";
 
   // New color for bubbles and arrows
   const accentColor = "#B5D900";

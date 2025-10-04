@@ -127,7 +127,7 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
             }
             return <span {...props}>{props.children}</span>;
           },
-          div: ({ className, children, ...props }) => {
+          div: ({ children, ...props }) => {
             return <div {...props}>{children}</div>;
           },
         }}

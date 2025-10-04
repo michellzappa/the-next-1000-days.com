@@ -58,7 +58,8 @@ const AIAutomationChart = () => {
           <Bar
             dataKey="exposure"
             fill="#999"
-            shape={(props) => {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            shape={(props: any) => {
               const { fill, x, y, width, height } = props;
               const industry = props.payload.industry;
               return (

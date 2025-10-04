@@ -1,15 +1,17 @@
 import React, { useEffect, useRef } from "react";
 
 const SmoothHighDPIDynamicGrayscaleAIAgentCollaborationAnimation = () => {
-  const canvasRef = useRef(null);
-  const containerRef = useRef(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const container = containerRef.current;
+    if (!canvas || !container) return;
     const ctx = canvas.getContext("2d");
-    let animationFrameId;
-    let dpr = window.devicePixelRatio || 1;
+    if (!ctx) return;
+    let animationFrameId: number;
+    const dpr = window.devicePixelRatio || 1;
 
     const resizeCanvas = () => {
       const rect = container.getBoundingClientRect();
@@ -27,13 +29,26 @@ const SmoothHighDPIDynamicGrayscaleAIAgentCollaborationAnimation = () => {
     resizeCanvas();
 
     const agentCount = 75;
-    let agents = [];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let agents: any[] = [];
 
     class Agent {
-      constructor() {
-        const rect = container.getBoundingClientRect();
-        this.x = Math.random() * rect.width;
-        this.y = Math.random() * rect.height;
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      baseRadius: number;
+      radius: number;
+      brightness: number;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      attractionTarget: any;
+      attractionDuration: number;
+      group: number;
+      groupColor: number[];
+
+      constructor(width: number, height: number) {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
         this.vx = (Math.random() * 2 - 1) * 0.5; // Reduced initial velocity
         this.vy = (Math.random() * 2 - 1) * 0.5; // Reduced initial velocity
         this.baseRadius = 2; // Reduced from 3.75 to 2.5
@@ -56,9 +71,7 @@ const SmoothHighDPIDynamicGrayscaleAIAgentCollaborationAnimation = () => {
         return shades[this.group];
       }
 
-      update() {
-        const rect = container.getBoundingClientRect();
-
+      update(width: number, height: number) {
         if (this.attractionTarget) {
           // Only attract to agents in the same group
           if (this.group === this.attractionTarget.group) {
@@ -73,8 +86,8 @@ const SmoothHighDPIDynamicGrayscaleAIAgentCollaborationAnimation = () => {
           }
         } else {
           // Existing center attraction logic
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
+          const centerX = width / 2;
+          const centerY = height / 2;
           const distToCenter = Math.hypot(this.x - centerX, this.y - centerY);
           if (distToCenter > 200) {
             this.vx += (centerX - this.x) * 0.0001;
@@ -105,11 +118,11 @@ const SmoothHighDPIDynamicGrayscaleAIAgentCollaborationAnimation = () => {
         this.x += this.vx;
         this.y += this.vy;
 
-        if (this.x < 0 || this.x > rect.width) this.vx *= -1;
-        if (this.y < 0 || this.y > rect.height) this.vy *= -1;
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
       }
 
-      draw() {
+      draw(ctx: CanvasRenderingContext2D) {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         const [r, g, b] = this.groupColor;
@@ -119,7 +132,11 @@ const SmoothHighDPIDynamicGrayscaleAIAgentCollaborationAnimation = () => {
     }
 
     const init = () => {
-      agents = Array.from({ length: agentCount }, () => new Agent());
+      const rect = container.getBoundingClientRect();
+      agents = Array.from(
+        { length: agentCount },
+        () => new Agent(rect.width, rect.height)
+      );
     };
 
     const animate = () => {
@@ -127,7 +144,7 @@ const SmoothHighDPIDynamicGrayscaleAIAgentCollaborationAnimation = () => {
       ctx.clearRect(0, 0, rect.width, rect.height);
 
       agents.forEach((agent) => {
-        agent.update();
+        agent.update(rect.width, rect.height);
       });
 
       agents.forEach((agent, i) => {
@@ -159,7 +176,7 @@ const SmoothHighDPIDynamicGrayscaleAIAgentCollaborationAnimation = () => {
       });
 
       agents.forEach((agent) => {
-        agent.draw();
+        agent.draw(ctx);
       });
 
       animationFrameId = requestAnimationFrame(animate);

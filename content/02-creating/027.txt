@@ -1,7 +1,6 @@
 # Robots
 
 
-Slide-30.webp
 
 Robots and AI devices will increasingly work their way into our daily lives, especially in commercial environments like airports and factories. Speaking of image and video-generating models, they are taking massive leaps forward. For example, a year ago, the idea of Will Smith eating spaghetti was disconcerting, but now, generative models produce videos that can be easily confused with real ones. 
 

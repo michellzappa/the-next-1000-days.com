@@ -13,7 +13,6 @@ Agents: call centers https://x.com/rohanpaul_ai/status/1841833425432449066
 
 ---
 
-Slide-71.webp
 
 An AI-driven voice assistant for drive-thru orders, which automates the ordering process, reduces labor costs, and improves order accuracy. It can handle up to 95% of orders without human intervention, operating 24/7.
 
@@ -21,7 +20,6 @@ An AI-driven voice assistant for drive-thru orders, which automates the ordering
 
 Waymo
 
-Slide-72.webp
 
 ---
 
@@ -40,7 +38,6 @@ https://x.com/LinusEkenstam/status/1826856902866674082
 
 ---
 
-image162-357.webp
 
 Size of ANT Financial (Ant Group):
 	•	Valuation: Ant Group was valued at around $200 billion during its attempted IPO in 2020, although estimates can vary.

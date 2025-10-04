@@ -3,4 +3,3 @@
 As AI systems grow more capable, they will inevitably clash with human expectations. Currently, around 25% of full-time work is exposed to automation, with sectors like admin, office, and legal work being almost 50% automatable. These numbers will keep growing. Eventually, these systems will not only act on their own but also interact physically with the world.
 
 
-Slide-70.webp

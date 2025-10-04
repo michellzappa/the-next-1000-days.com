@@ -1,8 +1,6 @@
 # Image Models
 
-Slide-27.webp
 
-Slide-28.webp
 
 
 On the left side of the spectrum, we have models like Luma AI, which allows you to turn any picture into a video. These are some of the current frontiers and top capabilities in AI. This landscape will keep changing, which is why I spend so much time on Twitter to stay updated.

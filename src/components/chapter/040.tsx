@@ -33,7 +33,11 @@ const LLMPromptingVisualization = () => {
   }, []);
 
   useEffect(() => {
-    const animateText = async (text, setter, isOutput = false) => {
+    const animateText = async (
+      text: string,
+      setter: (value: string) => void,
+      isOutput = false
+    ) => {
       for (let i = 0; i <= text.length; i++) {
         setter(text.slice(0, i));
         if (isOutput) {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const AICodeGenerator = () => {
-  const [lines, setLines] = useState([]);
+  const [lines, setLines] = useState<string[]>([]);
   const maxLines = 20;
 
   const generateCodeLine = () => {

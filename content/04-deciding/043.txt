@@ -1,5 +1,4 @@
 # Follow-up Questions
 
-Slide-53.webp
 
 In any conversation, I often ask, "What else should I know?" This helps uncover things you might not have considered. The bias of the system can be used to your advantage, as LLMs have a comprehensive overview of many subjects.

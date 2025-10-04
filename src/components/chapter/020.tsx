@@ -10,9 +10,17 @@ const NeuralNetworkAnimation = () => {
       setActivationLayer((prev) => (prev + 1) % layers.length);
     }, 1000); // Move to next layer every second
     return () => clearInterval(timer);
-  }, []);
+  }, [layers.length]);
 
-  const Node = ({ x, y, isActive }) => (
+  const Node = ({
+    x,
+    y,
+    isActive,
+  }: {
+    x: number;
+    y: number;
+    isActive: boolean;
+  }) => (
     <motion.circle
       cx={x}
       cy={y}
@@ -24,7 +32,19 @@ const NeuralNetworkAnimation = () => {
     />
   );
 
-  const Edge = ({ x1, y1, x2, y2, isActive }) => (
+  const Edge = ({
+    x1,
+    y1,
+    x2,
+    y2,
+    isActive,
+  }: {
+    x1: number;
+    y1: number;
+    x2: number;
+    y2: number;
+    isActive: boolean;
+  }) => (
     <motion.line
       x1={x1}
       y1={y1}
@@ -39,8 +59,8 @@ const NeuralNetworkAnimation = () => {
   );
 
   const renderNetwork = () => {
-    const nodes = [];
-    const edges = [];
+    const nodes: JSX.Element[] = [];
+    const edges: JSX.Element[] = [];
     const width = 500;
     const height = 300;
     const layerSpacing = width / (layers.length - 1);

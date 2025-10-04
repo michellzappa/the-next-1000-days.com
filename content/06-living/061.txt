@@ -1,7 +1,6 @@
 # Chunking
 
 
-Slide-64.webp
 
 
 It's worth mentioning that I'm not a programmer; I don't code. I've tried studying software engineering repeatedly and frequently failed, mostly due to impatience. Suddenly, with an infinitely capable, infinitely patient assistant like ChatGPT, you can build things step by step. You learn a lot about what it's like to build with these systems by using them to build the thing you want to see.

@@ -4,7 +4,6 @@
 ...
 
 
-Slide-36.webp
 
 Since 2005, centaur players typically outperform both supercomputers and human grandmasters in blind matches.
 
@@ -21,7 +20,6 @@ fro m the circle the to p 100 can keep up only in the Freestyle if they are equi
 
 ---
 
-Slide-37.webp
 
 If you plot the ELO scores, the best programs in purple outperform the best players in light green, and the best centaurs outperform the best programs. There's a fuzzy line at the very extreme of this, so there are times where programs outperform centaurs, but they're all at the edge of capability when playing together.
 

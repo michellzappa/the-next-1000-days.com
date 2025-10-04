@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 
 interface NavigationProps {
   chapterId: string;
@@ -16,7 +16,7 @@ interface NavigationProps {
 export function usePageNavigation({ chapterId, pageId, navigation, subPages }: NavigationProps) {
   const router = useRouter();
 
-  const handleNavigation = (direction: 'left' | 'right') => {
+  const handleNavigation = useCallback((direction: 'left' | 'right') => {
     if (direction === 'left') {
       if (pageId) {
         if (navigation.previousPage) {
@@ -50,7 +50,7 @@ export function usePageNavigation({ chapterId, pageId, navigation, subPages }: N
         }
       }
     }
-  };
+  }, [router, chapterId, pageId, navigation, subPages]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -65,7 +65,7 @@ export function usePageNavigation({ chapterId, pageId, navigation, subPages }: N
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [router, chapterId, pageId, navigation, subPages]);
+  }, [router, chapterId, pageId, navigation, subPages, handleNavigation]);
 
   return { handleNavigation };
 }

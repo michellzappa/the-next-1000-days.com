@@ -1,8 +1,6 @@
 # Prompt Blueprint
 
-Slide-50.webp
 
-Slide-51.webp
 
 Knowing that there's a system prompt is valuable because it helps build up the skills we'll see here. For example, what makes up a good prompt? What's the blueprint for generating the response you're expecting? It boils down to these four things: strictly defining a persona or role, giving it a task, being specific about what you want it to do, giving it some context, and giving it a format.
 

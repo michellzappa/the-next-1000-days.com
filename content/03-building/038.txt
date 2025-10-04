@@ -10,7 +10,6 @@
 ...
 
 
-Slide-39.webp
 
 Netflix's first big push into custom programming was a $100M bet supported by audience preference data used to support creative decisions.
 
@@ -19,7 +18,6 @@ This concept is a bit like what Netflix did when they purchased the rights to "H
 
 ---
 
-Slide-40.webp
 
 By leveraging all available data sources, Netflix took a traditionally creative process and made it data-driven.
 
@@ -27,12 +25,10 @@ Before producing "House of Cards," they made several creative decisions based on
 
 ---
 
-Slide-41.webp
 
 However, the VP of content mentioned that it's still two-thirds gut. You can't rely entirely on data; you still have to balance it with intuition. 
 
 
-Slide-42.webp
 
 Investment in original programming skyrocketed thanks to the success of House of Cards and other data-driven productions.
 
@@ -55,7 +51,6 @@ Netflix's investment in custom programming has not slowed down. There was a quic
 ## Copilot
 
 
-Slide-43.webp
 
 Developers using GitHub Copilot completed coding tasks 55% faster than those not using it.
 
@@ -72,7 +67,6 @@ https://github.blog/2022-09-07-research-quantifying-github-copilots-impact-on-de
 
 ## VAR
 
-Slide-44.webp
 
 Since the introduction of VAR, the accuracy of refereeing decisions in the Premier League has increased from 82% to 96%​.
 
