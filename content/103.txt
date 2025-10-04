@@ -1,0 +1,6 @@
+### 103
+# Poker Face Recognition
+
+I have never written much about the weekly images here on Artificial Insights, but inspired by a discussion in our awesome WhatsApp group about the role of work & art after AI, I figured sharing my own experience about a regular use of generative imagery would make sense.
+
+I started using AI imagery from MidJourney as newsletter covers in late 2023, including a [two gorgeous](https://newsletter.envisioning.io/p/you-must-learn-to-proceed-without) [portraits created](https://newsletter.envisioning.io/p/who-watches-the-watchers-021) by @Rodrigo Turra). After a few weeks I started trying to incorporate text, 

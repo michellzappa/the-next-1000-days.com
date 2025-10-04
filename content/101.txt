@@ -1,0 +1,24 @@
+101
+
+I was taught that my life trajectory would include learning about the world until a certain age, and then apply those learnings to become a useful member of society throughout the rest of my life. At no point was there a conversation about how to keep *learning about learning* and the importance of changing your abilities to keep pace with the world around me.
+
+AI shatters this concept and creates space for unlimited upskilling in areas of your life you never considered possible. For me, in the past year that has meant becoming a full-time software developer. No longer limited by my impatience for writing software line by line, instead you build complexity by endless iteration and improvement, in order to build something others can use. 
+
+The most exciting of these apps has been Signals, my generative approach for scanning signals of change.
+
+Integrated with Envisioning and our incredible data visualization tools, Signals takes you from a few inputs to a complete overview of signals signals affecting the future of your organization in minutes. Data is collected from multiple AI models, including OpenAI, Anthropic, Mistral, Google, DeepSeek and Perplexity, and taken through an enrichment and validation process to help you see everything that is out there and prioritize on where to act. Data is presented in our visualization layer and ready to be shared and discussed.
+
+This Thursday (April 24) I’m hosting a quick Webinar to showcase the platform. At [10 CET in English](https://lu.ma/493kd6bs) and [14 BRT in Portuguese](https://lu.ma/i83cexys). Between Luma and LinkedIn, we have over 150 registrations, and would love to see you there.
+
+The tool is interesting mainly for futurist and innovation researchers who want to leverage AI in their work. We’re working on a sensible business model, and in the short term are looking for a handful of agencies and consultancies to partner with in rolling it out. LMK if that’s you.
+
+Everyone joining the Webinars will receive access to a customized generative Radar. Early feedback tells us the output is interesting but not necessarily useful. We want to get facilitators and practitioners from the community involved early in the design process to make sure this approach serves us all. 
+
+
+
+
+O que consegue fazer:
+- mapear os sinais afetando sua organização ou seus clientes.
+- horizon scanning, visão 360º sobre sinais de mudança.
+- multi-modelo, visualização e comunidade. 
+- trying to get the community involved.
