@@ -17,11 +17,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       const description = lines.slice(1).find(line => line.trim() !== '') || '';
       
       const pages = chapterFiles
-        .filter(file => file.endsWith('.txt'))
+        .filter(file => file.endsWith('.md'))
         .map(file => {
           const pageContent = fs.readFileSync(path.join(chapterPath, file), 'utf-8');
           const pageTitle = pageContent.split('\n')[0].replace('# ', '');
-          return { id: file.replace('.txt', ''), title: pageTitle };
+          return { id: file.replace('.md', ''), title: pageTitle };
         });
 
       return { id: chapterId, title, description, pages };

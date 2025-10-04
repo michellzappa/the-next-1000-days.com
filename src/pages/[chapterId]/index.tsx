@@ -209,7 +209,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const chapterPath = path.join(contentDir, chapterDir);
   const chapterFiles = fs
     .readdirSync(chapterPath)
-    .filter((file) => file.endsWith(".txt"))
+    .filter((file) => file.endsWith(".md"))
     .sort();
 
   const mainFile = chapterFiles[0];
@@ -230,11 +230,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const pageContent = fs.readFileSync(path.join(chapterPath, file), "utf-8");
     const lines = pageContent.split("\n");
     const pageTitle = lines[0].replace("# ", "").trim();
-    const pageSubtitle = lines[1]?.startsWith("## ")
-      ? lines[1].replace("## ", "").trim()
-      : null;
+    const pageSubtitle =
+      lines[1] && lines[1].startsWith("## ")
+        ? lines[1].replace("## ", "").trim()
+        : null;
     return {
-      id: file.replace(".txt", ""),
+      id: file.replace(".md", ""),
       title: pageTitle,
       subtitle: pageSubtitle,
     };

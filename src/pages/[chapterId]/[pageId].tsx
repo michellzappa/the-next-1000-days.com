@@ -200,12 +200,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const chapterPath = path.join(contentDir, chapterDir);
     const pages = fs
       .readdirSync(chapterPath)
-      .filter((file) => file.endsWith(".txt") && file !== "00.txt");
+      .filter((file) => file.endsWith(".md") && file !== "00.md");
 
     return pages.map((page) => ({
       params: {
         chapterId: chapterDir.split("-")[0],
-        pageId: page.replace(".txt", ""),
+        pageId: page.replace(".md", ""),
       },
     }));
   });
@@ -226,7 +226,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 
   const chapterPath = path.join(contentDir, chapterDir);
-  const pageFile = `${pageId}.txt`;
+  const pageFile = `${pageId}.md`;
   const pagePath = path.join(chapterPath, pageFile);
 
   if (!fs.existsSync(pagePath)) {
@@ -242,7 +242,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // Get chapter title from the first file in the chapter directory
   const chapterFiles = fs
     .readdirSync(chapterPath)
-    .filter((file) => file.endsWith(".txt"))
+    .filter((file) => file.endsWith(".md"))
     .sort();
   const firstChapterFile = chapterFiles[0];
   const chapterContent = fs.readFileSync(

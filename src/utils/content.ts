@@ -25,11 +25,11 @@ export async function getChapters() {
           subtitle = lines[1]?.replace('## ', '') || '';
           content = lines.slice(2).join('\n'); // Add this line to get the content
           pages = fs.readdirSync(chapterPath)
-            .filter(file => file.endsWith('.txt') && file !== mainFile)
+            .filter(file => file.endsWith('.md') && file !== mainFile)
             .map(file => {
               const pageContent = fs.readFileSync(path.join(chapterPath, file), 'utf-8');
               const pageTitle = pageContent.split('\n')[0].replace('# ', '');
-              return { id: file.replace('.txt', ''), title: pageTitle };
+              return { id: file.replace('.md', ''), title: pageTitle };
             });
         } catch (error) {
           console.error(`Error reading chapter ${chapterId}:`, error);
@@ -58,11 +58,11 @@ export async function getChapter(chapterId: string) {
   const { data, content } = matter(fs.readFileSync(path.join(chapterPath, mainFile), 'utf-8'));
 
   const pages = fs.readdirSync(chapterPath)
-    .filter(file => file.endsWith('.txt') && !file.startsWith(`${chapterId}0.`))
+    .filter(file => file.endsWith('.md') && !file.startsWith(`${chapterId}0.`))
     .map(file => {
       const { data } = matter(fs.readFileSync(path.join(chapterPath, file), 'utf-8'));
       return {
-        id: file.replace('.txt', ''),
+        id: file.replace('.md', ''),
         title: data.title,
       };
     });
@@ -82,9 +82,9 @@ export async function getChapterPages(chapterId: string) {
 
   const chapterPath = path.join(contentDir, chapterDir);
   return fs.readdirSync(chapterPath)
-    .filter(file => file.endsWith('.txt') && !file.startsWith(`${chapterId}0.`))
+    .filter(file => file.endsWith('.md') && !file.startsWith(`${chapterId}0.`))
     .map(file => ({
-      id: file.replace('.txt', ''),
+      id: file.replace('.md', ''),
       chapterId,
     }));
 }
@@ -94,7 +94,7 @@ export async function getPage(chapterId: string, pageId: string) {
   if (!chapterDir) throw new Error(`Chapter ${chapterId} not found`);
 
   const chapterPath = path.join(contentDir, chapterDir);
-  const filePath = path.join(chapterPath, `${pageId}.txt`);
+  const filePath = path.join(chapterPath, `${pageId}.md`);
   
   if (!fs.existsSync(filePath)) throw new Error(`Page ${pageId} not found in chapter ${chapterId}`);
 
