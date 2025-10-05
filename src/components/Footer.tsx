@@ -39,7 +39,7 @@ const Footer = ({
           <div className="flex-1 flex flex-col items-center">
             {currentPageNumber && (
               <div className="text-xs text-gray-500 dark:text-gray-400 font-mono mb-2">
-                {formatDisplayNumber(currentPageNumber)} / 89
+                {formatDisplayNumber(currentPageNumber)} / 90
               </div>
             )}
             {showRandom ? <RandomPageButton /> : null}
