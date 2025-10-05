@@ -191,7 +191,9 @@ export default function GlobalNavigation({ children }: GlobalNavigationProps) {
           }
         }
       } else if (navigation.previousChapter) {
-        if (navigation.previousChapter.lastPage) {
+        if (chapterId === "01") {
+          router.push(`/`);
+        } else if (navigation.previousChapter.lastPage) {
           router.push(
             `/${navigation.previousChapter.id}/${navigation.previousChapter.lastPage}`
           );
