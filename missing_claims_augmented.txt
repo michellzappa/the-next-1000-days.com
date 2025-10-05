@@ -1,0 +1,351 @@
+Augmented Missing Claims
+
+== N-005.md ==
+- I had the opportunity of watching professor Joanna Bryson speak live in Lisbon last week about developing safe and responsible autonomous systems.
+  Suggested chapter: 05-organizing
+  Rationale: keywords: system
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-007.md ==
+- Last week I had the delightful privilege of hanging out with a couple of readers in the flesh and briefly talk about what is resonating from these weekly expeditions while in Sintra.
+  Suggested chapter: 07-connecting
+  Rationale: keywords: talk, x
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-011.md ==
+- This topic deeply impresses me, to the extent that I have evenwritten an essay about it._
+  Suggested chapter: 02-creating
+  Rationale: keywords: essay
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-012.md ==
+- I have a strong suspicion that we will learn a lot more about non-human intelligences in the near future – there are probably many more _kinds_ of intelligence out there than our anthropocentric worldview have us consider.
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-013.md ==
+- In the last few weeks I have been thinking about the implications of being surrounded by multiple types of intelligence.
+  Suggested chapter: 01-thinking
+  Rationale: keywords: thinking
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-014.md ==
+- Like most people spending significant time on their computers, over the years I have toyed with scripts, macros and code to help facilitate workflows or simply for the sake of learning.
+  Suggested chapter: 03-building
+  Rationale: keywords: code, script
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-015.md ==
+- The weekly committment of sharing what I have learned about AI and developing an ongoing and public opinion about the state of development is a great reminder of how few days there _actually_ are between one Monday and the following.
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- Last week I had the privilege of meeting a close friend and collaborator in Lisbon – our work together revolves around education and training – and it’s increasingly apparent how _all_ forward-looking conversations today revolve around the inevitable development of AI.
+  Suggested chapter: 07-connecting
+  Rationale: keywords: meeting, conversation
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-019.md ==
+- When I started writing this newsletter a couple of months ago I suspected there would not be enough noteworthy content to produce a weekly overview, but it turns out the opposite has been true.
+  Suggested chapter: 00-intro
+  Rationale: keywords: overview, started, start
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-021.md ==
+- As usual there is an overwhelming amount of development in the AI space, and I have found that learning from the people developing the technologies we increasingly rely on to be an insightful approach for keeping abreast of developments.
+  Suggested chapter: 01-thinking
+  Rationale: keywords: approach
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-022.md ==
+- To say I’m excited would be an understatement – London is where Envisioning effectively began a decade ago, and where I had some of my first opportunities to develop and present ideas about the emerging future of technology.
+  Suggested chapter: 07-connecting
+  Rationale: keywords: x
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- Last week at Lisbon I learned about DreamGPT which aims to enhance the creative potential of LLMs by simulating a dreaming process, unlocking new levels of innovation and creativity in AI systems.
+  Suggested chapter: 05-organizing
+  Rationale: keywords: system, process
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- I have known Inês a while and can genuinely say she was an inspiration for getting this newsletter off the ground earlier this year.
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-024.md ==
+- I have linked to an interview clip in the links but highly recommend listening to the whole thing to get a sense of how the sector is shaping up.
+  Suggested chapter: 03-building
+  Rationale: keywords: api
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-026.md ==
+- I made the mistake of starting with an ambitious request, and quickly realized the confident-but-wrong approach ChatGPT is known for also applies to code.
+  Suggested chapter: 00-intro
+  Rationale: keywords: start
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-028.md ==
+- Like in previous weeks, I have been experimenting a ton, especially with ChatGPT.
+  Suggested chapter: 07-connecting
+  Rationale: keywords: x
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-029.md ==
+- To make sense of the individuals involved, I have selected interviews and presentations with each of the five key players, which might help you understand their various incentives and worldviews moving forward.
+  Suggested chapter: 07-connecting
+  Rationale: keywords: interview, presentation
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- I started this newsletter 29 weeks ago with the intent of tracking our \(inevitable\) transition toward AGI.
+  Suggested chapter: 00-intro
+  Rationale: keywords: started, start
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-033.md ==
+- I have no idea which approach is ideal when it comes to learning about a new area of knowledge - but I am happy to say the number of subscribers and opening rate for this very newsletter has proven successful.
+  Suggested chapter: 01-thinking
+  Rationale: keywords: approach
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-037.md ==
+- The subject matter was “known” by the GPT because it covered topics I have written about previously, but I was surprised at how good the response came out with such little effort.
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-039.md ==
+- I have a life-long interest in emerging technology – it has always been something that fascinates me, and I have spent immense time and energy closely tracking what the “tech ecosystem” is up to.
+  Suggested chapter: 06-living
+  Rationale: keywords: life, energy, rest
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-040.md ==
+- I have lived here on and off the past decades due to work and study, and am thrilled to be living here full-time again.
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-041.md ==
+- > I have a strong hunch that tipping does in fact work to improve the output quality of LLMs and its conformance to constraints, but it’s very hard to prove objectively.
+  Suggested chapter: 04-deciding
+  Rationale: keywords: constraint
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-043.md ==
+- I have featured interviews by Dario Amodei in previous editions, and recommend the following links to get a sense for what it’s capable of.
+  Suggested chapter: 03-building
+  Rationale: keywords: feature
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-044.md ==
+- It turns out LLMs have tremendous self-knowledge, so I have been leveraging lots of GPT to develop and fact-check **over 200 AI-related concepts and terms**.
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-045.md ==
+- This very newsletter attempts to sense-make in small increments, but I have a lingering feeling that something greater is necessary.
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- Recorded almost a year ago, it is incredibly prescient.
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-046.md ==
+- I have been thinking a lot about working and hiring in a context where autonomous systems are already capable of replacing so many of our tasks.
+  Suggested chapter: 05-organizing
+  Rationale: keywords: system, task
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-049.md ==
+- After a year covering the cutting edge of AI, I have cemented my opinion that the general-purpose nature of AI applications mean that no industry or sector of modern economies will remain unaffected.
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- This week I have more questions than answers and hope the selection of links and videos below will satiate your curiosity.
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-051.md ==
+- Article mentions he uses Lex, which I have experimented with but never gotten used to.
+  Suggested chapter: 02-creating
+  Rationale: keywords: article
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-052.md ==
+- I have little commentary to add, as this past week has been all about _explainability_ for me.
+  Suggested chapter: 07-connecting
+  Rationale: keywords: x
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- When the newsletter began last year, each issue featured an _emerging vocabulary_ , or term/concept that I had learned about and which carries a particular meaning in AI.
+  Suggested chapter: 03-building
+  Rationale: keywords: feature
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-058.md ==
+- In contrast, I have tried to remain focused on concentrated efforts.
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- Presented at a fast pace and without exercises, it runs about 90 min.
+  Suggested chapter: 06-living
+  Rationale: keywords: exercise
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-059.md ==
+- Having spent the weekend moving house here in Amsterdam, I have very little in terms of personal commentary this week – only that 1\) forcefully stepping away from screens can be a relief 2\) good housing in a dense city is a tremendous privilege and 3\) extending my abilities with AI has become second nature and it would feel like a cognitive downgrade losing access to it.
+  Suggested chapter: 06-living
+  Rationale: keywords: personal, weekend
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-063.md ==
+- Below is a full day’s worth of listening from the people actually building AI – I hope you enjoy it as much as I did\!
+  Suggested chapter: 03-building
+  Rationale: keywords: build
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-067.md ==
+- Greetings from a humid and busy Bangkok where I have the privilege to talk about centaurs and our trajectory towards AGI for an audience of curious leaders.
+  Suggested chapter: 07-connecting
+  Rationale: keywords: talk
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-071.md ==
+- As someone who grew up through the digital revolution, I have always molded my work and personal learning modes around technology.
+  Suggested chapter: 06-living
+  Rationale: keywords: personal
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- Exactly one year ago I spoke about different kinds of augmented intelligence with Trendwatching, including _Interspecies Centaurs_ \- or our ability to understand what animals are communicating.
+  Suggested chapter: 07-connecting
+  Rationale: keywords: x
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-072.md ==
+- I had heard about Johnson at Google but had no idea he was involved in building this product.
+  Suggested chapter: 03-building
+  Rationale: keywords: build
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-074.md ==
+- I have a hypothesis about how we will reach AGI and have designed a ten-part framework to help those responsible of making strategic decisions around AI increase their technical understanding.
+  Suggested chapter: 01-thinking
+  Rationale: keywords: framework, hypothesis
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- Started reading it last night and especially recommend looking at the implications he predicts.
+  Suggested chapter: 00-intro
+  Rationale: keywords: started, start
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-075.md ==
+- I had the privilege of joining a conference which brought together people from as many such fields as possible.
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- Despite being deeply into science-fiction visions of the future, and having followed emerging technology professionally nearly two decades, I had my questions.
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- Instead of our typical newsletter format, this week I have **compiled my notes** from the talks and **selected previous videos from the speakers** , to help you get a sense for what went on.
+  Suggested chapter: 04-deciding
+  Rationale: keywords: selected
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-076.md ==
+- I have been tinkering on an “AI Vocabulary” since launching this newsletter last year.
+  Suggested chapter: 03-building
+  Rationale: keywords: launch
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-078.md ==
+- After listening to Ananthaswamy's interview on Machine Learning Street Talk \(above\), I started reading his recent book and am confident I'll make it through it despite my rusty high school math.
+  Suggested chapter: 00-intro
+  Rationale: keywords: started, start
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- I have been experimenting with collecting different quantitative aspects of each vocab term in order to look for groupings or clusters.
+  Suggested chapter: 07-connecting
+  Rationale: keywords: x
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-079.md ==
+- The most common question I have received since starting this newsletter has been from people wanting to learn ML.
+  Suggested chapter: 00-intro
+  Rationale: keywords: start
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- Here I have tried to collect some of the resources that should help anyone interested in the field to actually develop the core skills necessary to work in it.
+  Suggested chapter: 06-living
+  Rationale: keywords: rest
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-082.md ==
+- Despite my past inability, in the past year I have conceptualized and launched a different coding project each month.
+  Suggested chapter: 03-building
+  Rationale: keywords: launch, launched
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- In doing this, I have noticed a couple of foundational skills which might help you strengthen your own abilities in building everything you can imagine.
+  Suggested chapter: 03-building
+  Rationale: keywords: build
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- Last week I had the opportunity to hang out with brilliant minds at THNK planning their next and future initiatives around AI, and it occurred to me how much our capacity to prototype & build have changed in the past year.
+  Suggested chapter: 02-creating
+  Rationale: keywords: prototype
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-086.md ==
+- Yet thanks to hundreds and hundreds of individual requests, I have managed to build a functioning prototype mobile app for something we've been exploring the past year and a half: using carefully tuned AI to help people navigate their inner sense of purpose.
+  Suggested chapter: 02-creating
+  Rationale: keywords: prototype
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- I have shared other Dive Club sessions before, so don’t miss Pran, a designer at Vercel, diving into how tools like V0 are flipping the script on design.
+  Suggested chapter: 02-creating
+  Rationale: keywords: design
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-089.md ==
+- Personally, I have been using R1 in Cursor the last few days and am blown away by its reasoning capability.
+  Suggested chapter: 06-living
+  Rationale: keywords: personal
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- While we all grapple with what is happening, I have collected a bunch of threads, memes and articles below to help you make sense of what will clearly be a turbulent and exciting year.
+  Suggested chapter: 02-creating
+  Rationale: keywords: article
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-092.md ==
+- I have noticed a significant uptick in people _vibe coding_ on Twitter and Reddit, and it’s easy to understand why.
+  Suggested chapter: 00-intro
+  Rationale: keywords: why
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-093.md ==
+- I usually watch every video shared here \(especially the longer ones\) but I have spent less time learning and more time building recently.
+  Suggested chapter: 03-building
+  Rationale: keywords: build
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-095.md ==
+- I have little to add, but can wholeheartedly recommend the links below.
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-096.md ==
+- Justus:** _Here’s what I built with Lovable._ _It’s thePoem Booth booking system - it includes a full login system behind where we can manage bookings as well_
+  Suggested chapter: 03-building
+  Rationale: keywords: built
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-097.md ==
+- This week’s issue is brought to you from a surprisingly sunny London where I have spent the last few days being a tourist, book shopper and urban explorer \(without necessarily relying on AI\).
+  Suggested chapter: 07-connecting
+  Rationale: keywords: x
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-099.md ==
+- Recorded at TEDAI in San Francisco.
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-100.md ==
+- Despite decades of passion for emerging technology, I had missed the boat.
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- I have embraced this realization by getting to know this emerging phenomenon as much as humanly possible.
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- I have built, written, designed, answered and coded every thought coming through my mind and learned to sense the outlines of what is possible.
+  Suggested chapter: 02-creating
+  Rationale: keywords: outline, design
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-102.md ==
+- > “Over the last few months, I have become increasingly focused on an additional opportunity for steering the bus: the tantalizing possibility, opened up by some recent advances, that we could succeed at interpretability—that is, in understanding the inner workings of AI systems—before models reach an overwhelming level of power.”
+  Suggested chapter: 05-organizing
+  Rationale: keywords: system
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-103.md ==
+- I had no idea RAG was invented by a Dutch at Meta.
+  Suggested chapter: 08-about
+  Rationale: keywords: meta
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-104.md ==
+- I have been noticing many of these (tab-to-complete in Cursor is a paradigm-shifting experience) and have tried building UX around generative intelligence as well.
+  Suggested chapter: 03-building
+  Rationale: keywords: build
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-108.md ==
+- AI & AGI was on everyone’s mind, and I had the absolute privilege of hosting an innovation dinner with
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-111.md ==
+- > I have shared Nate Jones before and I guess it is ‘acquired listening taste’ which is why today I thought.. lets have two options for breakfast.. perhaps pick one.. both worthy and the first reflects on the earlier great presso by karpathy (autonomy slider 🤗)
+  Suggested chapter: 00-intro
+  Rationale: keywords: why
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+== N-119.md ==
+- > I had tried similar problems a year ago, with the then-new GPT reasoning models, but I didn’t get results that were nearly as good.
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
+- I guess I should be grateful that I have tenure.
+  Suggested chapter: 00-intro
+  Rationale: heuristic match
+  Include: what/why, date/timeframe, artifacts/links, numbers/impact, next steps
