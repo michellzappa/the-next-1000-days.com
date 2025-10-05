@@ -7,8 +7,8 @@ import Footer from "../components/Footer";
 import { usePageNavigation } from "../hooks/usePageNavigation";
 import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
-import RandomPageButton from "../components/RandomPageButton";
-import { getMainPageNumber } from "../utils/pageNumbers";
+// Random button not used on home page
+import { getMainPageNumber, formatDisplayNumber } from "../utils/pageNumbers";
 
 interface Chapter {
   id: string;
@@ -35,7 +35,7 @@ export default function Home({ chapters }: HomeProps) {
     navigation,
   });
 
-  const CustomComponent = dynamic(() => import("../components/chapter/000"));
+  const CustomComponent = dynamic(() => import("../components/chapter/0"));
 
   // Days counter for AI milestones
   const [chatGPTDays, setChatGPTDays] = useState(0);
@@ -93,23 +93,7 @@ export default function Home({ chapters }: HomeProps) {
                 >
                   <div className="flex items-baseline">
                     <span className="inline-block w-12 text-base font-mono text-gray-500 dark:text-gray-400">
-                      {chapter.id === "01"
-                        ? "011"
-                        : chapter.id === "02"
-                        ? "022"
-                        : chapter.id === "03"
-                        ? "033"
-                        : chapter.id === "04"
-                        ? "044"
-                        : chapter.id === "05"
-                        ? "055"
-                        : chapter.id === "06"
-                        ? "066"
-                        : chapter.id === "07"
-                        ? "077"
-                        : chapter.id === "08"
-                        ? "088"
-                        : "000"}
+                      {formatDisplayNumber(getMainPageNumber(chapter.id))}
                     </span>
                     <span className="text-lg font-bold">{chapter.title}</span>
                   </div>

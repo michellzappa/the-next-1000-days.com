@@ -122,7 +122,7 @@ const AugmentedIntelligenceMonochrome: React.FC = () => {
       return arr;
     };
 
-    let agents = makeAgents(canvas.width / dpr, canvas.height / dpr);
+    const agents = makeAgents(canvas.width / dpr, canvas.height / dpr);
     let currentRingRadius = 24; // px
 
     const animate = () => {

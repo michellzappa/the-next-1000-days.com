@@ -6,9 +6,12 @@ import fs from "fs";
 import path from "path";
 import Markdown from "../../components/Markdown";
 import Footer from "../../components/Footer";
-import RandomPageButton from "../../components/RandomPageButton";
+// Random button not used on chapter landing
 // removed duplicate type import
-import { getMainPageNumber } from "../../utils/pageNumbers";
+import {
+  getMainPageNumber,
+  formatDisplayNumber,
+} from "../../utils/pageNumbers";
 import { usePageNavigation } from "../../hooks/usePageNavigation";
 import dynamic from "next/dynamic";
 import { existsSync } from "fs";
@@ -41,12 +44,7 @@ interface ChapterNavigation {
   nextChapter: { id: string; title: string } | null;
 }
 
-function getDisplayTitle(pageId: string, chapterId: string) {
-  if (pageId.endsWith("0")) {
-    return `Chapter ${parseInt(chapterId, 10)}`;
-  }
-  return `Page ${pageId}`;
-}
+// helper removed (unused)
 
 export default function Chapter({
   title,
@@ -113,7 +111,7 @@ export default function Chapter({
         <Markdown
           content={content}
           chapterId={chapterId}
-          pageId={chapterId.padStart(2, "0") + "0"}
+          pageId={mainPageNumber}
         />
 
         {subPages.length > 0 && (
@@ -127,7 +125,7 @@ export default function Chapter({
               >
                 <div className="flex items-start">
                   <span className="inline-block w-12 text-sm font-mono text-gray-500 dark:text-gray-400 font-bold mr-4">
-                    {page.id}
+                    {formatDisplayNumber(page.id)}
                   </span>
                   <div>
                     <h3 className="text-xl font-medium">{page.title}</h3>
@@ -159,7 +157,7 @@ export default function Chapter({
                     : `/${navigation.previousChapter.id}`,
                 number: navigation.previousChapter.lastPage
                   ? navigation.previousChapter.lastPage
-                  : `${navigation.previousChapter.id.padStart(2, "0")}0`,
+                  : getMainPageNumber(navigation.previousChapter.id),
                 title: navigation.previousChapter.lastPageTitle
                   ? navigation.previousChapter.lastPageTitle
                   : navigation.previousChapter.title,
@@ -176,7 +174,7 @@ export default function Chapter({
             : navigation.nextChapter
             ? {
                 href: `/${navigation.nextChapter.id}`,
-                number: `${navigation.nextChapter.id.padStart(2, "0")}0`,
+                number: getMainPageNumber(navigation.nextChapter.id),
                 title: navigation.nextChapter.title,
               }
             : null

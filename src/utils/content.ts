@@ -6,16 +6,10 @@ const contentDir = path.join(process.cwd(), 'content');
 
 // Helper function to get the main page number for each chapter
 export function getMainPageNumber(chapterId: string): string {
-  const chapterNumber = parseInt(chapterId);
-  return chapterNumber === 0 ? '000' : 
-    chapterNumber === 1 ? '011' :
-    chapterNumber === 2 ? '022' :
-    chapterNumber === 3 ? '033' :
-    chapterNumber === 4 ? '044' :
-    chapterNumber === 5 ? '055' :
-    chapterNumber === 6 ? '066' :
-    chapterNumber === 7 ? '077' :
-    chapterNumber === 8 ? '088' : '000';
+  const chapterNumber = parseInt(chapterId, 10);
+  if (Number.isNaN(chapterNumber)) return '0';
+  if (chapterNumber === 0) return '0';
+  return `${chapterNumber}${chapterNumber}`;
 }
 
 export async function getChapters() {

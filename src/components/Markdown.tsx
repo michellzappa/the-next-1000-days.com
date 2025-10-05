@@ -18,8 +18,8 @@ const Markdown: React.FC<MarkdownProps> = ({
   subtitle,
 }) => {
   const processedContent = React.useMemo(() => {
-    const chapterNumber = chapterId.padStart(3, "0");
-    const pageNumber = pageId || `${chapterNumber}0`;
+    const pageNumber =
+      pageId || `${parseInt(chapterId, 10)}${parseInt(chapterId, 10)}`;
 
     // Remove the chapter and page indicators
     return content.replace(

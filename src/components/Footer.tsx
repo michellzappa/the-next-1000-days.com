@@ -1,5 +1,6 @@
 import Link from "next/link"; // Correct import from next/link
 import RandomPageButton from "./RandomPageButton";
+import { formatDisplayNumber } from "../utils/pageNumbers";
 
 interface FooterProps {
   currentPageNumber?: string;
@@ -24,7 +25,7 @@ const Footer = ({
               <Link href={navLeft.href} className="hover:underline">
                 <span className="flex flex-col items-start">
                   <span className="text-lg sm:text-xl font-mono font-bold">
-                    {navLeft.number}
+                    {formatDisplayNumber(navLeft.number)}
                   </span>
                   <span className="text-sm sm:text-base opacity-80 max-w-[12rem] sm:max-w-[16rem] leading-snug">
                     {navLeft.title}
@@ -38,7 +39,7 @@ const Footer = ({
           <div className="flex-1 flex flex-col items-center">
             {currentPageNumber && (
               <div className="text-xs text-gray-500 dark:text-gray-400 font-mono mb-2">
-                {currentPageNumber} / 089
+                {formatDisplayNumber(currentPageNumber)} / 89
               </div>
             )}
             {showRandom ? <RandomPageButton /> : null}
@@ -48,7 +49,7 @@ const Footer = ({
               <Link href={navRight.href} className="hover:underline text-right">
                 <span className="flex flex-col items-end">
                   <span className="text-base sm:text-lg font-mono font-bold no-underline">
-                    {navRight.number}
+                    {formatDisplayNumber(navRight.number)}
                   </span>
                   <span className="text-sm sm:text-base opacity-80 max-w-[12rem] sm:max-w-[16rem] leading-snug text-right">
                     {navRight.title}

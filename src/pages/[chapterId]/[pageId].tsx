@@ -6,7 +6,6 @@ import path from "path";
 import Link from "next/link";
 import Markdown from "../../components/Markdown";
 import Footer from "../../components/Footer";
-import RandomPageButton from "../../components/RandomPageButton";
 import { getMainPageNumber } from "../../utils/pageNumbers";
 import { existsSync } from "fs";
 import { join } from "path";
@@ -170,13 +169,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const paths = chapters.flatMap((chapterDir) => {
     const chapterPath = path.join(contentDir, chapterDir);
+    const chapterId = chapterDir.split("-")[0];
+    const mainFile = `${getMainPageNumber(chapterId)}.md`;
     const pages = fs
       .readdirSync(chapterPath)
-      .filter((file) => file.endsWith(".md") && file !== "00.md");
+      .filter((file) => file.endsWith(".md") && file !== mainFile);
 
     return pages.map((page) => ({
       params: {
-        chapterId: chapterDir.split("-")[0],
+        chapterId,
         pageId: page.replace(".md", ""),
       },
     }));
