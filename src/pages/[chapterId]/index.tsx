@@ -11,6 +11,7 @@ import Footer from "../../components/Footer";
 import {
   getMainPageNumber,
   formatDisplayNumber,
+  formatChapterNumber,
 } from "../../utils/pageNumbers";
 import { usePageNavigation } from "../../hooks/usePageNavigation";
 import dynamic from "next/dynamic";
@@ -61,8 +62,6 @@ export default function Chapter({
 
   const { handleNavigation } = usePageNavigation({
     chapterId: chapterIdQuery as string,
-    navigation,
-    subPages,
   });
 
   if (router.isFallback) {
@@ -143,7 +142,7 @@ export default function Chapter({
         {/* Pagination moved to Footer */}
       </div>
       <Footer
-        currentPageNumber={mainPageNumber}
+        currentPageNumber={formatChapterNumber(chapterId)}
         chapterId={chapterId}
         showRandom
         navLeft={
@@ -157,7 +156,7 @@ export default function Chapter({
                     : `/${navigation.previousChapter.id}`,
                 number: navigation.previousChapter.lastPage
                   ? navigation.previousChapter.lastPage
-                  : getMainPageNumber(navigation.previousChapter.id),
+                  : formatChapterNumber(navigation.previousChapter.id),
                 title: navigation.previousChapter.lastPageTitle
                   ? navigation.previousChapter.lastPageTitle
                   : navigation.previousChapter.title,
@@ -174,7 +173,7 @@ export default function Chapter({
             : navigation.nextChapter
             ? {
                 href: `/${navigation.nextChapter.id}`,
-                number: getMainPageNumber(navigation.nextChapter.id),
+                number: formatChapterNumber(navigation.nextChapter.id),
                 title: navigation.nextChapter.title,
               }
             : null

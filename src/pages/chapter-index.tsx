@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { getChapters } from "../utils/content";
 import Footer from "../components/Footer";
+import { formatChapterNumber } from "../utils/pageNumbers";
 
 interface Chapter {
   id: string;
@@ -19,30 +20,6 @@ interface ChapterOverviewProps {
 export default function ChapterOverview({ chapters }: ChapterOverviewProps) {
   // Determine the maximum number of pages across all chapters
   const maxPages = Math.max(...chapters.map((chapter) => chapter.pages.length));
-
-  // Utility function to get the main chapter page number
-  const getMainChapterPageNumber = (chapterId: string): string => {
-    const chapterNumber = parseInt(chapterId);
-    return chapterNumber === 0
-      ? "000"
-      : chapterNumber === 1
-      ? "011"
-      : chapterNumber === 2
-      ? "022"
-      : chapterNumber === 3
-      ? "033"
-      : chapterNumber === 4
-      ? "044"
-      : chapterNumber === 5
-      ? "055"
-      : chapterNumber === 6
-      ? "066"
-      : chapterNumber === 7
-      ? "077"
-      : chapterNumber === 8
-      ? "088"
-      : "000";
-  };
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-background text-foreground">
@@ -82,7 +59,7 @@ export default function ChapterOverview({ chapters }: ChapterOverviewProps) {
                         <div className="font-bold">
                           {/* Formatted Chapter Number */}
                           <span className="font-mono">
-                            {getMainChapterPageNumber(chapter.id)}
+                            {formatChapterNumber(chapter.id)}
                           </span>
                         </div>
                         {/* Chapter Title on a New Line */}

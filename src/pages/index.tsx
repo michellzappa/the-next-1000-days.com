@@ -8,7 +8,7 @@ import { usePageNavigation } from "../hooks/usePageNavigation";
 import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
 // Random button not used on home page
-import { getMainPageNumber, formatDisplayNumber } from "../utils/pageNumbers";
+import { formatChapterNumber } from "../utils/pageNumbers";
 
 interface Chapter {
   id: string;
@@ -26,13 +26,8 @@ interface HomeProps {
 export default function Home({ chapters }: HomeProps) {
   const mainChapters = chapters.filter((chapter) => chapter.id !== "00");
 
-  const navigation = {
-    nextChapter: mainChapters[0] || null,
-  } as { nextChapter: { id: string; title: string } | null };
-
-  const swipeHandlers = usePageNavigation({
+  const { handleNavigation } = usePageNavigation({
     chapterId: "00",
-    navigation,
   });
 
   const CustomComponent = dynamic(() => import("../components/chapter/0"));
@@ -56,8 +51,12 @@ export default function Home({ chapters }: HomeProps) {
   return (
     <div className="min-h-screen flex flex-col items-center bg-background text-foreground">
       <div
-        {...swipeHandlers}
         className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-6"
+        onKeyDown={(e) => {
+          if (e.key === "ArrowLeft") handleNavigation("left");
+          if (e.key === "ArrowRight") handleNavigation("right");
+        }}
+        tabIndex={0}
       >
         <Head>
           <title>Field Notes from a Centaur</title>
@@ -93,7 +92,7 @@ export default function Home({ chapters }: HomeProps) {
                 >
                   <div className="flex items-baseline">
                     <span className="inline-block w-12 text-base font-mono text-gray-500 dark:text-gray-400">
-                      {formatDisplayNumber(getMainPageNumber(chapter.id))}
+                      {formatChapterNumber(chapter.id)}
                     </span>
                     <span className="text-lg font-bold">{chapter.title}</span>
                   </div>
@@ -122,19 +121,7 @@ export default function Home({ chapters }: HomeProps) {
         </main>
         {/* Pagination moved to Footer */}
       </div>
-      <Footer
-        showRandom
-        navLeft={null}
-        navRight={
-          navigation.nextChapter
-            ? {
-                href: `/${navigation.nextChapter.id}`,
-                number: getMainPageNumber(navigation.nextChapter.id),
-                title: navigation.nextChapter.title,
-              }
-            : null
-        }
-      />
+      <Footer chapterId="00" showRandom />
     </div>
   );
 }

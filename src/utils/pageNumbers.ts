@@ -10,3 +10,8 @@ export function formatDisplayNumber(id: string): string {
   const n = parseInt(id, 10);
   return Number.isNaN(n) ? id : String(n);
 }
+
+export function formatChapterNumber(chapterId: string): string {
+  const n = parseInt(chapterId, 10);
+  return Number.isNaN(n) ? chapterId : String(n);
+}

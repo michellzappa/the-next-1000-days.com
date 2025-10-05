@@ -36,11 +36,10 @@ export default function RandomPageButton({
     <button
       onClick={handleRandomPage}
       disabled={isLoading}
-      className={`inline-flex flex-col items-center gap-1 px-3 py-2 text-base disabled:opacity-50 hover:opacity-80 ${className}`}
+      className={`inline-flex items-center px-2 py-1 text-base disabled:opacity-50 hover:opacity-80 mt-3 ${className}`}
       title="Go to random page"
     >
-      <Shuffle size={24} />
-      <span className="text-xs opacity-80">Random</span>
+      <Shuffle size={16} />
     </button>
   );
 }

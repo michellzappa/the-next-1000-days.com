@@ -6,7 +6,10 @@ import path from "path";
 import Link from "next/link";
 import Markdown from "../../components/Markdown";
 import Footer from "../../components/Footer";
-import { getMainPageNumber } from "../../utils/pageNumbers";
+import {
+  getMainPageNumber,
+  formatChapterNumber,
+} from "../../utils/pageNumbers";
 import { existsSync } from "fs";
 import { join } from "path";
 import dynamic from "next/dynamic";
@@ -58,11 +61,9 @@ export default function Page({
     ? dynamic(() => import(`../../components/chapter/${pageId}`))
     : null;
 
-  const swipeHandlers = usePageNavigation({
+  const { handleNavigation } = usePageNavigation({
     chapterId: chapterId as string,
     pageId: pageId as string,
-    navigation,
-    isFirstPage,
   });
 
   // Keydown navigation handled centrally by usePageNavigation
@@ -100,8 +101,12 @@ export default function Page({
       )}
 
       <div
-        {...swipeHandlers}
         className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-6"
+        onKeyDown={(e) => {
+          if (e.key === "ArrowLeft") handleNavigation("left");
+          if (e.key === "ArrowRight") handleNavigation("right");
+        }}
+        tabIndex={0}
       >
         <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-none">
           <Markdown
@@ -124,7 +129,7 @@ export default function Page({
           isFirstPage
             ? {
                 href: `/${chapterId}`,
-                number: getMainPageNumber(chapterId as string),
+                number: formatChapterNumber(chapterId as string),
                 title: chapterTitle,
               }
             : navigation.previousPage
@@ -151,7 +156,7 @@ export default function Page({
             : navigation.nextChapter
             ? {
                 href: `/${navigation.nextChapter.id}`,
-                number: getMainPageNumber(navigation.nextChapter.id),
+                number: formatChapterNumber(navigation.nextChapter.id),
                 title: navigation.nextChapter.title,
               }
             : null
@@ -237,7 +242,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const currentPageIndex = currentChapter.pages.findIndex(
     (page) => page.id === pageId
   );
-  const isFirstPage = currentPageIndex === 0;
+  // Check if this page should navigate back to chapter landing page
+  const pageNumber = parseInt(pageId, 10);
+  const chapterNumber = parseInt(chapterId, 10);
+  const shouldNavigateToChapter =
+    pageNumber === chapterNumber * 10 + chapterNumber + 1;
+  const isFirstPage = currentPageIndex === 0 || shouldNavigateToChapter;
   const previousPage =
     currentPageIndex > 0 ? currentChapter.pages[currentPageIndex - 1] : null;
   const nextPage =
