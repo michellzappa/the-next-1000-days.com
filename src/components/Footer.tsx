@@ -1,6 +1,5 @@
 import Link from "next/link";
 import RandomPageButton from "./RandomPageButton";
-import { formatDisplayNumber } from "../utils/pageNumbers";
 import {
   getNavigationContext,
   getNavigationUrl,
@@ -12,6 +11,7 @@ import { useEffect, useState } from "react";
 interface FooterProps {
   currentPageNumber?: string;
   chapterId?: string;
+  pageId?: string;
   navLeft?: { href: string; number: string; title: string } | null;
   navRight?: { href: string; number: string; title: string } | null;
   showRandom?: boolean;
@@ -20,6 +20,7 @@ interface FooterProps {
 const Footer = ({
   currentPageNumber,
   chapterId,
+  pageId,
   navLeft,
   navRight,
   showRandom = false,
@@ -30,11 +31,11 @@ const Footer = ({
   // Load navigation context if chapterId is provided
   useEffect(() => {
     if (chapterId) {
-      getNavigationContext(chapterId)
+      getNavigationContext(chapterId, pageId)
         .then(setNavigationContext)
         .catch(console.error);
     }
-  }, [chapterId]);
+  }, [chapterId, pageId]);
 
   // Use centralized navigation if available, otherwise fall back to props
   const effectiveNavLeft = navigationContext?.previous
@@ -62,7 +63,7 @@ const Footer = ({
               <Link href={effectiveNavLeft.href} className="hover:underline">
                 <span className="flex flex-col items-start">
                   <span className="text-base text-gray-500 dark:text-gray-400 font-mono font-bold">
-                    {formatDisplayNumber(effectiveNavLeft.number)}
+                    {effectiveNavLeft.number}
                   </span>
                   <span className="text-xs sm:text-sm opacity-80 max-w-[12rem] sm:max-w-[16rem] leading-snug">
                     {effectiveNavLeft.title}
@@ -89,7 +90,7 @@ const Footer = ({
               >
                 <span className="flex flex-col items-end">
                   <span className="text-base text-gray-500 dark:text-gray-400 font-mono font-bold no-underline">
-                    {formatDisplayNumber(effectiveNavRight.number)}
+                    {effectiveNavRight.number}
                   </span>
                   <span className="text-xs sm:text-sm opacity-80 max-w-[12rem] sm:max-w-[16rem] leading-snug text-right">
                     {effectiveNavRight.title}

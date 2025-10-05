@@ -6,10 +6,7 @@ import path from "path";
 import Link from "next/link";
 import Markdown from "../../components/Markdown";
 import Footer from "../../components/Footer";
-import {
-  getMainPageNumber,
-  formatChapterNumber,
-} from "../../utils/pageNumbers";
+import { getMainPageNumber } from "../../utils/pageNumbers";
 import { existsSync } from "fs";
 import { join } from "path";
 import dynamic from "next/dynamic";
@@ -24,35 +21,16 @@ interface PageProps {
   nextChapter: { id: string; title: string } | null;
 }
 
-interface PageNavigation {
-  previousPage: { id: string; title: string } | null;
-  nextPage: { id: string; title: string } | null;
-  previousChapter: {
-    id: string;
-    title: string;
-    pages: { id: string; title: string }[];
-  } | null;
-  nextChapter: {
-    id: string;
-    title: string;
-    pages: { id: string; title: string }[];
-  } | null;
-}
-
 export default function Page({
   title,
   subtitle,
   content,
   chapterTitle,
-  navigation,
   lastUpdated,
   hasCustomComponent,
-  isFirstPage,
 }: PageProps & {
   lastUpdated: string;
-  navigation: PageNavigation;
   hasCustomComponent: boolean;
-  isFirstPage: boolean;
 }) {
   const router = useRouter();
   const { chapterId, pageId } = router.query;
@@ -124,43 +102,8 @@ export default function Page({
       <Footer
         currentPageNumber={pageId as string}
         chapterId={chapterId as string}
+        pageId={pageId as string}
         showRandom
-        navLeft={
-          isFirstPage
-            ? {
-                href: `/${chapterId}`,
-                number: formatChapterNumber(chapterId as string),
-                title: chapterTitle,
-              }
-            : navigation.previousPage
-            ? {
-                href: `/${chapterId}/${navigation.previousPage.id}`,
-                number: navigation.previousPage.id,
-                title: navigation.previousPage.title,
-              }
-            : navigation.previousChapter
-            ? {
-                href: `/${navigation.previousChapter.id}`,
-                number: getMainPageNumber(navigation.previousChapter.id),
-                title: navigation.previousChapter.title,
-              }
-            : null
-        }
-        navRight={
-          navigation.nextPage
-            ? {
-                href: `/${chapterId}/${navigation.nextPage.id}`,
-                number: navigation.nextPage.id,
-                title: navigation.nextPage.title,
-              }
-            : navigation.nextChapter
-            ? {
-                href: `/${navigation.nextChapter.id}`,
-                number: formatChapterNumber(navigation.nextChapter.id),
-                title: navigation.nextChapter.title,
-              }
-            : null
-        }
       />
     </div>
   );
@@ -192,7 +135,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { getChapters } = await import("../../utils/content");
   const chapterId = params?.chapterId as string;
   const pageId = params?.pageId as string;
   const contentDir = path.join(process.cwd(), "content");
@@ -232,45 +174,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   );
   const chapterTitle = chapterContent.split("\n")[0].replace("# ", "");
 
-  // Determine previous and next pages/chapters
-  const chapters = await getChapters();
-  const currentChapterIndex = chapters.findIndex(
-    (chapter) => chapter.id === chapterId
-  );
-  const currentChapter = chapters[currentChapterIndex];
-
-  const currentPageIndex = currentChapter.pages.findIndex(
-    (page) => page.id === pageId
-  );
-  // Check if this page should navigate back to chapter landing page
-  const pageNumber = parseInt(pageId, 10);
-  const chapterNumber = parseInt(chapterId, 10);
-  const shouldNavigateToChapter =
-    pageNumber === chapterNumber * 10 + chapterNumber + 1;
-  const isFirstPage = currentPageIndex === 0 || shouldNavigateToChapter;
-  const previousPage =
-    currentPageIndex > 0 ? currentChapter.pages[currentPageIndex - 1] : null;
-  const nextPage =
-    currentPageIndex < currentChapter.pages.length - 1
-      ? currentChapter.pages[currentPageIndex + 1]
-      : null;
-  const previousChapter =
-    currentChapterIndex > 0 ? chapters[currentChapterIndex - 1] : null;
-  const nextChapter =
-    currentChapterIndex < chapters.length - 1
-      ? chapters[currentChapterIndex + 1]
-      : null;
-
-  const navigation: PageNavigation = {
-    previousPage: previousPage
-      ? { id: previousPage.id, title: previousPage.title }
-      : null,
-    nextPage: nextPage ? { id: nextPage.id, title: nextPage.title } : null,
-    previousChapter: currentPageIndex === 0 ? previousChapter : null,
-    nextChapter:
-      currentPageIndex === currentChapter.pages.length - 1 ? nextChapter : null,
-  };
-
   const stats = fs.statSync(pagePath);
   const lastUpdated = new Date(stats.mtime).toLocaleDateString("en-GB", {
     day: "numeric",
@@ -290,13 +193,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       title,
-      subtitle, // Add this line
-      content: lines.slice(1).join("\n"), // Remove only the title line, let Markdown component handle subtitle
+      subtitle,
+      content: lines.slice(1).join("\n"),
       chapterTitle,
-      navigation,
       lastUpdated,
-      hasCustomComponent, // Add this line
-      isFirstPage,
+      hasCustomComponent,
     },
   };
 };

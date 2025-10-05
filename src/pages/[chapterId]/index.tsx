@@ -24,7 +24,6 @@ interface ChapterProps {
   content: string;
   chapterId: string;
   subPages: Page[];
-  navigation: ChapterNavigation;
   hasCustomComponent: boolean;
   mainPageNumber: string;
 }
@@ -35,16 +34,6 @@ interface Page {
   subtitle: string;
 }
 
-interface ChapterNavigation {
-  previousChapter: {
-    id: string;
-    title: string;
-    lastPage: string | null;
-    lastPageTitle: string | null;
-  } | null;
-  nextChapter: { id: string; title: string } | null;
-}
-
 // helper removed (unused)
 
 export default function Chapter({
@@ -53,7 +42,6 @@ export default function Chapter({
   content,
   chapterId,
   subPages,
-  navigation,
   hasCustomComponent,
   mainPageNumber,
 }: ChapterProps) {
@@ -145,39 +133,6 @@ export default function Chapter({
         currentPageNumber={formatChapterNumber(chapterId)}
         chapterId={chapterId}
         showRandom
-        navLeft={
-          navigation.previousChapter
-            ? {
-                href:
-                  chapterId === "01"
-                    ? "/"
-                    : navigation.previousChapter.lastPage
-                    ? `/${navigation.previousChapter.id}/${navigation.previousChapter.lastPage}`
-                    : `/${navigation.previousChapter.id}`,
-                number: navigation.previousChapter.lastPage
-                  ? navigation.previousChapter.lastPage
-                  : formatChapterNumber(navigation.previousChapter.id),
-                title: navigation.previousChapter.lastPageTitle
-                  ? navigation.previousChapter.lastPageTitle
-                  : navigation.previousChapter.title,
-              }
-            : null
-        }
-        navRight={
-          subPages.length > 0
-            ? {
-                href: `/${chapterId}/${subPages[0].id}`,
-                number: subPages[0].id,
-                title: subPages[0].title,
-              }
-            : navigation.nextChapter
-            ? {
-                href: `/${navigation.nextChapter.id}`,
-                number: formatChapterNumber(navigation.nextChapter.id),
-                title: navigation.nextChapter.title,
-              }
-            : null
-        }
       />
     </div>
   );
@@ -197,7 +152,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { getChapters } = await import("../../utils/content");
   const chapterId = params?.chapterId as string;
   const pageId = `${chapterId.padStart(2, "0")}0`;
 
@@ -265,40 +219,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       };
     });
 
-  const chapters = await getChapters();
-  const currentChapterIndex = chapters.findIndex(
-    (chapter) => chapter.id === chapterId
-  );
-
-  const navigation: ChapterNavigation = {
-    previousChapter:
-      currentChapterIndex > 0
-        ? {
-            id: chapters[currentChapterIndex - 1].id,
-            title: chapters[currentChapterIndex - 1].title,
-            lastPage:
-              chapters[currentChapterIndex - 1].pages.length > 0
-                ? chapters[currentChapterIndex - 1].pages[
-                    chapters[currentChapterIndex - 1].pages.length - 1
-                  ].id
-                : null,
-            lastPageTitle:
-              chapters[currentChapterIndex - 1].pages.length > 0
-                ? chapters[currentChapterIndex - 1].pages[
-                    chapters[currentChapterIndex - 1].pages.length - 1
-                  ].title
-                : null,
-          }
-        : null,
-    nextChapter:
-      currentChapterIndex < chapters.length - 1
-        ? {
-            id: chapters[currentChapterIndex + 1].id,
-            title: chapters[currentChapterIndex + 1].title,
-          }
-        : null,
-  };
-
   const componentPath = join(
     process.cwd(),
     "src",
@@ -315,7 +235,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       content: contentWithoutTitleAndSubtitle,
       chapterId,
       subPages,
-      navigation,
       hasCustomComponent,
       mainPageNumber,
     },
