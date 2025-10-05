@@ -51,23 +51,13 @@ export default function GlobalNavigation({ children }: GlobalNavigationProps) {
     const { chapterId, pageId } = router.query;
 
     if (!chapterId) {
-      // Handle homepage navigation
-      const introChapter = chapters.find((chapter) => chapter.id === "00");
+      // Handle homepage navigation: only suggest first real chapter
       const mainChapters = chapters.filter((chapter) => chapter.id !== "00");
+      const firstMainChapter = mainChapters.length > 0 ? mainChapters[0] : null;
 
-      if (introChapter) {
-        const firstIntroPage =
-          introChapter.pages.length > 0 ? introChapter.pages[0] : null;
-        const firstMainChapter =
-          mainChapters.length > 0 ? mainChapters[0] : null;
-
-        setNavigation({
-          nextPage: firstIntroPage
-            ? { id: firstIntroPage.id, title: firstIntroPage.title }
-            : null,
-          nextChapter: !firstIntroPage ? firstMainChapter : null,
-        });
-      }
+      setNavigation({
+        nextChapter: firstMainChapter,
+      });
       return;
     }
 
@@ -167,12 +157,8 @@ export default function GlobalNavigation({ children }: GlobalNavigationProps) {
 
     // Handle homepage navigation
     if (!chapterId) {
-      if (direction === "right") {
-        if (navigation.nextPage) {
-          router.push(`/00/${navigation.nextPage.id}`);
-        } else if (navigation.nextChapter) {
-          router.push(`/${navigation.nextChapter.id}`);
-        }
+      if (direction === "right" && navigation.nextChapter) {
+        router.push(`/${navigation.nextChapter.id}`);
       }
       return;
     }

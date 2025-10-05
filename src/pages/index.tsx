@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { getChapters } from "../utils/content";
 import Footer from "../components/Footer";
-import Markdown from "../components/Markdown";
+// Intro chapter removed; Markdown import no longer used here
 import { usePageNavigation } from "../hooks/usePageNavigation";
 import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
@@ -24,15 +24,11 @@ interface HomeProps {
 }
 
 export default function Home({ chapters }: HomeProps) {
-  const introChapter = chapters.find((chapter) => chapter.id === "00");
   const mainChapters = chapters.filter((chapter) => chapter.id !== "00");
 
   const navigation = {
-    nextPage: introChapter?.pages?.[0]
-      ? { id: "001", title: introChapter.pages[0].title }
-      : null,
-    nextChapter: !introChapter?.pages?.length ? mainChapters[0] : null,
-  };
+    nextChapter: mainChapters[0] || null,
+  } as { nextChapter: { id: string; title: string } | null };
 
   const swipeHandlers = usePageNavigation({
     chapterId: "00",
@@ -85,36 +81,7 @@ export default function Home({ chapters }: HomeProps) {
             </div>
           </div>
 
-          {introChapter && (
-            <section className="mt-8 mb-12">
-              <Markdown
-                content={introChapter.content || ""}
-                chapterId="00"
-                pageId="000"
-              />
-              <h3 className="text-2xl font-semibold mt-8 mb-3">
-                Introduction Pages
-              </h3>
-              {introChapter.pages &&
-                introChapter.pages.map((page) => (
-                  <div key={page.id} className="mb-2">
-                    <Link
-                      href={`/00/${page.id}`}
-                      className="block hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg p-2 transition duration-150 ease-in-out"
-                    >
-                      <div className="flex items-baseline">
-                        <span className="inline-block w-8 font-mono text-sm font-bold text-gray-500 dark:text-gray-400">
-                          {page.id.padStart(3, "0")}
-                        </span>
-                        <span className="text-lg font-medium">
-                          {page.title}
-                        </span>
-                      </div>
-                    </Link>
-                  </div>
-                ))}
-            </section>
-          )}
+          {/* Intro chapter section removed */}
 
           <section className="mt-8">
             <h2 className="text-2xl font-semibold mb-3">Chapters</h2>
@@ -178,21 +145,7 @@ export default function Home({ chapters }: HomeProps) {
             <RandomPageButton />
           </div>
           <div className="flex-1 flex justify-end">
-            {navigation.nextPage ? (
-              <Link
-                href={`/00/${navigation.nextPage.id}`}
-                className="hover:underline text-right"
-              >
-                <span className="flex flex-col items-end">
-                  <span className="text-lg sm:text-xl font-mono font-bold no-underline">
-                    {navigation.nextPage.id}
-                  </span>
-                  <span className="text-xs sm:text-sm opacity-80">
-                    {navigation.nextPage.title}
-                  </span>
-                </span>
-              </Link>
-            ) : navigation.nextChapter ? (
+            {navigation.nextChapter ? (
               <Link
                 href={`/${navigation.nextChapter.id}`}
                 className="hover:underline text-right"

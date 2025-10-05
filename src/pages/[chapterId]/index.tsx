@@ -115,9 +115,6 @@ export default function Chapter({
           chapterId={chapterId}
           pageId={chapterId.padStart(2, "0") + "0"}
         />
-        <div className="text-sm text-gray-500 mb-2 font-mono">
-          {getDisplayTitle(chapterId.padStart(2, "0") + "0", chapterId)}
-        </div>
 
         {subPages.length > 0 && (
           <section className="mt-12">
