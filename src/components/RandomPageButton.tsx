@@ -36,7 +36,7 @@ export default function RandomPageButton({
     <button
       onClick={handleRandomPage}
       disabled={isLoading}
-      className={`inline-flex items-center gap-1 px-2 py-1 text-sm text-blue-600 dark:text-blue-400 hover:underline disabled:opacity-50 ${className}`}
+      className={`inline-flex items-center gap-1 px-2 py-1 text-sm hover:underline disabled:opacity-50 ${className}`}
       title="Go to random page"
     >
       <Shuffle size={14} className={isLoading ? "animate-spin" : ""} />

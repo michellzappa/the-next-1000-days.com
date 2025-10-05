@@ -42,14 +42,6 @@ const Footer = ({ currentPageNumber, chapterId }: FooterProps) => {
         {currentPageNumber && (
           <div className="text-sm text-gray-500 dark:text-gray-400 font-mono">
             {currentPageNumber} / 089
-            {chapterId && (
-              <span>
-                {" • "}
-                <Link href={`/${chapterId}`} className="hover:underline">
-                  Chapter {chapterId}
-                </Link>
-              </span>
-            )}
           </div>
         )}
       </div>

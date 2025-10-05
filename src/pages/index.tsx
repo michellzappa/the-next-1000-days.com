@@ -64,10 +64,10 @@ export default function Home({ chapters }: HomeProps) {
         className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-6"
       >
         <Head>
-          <title>The Next 1.000 Days</title>
+          <title>Field Notes from a Centaur</title>
           <meta
             name="description"
-            content="Your guide to navigating the transition to AGI."
+            content="Learnings from one thousand days using AI."
           />
         </Head>
 
@@ -181,10 +181,10 @@ export default function Home({ chapters }: HomeProps) {
             {navigation.nextPage ? (
               <Link
                 href={`/00/${navigation.nextPage.id}`}
-                className="text-blue-600 dark:text-blue-400 hover:underline"
+                className="hover:underline text-right"
               >
                 <span className="flex flex-col items-end">
-                  <span className="text-xl sm:text-2xl font-mono font-bold">
+                  <span className="text-lg sm:text-xl font-mono font-bold no-underline">
                     {navigation.nextPage.id}
                   </span>
                   <span className="text-xs sm:text-sm opacity-80">
@@ -195,10 +195,10 @@ export default function Home({ chapters }: HomeProps) {
             ) : navigation.nextChapter ? (
               <Link
                 href={`/${navigation.nextChapter.id}`}
-                className="text-blue-600 dark:text-blue-400 hover:underline"
+                className="hover:underline text-right"
               >
                 <span className="flex flex-col items-end">
-                  <span className="text-xl sm:text-2xl font-mono font-bold">
+                  <span className="text-lg sm:text-xl font-mono font-bold no-underline">
                     {getMainPageNumber(navigation.nextChapter.id)}
                   </span>
                   <span className="text-xs sm:text-sm opacity-80">

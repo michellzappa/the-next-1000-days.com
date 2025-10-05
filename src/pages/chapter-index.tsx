@@ -48,7 +48,7 @@ export default function ChapterOverview({ chapters }: ChapterOverviewProps) {
     <div className="min-h-screen flex flex-col items-center bg-background text-foreground">
       <div className="w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-6">
         <Head>
-          <title>Chapter Overview - The Next 1.000 Days</title>
+          <title>Chapter Overview - Field Notes from a Centaur</title>
         </Head>
 
         <h1 className="text-4xl font-bold mb-8">Chapter Overview</h1>

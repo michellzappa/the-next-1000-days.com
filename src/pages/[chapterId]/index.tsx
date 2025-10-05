@@ -7,7 +7,7 @@ import path from "path";
 import Markdown from "../../components/Markdown";
 import Footer from "../../components/Footer";
 import RandomPageButton from "../../components/RandomPageButton";
-import type { GetStaticProps, GetStaticPaths } from "next";
+// removed duplicate type import
 import { getMainPageNumber } from "../../utils/pageNumbers";
 import { usePageNavigation } from "../../hooks/usePageNavigation";
 import dynamic from "next/dynamic";
@@ -78,17 +78,19 @@ export default function Chapter({
   return (
     <div className="min-h-screen flex flex-col items-center bg-background text-foreground">
       <Head>
-        <title>{title} - The Next 1.000 Days</title>
+        <title>
+          {`${parseInt(chapterId, 10)}. ${title}`} - Field Notes from a Centaur
+        </title>
         <meta name="description" content={subtitle || "Chapter content"} />
       </Head>
       <div className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-6">
-        <Link
-          href="/"
-          className="text-blue-600 dark:text-blue-400 hover:underline mb-4 inline-block"
-        >
+        <Link href="/" className="hover:underline mb-4 inline-block">
           ← Home
         </Link>
-        <h1 className="text-4xl font-bold mb-2">{title}</h1>
+        <h1 className="text-4xl font-bold mb-2">{`${parseInt(
+          chapterId,
+          10
+        )}. ${title}`}</h1>
         {subtitle && <h2 className="text-2xl italic mb-6">{subtitle}</h2>}
       </div>
 
@@ -155,7 +157,7 @@ export default function Chapter({
                     ? `/${navigation.previousChapter.id}/${navigation.previousChapter.lastPage}`
                     : `/${navigation.previousChapter.id}`
                 }
-                className="text-blue-600 dark:text-blue-400 hover:underline"
+                className="hover:underline"
               >
                 <span className="flex flex-col items-start">
                   <span className="text-xl sm:text-2xl font-mono font-bold">
@@ -179,10 +181,10 @@ export default function Chapter({
             {subPages.length > 0 && (
               <Link
                 href={`/${chapterId}/${subPages[0].id}`}
-                className="text-blue-600 dark:text-blue-400 hover:underline"
+                className="hover:underline text-right"
               >
                 <span className="flex flex-col items-end">
-                  <span className="text-xl sm:text-2xl font-mono font-bold">
+                  <span className="text-lg sm:text-xl font-mono font-bold no-underline">
                     {subPages[0].id}
                   </span>
                   <span className="text-xs sm:text-sm opacity-80">
@@ -194,10 +196,10 @@ export default function Chapter({
             {subPages.length === 0 && navigation.nextChapter && (
               <Link
                 href={`/${navigation.nextChapter.id}`}
-                className="text-blue-600 dark:text-blue-400 hover:underline"
+                className="hover:underline text-right"
               >
                 <span className="flex flex-col items-end">
-                  <span className="text-xl sm:text-2xl font-mono font-bold">
+                  <span className="text-lg sm:text-xl font-mono font-bold no-underline">
                     {`${navigation.nextChapter.id.padStart(2, "0")}0`}
                   </span>
                   <span className="text-xs sm:text-sm opacity-80">

@@ -91,7 +91,7 @@ function getAllContent(): string {
     // Add metadata header
     const metadata = `# Field Notes from a Centaur - Complete Text
 Generated: ${new Date().toISOString()}
-Source: https://the-next-1000-days.com
+Source: https://field-notes.centaur-labs.io
 
 This document contains the complete text of "Field Notes from a Centaur: Learnings from one thousand days using AI."
 

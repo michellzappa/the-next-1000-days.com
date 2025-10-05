@@ -75,7 +75,7 @@ export default function Page({
   return (
     <div className="min-h-screen flex flex-col items-center bg-background text-foreground">
       <Head>
-        <title>{title} - The Next 1.000 Days</title>
+        <title>{title} - Field Notes from a Centaur</title>
         <meta
           name="description"
           content={subtitle || `${title} - Chapter content`}
@@ -84,9 +84,9 @@ export default function Page({
       <div className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-6">
         <Link
           href={`/${chapterId}`}
-          className="text-gray-700 dark:text-blue-400 hover:underline mb-4 inline-block"
+          className="hover:underline mb-4 inline-block"
         >
-          ← {chapterTitle}
+          ← {`${parseInt(chapterId as string, 10)}. ${chapterTitle}`}
         </Link>
         <h1 className="text-4xl font-bold mb-2">{title}</h1>
         {subtitle && <h2 className="text-2xl italic mb-6">{subtitle}</h2>}
@@ -118,10 +118,7 @@ export default function Page({
         <div className="flex justify-between items-center mt-8">
           <div className="flex-1">
             {isFirstPage ? (
-              <Link
-                href={`/${chapterId}`}
-                className="text-blue-600 dark:text-blue-400 hover:underline"
-              >
+              <Link href={`/${chapterId}`} className="hover:underline">
                 <span className="flex flex-col items-start">
                   <span className="text-xl sm:text-2xl font-mono font-bold">
                     {getMainPageNumber(chapterId as string)}
@@ -134,7 +131,7 @@ export default function Page({
             ) : navigation.previousPage ? (
               <Link
                 href={`/${chapterId}/${navigation.previousPage.id}`}
-                className="text-blue-600 dark:text-blue-400 hover:underline"
+                className="hover:underline"
               >
                 <span className="flex flex-col items-start">
                   <span className="text-xl sm:text-2xl font-mono font-bold">
@@ -148,7 +145,7 @@ export default function Page({
             ) : navigation.previousChapter ? (
               <Link
                 href={`/${navigation.previousChapter.id}`}
-                className="text-blue-600 dark:text-blue-400 hover:underline"
+                className="hover:underline"
               >
                 <span className="flex flex-col items-start">
                   <span className="text-xl sm:text-2xl font-mono font-bold">
@@ -170,10 +167,10 @@ export default function Page({
             {navigation.nextPage ? (
               <Link
                 href={`/${chapterId}/${navigation.nextPage.id}`}
-                className="text-blue-600 dark:text-blue-400 hover:underline"
+                className="hover:underline text-right"
               >
                 <span className="flex flex-col items-end">
-                  <span className="text-xl sm:text-2xl font-mono font-bold">
+                  <span className="text-lg sm:text-xl font-mono font-bold no-underline">
                     {navigation.nextPage.id}
                   </span>
                   <span className="text-xs sm:text-sm opacity-80">
@@ -184,10 +181,10 @@ export default function Page({
             ) : navigation.nextChapter ? (
               <Link
                 href={`/${navigation.nextChapter.id}`}
-                className="text-blue-600 dark:text-blue-400 hover:underline"
+                className="hover:underline text-right"
               >
                 <span className="flex flex-col items-end">
-                  <span className="text-xl sm:text-2xl font-mono font-bold">
+                  <span className="text-lg sm:text-xl font-mono font-bold no-underline">
                     {getMainPageNumber(navigation.nextChapter.id)}
                   </span>
                   <span className="text-xs sm:text-sm opacity-80">

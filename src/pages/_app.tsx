@@ -7,7 +7,7 @@ import GlobalNavigation from "../components/GlobalNavigation";
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <PlausibleProvider
-      domain="the-next-1000-days.vercel.app, the-next-1000-days.com"
+      domain="centaur-labs.io, michellzappa.com"
       trackLocalhost={false} // Set to true if you want to track localhost during development
     >
       <ThemeProvider attribute="class">
