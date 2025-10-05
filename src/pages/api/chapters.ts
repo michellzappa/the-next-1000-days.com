@@ -1,20 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
-
-// Helper function to get the main page number for each chapter
-function getMainPageNumber(chapterId: string): string {
-  const chapterNumber = parseInt(chapterId);
-  return chapterNumber === 0 ? '000' : 
-    chapterNumber === 1 ? '011' :
-    chapterNumber === 2 ? '022' :
-    chapterNumber === 3 ? '033' :
-    chapterNumber === 4 ? '044' :
-    chapterNumber === 5 ? '055' :
-    chapterNumber === 6 ? '066' :
-    chapterNumber === 7 ? '077' :
-    chapterNumber === 8 ? '088' : '000';
-}
+import { getMainPageNumber } from '../../utils/content';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const contentDir = path.join(process.cwd(), 'content');
@@ -25,7 +12,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       const chapterPath = path.join(contentDir, dir);
       const chapterFiles = fs.readdirSync(chapterPath);
       const mainPageNumber = getMainPageNumber(chapterId);
-      const mainFile = chapterFiles.find(file => file.startsWith(`${mainPageNumber}.`)) || chapterFiles[0];
+      const mainFile = chapterFiles.find(file => file.startsWith(`${mainPageNumber}.`)) || '';
       const content = fs.readFileSync(path.join(chapterPath, mainFile), 'utf-8');
       const lines = content.split('\n');
       const title = lines[0].replace('# ', '');
@@ -35,7 +22,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       const description = firstNonEmptyLine || '';
       
       const pages = chapterFiles
-        .filter(file => file.endsWith('.md') && !file.startsWith(`${mainPageNumber}.`))
+        .filter(file => file.endsWith('.md') && file !== mainFile)
+        .sort((a, b) => parseInt(a) - parseInt(b))
         .map(file => {
           const pageContent = fs.readFileSync(path.join(chapterPath, file), 'utf-8');
           const pageTitle = pageContent.split('\n')[0].replace('# ', '');

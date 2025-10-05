@@ -42,6 +42,7 @@ export async function getChapters() {
           content = lines.slice(contentStartIndex).join('\n');
           pages = fs.readdirSync(chapterPath)
             .filter(file => file.endsWith('.md') && file !== mainFile)
+            .sort((a, b) => parseInt(a) - parseInt(b))
             .map(file => {
               const pageContent = fs.readFileSync(path.join(chapterPath, file), 'utf-8');
               const pageTitle = pageContent.split('\n')[0].replace('# ', '');
