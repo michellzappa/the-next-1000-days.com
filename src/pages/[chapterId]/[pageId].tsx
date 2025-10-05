@@ -115,93 +115,49 @@ export default function Page({
         <div className="text-sm text-gray-500 dark:text-gray-400 mt-4 hidden">
           Last updated: {lastUpdated}
         </div>
-        <div className="flex justify-between items-center mt-8">
-          <div className="flex-1">
-            {isFirstPage ? (
-              <Link href={`/${chapterId}`} className="hover:underline">
-                <span className="flex flex-col items-start">
-                  <span className="text-xl sm:text-2xl font-mono font-bold">
-                    {getMainPageNumber(chapterId as string)}
-                  </span>
-                  <span className="text-xs sm:text-sm opacity-80">
-                    {chapterTitle}
-                  </span>
-                </span>
-              </Link>
-            ) : navigation.previousPage ? (
-              <Link
-                href={`/${chapterId}/${navigation.previousPage.id}`}
-                className="hover:underline"
-              >
-                <span className="flex flex-col items-start">
-                  <span className="text-xl sm:text-2xl font-mono font-bold">
-                    {navigation.previousPage.id}
-                  </span>
-                  <span className="text-xs sm:text-sm opacity-80">
-                    {navigation.previousPage.title}
-                  </span>
-                </span>
-              </Link>
-            ) : navigation.previousChapter ? (
-              <Link
-                href={`/${navigation.previousChapter.id}`}
-                className="hover:underline"
-              >
-                <span className="flex flex-col items-start">
-                  <span className="text-xl sm:text-2xl font-mono font-bold">
-                    {getMainPageNumber(navigation.previousChapter.id)}
-                  </span>
-                  <span className="text-xs sm:text-sm opacity-80">
-                    {navigation.previousChapter.title}
-                  </span>
-                </span>
-              </Link>
-            ) : (
-              <span></span>
-            )}
-          </div>
-          <div className="flex-1 flex justify-center">
-            <RandomPageButton />
-          </div>
-          <div className="flex-1 flex justify-end">
-            {navigation.nextPage ? (
-              <Link
-                href={`/${chapterId}/${navigation.nextPage.id}`}
-                className="hover:underline text-right"
-              >
-                <span className="flex flex-col items-end">
-                  <span className="text-lg sm:text-xl font-mono font-bold no-underline">
-                    {navigation.nextPage.id}
-                  </span>
-                  <span className="text-xs sm:text-sm opacity-80">
-                    {navigation.nextPage.title}
-                  </span>
-                </span>
-              </Link>
-            ) : navigation.nextChapter ? (
-              <Link
-                href={`/${navigation.nextChapter.id}`}
-                className="hover:underline text-right"
-              >
-                <span className="flex flex-col items-end">
-                  <span className="text-lg sm:text-xl font-mono font-bold no-underline">
-                    {getMainPageNumber(navigation.nextChapter.id)}
-                  </span>
-                  <span className="text-xs sm:text-sm opacity-80">
-                    {navigation.nextChapter.title}
-                  </span>
-                </span>
-              </Link>
-            ) : (
-              <span></span>
-            )}
-          </div>
-        </div>
-        <Footer
-          currentPageNumber={pageId as string}
-          chapterId={chapterId as string}
-        />
+        {/* Pagination moved to Footer */}
       </div>
+      <Footer
+        currentPageNumber={pageId as string}
+        chapterId={chapterId as string}
+        showRandom
+        navLeft={
+          isFirstPage
+            ? {
+                href: `/${chapterId}`,
+                number: getMainPageNumber(chapterId as string),
+                title: chapterTitle,
+              }
+            : navigation.previousPage
+            ? {
+                href: `/${chapterId}/${navigation.previousPage.id}`,
+                number: navigation.previousPage.id,
+                title: navigation.previousPage.title,
+              }
+            : navigation.previousChapter
+            ? {
+                href: `/${navigation.previousChapter.id}`,
+                number: getMainPageNumber(navigation.previousChapter.id),
+                title: navigation.previousChapter.title,
+              }
+            : null
+        }
+        navRight={
+          navigation.nextPage
+            ? {
+                href: `/${chapterId}/${navigation.nextPage.id}`,
+                number: navigation.nextPage.id,
+                title: navigation.nextPage.title,
+              }
+            : navigation.nextChapter
+            ? {
+                href: `/${navigation.nextChapter.id}`,
+                number: getMainPageNumber(navigation.nextChapter.id),
+                title: navigation.nextChapter.title,
+              }
+            : null
+        }
+      />
     </div>
   );
 }

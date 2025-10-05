@@ -136,36 +136,21 @@ export default function Home({ chapters }: HomeProps) {
             </div>
           </section>
         </main>
-        <div className="flex justify-between items-center mt-8">
-          <div className="flex-1">
-            {/* Home has no previous destination */}
-            <span></span>
-          </div>
-          <div className="flex-1 flex justify-center">
-            <RandomPageButton />
-          </div>
-          <div className="flex-1 flex justify-end">
-            {navigation.nextChapter ? (
-              <Link
-                href={`/${navigation.nextChapter.id}`}
-                className="hover:underline text-right"
-              >
-                <span className="flex flex-col items-end">
-                  <span className="text-lg sm:text-xl font-mono font-bold no-underline">
-                    {getMainPageNumber(navigation.nextChapter.id)}
-                  </span>
-                  <span className="text-xs sm:text-sm opacity-80">
-                    {navigation.nextChapter.title}
-                  </span>
-                </span>
-              </Link>
-            ) : (
-              <span></span>
-            )}
-          </div>
-        </div>
-        <Footer />
+        {/* Pagination moved to Footer */}
       </div>
+      <Footer
+        showRandom
+        navLeft={null}
+        navRight={
+          navigation.nextChapter
+            ? {
+                href: `/${navigation.nextChapter.id}`,
+                number: getMainPageNumber(navigation.nextChapter.id),
+                title: navigation.nextChapter.title,
+              }
+            : null
+        }
+      />
     </div>
   );
 }

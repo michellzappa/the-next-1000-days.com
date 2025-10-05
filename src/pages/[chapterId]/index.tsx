@@ -142,73 +142,46 @@ export default function Chapter({
             ))}
           </section>
         )}
-        <div className="flex justify-between items-center mt-8">
-          <div className="flex-1">
-            {navigation.previousChapter && (
-              <Link
-                href={
-                  // Special-case: from chapter 01, go back to home
+        {/* Pagination moved to Footer */}
+      </div>
+      <Footer
+        currentPageNumber={mainPageNumber}
+        chapterId={chapterId}
+        showRandom
+        navLeft={
+          navigation.previousChapter
+            ? {
+                href:
                   chapterId === "01"
                     ? "/"
                     : navigation.previousChapter.lastPage
                     ? `/${navigation.previousChapter.id}/${navigation.previousChapter.lastPage}`
-                    : `/${navigation.previousChapter.id}`
-                }
-                className="hover:underline"
-              >
-                <span className="flex flex-col items-start">
-                  <span className="text-xl sm:text-2xl font-mono font-bold">
-                    {navigation.previousChapter.lastPage
-                      ? navigation.previousChapter.lastPage
-                      : `${navigation.previousChapter.id.padStart(2, "0")}0`}
-                  </span>
-                  <span className="text-xs sm:text-sm opacity-80">
-                    {navigation.previousChapter.lastPageTitle
-                      ? navigation.previousChapter.lastPageTitle
-                      : navigation.previousChapter.title}
-                  </span>
-                </span>
-              </Link>
-            )}
-          </div>
-          <div className="flex-1 flex justify-center">
-            <RandomPageButton />
-          </div>
-          <div className="flex-1 flex justify-end">
-            {subPages.length > 0 && (
-              <Link
-                href={`/${chapterId}/${subPages[0].id}`}
-                className="hover:underline text-right"
-              >
-                <span className="flex flex-col items-end">
-                  <span className="text-lg sm:text-xl font-mono font-bold no-underline">
-                    {subPages[0].id}
-                  </span>
-                  <span className="text-xs sm:text-sm opacity-80">
-                    {subPages[0].title}
-                  </span>
-                </span>
-              </Link>
-            )}
-            {subPages.length === 0 && navigation.nextChapter && (
-              <Link
-                href={`/${navigation.nextChapter.id}`}
-                className="hover:underline text-right"
-              >
-                <span className="flex flex-col items-end">
-                  <span className="text-lg sm:text-xl font-mono font-bold no-underline">
-                    {`${navigation.nextChapter.id.padStart(2, "0")}0`}
-                  </span>
-                  <span className="text-xs sm:text-sm opacity-80">
-                    {navigation.nextChapter.title}
-                  </span>
-                </span>
-              </Link>
-            )}
-          </div>
-        </div>
-        <Footer currentPageNumber={mainPageNumber} chapterId={chapterId} />
-      </div>
+                    : `/${navigation.previousChapter.id}`,
+                number: navigation.previousChapter.lastPage
+                  ? navigation.previousChapter.lastPage
+                  : `${navigation.previousChapter.id.padStart(2, "0")}0`,
+                title: navigation.previousChapter.lastPageTitle
+                  ? navigation.previousChapter.lastPageTitle
+                  : navigation.previousChapter.title,
+              }
+            : null
+        }
+        navRight={
+          subPages.length > 0
+            ? {
+                href: `/${chapterId}/${subPages[0].id}`,
+                number: subPages[0].id,
+                title: subPages[0].title,
+              }
+            : navigation.nextChapter
+            ? {
+                href: `/${navigation.nextChapter.id}`,
+                number: `${navigation.nextChapter.id.padStart(2, "0")}0`,
+                title: navigation.nextChapter.title,
+              }
+            : null
+        }
+      />
     </div>
   );
 }

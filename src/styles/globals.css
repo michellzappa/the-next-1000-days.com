@@ -4,6 +4,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 3D flip animation for Random icon */
+@keyframes tn1000-flip-x {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(360deg); }
+}
+
+.flip-perspective {
+  perspective: 800px;
+}
+
+.flip-3d {
+  transform-style: preserve-3d;
+  animation: tn1000-flip-x 800ms linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flip-3d {
+    animation: none;
+  }
+}
+
 :root {
   --background: #F5F4EF;
   --foreground: #171717;
