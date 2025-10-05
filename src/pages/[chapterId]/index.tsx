@@ -115,13 +115,13 @@ export default function Chapter({
         />
 
         {subPages.length > 0 && (
-          <section className="mt-12">
-            <h2 className="text-2xl font-semibold mb-4">Pages</h2>
+          <section className="mt-8">
+            <h2 className="text-2xl font-semibold mb-3">Pages</h2>
             {subPages.map((page: Page) => (
               <Link
                 key={page.id}
                 href={`/${chapterId}/${page.id}`}
-                className="block mb-6 border border-transparent hover:border-gray-300 dark:hover:border-gray-700 border-2 rounded-lg p-4 transition duration-150 ease-in-out"
+                className="block border border-transparent hover:border-gray-300 dark:hover:border-gray-700 border-2 rounded-lg p-3 transition duration-150 ease-in-out"
               >
                 <div className="flex items-start">
                   <span className="inline-block w-12 text-sm font-mono text-gray-500 dark:text-gray-400 font-bold mr-4">
