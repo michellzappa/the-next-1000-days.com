@@ -51,7 +51,23 @@ export default function GlobalNavigation({ children }: GlobalNavigationProps) {
     const { chapterId, pageId } = router.query;
 
     if (!chapterId) {
-      setNavigation({});
+      // Handle homepage navigation
+      const introChapter = chapters.find((chapter) => chapter.id === "00");
+      const mainChapters = chapters.filter((chapter) => chapter.id !== "00");
+
+      if (introChapter) {
+        const firstIntroPage =
+          introChapter.pages.length > 0 ? introChapter.pages[0] : null;
+        const firstMainChapter =
+          mainChapters.length > 0 ? mainChapters[0] : null;
+
+        setNavigation({
+          nextPage: firstIntroPage
+            ? { id: firstIntroPage.id, title: firstIntroPage.title }
+            : null,
+          nextChapter: !firstIntroPage ? firstMainChapter : null,
+        });
+      }
       return;
     }
 
@@ -148,6 +164,18 @@ export default function GlobalNavigation({ children }: GlobalNavigationProps) {
 
   const handleNavigation = (direction: "left" | "right") => {
     const { chapterId, pageId } = router.query;
+
+    // Handle homepage navigation
+    if (!chapterId) {
+      if (direction === "right") {
+        if (navigation.nextPage) {
+          router.push(`/00/${navigation.nextPage.id}`);
+        } else if (navigation.nextChapter) {
+          router.push(`/${navigation.nextChapter.id}`);
+        }
+      }
+      return;
+    }
 
     if (direction === "left") {
       if (pageId) {

@@ -35,7 +35,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       const description = firstNonEmptyLine || '';
       
       const pages = chapterFiles
-        .filter(file => file.endsWith('.md'))
+        .filter(file => file.endsWith('.md') && !file.startsWith(`${mainPageNumber}.`))
         .map(file => {
           const pageContent = fs.readFileSync(path.join(chapterPath, file), 'utf-8');
           const pageTitle = pageContent.split('\n')[0].replace('# ', '');

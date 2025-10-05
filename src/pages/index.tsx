@@ -7,6 +7,8 @@ import Markdown from "../components/Markdown";
 import { usePageNavigation } from "../hooks/usePageNavigation";
 import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
+import RandomPageButton from "../components/RandomPageButton";
+import { getMainPageNumber } from "../utils/pageNumbers";
 
 interface Chapter {
   id: string;
@@ -167,6 +169,48 @@ export default function Home({ chapters }: HomeProps) {
             </div>
           </section>
         </main>
+        <div className="flex justify-between items-center mt-8">
+          <div className="flex-1">
+            {/* Home has no previous destination */}
+            <span></span>
+          </div>
+          <div className="flex-1 flex justify-center">
+            <RandomPageButton />
+          </div>
+          <div className="flex-1 flex justify-end">
+            {navigation.nextPage ? (
+              <Link
+                href={`/00/${navigation.nextPage.id}`}
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                <span className="flex flex-col items-end">
+                  <span className="text-xl sm:text-2xl font-mono font-bold">
+                    {navigation.nextPage.id}
+                  </span>
+                  <span className="text-xs sm:text-sm opacity-80">
+                    {navigation.nextPage.title}
+                  </span>
+                </span>
+              </Link>
+            ) : navigation.nextChapter ? (
+              <Link
+                href={`/${navigation.nextChapter.id}`}
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                <span className="flex flex-col items-end">
+                  <span className="text-xl sm:text-2xl font-mono font-bold">
+                    {getMainPageNumber(navigation.nextChapter.id)}
+                  </span>
+                  <span className="text-xs sm:text-sm opacity-80">
+                    {navigation.nextChapter.title}
+                  </span>
+                </span>
+              </Link>
+            ) : (
+              <span></span>
+            )}
+          </div>
+        </div>
         <Footer />
       </div>
     </div>

@@ -5,7 +5,7 @@ import matter from 'gray-matter';
 const contentDir = path.join(process.cwd(), 'content');
 
 // Helper function to get the main page number for each chapter
-function getMainPageNumber(chapterId: string): string {
+export function getMainPageNumber(chapterId: string): string {
   const chapterNumber = parseInt(chapterId);
   return chapterNumber === 0 ? '000' : 
     chapterNumber === 1 ? '011' :
@@ -128,4 +128,47 @@ export async function getPage(chapterId: string, pageId: string) {
     title: data.title,
     content,
   };
+}
+
+export async function getAllPages() {
+  const chapters = fs.readdirSync(contentDir)
+    .filter(dir => /^\d{2}-/.test(dir))
+    .map(dir => dir.split('-')[0])
+    .sort((a, b) => parseInt(a) - parseInt(b));
+
+  const allPages: { chapterId: string; pageId: string; title: string }[] = [];
+
+  for (const chapterId of chapters) {
+    const chapterDir = fs.readdirSync(contentDir).find(dir => dir.startsWith(`${chapterId}-`));
+    if (!chapterDir) continue;
+
+    const chapterPath = path.join(contentDir, chapterDir);
+    const files = fs.readdirSync(chapterPath).filter(file => file.endsWith('.md'));
+    
+    for (const file of files) {
+      try {
+        const pageId = file.replace('.md', '');
+        const filePath = path.join(chapterPath, file);
+        const { data } = matter(fs.readFileSync(filePath, 'utf-8'));
+        
+        allPages.push({
+          chapterId,
+          pageId,
+          title: data.title || pageId
+        });
+      } catch (error) {
+        console.error(`Error reading page ${file} in chapter ${chapterId}:`, error);
+      }
+    }
+  }
+
+  return allPages;
+}
+
+export async function getRandomPage() {
+  const allPages = await getAllPages();
+  if (allPages.length === 0) return null;
+  
+  const randomIndex = Math.floor(Math.random() * allPages.length);
+  return allPages[randomIndex];
 }

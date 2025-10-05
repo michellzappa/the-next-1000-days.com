@@ -6,8 +6,8 @@ import path from "path";
 import Link from "next/link";
 import Markdown from "../../components/Markdown";
 import Footer from "../../components/Footer";
-import { getChapters } from "../../utils/content";
-import { useEffect } from "react";
+import RandomPageButton from "../../components/RandomPageButton";
+import { getMainPageNumber } from "../../utils/pageNumbers";
 import { existsSync } from "fs";
 import { join } from "path";
 import dynamic from "next/dynamic";
@@ -45,10 +45,12 @@ export default function Page({
   navigation,
   lastUpdated,
   hasCustomComponent,
+  isFirstPage,
 }: PageProps & {
   lastUpdated: string;
   navigation: PageNavigation;
   hasCustomComponent: boolean;
+  isFirstPage: boolean;
 }) {
   const router = useRouter();
   const { chapterId, pageId } = router.query;
@@ -61,37 +63,10 @@ export default function Page({
     chapterId: chapterId as string,
     pageId: pageId as string,
     navigation,
+    isFirstPage,
   });
 
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowLeft") {
-        if (
-          typeof pageId === "string" &&
-          pageId.endsWith("1") &&
-          pageId !== "01"
-        ) {
-          // If it's the second page of a chapter (e.g., 051, 061), go to the main chapter page
-          router.push(`/${chapterId}`);
-        } else if (navigation.previousPage) {
-          router.push(`/${chapterId}/${navigation.previousPage.id}`);
-        } else if (navigation.previousChapter) {
-          router.push(`/${navigation.previousChapter.id}`);
-        }
-      } else if (event.key === "ArrowRight") {
-        if (navigation.nextPage) {
-          router.push(`/${chapterId}/${navigation.nextPage.id}`);
-        } else if (navigation.nextChapter) {
-          router.push(`/${navigation.nextChapter.id}`);
-        }
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [router, chapterId, pageId, navigation]);
+  // Keydown navigation handled centrally by usePageNavigation
 
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -134,57 +109,101 @@ export default function Page({
             content={content}
             chapterId={chapterId as string}
             pageId={pageId as string}
+            subtitle={subtitle || undefined}
           />
         </div>
         <div className="text-sm text-gray-500 dark:text-gray-400 mt-4 hidden">
           Last updated: {lastUpdated}
         </div>
-        <div className="flex justify-between mt-8">
-          {typeof pageId === "string" &&
-          pageId.endsWith("1") &&
-          pageId !== "01" ? (
-            <Link
-              href={`/${chapterId}`}
-              className="text-blue-600 dark:text-blue-400 hover:underline"
-            >
-              ← {chapterTitle}
-            </Link>
-          ) : navigation.previousPage ? (
-            <Link
-              href={`/${chapterId}/${navigation.previousPage.id}`}
-              className="text-blue-600 dark:text-blue-400 hover:underline"
-            >
-              ← {navigation.previousPage.title}
-            </Link>
-          ) : navigation.previousChapter ? (
-            <Link
-              href={`/${navigation.previousChapter.id}`}
-              className="text-blue-600 dark:text-blue-400 hover:underline"
-            >
-              ← {navigation.previousChapter.title}
-            </Link>
-          ) : (
-            <span></span>
-          )}
-          {navigation.nextPage ? (
-            <Link
-              href={`/${chapterId}/${navigation.nextPage.id}`}
-              className="text-blue-600 dark:text-blue-400 hover:underline"
-            >
-              {navigation.nextPage.title} →
-            </Link>
-          ) : navigation.nextChapter ? (
-            <Link
-              href={`/${navigation.nextChapter.id}`}
-              className="text-blue-600 dark:text-blue-400 hover:underline"
-            >
-              {navigation.nextChapter.title} →
-            </Link>
-          ) : (
-            <span></span>
-          )}
+        <div className="flex justify-between items-center mt-8">
+          <div className="flex-1">
+            {isFirstPage ? (
+              <Link
+                href={`/${chapterId}`}
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                <span className="flex flex-col items-start">
+                  <span className="text-xl sm:text-2xl font-mono font-bold">
+                    {getMainPageNumber(chapterId as string)}
+                  </span>
+                  <span className="text-xs sm:text-sm opacity-80">
+                    {chapterTitle}
+                  </span>
+                </span>
+              </Link>
+            ) : navigation.previousPage ? (
+              <Link
+                href={`/${chapterId}/${navigation.previousPage.id}`}
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                <span className="flex flex-col items-start">
+                  <span className="text-xl sm:text-2xl font-mono font-bold">
+                    {navigation.previousPage.id}
+                  </span>
+                  <span className="text-xs sm:text-sm opacity-80">
+                    {navigation.previousPage.title}
+                  </span>
+                </span>
+              </Link>
+            ) : navigation.previousChapter ? (
+              <Link
+                href={`/${navigation.previousChapter.id}`}
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                <span className="flex flex-col items-start">
+                  <span className="text-xl sm:text-2xl font-mono font-bold">
+                    {getMainPageNumber(navigation.previousChapter.id)}
+                  </span>
+                  <span className="text-xs sm:text-sm opacity-80">
+                    {navigation.previousChapter.title}
+                  </span>
+                </span>
+              </Link>
+            ) : (
+              <span></span>
+            )}
+          </div>
+          <div className="flex-1 flex justify-center">
+            <RandomPageButton />
+          </div>
+          <div className="flex-1 flex justify-end">
+            {navigation.nextPage ? (
+              <Link
+                href={`/${chapterId}/${navigation.nextPage.id}`}
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                <span className="flex flex-col items-end">
+                  <span className="text-xl sm:text-2xl font-mono font-bold">
+                    {navigation.nextPage.id}
+                  </span>
+                  <span className="text-xs sm:text-sm opacity-80">
+                    {navigation.nextPage.title}
+                  </span>
+                </span>
+              </Link>
+            ) : navigation.nextChapter ? (
+              <Link
+                href={`/${navigation.nextChapter.id}`}
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                <span className="flex flex-col items-end">
+                  <span className="text-xl sm:text-2xl font-mono font-bold">
+                    {getMainPageNumber(navigation.nextChapter.id)}
+                  </span>
+                  <span className="text-xs sm:text-sm opacity-80">
+                    {navigation.nextChapter.title}
+                  </span>
+                </span>
+              </Link>
+            ) : (
+              <span></span>
+            )}
+          </div>
         </div>
-        <Footer />
+        <Footer
+          currentPageNumber={pageId as string}
+          chapterId={chapterId as string}
+        />
       </div>
     </div>
   );
@@ -214,6 +233,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { getChapters } = await import("../../utils/content");
   const chapterId = params?.chapterId as string;
   const pageId = params?.pageId as string;
   const contentDir = path.join(process.cwd(), "content");
@@ -263,6 +283,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const currentPageIndex = currentChapter.pages.findIndex(
     (page) => page.id === pageId
   );
+  const isFirstPage = currentPageIndex === 0;
   const previousPage =
     currentPageIndex > 0 ? currentChapter.pages[currentPageIndex - 1] : null;
   const nextPage =
@@ -306,11 +327,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       title,
       subtitle, // Add this line
-      content: lines.slice(subtitle ? 2 : 1).join("\n"), // Modify this line
+      content: lines.slice(1).join("\n"), // Remove only the title line, let Markdown component handle subtitle
       chapterTitle,
       navigation,
       lastUpdated,
       hasCustomComponent, // Add this line
+      isFirstPage,
     },
   };
 };

@@ -6,7 +6,9 @@ import fs from "fs";
 import path from "path";
 import Markdown from "../../components/Markdown";
 import Footer from "../../components/Footer";
-import { getChapters } from "../../utils/content";
+import RandomPageButton from "../../components/RandomPageButton";
+import type { GetStaticProps, GetStaticPaths } from "next";
+import { getMainPageNumber } from "../../utils/pageNumbers";
 import { usePageNavigation } from "../../hooks/usePageNavigation";
 import dynamic from "next/dynamic";
 import { existsSync } from "fs";
@@ -141,40 +143,72 @@ export default function Chapter({
             ))}
           </section>
         )}
-        <div className="flex justify-between mt-8">
-          {navigation.previousChapter && (
-            <Link
-              href={
-                navigation.previousChapter.lastPage
-                  ? `/${navigation.previousChapter.id}/${navigation.previousChapter.lastPage}`
-                  : `/${navigation.previousChapter.id}`
-              }
-              className="text-blue-600 dark:text-blue-400 hover:underline"
-            >
-              ←
-              {navigation.previousChapter.lastPageTitle
-                ? navigation.previousChapter.lastPageTitle
-                : navigation.previousChapter.title}
-            </Link>
-          )}
-          {subPages.length > 0 && (
-            <Link
-              href={`/${chapterId}/${subPages[0].id}`}
-              className="text-blue-600 dark:text-blue-400 hover:underline"
-            >
-              {subPages[0].title} →
-            </Link>
-          )}
-          {subPages.length === 0 && navigation.nextChapter && (
-            <Link
-              href={`/${navigation.nextChapter.id}`}
-              className="text-blue-600 dark:text-blue-400 hover:underline"
-            >
-              {navigation.nextChapter.title} →
-            </Link>
-          )}
+        <div className="flex justify-between items-center mt-8">
+          <div className="flex-1">
+            {navigation.previousChapter && (
+              <Link
+                href={
+                  // Special-case: from chapter 01, go back to home
+                  chapterId === "01"
+                    ? "/"
+                    : navigation.previousChapter.lastPage
+                    ? `/${navigation.previousChapter.id}/${navigation.previousChapter.lastPage}`
+                    : `/${navigation.previousChapter.id}`
+                }
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                <span className="flex flex-col items-start">
+                  <span className="text-xl sm:text-2xl font-mono font-bold">
+                    {navigation.previousChapter.lastPage
+                      ? navigation.previousChapter.lastPage
+                      : `${navigation.previousChapter.id.padStart(2, "0")}0`}
+                  </span>
+                  <span className="text-xs sm:text-sm opacity-80">
+                    {navigation.previousChapter.lastPageTitle
+                      ? navigation.previousChapter.lastPageTitle
+                      : navigation.previousChapter.title}
+                  </span>
+                </span>
+              </Link>
+            )}
+          </div>
+          <div className="flex-1 flex justify-center">
+            <RandomPageButton />
+          </div>
+          <div className="flex-1 flex justify-end">
+            {subPages.length > 0 && (
+              <Link
+                href={`/${chapterId}/${subPages[0].id}`}
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                <span className="flex flex-col items-end">
+                  <span className="text-xl sm:text-2xl font-mono font-bold">
+                    {subPages[0].id}
+                  </span>
+                  <span className="text-xs sm:text-sm opacity-80">
+                    {subPages[0].title}
+                  </span>
+                </span>
+              </Link>
+            )}
+            {subPages.length === 0 && navigation.nextChapter && (
+              <Link
+                href={`/${navigation.nextChapter.id}`}
+                className="text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                <span className="flex flex-col items-end">
+                  <span className="text-xl sm:text-2xl font-mono font-bold">
+                    {`${navigation.nextChapter.id.padStart(2, "0")}0`}
+                  </span>
+                  <span className="text-xs sm:text-sm opacity-80">
+                    {navigation.nextChapter.title}
+                  </span>
+                </span>
+              </Link>
+            )}
+          </div>
         </div>
-        <Footer />
+        <Footer currentPageNumber={mainPageNumber} chapterId={chapterId} />
       </div>
     </div>
   );
@@ -194,6 +228,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { getChapters } = await import("../../utils/content");
   const chapterId = params?.chapterId as string;
   const pageId = `${chapterId.padStart(2, "0")}0`;
 
@@ -209,27 +244,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const chapterPath = path.join(contentDir, chapterDir);
 
   // Find the main chapter page based on the new numbering system
-  const chapterNumber = parseInt(chapterId);
-  const mainPageNumber =
-    chapterNumber === 0
-      ? "000"
-      : chapterNumber === 1
-      ? "011"
-      : chapterNumber === 2
-      ? "022"
-      : chapterNumber === 3
-      ? "033"
-      : chapterNumber === 4
-      ? "044"
-      : chapterNumber === 5
-      ? "055"
-      : chapterNumber === 6
-      ? "066"
-      : chapterNumber === 7
-      ? "077"
-      : chapterNumber === 8
-      ? "088"
-      : "000";
+  const mainPageNumber = getMainPageNumber(chapterId);
 
   const mainFile = `${mainPageNumber}.md`;
   const content = fs.readFileSync(path.join(chapterPath, mainFile), "utf-8");
@@ -320,7 +335,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     "src",
     "components",
     "chapter",
-    `${chapterId.padStart(2, "0")}0.tsx`
+    `${mainPageNumber}.tsx`
   );
   const hasCustomComponent = existsSync(componentPath);
 

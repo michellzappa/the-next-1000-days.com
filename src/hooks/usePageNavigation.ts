@@ -11,14 +11,19 @@ interface NavigationProps {
     nextChapter?: { id: string; title: string } | null;
   };
   subPages?: { id: string; title: string }[];
+  isFirstPage?: boolean;
 }
 
-export function usePageNavigation({ chapterId, pageId, navigation, subPages }: NavigationProps) {
+export function usePageNavigation({ chapterId, pageId, navigation, subPages, isFirstPage }: NavigationProps) {
   const router = useRouter();
 
   const handleNavigation = useCallback((direction: 'left' | 'right') => {
     if (direction === 'left') {
       if (pageId) {
+        if (isFirstPage) {
+          router.push(`/${chapterId}`);
+          return;
+        }
         if (navigation.previousPage) {
           router.push(`/${chapterId}/${navigation.previousPage.id}`);
         } else if (navigation.previousChapter) {
@@ -29,7 +34,9 @@ export function usePageNavigation({ chapterId, pageId, navigation, subPages }: N
           }
         }
       } else if (navigation.previousChapter) {
-        if (navigation.previousChapter.lastPage) {
+        if (chapterId === '01') {
+          router.push(`/`);
+        } else if (navigation.previousChapter.lastPage) {
           router.push(`/${navigation.previousChapter.id}/${navigation.previousChapter.lastPage}`);
         } else {
           router.push(`/${navigation.previousChapter.id}`);
@@ -50,7 +57,7 @@ export function usePageNavigation({ chapterId, pageId, navigation, subPages }: N
         }
       }
     }
-  }, [router, chapterId, pageId, navigation, subPages]);
+  }, [router, chapterId, pageId, navigation, subPages, isFirstPage]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {

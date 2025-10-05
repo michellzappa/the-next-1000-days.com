@@ -8,9 +8,15 @@ interface MarkdownProps {
   content: string;
   chapterId: string;
   pageId?: string;
+  subtitle?: string;
 }
 
-const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
+const Markdown: React.FC<MarkdownProps> = ({
+  content,
+  chapterId,
+  pageId,
+  subtitle,
+}) => {
   const processedContent = React.useMemo(() => {
     const chapterNumber = chapterId.padStart(3, "0");
     const pageNumber = pageId || `${chapterNumber}0`;
@@ -68,9 +74,20 @@ const Markdown: React.FC<MarkdownProps> = ({ content, chapterId, pageId }) => {
           h1: (props) => (
             <h1 className="text-3xl font-bold mt-6 mb-4" {...props} />
           ),
-          h2: (props) => (
-            <h2 className="text-2xl font-semibold mt-5 mb-3" {...props} />
-          ),
+          h2: (props) => {
+            // Skip rendering h2 if it matches the subtitle
+            if (
+              subtitle &&
+              props.children &&
+              typeof props.children === "string" &&
+              props.children.trim() === subtitle.trim()
+            ) {
+              return null;
+            }
+            return (
+              <h2 className="text-2xl font-semibold mt-5 mb-3" {...props} />
+            );
+          },
           h3: (props) => (
             <h3 className="text-xl font-medium mt-4 mb-2" {...props} />
           ),
