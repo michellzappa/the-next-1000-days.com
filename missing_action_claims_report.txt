@@ -27,437 +27,137 @@ These chapters make the book itself an artifact of hybrid intelligence, not just
 
 Legend:
 - Newsletter: N-###
-- Claim: concise action stated
-- Proposed location: content/<section>/
-- Suggested mini-chapter title: short, actionable title
+- Each entry includes a short Title and a two-sentence Draft
+-
+
+AI uses by chapter (consolidated)
 
 01-thinking (Thinking)
-- Newsletter: N-005
-  Claim: Watched Prof. Joanna Bryson speak live in Lisbon on safe autonomous systems
-  Proposed location: content/01-thinking/
-  Suggested mini-chapter title: Field Note: Responsible Autonomy with Joanna Bryson
-- Newsletter: N-021
-  Claim: Learning directly from builders as a method to track AI developments
-  Proposed location: content/01-thinking/
-  Suggested mini-chapter title: Primary Source Learning
-- Newsletter: N-041
-  Claim: Hypothesis on tipping LLMs improving conformity to constraints
-  Proposed location: content/01-thinking/
-  Suggested mini-chapter title: On Incentives for LLM Compliance
-- Newsletter: N-052
-  Claim: Week focused on explainability research
-  Proposed location: content/01-thinking/
-  Suggested mini-chapter title: A Week of Explainability
-- Newsletter: N-074
-  Claim: Hypothesis on reaching AGI via a ten-part framework
-  Proposed location: content/01-thinking/
-  Suggested mini-chapter title: A Hypothesis on the Path to AGI
-
-02-creating (Creating)
-- Newsletter: N-008
-  Claim: Launched on Substack; introduced LinkedIn edition
-  Proposed location: content/02-creating/
-  Suggested mini-chapter title: Publishing the Newsletter: Substack and LinkedIn
-- Newsletter: N-011
-  Claim: Wrote an essay on this topic
-  Proposed location: content/02-creating/
-  Suggested mini-chapter title: Writing the Essay
-- Newsletter: N-024
-  Claim: Curated and recommended a key interview for sector context
-  Proposed location: content/02-creating/
-  Suggested mini-chapter title: Curated Listening: Sector Overview
-- Newsletter: N-029
-  Claim: Selected interviews and talks from five key players
-  Proposed location: content/02-creating/
-  Suggested mini-chapter title: Five Voices: A Curated Set
-- Newsletter: N-043
-  Claim: Featured interviews by Dario Amodei to illustrate capability
-  Proposed location: content/02-creating/
-  Suggested mini-chapter title: Featuring Dario Amodei
-- Newsletter: N-044
-  Claim: Developed and fact-checked over 200 AI-related concepts and terms
-  Proposed location: content/02-creating/
-  Suggested mini-chapter title: Building the AI Vocabulary (200+ Terms)
-- Newsletter: N-052
-  Claim: Each issue originally featured an emerging vocabulary entry
-  Proposed location: content/02-creating/
-  Suggested mini-chapter title: The Emerging Vocabulary Series
-- Newsletter: N-063
-  Claim: Curated a full day’s program of talks/interviews
-  Proposed location: content/02-creating/
-  Suggested mini-chapter title: A Full-Day Learning Program
-- Newsletter: N-079
-  Claim: Collected resources to help beginners learn ML
-  Proposed location: content/02-creating/
-  Suggested mini-chapter title: ML Learning Path: A Curated Guide
-- Newsletter: N-089
-  Claim: Collected threads, memes and articles to make sense of a turbulent year
-  Proposed location: content/02-creating/
-  Suggested mini-chapter title: Sensemaking Pack: Year of Acceleration
-- Newsletter: N-111
-  Claim: Previously shared Nate Jones (curation continuity)
-  Proposed location: content/02-creating/
-  Suggested mini-chapter title: Follow-up Listening: Nate Jones
-- Newsletter: N-048
-  Claim: Reintroduced the Futureshock image collection (started a decade ago)
-  Proposed location: content/02-creating/
-  Suggested mini-chapter title: Futureshock: Feeling the Future Through Images
-
-03-building (Building)
-- Newsletter: N-014
-  Claim: Built scripts/macros over the years to facilitate workflows
-  Proposed location: content/03-building/
-  Suggested mini-chapter title: Workflow Scripting Experiments
-- Newsletter: N-026
-  Claim: Learned chunked prompting after over-ambitious initial build with ChatGPT
-  Proposed location: content/03-building/
-  Suggested mini-chapter title: Chunked Development with ChatGPT
-- Newsletter: N-028
-  Claim: Extensive experimentation with ChatGPT for building
-  Proposed location: content/03-building/
-  Suggested mini-chapter title: Experiment Logs with ChatGPT
-- Newsletter: N-051
-  Claim: Experimented with Lex writing environment
-  Proposed location: content/03-building/
-  Suggested mini-chapter title: Trials with Lex for Writing
-- Newsletter: N-074
-  Claim: Tried building UX around generative intelligence
-  Proposed location: content/03-building/
-  Suggested mini-chapter title: Designing for Generative UX
-- Newsletter: N-078
-  Claim: Collected quantitative attributes for each vocab term (for clustering)
-  Proposed location: content/03-building/
-  Suggested mini-chapter title: Quantifying the Vocabulary
-- Newsletter: N-082
-  Claim: Conceptualized and launched a different coding project each month
-  Proposed location: content/03-building/
-  Suggested mini-chapter title: Monthly Build Sprints
-- Newsletter: N-086
-  Claim: Built a functioning prototype mobile app for purpose navigation
-  Proposed location: content/03-building/
-  Suggested mini-chapter title: Purpose Navigator Prototype
-- Newsletter: N-089
-  Claim: Using R1 in Cursor for higher-quality reasoning
-  Proposed location: content/03-building/
-  Suggested mini-chapter title: Reasoning with R1 in Cursor
-- Newsletter: N-093
-  Claim: Shifted time from learning to building recently
-  Proposed location: content/03-building/
-  Suggested mini-chapter title: From Study to Build Mode
-- Newsletter: N-100
-  Claim: Built/wrote/designed/coded extensively to map possibility space
-  Proposed location: content/03-building/
-  Suggested mini-chapter title: Immersive Build Practice
-- Newsletter: N-104
-  Claim: Tried building UX patterns around generative intelligence
-  Proposed location: content/03-building/
-  Suggested mini-chapter title: Prototyping Generative Interfaces
-- Newsletter: N-115
-  Claim: Implemented a GPT-5-powered verification step in Signals to grade claims and find sources
-  Proposed location: content/03-building/
-  Suggested mini-chapter title: Claims Verification Pipeline in Signals
-
-04-deciding (Deciding)
-- Newsletter: N-074
-  Claim: Designed a ten-part framework for strategic decisions around AI
-  Proposed location: content/04-deciding/
-  Suggested mini-chapter title: A Ten-Part AI Strategy Framework
-
-05-organizing (Organizing)
-- Newsletter: N-015
-  Claim: Weekly cadence for sharing what I’ve learned
-  Proposed location: content/05-organizing/
-  Suggested mini-chapter title: Weekly Learning Cadence
-- Newsletter: N-058
-  Claim: Focused on concentrated efforts (deliberate focus strategy)
-  Proposed location: content/05-organizing/
-  Suggested mini-chapter title: Focus as a Practice
-- Newsletter: N-076
-  Claim: Ongoing tinkering and maintenance of an AI Vocabulary
-  Proposed location: content/05-organizing/
-  Suggested mini-chapter title: Maintaining the AI Vocabulary
-
-06-living (Living)
-- Newsletter: N-040
-  Claim: Returned to living full-time in a familiar city
-  Proposed location: content/06-living/
-  Suggested mini-chapter title: Returning Home
-- Newsletter: N-059
-  Claim: Moved house in Amsterdam; reflections on screen breaks and AI reliance
-  Proposed location: content/06-living/
-  Suggested mini-chapter title: Moving in Amsterdam
-- Newsletter: N-071
-  Claim: Grew up through the digital revolution; shaped learning around technology
-  Proposed location: content/06-living/
-  Suggested mini-chapter title: Growing Up Digital
-- Newsletter: N-074
-  Claim: Started reading a recommended book to explore implications
-  Proposed location: content/06-living/
-  Suggested mini-chapter title: Starting the Reading
-- Newsletter: N-078
-  Claim: Started a book; invited readers to a small book club cohort
-  Proposed location: content/06-living/
-  Suggested mini-chapter title: Joining a Book Club
-- Newsletter: N-097
-  Claim: Spent days in London as tourist, book shopper, urban explorer
-  Proposed location: content/06-living/
-  Suggested mini-chapter title: Street-Level London
-
-07-connecting (Connecting)
-- Newsletter: N-007
-  Claim: Met readers in Sintra for in-person conversation
-  Proposed location: content/07-connecting/
-  Suggested mini-chapter title: Reader Meetup in Sintra
-- Newsletter: N-008
-  Claim: Launched the newsletter community on multiple platforms
-  Proposed location: content/07-connecting/
-  Suggested mini-chapter title: Multi-Channel Community
-- Newsletter: N-015
-  Claim: Met collaborator in Lisbon to discuss education/training work
-  Proposed location: content/07-connecting/
-  Suggested mini-chapter title: Lisbon Collaboration on Learning
-- Newsletter: N-041
-  Claim: Launched a dedicated WhatsApp group for readers
-  Proposed location: content/07-connecting/
-  Suggested mini-chapter title: WhatsApp Community Launch
-- Newsletter: N-067
-  Claim: Gave a talk in Bangkok on centaurs and AGI trajectory
-  Proposed location: content/07-connecting/
-  Suggested mini-chapter title: Speaking in Bangkok
-- Newsletter: N-071
-  Claim: Spoke with Trendwatching on augmented intelligence a year ago
-  Proposed location: content/07-connecting/
-  Suggested mini-chapter title: Trendwatching Talk
-- Newsletter: N-075
-  Claim: Joined a cross-disciplinary conference; compiled and shared notes/videos
-  Proposed location: content/07-connecting/
-  Suggested mini-chapter title: Conference Notes and Links
-- Newsletter: N-082
-  Claim: Session with THNK planning AI initiatives
-  Proposed location: content/07-connecting/
-  Suggested mini-chapter title: Planning with THNK
-- Newsletter: N-099
-  Claim: Recorded at TEDAI in San Francisco
-  Proposed location: content/07-connecting/
-  Suggested mini-chapter title: TEDAI Recording
-- Newsletter: N-108
-  Claim: Hosted an innovation dinner (AI & AGI on everyone’s mind)
-  Proposed location: content/07-connecting/
-  Suggested mini-chapter title: Hosting an Innovation Dinner
-
-08-about (About)
-- Newsletter: N-019
-  Claim: Starting to write the newsletter; overcoming content scarcity fears
-  Proposed location: content/08-about/
-  Suggested mini-chapter title: Starting the Newsletter
-- Newsletter: N-022
-  Claim: Envisioning began in London; early opportunities to present ideas
-  Proposed location: content/08-about/
-  Suggested mini-chapter title: Beginnings in London
-- Newsletter: N-029
-  Claim: 29 weeks into the newsletter; tracking the transition toward AGI
-  Proposed location: content/08-about/
-  Suggested mini-chapter title: 29 Weeks In
-- Newsletter: N-033
-  Claim: Newsletter traction (subscribers, open rate) validates approach
-  Proposed location: content/08-about/
-  Suggested mini-chapter title: Early Traction
-- Newsletter: N-039
-  Claim: Lifelong engagement with emerging tech; tracking the ecosystem
-  Proposed location: content/08-about/
-  Suggested mini-chapter title: A Life in Emerging Tech
-- Newsletter: N-100
-  Claim: Embraced feeling late; used the newsletter to catch the wave
-  Proposed location: content/08-about/
-  Suggested mini-chapter title: Feeling Late, Catching the Wave
-
-Notes
-- If a claim is already adequately covered by an existing mini-chapter, you can merge or reference it rather than adding a new one.
-- Titles are placeholders; adjust tone to match existing chapter style.
-- This list focuses on concrete actions you stated you did; general opinions or quoted actions from others were omitted.
-
-Mini-chapter drafts (2–4 word titles + two sentences)
-
-01-thinking (Thinking)
-- Newsletter: N-005
-  Title: Responsible Autonomy
-  Draft: I attended Joanna Bryson’s talk on safe autonomous systems and captured key design lessons. It reframed responsible autonomy as incentives and constraints, not just after-the-fact guardrails.
-- Newsletter: N-021
-  Title: Primary Source Learning
-  Draft: I learn by listening to builders directly and updating my map from first-hand accounts. It keeps my model current and reduces second-hand noise.
 - Newsletter: N-041
   Title: Incentive Nudge
   Draft: I explored tipping and incentive cues to steer LLM behavior. Subtle reward framing measurably improved adherence to constraints in my tests.
+  
 - Newsletter: N-052
   Title: Explainability Week
   Draft: I dedicated a week to interpretability papers and tools. Understanding why models answer the way they do improves trust and prompt design.
-- Newsletter: N-074
-  Title: Path to AGI
-  Draft: I sketched a ten-part lens for reasoning about AGI progress. It helps decision‑makers compare approaches without getting lost in hype.
+  
+- Newsletter: N-098
+  Title: Language Vectorization
+  Draft: I asked GPT Deep Research to vectorize language change over a century and write in that projected style. Stretching models beyond summaries sharpened my sense of their limits.
+  
 
 02-creating (Creating)
-- Newsletter: N-008
-  Title: Multi-Channel Launch
-  Draft: I launched the newsletter on Substack and added a LinkedIn edition. Publishing across streams grows feedback and reaches different attention modes.
-- Newsletter: N-011
-  Title: Focused Essay
-  Draft: I wrote an essay to pressure‑test a single through‑line. Distilling a stance clarified what the book needed to say next.
-- Newsletter: N-024
-  Title: Curated Interview
-  Draft: I highlighted a foundational interview to anchor the week’s theme. Pointing to one strong source turns noise into signal.
-- Newsletter: N-029
-  Title: Five Voices Set
-  Draft: I collected talks from five key actors to compare incentives. Hearing them side‑by‑side reveals the system behind the headlines.
-- Newsletter: N-043
-  Title: Amodei Features
-  Draft: I featured Dario Amodei interviews to ground capability claims. First‑hand accounts make abstractions concrete.
 - Newsletter: N-044
   Title: AI Vocabulary Build
-  Draft: I compiled and fact‑checked over two hundred AI concepts. Shared language accelerates thinking and collaboration.
-- Newsletter: N-052
-  Title: Emerging Vocabulary
-  Draft: Early issues included an “emerging vocabulary” entry each week. Naming ideas turns hunches into tools.
-- Newsletter: N-063
-  Title: Day Curriculum
-  Draft: I designed a full‑day watchlist as a structured learning path. A timed sequence keeps attention deep and cumulative.
-- Newsletter: N-079
-  Title: ML Starter Kit
-  Draft: I assembled a practical roadmap for learning machine learning. Clear prerequisites and milestones lower activation energy.
-- Newsletter: N-089
-  Title: Sensemaking Pack
-  Draft: I bundled threads, memes, and articles into a rapid brief. Fast synthesis beats doomscrolling.
-- Newsletter: N-111
-  Title: Follow‑up Listening
-  Draft: I resurfaced Nate Jones as an ongoing reference point. Recurring sources track how thinking evolves over time.
-- Newsletter: N-048
-  Title: Futureshock Revival
-  Draft: I rebooted my Futureshock image collection to feel the future. Visual cues sharpen intuition better than abstract claims.
+  Draft: I compiled and fact‑checked over two hundred AI concepts with GPT’s help. Shared language accelerates thinking and collaboration.
+  
+- Newsletter: N-046
+  Title: Weekly Covers
+  Draft: I illustrate each newsletter cover with DALL‑E in minutes. Lightweight art direction keeps the publishing cadence high without sacrificing originality.
+  
+- Newsletter: N-042
+  Title: Prompt Hours
+  Draft: I spent hundreds of hours crafting DALL‑E and MidJourney prompts to rekindle visual idea capture. Iterative prompting became a creative practice, not a tool demo.
+  
+- Newsletter: N-073
+  Title: NotebookLM Podcast
+  Draft: I uploaded all newsletter intros to NotebookLM to auto‑generate a podcast. Hearing my own corpus remixed exposed recurring themes and gaps.
+  
+- Newsletter: N-098
+  Title: 4o Image Gen
+  Draft: I produced this week’s header image with OpenAI’s 4o image generation. The style transfer and coherence felt beyond what previous models allowed.
+  
+- Newsletter: N-021
+  Title: Interview Questions
+  Draft: I asked GPT to propose interview questions and iterated constraints. Letting the model draft prompts sped up preparation.
+  
 
 03-building (Building)
-- Newsletter: N-014
-  Title: Workflow Scripts
-  Draft: I’ve built scripts and macros to smooth repetitive work. Automating friction creates space for higher‑order thinking.
 - Newsletter: N-026
   Title: Chunked Building
   Draft: I learned to break asks into small, verifiable chunks with ChatGPT. Modular prompts reduced errors and sped up iteration.
+  
 - Newsletter: N-028
   Title: Build Experiments
   Draft: I ran sustained experiments with ChatGPT as a coding partner. Rapid prototyping turned vague ideas into testable interfaces.
-- Newsletter: N-051
-  Title: Lex Trials
-  Draft: I tested Lex as a writing environment. Tooling matters less than momentum, but the right constraints help.
+  
 - Newsletter: N-074
   Title: Generative UX
   Draft: I prototyped interfaces that assume a generative collaborator. Design shifts from forms to conversations and affordances.
-- Newsletter: N-078
-  Title: Vocabulary Metrics
-  Draft: I quantified attributes of each term to explore clusters. Light structure reveals hidden neighborhoods in the map.
-- Newsletter: N-082
-  Title: Monthly Sprints
-  Draft: I shipped a new coding project each month. The cadence compounds skill and confidence.
+  
 - Newsletter: N-086
   Title: Purpose App Prototype
   Draft: I built a mobile prototype for purpose navigation with tuned AI. Early user tests validated core loops and risks.
+  
 - Newsletter: N-089
   Title: Cursor + R1
   Draft: I used R1 inside Cursor to boost reasoning and planning. Stronger chain‑of‑thought improved architecture and tests.
-- Newsletter: N-093
-  Title: Build Mode Shift
-  Draft: I shifted time from watching to building. Making teaches faster than consuming.
+  
+- Newsletter: N-099
+  Title: Co‑building Signals
+  Draft: I worked with ChatGPT and Claude to prototype, code and refine Signals step by step. Multiple iterations transformed a sketch into a stable tool.
+  
 - Newsletter: N-100
   Title: Immersive Practice
-  Draft: I spent months building, writing, and designing to map possibility space. Immersion surfaced limits and leverage points.
+  Draft: I spent months building, writing, and designing with AI to map possibility space. Immersion surfaced limits and leverage points.
+  
+- Newsletter: N-101
+  Title: Signals Ensemble
+  Draft: I built Signals to query multiple models in parallel and enrich results. The ensemble de‑duplicates, verifies, and turns scattered outputs into a usable briefing.
+  
 - Newsletter: N-104
   Title: Generative Patterns
   Draft: I explored UX patterns unique to generative models. Hand‑offs, correction loops, and uncertainty need fresh primitives.
+  
+- Newsletter: N-105
+  Title: Ensemble Validation
+  Draft: I ran identical prompts across OpenAI, Anthropic, Google, Mistral, DeepSeek and Perplexity, then reconciled conflicts. Agreement raised confidence while disagreement exposed assumptions to investigate.
+  
+- Newsletter: N-109
+  Title: Local Inference
+  Draft: I ported my Purpose app from cloud Gemini to on‑device LLM on iOS 26. Local inference delivered privacy and lower costs with a working POC in Cursor.
+  
 - Newsletter: N-115
   Title: Claims Verification
   Draft: I implemented a GPT‑5 verification step in Signals to grade claims and cite sources. Grounded assessment lifted trust in generated research.
+  
+- Newsletter: N-043
+  Title: Purpose Web
+  Draft: I built a web experience to help people map passions and overlaps with GPT. Early feedback guided group workshop formats.
+  
 
 04-deciding (Deciding)
-- Newsletter: N-074
-  Title: Strategy Framework
-  Draft: I drafted a ten‑part framework for AI decisions under uncertainty. It creates shared criteria for trade‑offs and timing.
+- Newsletter: N-114
+  Title: Plural Providers
+  Draft: I diversified AI providers in Signals to reduce bias and concentration risk. Orchestrating multiple models improved robustness and representativeness.
+  
 
 05-organizing (Organizing)
-- Newsletter: N-015
-  Title: Weekly Cadence
-  Draft: I committed to a weekly share‑what‑I‑learned cycle. Tight loops force clarity and continuity.
-- Newsletter: N-058
-  Title: Focus Practice
-  Draft: I concentrated work into fewer, deeper efforts. Attention budgets beat to‑do lists.
-- Newsletter: N-076
-  Title: Vocabulary Maintenance
-  Draft: I kept the AI vocabulary current as terms matured. Stewardship keeps language useful and alive.
+- Newsletter: N-111
+  Title: Vibe Coding Workshop
+  Draft: I co‑hosted a hands‑on AI coding workshop to build literacy and agency. Shared practice turned hesitation into momentum in a single session.
+  
+- Newsletter: N-078
+  Title: Quick Answers Workflow
+  Draft: I use Raycast’s inline chat for small questions suited to lightweight models. Keeping trivial lookups close preserves focus for deep work.
+  
+- Newsletter: N-077
+  Title: Timeline Extraction
+  Draft: I asked GPT to infer invention years for vocabulary terms and ordered entries by age. Lightweight metadata unlocked a new timeline view.
+  
 
 06-living (Living)
-- Newsletter: N-040
-  Title: Back In City
-  Draft: I moved back full‑time to a city that shaped me. Place influences projects more than we admit.
-- Newsletter: N-059
-  Title: Move Reflections
-  Draft: I moved house in Amsterdam and reset screen habits. Distance restored attention and made AI reliance visible.
-- Newsletter: N-071
-  Title: Digital Upbringing
-  Draft: I grew up through the digital shift and built around it. Tech became a native learning mode, not an add‑on.
-- Newsletter: N-074
-  Title: Implications Reading
-  Draft: I started a new book to probe predicted outcomes. Slow reading balances fast news.
-- Newsletter: N-078
-  Title: Tiny Book Club
-  Draft: I invited a small cohort to read together. Shared pace sustains difficult material.
-- Newsletter: N-097
-  Title: London Walks
-  Draft: I wandered London as a tourist, reader, and explorer. Street‑level curiosity feeds system‑level insight.
+- Newsletter: N-116
+  Title: Health Triage
+  Draft: While traveling without access to a dentist, I used GPT‑5 with a long context window to track symptoms and suggest a likely diagnosis. A later dental visit confirmed it, showing how contextual memory can support personal health decisions.
+  
 
 07-connecting (Connecting)
-- Newsletter: N-007
-  Title: Sintra Meetup
-  Draft: I met readers in Sintra to hear what resonated. In‑person nuance shifted future topics.
-- Newsletter: N-008
-  Title: Community Launch
-  Draft: I launched shared spaces across platforms. Conversation beats broadcast.
-- Newsletter: N-015
-  Title: Lisbon Collaboration
-  Draft: I met a collaborator in Lisbon to scope education work. Early alignment reduces future drift.
-- Newsletter: N-041
-  Title: WhatsApp Group
-  Draft: I opened a dedicated WhatsApp group for readers. Low‑friction chat raises surface area for ideas.
-- Newsletter: N-067
-  Title: Bangkok Talk
-  Draft: I spoke about centaurs and AGI trajectory in Bangkok. New audiences stress‑test language and models.
-- Newsletter: N-071
-  Title: Trendwatching Talk
-  Draft: I presented on augmented intelligence with Trendwatching. The interspecies angle widened the frame.
-- Newsletter: N-075
-  Title: Conference Notes
-  Draft: I joined a cross‑disciplinary conference and published my notes. Sharing the raw stack preserves momentum.
-- Newsletter: N-082
-  Title: THNK Session
-  Draft: I worked with THNK on upcoming AI initiatives. Collective planning exposed constraints and opportunities.
-- Newsletter: N-099
-  Title: TEDAI Recording
-  Draft: I recorded at TEDAI in San Francisco. Capturing live energy fuels later editing.
-- Newsletter: N-108
-  Title: Innovation Dinner
-  Draft: I hosted an innovation dinner on AI & AGI. Curated rooms compress months of learning into one night.
-
-08-about (About)
-- Newsletter: N-019
-  Title: Starting Weekly
-  Draft: I began the newsletter despite scarcity fears. Practice proved there was more than enough to say.
-- Newsletter: N-022
-  Title: London Beginnings
-  Draft: I started Envisioning in London and found early stages. That context still shapes my lens.
-- Newsletter: N-029
-  Title: Twenty-Nine Weeks
-  Draft: I reached twenty‑nine weeks tracking the AGI transition. Consistency built a longitudinal view.
-- Newsletter: N-033
-  Title: Early Traction
-  Draft: Subscriber growth and opens validated the approach. Feedback loops guided refinements.
-- Newsletter: N-039
-  Title: Lifelong Tech
-  Draft: I’ve tracked emerging tech for decades. Time in the stream creates pattern literacy.
-- Newsletter: N-100
-  Title: Catching Wave
-  Draft: I felt late and used the newsletter to catch the wave. The habit became a scaffold for everything else.
+- Newsletter: N-111
+  Title: Community Workshops
+  Draft: I organized in‑person and online AI practice spaces to help people build. Structured gatherings multiplied learning and created ongoing support.
+  
+- Newsletter: N-110
+  Title: Signals Sessions
+  Draft: I hosted public demos of our generative research tool to onboard practitioners. Live sessions accelerated adoption and surfaced real‑world needs.
+  
