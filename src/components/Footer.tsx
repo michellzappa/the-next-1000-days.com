@@ -5,7 +5,7 @@ interface FooterProps {
   chapterId?: string;
 }
 
-const Footer = ({ currentPageNumber, chapterId }: FooterProps) => {
+const Footer = ({ currentPageNumber }: FooterProps) => {
   return (
     <footer className="mt-auto py-4">
       <div className="container mx-auto flex items-left mt-4">
