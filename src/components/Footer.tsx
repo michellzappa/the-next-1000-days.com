@@ -28,31 +28,33 @@ const Footer = ({
   const [navigationContext, setNavigationContext] =
     useState<NavigationContext | null>(null);
 
-  // Load navigation context if chapterId is provided
+  // Load navigation context only if server didn't provide navLeft/navRight
   useEffect(() => {
-    if (chapterId) {
+    if (!navLeft && !navRight && chapterId) {
       getNavigationContext(chapterId, pageId)
         .then(setNavigationContext)
         .catch(console.error);
     }
-  }, [chapterId, pageId]);
+  }, [chapterId, pageId, navLeft, navRight]);
 
   // Use centralized navigation if available, otherwise fall back to props
-  const effectiveNavLeft = navigationContext?.previous
-    ? {
-        href: getNavigationUrl(navigationContext.previous),
-        number: getNavigationDisplayNumber(navigationContext.previous),
-        title: navigationContext.previous.title,
-      }
-    : navLeft;
+  const effectiveNavLeft =
+    navigationContext?.previous && !navLeft
+      ? {
+          href: getNavigationUrl(navigationContext.previous),
+          number: getNavigationDisplayNumber(navigationContext.previous),
+          title: navigationContext.previous.title,
+        }
+      : navLeft || null;
 
-  const effectiveNavRight = navigationContext?.next
-    ? {
-        href: getNavigationUrl(navigationContext.next),
-        number: getNavigationDisplayNumber(navigationContext.next),
-        title: navigationContext.next.title,
-      }
-    : navRight;
+  const effectiveNavRight =
+    navigationContext?.next && !navRight
+      ? {
+          href: getNavigationUrl(navigationContext.next),
+          number: getNavigationDisplayNumber(navigationContext.next),
+          title: navigationContext.next.title,
+        }
+      : navRight || null;
 
   return (
     <footer className="w-full mt-auto pt-6 pb-8">
@@ -110,8 +112,16 @@ const Footer = ({
       {/* Centered footer */}
       <div className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 mx-auto mt-4 flex flex-col items-center text-center gap-2">
         <div>
+          <Link href="/" className="text-sm">
+            Home
+          </Link>
+          <span className="text-sm text-gray-600 dark:text-gray-400"> • </span>
           <Link href="/chapter-index" className="text-sm">
-            Chapter Index
+            Index
+          </Link>
+          <span className="text-sm text-gray-600 dark:text-gray-400"> • </span>
+          <Link href="/8" className="text-sm">
+            About
           </Link>
         </div>
         <div>

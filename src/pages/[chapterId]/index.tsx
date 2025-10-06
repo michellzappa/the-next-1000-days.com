@@ -17,6 +17,11 @@ import { usePageNavigation } from "../../hooks/usePageNavigation";
 import dynamic from "next/dynamic";
 import { existsSync } from "fs";
 import { join } from "path";
+import {
+  getNavigationContext as getServerNavigationContext,
+  getNavigationUrl,
+  getNavigationDisplayNumber,
+} from "../../utils/navigation";
 
 interface ChapterProps {
   title: string;
@@ -27,6 +32,8 @@ interface ChapterProps {
   hasCustomComponent: boolean;
   mainPageNumber: string;
   componentImportPath: string | null;
+  navLeft?: { href: string; number: string; title: string } | null;
+  navRight?: { href: string; number: string; title: string } | null;
 }
 
 interface Page {
@@ -46,6 +53,8 @@ export default function Chapter({
   hasCustomComponent,
   mainPageNumber,
   componentImportPath,
+  navLeft,
+  navRight,
 }: ChapterProps) {
   const router = useRouter();
   const { chapterId: chapterIdQuery } = router.query;
@@ -139,7 +148,8 @@ export default function Chapter({
       </div>
       <Footer
         currentPageNumber={formatChapterNumber(chapterId)}
-        chapterId={chapterId}
+        navLeft={navLeft || null}
+        navRight={navRight || null}
         showRandom
       />
     </div>
@@ -200,13 +210,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     .slice(contentStartIndex)
     .join("\n");
 
-  const chapterFiles = fs
+  const subPages = fs
     .readdirSync(chapterPath)
-    .filter((file) => file.endsWith(".md"))
-    .sort();
-
-  const subPages = chapterFiles
-    .filter((file) => file !== mainFile)
+    .filter((file) => file.endsWith(".md") && file !== mainFile)
+    .sort((a, b) => parseInt(a) - parseInt(b))
     .map((file) => {
       const pageContent = fs.readFileSync(
         path.join(chapterPath, file),
@@ -251,6 +258,23 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     ? `${mainPageNumber}`
     : null;
 
+  // Precompute navigation to avoid client-side flash
+  const navCtx = await getServerNavigationContext(chapterId);
+  const navLeft = navCtx.previous
+    ? {
+        href: getNavigationUrl(navCtx.previous),
+        number: getNavigationDisplayNumber(navCtx.previous),
+        title: navCtx.previous.title,
+      }
+    : null;
+  const navRight = navCtx.next
+    ? {
+        href: getNavigationUrl(navCtx.next),
+        number: getNavigationDisplayNumber(navCtx.next),
+        title: navCtx.next.title,
+      }
+    : null;
+
   return {
     props: {
       title,
@@ -261,6 +285,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       hasCustomComponent,
       mainPageNumber,
       componentImportPath,
+      navLeft,
+      navRight,
     },
   };
 };

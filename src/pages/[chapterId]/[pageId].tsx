@@ -7,6 +7,11 @@ import Link from "next/link";
 import Markdown from "../../components/Markdown";
 import Footer from "../../components/Footer";
 import { getMainPageNumber } from "../../utils/pageNumbers";
+import {
+  getNavigationContext as getServerNavigationContext,
+  getNavigationUrl,
+  getNavigationDisplayNumber,
+} from "../../utils/navigation";
 import { existsSync } from "fs";
 import { join } from "path";
 import dynamic from "next/dynamic";
@@ -19,6 +24,8 @@ interface PageProps {
   chapterTitle: string;
   nextPage: { id: string; title: string } | null;
   nextChapter: { id: string; title: string } | null;
+  navLeft?: { href: string; number: string; title: string } | null;
+  navRight?: { href: string; number: string; title: string } | null;
 }
 
 export default function Page({
@@ -28,6 +35,8 @@ export default function Page({
   chapterTitle,
   lastUpdated,
   hasCustomComponent,
+  navLeft,
+  navRight,
 }: PageProps & {
   lastUpdated: string;
   hasCustomComponent: boolean;
@@ -105,8 +114,8 @@ export default function Page({
       </div>
       <Footer
         currentPageNumber={pageId as string}
-        chapterId={chapterId as string}
-        pageId={pageId as string}
+        navLeft={navLeft || null}
+        navRight={navRight || null}
         showRandom
       />
     </div>
@@ -208,6 +217,23 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const hasCustomComponent =
     existsSync(chapterSpecificPath) || existsSync(genericPath);
 
+  // Precompute navigation to avoid client-side flash
+  const navCtx = await getServerNavigationContext(chapterId, pageId);
+  const navLeft = navCtx.previous
+    ? {
+        href: getNavigationUrl(navCtx.previous),
+        number: getNavigationDisplayNumber(navCtx.previous),
+        title: navCtx.previous.title,
+      }
+    : null;
+  const navRight = navCtx.next
+    ? {
+        href: getNavigationUrl(navCtx.next),
+        number: getNavigationDisplayNumber(navCtx.next),
+        title: navCtx.next.title,
+      }
+    : null;
+
   return {
     props: {
       title,
@@ -216,6 +242,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       chapterTitle,
       lastUpdated,
       hasCustomComponent,
+      navLeft,
+      navRight,
     },
   };
 };
