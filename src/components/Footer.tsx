@@ -56,6 +56,18 @@ const Footer = ({
         }
       : navRight || null;
 
+  // Prefix chapter landing links with "Chapter "
+  const leftNumber = effectiveNavLeft
+    ? /^\/\d+$/.test(effectiveNavLeft.href)
+      ? `Chapter ${effectiveNavLeft.number}`
+      : effectiveNavLeft.number
+    : null;
+  const rightNumber = effectiveNavRight
+    ? /^\/\d+$/.test(effectiveNavRight.href)
+      ? `Chapter ${effectiveNavRight.number}`
+      : effectiveNavRight.number
+    : null;
+
   return (
     <footer className="w-full mt-auto pt-6 pb-8">
       {effectiveNavLeft || effectiveNavRight || showRandom ? (
@@ -65,7 +77,7 @@ const Footer = ({
               <Link href={effectiveNavLeft.href} className="hover:underline">
                 <span className="flex flex-col items-start">
                   <span className="text-base text-gray-500 dark:text-gray-400 font-mono font-bold">
-                    {effectiveNavLeft.number}
+                    {leftNumber}
                   </span>
                   <span className="text-xs sm:text-sm opacity-80 max-w-[12rem] sm:max-w-[16rem] leading-snug">
                     {effectiveNavLeft.title}
@@ -92,7 +104,7 @@ const Footer = ({
               >
                 <span className="flex flex-col items-end">
                   <span className="text-base text-gray-500 dark:text-gray-400 font-mono font-bold no-underline">
-                    {effectiveNavRight.number}
+                    {rightNumber}
                   </span>
                   <span className="text-xs sm:text-sm opacity-80 max-w-[12rem] sm:max-w-[16rem] leading-snug text-right">
                     {effectiveNavRight.title}

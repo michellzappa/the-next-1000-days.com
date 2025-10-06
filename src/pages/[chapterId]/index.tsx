@@ -125,7 +125,7 @@ export default function Chapter({
               <Link
                 key={page.id}
                 href={`/${chapterId}/${page.id}`}
-                className="block border border-transparent hover:border-gray-300 dark:hover:border-gray-700 border-2 rounded-lg p-3 transition duration-150 ease-in-out"
+                className="block rounded-lg p-3 transition-colors duration-200 hover:bg-black hover:bg-opacity-10 dark:hover:bg-white dark:hover:bg-opacity-10"
               >
                 <div className="flex items-start">
                   <span className="inline-block w-12 text-sm font-mono text-gray-500 dark:text-gray-400 font-bold mr-4">

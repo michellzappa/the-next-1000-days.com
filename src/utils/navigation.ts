@@ -80,12 +80,9 @@ export async function getNavigationContext(
   let previous = currentIndex > 0 ? index[currentIndex - 1] : null;
   const next = currentIndex < index.length - 1 ? index[currentIndex + 1] : null;
 
-  // If we're on the first content page of a chapter, skip the chapter landing when going left
-  // and send users to home instead
-  if (current.pageId !== null && previous && previous.isChapterLanding && previous.chapterId === current.chapterId) {
-    const home = index.find(item => item.chapterId === 'home') || null;
-    previous = home;
-  }
+  // No special-case override: from the first sub-page of a chapter, previous
+  // should be that chapter's landing page. From the chapter landing, previous
+  // is home (as per the index order).
 
   return { current, previous, next };
 }

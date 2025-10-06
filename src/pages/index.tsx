@@ -88,7 +88,7 @@ export default function Home({ chapters }: HomeProps) {
               <div key={chapter.id} className="mb-2">
                 <Link
                   href={`/${chapter.id}/`}
-                  className="block rounded-lg p-2 transition duration-150 ease-in-out hover:outline hover:outline-2 hover:outline-gray-300 dark:hover:outline-gray-600"
+                  className="block rounded-lg p-2 transition-colors duration-200 hover:bg-black hover:bg-opacity-10 dark:hover:bg-white dark:hover:bg-opacity-10"
                 >
                   <div className="flex items-baseline">
                     <span className="inline-block w-12 text-base font-mono text-gray-500 dark:text-gray-400">
