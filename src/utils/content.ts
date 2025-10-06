@@ -9,7 +9,7 @@ const contentDir = path.join(process.cwd(), 'content');
 
 export async function getChapters() {
   const chapters = fs.readdirSync(contentDir)
-    .filter(dir => /^\d{1,3}-/.test(dir))
+    .filter(dir => /^(\d{1,3}|about)-/.test(dir))
     .map(dir => {
       const chapterId = dir.split('-')[0];
       const chapterPath = path.join(contentDir, dir);
@@ -122,9 +122,14 @@ export async function getPage(chapterId: string, pageId: string) {
 
 export async function getAllPages() {
   const chapters = fs.readdirSync(contentDir)
-    .filter(dir => /^\d{1,3}-/.test(dir))
+    .filter(dir => /^(\d{1,3}|about)-/.test(dir))
     .map(dir => dir.split('-')[0])
-    .sort((a, b) => parseInt(a) - parseInt(b));
+    .sort((a, b) => {
+      // Sort about chapter last
+      if (a === 'about') return 1;
+      if (b === 'about') return -1;
+      return parseInt(a) - parseInt(b);
+    });
 
   const allPages: { chapterId: string; pageId: string; title: string }[] = [];
 

@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { getChapters } from "../utils/content";
 import Footer from "../components/Footer";
-import { formatChapterNumber } from "../utils/pageNumbers";
+import { formatChapterNumber, formatDisplayNumber } from "../utils/pageNumbers";
 
 interface Chapter {
   id: string;
@@ -83,7 +83,7 @@ export default function ChapterOverview({ chapters }: ChapterOverviewProps) {
                               className="block rounded-lg p-2 transition duration-150 ease-in-out hover:outline hover:outline-2 hover:outline-gray-300 dark:hover:outline-gray-600"
                             >
                               <div className="font-bold font-mono">
-                                {page.id}
+                                {formatDisplayNumber(page.id, chapter.id)}
                               </div>
                               <div className="text-xs mt-1 font-normal">
                                 {page.title}

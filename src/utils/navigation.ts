@@ -110,5 +110,11 @@ export function getNavigationDisplayNumber(item: NavigationItem): string {
   if (item.isChapterLanding) {
     return formatChapterNumber(item.chapterId);
   }
+  
+  // For about chapter pages, show bullet point instead of number
+  if (item.chapterId === 'about' && item.pageId && ['78', '79', '80'].includes(item.pageId)) {
+    return '•';
+  }
+  
   return item.pageId || '';
 }

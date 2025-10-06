@@ -79,9 +79,8 @@ export default function Chapter({
   return (
     <div className="min-h-screen flex flex-col items-center bg-background text-foreground">
       <Head>
-        <title>{`${parseInt(
-          chapterId,
-          10
+        <title>{`${formatChapterNumber(
+          chapterId
         )}. ${title} - Field Notes from a Centaur`}</title>
         <meta name="description" content={subtitle || "Chapter content"} />
       </Head>
@@ -89,9 +88,8 @@ export default function Chapter({
         <Link href="/" className="hover:underline mb-4 inline-block">
           ← Home
         </Link>
-        <h1 className="text-4xl font-bold mb-2">{`${parseInt(
-          chapterId,
-          10
+        <h1 className="text-4xl font-bold mb-2">{`${formatChapterNumber(
+          chapterId
         )}. ${title}`}</h1>
         {subtitle && <h2 className="text-2xl italic mb-6">{subtitle}</h2>}
       </div>
@@ -129,7 +127,7 @@ export default function Chapter({
               >
                 <div className="flex items-start">
                   <span className="inline-block w-12 text-sm font-mono text-gray-500 dark:text-gray-400 font-bold mr-4">
-                    {formatDisplayNumber(page.id)}
+                    {formatDisplayNumber(page.id, chapterId)}
                   </span>
                   <div>
                     <h3 className="text-xl font-medium">{page.title}</h3>
@@ -160,7 +158,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const contentDir = path.join(process.cwd(), "content");
   const chapters = fs
     .readdirSync(contentDir)
-    .filter((dir) => /^\d{1,3}-/.test(dir))
+    .filter((dir) => /^(\d{1,3}|about)-/.test(dir))
     .filter((dir) => !dir.startsWith("0-"));
 
   const paths = chapters.map((dir) => ({

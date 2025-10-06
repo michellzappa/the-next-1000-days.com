@@ -6,7 +6,10 @@ import path from "path";
 import Link from "next/link";
 import Markdown from "../../components/Markdown";
 import Footer from "../../components/Footer";
-import { getMainPageNumber } from "../../utils/pageNumbers";
+import {
+  getMainPageNumber,
+  formatDisplayNumber,
+} from "../../utils/pageNumbers";
 import {
   getNavigationContext as getServerNavigationContext,
   getNavigationUrl,
@@ -113,7 +116,10 @@ export default function Page({
         {/* Pagination moved to Footer */}
       </div>
       <Footer
-        currentPageNumber={pageId as string}
+        currentPageNumber={formatDisplayNumber(
+          pageId as string,
+          chapterId as string
+        )}
         navLeft={navLeft || null}
         navRight={navRight || null}
         showRandom
@@ -126,7 +132,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const contentDir = path.join(process.cwd(), "content");
   const chapters = fs
     .readdirSync(contentDir)
-    .filter((dir) => /^\d{1,3}-/.test(dir))
+    .filter((dir) => /^(\d{1,3}|about)-/.test(dir))
     .filter((dir) => !dir.startsWith("0-"));
 
   const paths = chapters.flatMap((chapterDir) => {

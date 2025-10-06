@@ -58,13 +58,19 @@ const Footer = ({
 
   // Prefix chapter landing links with "Chapter "
   const leftNumber = effectiveNavLeft
-    ? /^\/\d+$/.test(effectiveNavLeft.href)
-      ? `Chapter ${effectiveNavLeft.number}`
+    ? /^\/\d+$/.test(effectiveNavLeft.href) ||
+      /^\/about$/.test(effectiveNavLeft.href)
+      ? effectiveNavLeft.href === "/about"
+        ? ""
+        : `Chapter ${effectiveNavLeft.number}`
       : effectiveNavLeft.number
     : null;
   const rightNumber = effectiveNavRight
-    ? /^\/\d+$/.test(effectiveNavRight.href)
-      ? `Chapter ${effectiveNavRight.number}`
+    ? /^\/\d+$/.test(effectiveNavRight.href) ||
+      /^\/about$/.test(effectiveNavRight.href)
+      ? effectiveNavRight.href === "/about"
+        ? ""
+        : `Chapter ${effectiveNavRight.number}`
       : effectiveNavRight.number
     : null;
 
@@ -132,7 +138,7 @@ const Footer = ({
             Index
           </Link>
           <span className="text-sm text-gray-600 dark:text-gray-400"> • </span>
-          <Link href="/8" className="text-sm">
+          <Link href="/about" className="text-sm">
             About
           </Link>
         </div>
