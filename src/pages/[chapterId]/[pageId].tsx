@@ -117,7 +117,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const contentDir = path.join(process.cwd(), "content");
   const chapters = fs
     .readdirSync(contentDir)
-    .filter((dir) => /^\d{1,3}-/.test(dir));
+    .filter((dir) => /^\d{1,3}-/.test(dir))
+    .filter((dir) => !dir.startsWith("0-"));
 
   const paths = chapters.flatMap((chapterDir) => {
     const chapterPath = path.join(contentDir, chapterDir);

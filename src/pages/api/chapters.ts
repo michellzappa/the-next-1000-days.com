@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
-import { getMainPageNumber } from '../../utils/content';
+import { getMainPageNumber } from '../../utils/pageNumbers';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const contentDir = path.join(process.cwd(), 'content');

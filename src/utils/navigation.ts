@@ -32,6 +32,8 @@ export async function createNavigationIndex(): Promise<NavigationItem[]> {
   });
 
   for (const chapter of chapters) {
+    // Skip intro/0 from navigation index entirely (we only link to home)
+    if (chapter.id === '0') continue;
     // Add chapter landing page
     index.push({
       chapterId: chapter.id,
@@ -75,8 +77,15 @@ export async function getNavigationContext(
   }
 
   const current = index[currentIndex];
-  const previous = currentIndex > 0 ? index[currentIndex - 1] : null;
+  let previous = currentIndex > 0 ? index[currentIndex - 1] : null;
   const next = currentIndex < index.length - 1 ? index[currentIndex + 1] : null;
+
+  // If we're on the first content page of a chapter, skip the chapter landing when going left
+  // and send users to home instead
+  if (current.pageId !== null && previous && previous.isChapterLanding && previous.chapterId === current.chapterId) {
+    const home = index.find(item => item.chapterId === 'home') || null;
+    previous = home;
+  }
 
   return { current, previous, next };
 }
