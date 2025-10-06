@@ -1,20 +1,15 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { getMainPageNumber } from './pageNumbers';
 
 const contentDir = path.join(process.cwd(), 'content');
 
-// Helper function to get the main page number for each chapter
-export function getMainPageNumber(chapterId: string): string {
-  const chapterNumber = parseInt(chapterId, 10);
-  if (Number.isNaN(chapterNumber)) return '0';
-  if (chapterNumber === 0) return '0';
-  return `${chapterNumber}${chapterNumber}`;
-}
+// getMainPageNumber moved to utils/pageNumbers to unify numbering across the app
 
 export async function getChapters() {
   const chapters = fs.readdirSync(contentDir)
-    .filter(dir => /^\d{2}-/.test(dir))
+    .filter(dir => /^\d{1,3}-/.test(dir))
     .map(dir => {
       const chapterId = dir.split('-')[0];
       const chapterPath = path.join(contentDir, dir);
@@ -127,7 +122,7 @@ export async function getPage(chapterId: string, pageId: string) {
 
 export async function getAllPages() {
   const chapters = fs.readdirSync(contentDir)
-    .filter(dir => /^\d{2}-/.test(dir))
+    .filter(dir => /^\d{1,3}-/.test(dir))
     .map(dir => dir.split('-')[0])
     .sort((a, b) => parseInt(a) - parseInt(b));
 

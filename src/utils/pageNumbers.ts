@@ -1,9 +1,9 @@
 export function getMainPageNumber(chapterId: string): string {
   const chapterNumber = parseInt(chapterId, 10);
-  // Move to two-digit page IDs for main chapter pages (e.g., 01 -> 11)
   if (Number.isNaN(chapterNumber)) return '0';
-  if (chapterNumber === 0) return '0';
-  return `${chapterNumber}${chapterNumber}`;
+  // Intro uses 0; others use the global-linear first page of the chapter:
+  // (chapterNumber - 1) * 11 + 1 => 1, 12, 23, 34, ...
+  return chapterNumber === 0 ? '0' : String((chapterNumber - 1) * 11 + 1);
 }
 
 export function formatDisplayNumber(id: string): string {

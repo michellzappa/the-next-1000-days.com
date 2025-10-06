@@ -24,10 +24,10 @@ interface HomeProps {
 }
 
 export default function Home({ chapters }: HomeProps) {
-  const mainChapters = chapters.filter((chapter) => chapter.id !== "00");
+  const mainChapters = chapters.filter((chapter) => chapter.id !== "0");
 
   const { handleNavigation } = usePageNavigation({
-    chapterId: "00",
+    chapterId: "home",
   });
 
   const CustomComponent = dynamic(() => import("../components/chapter/0"));
@@ -121,7 +121,7 @@ export default function Home({ chapters }: HomeProps) {
         </main>
         {/* Pagination moved to Footer */}
       </div>
-      <Footer chapterId="00" showRandom />
+      <Footer chapterId="home" showRandom />
     </div>
   );
 }

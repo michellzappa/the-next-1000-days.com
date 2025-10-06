@@ -26,6 +26,7 @@ interface ChapterProps {
   subPages: Page[];
   hasCustomComponent: boolean;
   mainPageNumber: string;
+  componentImportPath: string | null;
 }
 
 interface Page {
@@ -44,6 +45,7 @@ export default function Chapter({
   subPages,
   hasCustomComponent,
   mainPageNumber,
+  componentImportPath,
 }: ChapterProps) {
   const router = useRouter();
   const { chapterId: chapterIdQuery } = router.query;
@@ -57,15 +59,21 @@ export default function Chapter({
   }
 
   const CustomComponent = hasCustomComponent
-    ? dynamic(() => import(`../../components/chapter/${mainPageNumber}`))
+    ? dynamic(
+        () =>
+          import(
+            `../../components/chapter/${componentImportPath || mainPageNumber}`
+          )
+      )
     : null;
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-background text-foreground">
       <Head>
-        <title>
-          {`${parseInt(chapterId, 10)}. ${title}`} - Field Notes from a Centaur
-        </title>
+        <title>{`${parseInt(
+          chapterId,
+          10
+        )}. ${title} - Field Notes from a Centaur`}</title>
         <meta name="description" content={subtitle || "Chapter content"} />
       </Head>
       <div className="w-full max-w-2xl px-4 sm:px-6 lg:px-8 py-6">
@@ -142,7 +150,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const contentDir = path.join(process.cwd(), "content");
   const chapters = fs
     .readdirSync(contentDir)
-    .filter((dir) => /^\d{2}-/.test(dir));
+    .filter((dir) => /^\d{1,3}-/.test(dir));
 
   const paths = chapters.map((dir) => ({
     params: { chapterId: dir.split("-")[0] },
@@ -173,9 +181,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const content = fs.readFileSync(path.join(chapterPath, mainFile), "utf-8");
   const lines = content.split("\n");
 
-  const title = lines[0].startsWith("# ")
-    ? lines[0].replace("# ", "").trim()
+  const titleLine = lines[0].startsWith("# ")
+    ? lines[0].replace("# ", "")
     : pageId;
+  const title = titleLine.replace(/<!--[\s\S]*?-->/g, "").trim();
 
   // Find the first ## subtitle line, skipping any blank lines
   const subtitleLine = lines.find((line) => line.trim().startsWith("## "));
@@ -219,14 +228,27 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       };
     });
 
-  const componentPath = join(
+  const chapterSpecificPath = join(
+    process.cwd(),
+    "src",
+    "components",
+    "chapter",
+    `${chapterId}-${mainPageNumber}.tsx`
+  );
+  const genericPath = join(
     process.cwd(),
     "src",
     "components",
     "chapter",
     `${mainPageNumber}.tsx`
   );
-  const hasCustomComponent = existsSync(componentPath);
+  const hasCustomComponent =
+    existsSync(chapterSpecificPath) || existsSync(genericPath);
+  const componentImportPath = existsSync(chapterSpecificPath)
+    ? `${chapterId}-${mainPageNumber}`
+    : existsSync(genericPath)
+    ? `${mainPageNumber}`
+    : null;
 
   return {
     props: {
@@ -237,6 +259,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       subPages,
       hasCustomComponent,
       mainPageNumber,
+      componentImportPath,
     },
   };
 };

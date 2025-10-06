@@ -6,7 +6,7 @@ import { getMainPageNumber } from '../../utils/content';
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const contentDir = path.join(process.cwd(), 'content');
   const chapters = fs.readdirSync(contentDir)
-    .filter(dir => /^\d{2}-/.test(dir))
+    .filter(dir => /^\d{1,3}-/.test(dir))
     .map(dir => {
       const chapterId = dir.split('-')[0];
       const chapterPath = path.join(contentDir, dir);

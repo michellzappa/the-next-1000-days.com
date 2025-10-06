@@ -36,7 +36,11 @@ export default function Page({
   const { chapterId, pageId } = router.query;
 
   const CustomComponent = hasCustomComponent
-    ? dynamic(() => import(`../../components/chapter/${pageId}`))
+    ? dynamic(() =>
+        import(`../../components/chapter/${chapterId}-${pageId}`).catch(
+          () => import(`../../components/chapter/${pageId}`)
+        )
+      )
     : null;
 
   const { handleNavigation } = usePageNavigation({
@@ -53,7 +57,7 @@ export default function Page({
   return (
     <div className="min-h-screen flex flex-col items-center bg-background text-foreground">
       <Head>
-        <title>{title} - Field Notes from a Centaur</title>
+        <title>{`${title} - Field Notes from a Centaur`}</title>
         <meta
           name="description"
           content={subtitle || `${title} - Chapter content`}
@@ -113,7 +117,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const contentDir = path.join(process.cwd(), "content");
   const chapters = fs
     .readdirSync(contentDir)
-    .filter((dir) => /^\d{2}-/.test(dir));
+    .filter((dir) => /^\d{1,3}-/.test(dir));
 
   const paths = chapters.flatMap((chapterDir) => {
     const chapterPath = path.join(contentDir, chapterDir);
@@ -156,7 +160,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const content = fs.readFileSync(pagePath, "utf-8");
   const lines = content.split("\n");
-  const title = lines[0].replace("# ", "");
+  const rawTitle = lines[0].replace("# ", "");
+  const title = rawTitle.replace(/<!--[\s\S]*?-->/g, "").trim();
 
   // Find the first ## subtitle line, skipping any blank lines
   const subtitleLine = lines.find((line) => line.trim().startsWith("## "));
@@ -172,7 +177,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     path.join(chapterPath, firstChapterFile),
     "utf-8"
   );
-  const chapterTitle = chapterContent.split("\n")[0].replace("# ", "");
+  const chapterTitle = chapterContent
+    .split("\n")[0]
+    .replace("# ", "")
+    .replace(/<!--[\s\S]*?-->/g, "")
+    .trim();
 
   const stats = fs.statSync(pagePath);
   const lastUpdated = new Date(stats.mtime).toLocaleDateString("en-GB", {
@@ -181,14 +190,22 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     year: "numeric",
   });
 
-  const componentPath = join(
+  const chapterSpecificPath = join(
+    process.cwd(),
+    "src",
+    "components",
+    "chapter",
+    `${chapterId}-${pageId}.tsx`
+  );
+  const genericPath = join(
     process.cwd(),
     "src",
     "components",
     "chapter",
     `${pageId}.tsx`
   );
-  const hasCustomComponent = existsSync(componentPath);
+  const hasCustomComponent =
+    existsSync(chapterSpecificPath) || existsSync(genericPath);
 
   return {
     props: {

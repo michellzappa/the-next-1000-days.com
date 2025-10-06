@@ -1,22 +1,11 @@
 import { GetServerSideProps } from 'next';
 import fs from 'fs';
 import path from 'path';
+import { getMainPageNumber } from '../utils/pageNumbers';
 
 const contentDir = path.join(process.cwd(), 'content');
 
-// Helper function to get the main page number for each chapter
-function getMainPageNumber(chapterId: string): string {
-  const chapterNumber = parseInt(chapterId);
-  return chapterNumber === 0 ? '000' : 
-    chapterNumber === 1 ? '011' :
-    chapterNumber === 2 ? '022' :
-    chapterNumber === 3 ? '033' :
-    chapterNumber === 4 ? '044' :
-    chapterNumber === 5 ? '055' :
-    chapterNumber === 6 ? '066' :
-    chapterNumber === 7 ? '077' :
-    chapterNumber === 8 ? '088' : '000';
-}
+// unified in utils/pageNumbers
 
 // Function to read all content recursively
 function getAllContent(): string {
