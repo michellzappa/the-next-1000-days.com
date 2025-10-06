@@ -77,7 +77,7 @@ export async function getNavigationContext(
   }
 
   const current = index[currentIndex];
-  let previous = currentIndex > 0 ? index[currentIndex - 1] : null;
+  const previous = currentIndex > 0 ? index[currentIndex - 1] : null;
   const next = currentIndex < index.length - 1 ? index[currentIndex + 1] : null;
 
   // No special-case override: from the first sub-page of a chapter, previous
