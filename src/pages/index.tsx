@@ -3,11 +3,10 @@ import Head from "next/head";
 import Link from "next/link";
 import { getChapters } from "../utils/content";
 import Footer from "../components/Footer";
-// Intro chapter removed; Markdown import no longer used here
+import Markdown from "../components/Markdown";
 import { usePageNavigation } from "../hooks/usePageNavigation";
 import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
-// Random button not used on home page
 import { formatChapterNumber } from "../utils/pageNumbers";
 
 interface Chapter {
@@ -25,6 +24,7 @@ interface HomeProps {
 
 export default function Home({ chapters }: HomeProps) {
   const mainChapters = chapters.filter((chapter) => chapter.id !== "0");
+  const introChapter = chapters.find((chapter) => chapter.id === "0");
 
   const { handleNavigation } = usePageNavigation({
     chapterId: "home",
@@ -80,7 +80,11 @@ export default function Home({ chapters }: HomeProps) {
             </div>
           </div>
 
-          {/* Intro chapter section removed */}
+          {introChapter && introChapter.content && (
+            <section className="mt-8 mb-8">
+              <Markdown content={introChapter.content} />
+            </section>
+          )}
 
           <section className="mt-8">
             <h2 className="text-2xl font-semibold mb-3">Chapters</h2>
