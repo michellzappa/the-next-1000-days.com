@@ -29,6 +29,7 @@ from urllib.parse import urljoin, urlparse
 import html2text
 from bs4 import BeautifulSoup
 import time
+import argparse
 
 # Configuration
 RSS_FEED_URL = "https://newsletter.envisioning.io/feed.rss"
@@ -76,15 +77,25 @@ class RSSNewsletterFetcher:
             return int(match.group(1))
         return None
     
-    def fetch_rss_feed(self) -> List[Dict]:
+    def fetch_rss_feed(self, rss_content: Optional[str] = None) -> List[Dict]:
         """Fetch and parse RSS feed"""
         try:
-            print(f"Fetching RSS feed from {RSS_FEED_URL}")
-            response = requests.get(RSS_FEED_URL, headers={'User-Agent': USER_AGENT})
-            response.raise_for_status()
+            if rss_content is None:
+                print(f"Fetching RSS feed from {RSS_FEED_URL}")
+                response = requests.get(RSS_FEED_URL, headers={'User-Agent': USER_AGENT})
+                response.raise_for_status()
+                rss_content = response.text
+            else:
+                print("Using RSS feed content from local file/input")
+            
+            # Strip any leading browser preamble text before XML declaration
+            if rss_content:
+                first_tag_index = rss_content.find('<')
+                if first_tag_index > 0:
+                    rss_content = rss_content[first_tag_index:]
             
             # Parse XML
-            root = ET.fromstring(response.content)
+            root = ET.fromstring(rss_content)
             
             # Find all items (newsletter posts)
             items = []
@@ -92,6 +103,11 @@ class RSSNewsletterFetcher:
                 title_elem = item.find('title')
                 link_elem = item.find('link')
                 pub_date_elem = item.find('pubDate')
+                content_elem = item.find('{http://purl.org/rss/1.0/modules/content/}encoded')
+                
+                content_html = None
+                if content_elem is not None:
+                    content_html = content_elem.text or ''.join(content_elem.itertext())
                 
                 if title_elem is not None and link_elem is not None:
                     title = title_elem.text
@@ -102,7 +118,8 @@ class RSSNewsletterFetcher:
                     items.append({
                         'title': title,
                         'link': link_elem.text,
-                        'pub_date': pub_date_elem.text if pub_date_elem is not None else None
+                        'pub_date': pub_date_elem.text if pub_date_elem is not None else None,
+                        'content': content_html
                     })
             
             print(f"Found {len(items)} items in RSS feed")
@@ -276,8 +293,10 @@ class RSSNewsletterFetcher:
                 }
                 return True
             
-            # Fetch article content
-            html_content = self.fetch_article_content(link)
+            # Fetch article content (prefer RSS embedded HTML when available)
+            html_content = item.get('content')
+            if not html_content:
+                html_content = self.fetch_article_content(link)
             if not html_content:
                 return False
             
@@ -303,7 +322,7 @@ class RSSNewsletterFetcher:
             print(f"✗ Error processing newsletter item: {e}")
             return False
     
-    def run(self, force_refresh: bool = False):
+    def run(self, force_refresh: bool = False, feed_content: Optional[str] = None):
         """Run the RSS fetching process"""
         print("Starting RSS newsletter fetch...")
         print(f"Output directory: {OUTPUT_DIR}")
@@ -312,7 +331,7 @@ class RSSNewsletterFetcher:
             print("Force refresh enabled - will reprocess existing files")
         
         # Fetch RSS feed
-        items = self.fetch_rss_feed()
+        items = self.fetch_rss_feed(feed_content)
         if not items:
             print("No items found in RSS feed")
             return
@@ -359,16 +378,24 @@ class RSSNewsletterFetcher:
 
 def main():
     """Main function"""
+    parser = argparse.ArgumentParser(description="Fetch and convert Substack newsletters.")
+    parser.add_argument("--force", "-f", action="store_true", help="Reprocess existing issues")
+    parser.add_argument("--feed-file", type=str, help="Use a local RSS XML file instead of fetching over the network")
+    args = parser.parse_args()
+    
     fetcher = RSSNewsletterFetcher()
     
-    # Check for command line arguments
-    import sys
-    force_refresh = "--force" in sys.argv or "-f" in sys.argv
+    feed_content = None
+    if args.feed_file:
+        feed_path = Path(args.feed_file).expanduser()
+        if not feed_path.exists():
+            raise FileNotFoundError(f"Feed file not found: {feed_path}")
+        feed_content = feed_path.read_text(encoding='utf-8')
     
-    if force_refresh:
+    if args.force:
         print("Force refresh enabled - will reprocess existing files")
     
-    fetcher.run(force_refresh=force_refresh)
+    fetcher.run(force_refresh=args.force, feed_content=feed_content)
 
 if __name__ == "__main__":
     main()
