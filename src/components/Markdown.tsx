@@ -31,11 +31,14 @@ const Markdown: React.FC<MarkdownProps> = ({
     );
   }, [content, chapterId, pageId]);
 
-  const customImageRenderer = (props: { src?: string; alt?: string }) => {
-    const { src, alt } = props;
-    if (src && src.startsWith("/images/chapters/")) {
-      const isMeme = src.split("/").pop()?.startsWith("meme_");
-      const isGif = src.endsWith(".gif");
+  const customImageRenderer = (props: React.ImgHTMLAttributes<HTMLImageElement>) => {
+    const { src, alt, ...rest } = props;
+    // Ensure src is a string (handle Blob type from React 19)
+    const srcString = typeof src === 'string' ? src : undefined;
+    
+    if (srcString && srcString.startsWith("/images/chapters/")) {
+      const isMeme = srcString.split("/").pop()?.startsWith("meme_");
+      const isGif = srcString.endsWith(".gif");
       return (
         <span
           className={
@@ -43,7 +46,7 @@ const Markdown: React.FC<MarkdownProps> = ({
           }
         >
           <Image
-            src={src}
+            src={srcString}
             alt={alt || ""}
             width={800}
             height={600}
@@ -54,15 +57,19 @@ const Markdown: React.FC<MarkdownProps> = ({
       );
     }
     // For other image formats, use default rendering
-    return (
-      <Image
-        src={src || ""}
-        alt={alt || ""}
-        width={800}
-        height={600}
-        style={{ width: "100%", height: "auto" }}
-      />
-    );
+    if (srcString) {
+      return (
+        <Image
+          src={srcString}
+          alt={alt || ""}
+          width={800}
+          height={600}
+          style={{ width: "100%", height: "auto" }}
+        />
+      );
+    }
+    // Fallback if no valid src
+    return null;
   };
 
   return (

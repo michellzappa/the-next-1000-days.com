@@ -29,6 +29,7 @@ interface PageProps {
   nextChapter: { id: string; title: string } | null;
   navLeft?: { href: string; number: string; title: string } | null;
   navRight?: { href: string; number: string; title: string } | null;
+  componentImportPath?: string | null;
 }
 
 export default function Page({
@@ -38,6 +39,7 @@ export default function Page({
   chapterTitle,
   lastUpdated,
   hasCustomComponent,
+  componentImportPath,
   navLeft,
   navRight,
 }: PageProps & {
@@ -47,12 +49,8 @@ export default function Page({
   const router = useRouter();
   const { chapterId, pageId } = router.query;
 
-  const CustomComponent = hasCustomComponent
-    ? dynamic(() =>
-        import(`../../components/chapter/${chapterId}-${pageId}`).catch(
-          () => import(`../../components/chapter/${pageId}`)
-        )
-      )
+  const CustomComponent = hasCustomComponent && componentImportPath
+    ? dynamic(() => import(`../../components/chapter/${componentImportPath}`))
     : null;
 
   const { handleNavigation } = usePageNavigation({
@@ -222,6 +220,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   );
   const hasCustomComponent =
     existsSync(chapterSpecificPath) || existsSync(genericPath);
+  const componentImportPath = existsSync(chapterSpecificPath)
+    ? `${chapterId}-${pageId}`
+    : existsSync(genericPath)
+    ? pageId
+    : null;
 
   // Precompute navigation to avoid client-side flash
   const navCtx = await getServerNavigationContext(chapterId, pageId);
@@ -248,6 +251,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       chapterTitle,
       lastUpdated,
       hasCustomComponent,
+      componentImportPath,
       navLeft,
       navRight,
     },

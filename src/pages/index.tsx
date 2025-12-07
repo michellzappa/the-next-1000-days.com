@@ -82,7 +82,7 @@ export default function Home({ chapters }: HomeProps) {
 
           {introChapter && introChapter.content && (
             <section className="mt-8 mb-8">
-              <Markdown content={introChapter.content} />
+              <Markdown content={introChapter.content} chapterId="0" />
             </section>
           )}
 
