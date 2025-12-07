@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=20.9.0"
   },
   "dependencies": {
     "@types/recharts": "^1.8.29",
@@ -17,13 +17,13 @@
     "framer-motion": "^11.11.1",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.447.0",
-    "next": "^15.0.0",
+    "next": "^16.0.7",
     "next-images": "^1.8.5",
-    "next-plausible": "^3.12.2",
-    "next-themes": "^0.3.0",
+    "next-plausible": "^3.12.5",
+    "next-themes": "^0.4.6",
     "noisejs": "^2.1.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
     "react-markdown": "^9.0.1",
     "recharts": "^2.12.7",
     "rehype-raw": "^7.0.0",
@@ -35,10 +35,10 @@
   },
   "devDependencies": {
     "@types/node": "^20.11.30",
-    "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.0",
-    "eslint": "^8.57.1",
-    "eslint-config-next": "^15.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^16.0.7",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13",
     "typescript": "^5.6.3"
