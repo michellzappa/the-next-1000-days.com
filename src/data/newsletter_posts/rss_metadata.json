@@ -1,168 +1,6 @@
 {
   "fetched_issues": {
     "119": {
-      "title": "We are in service of the future (119)",
-      "link": "https://newsletter.envisioning.io/p/we-are-in-service-of-the-future-119",
-      "fetched_at": "2025-11-17T11:44:59.527273",
-      "output_file": "N-119.md"
-    },
-    "118": {
-      "title": "Don't Obey in Advance (118)",
-      "link": "https://newsletter.envisioning.io/p/dont-obey-in-advance-118",
-      "fetched_at": "2025-11-17T11:45:00.532461",
-      "output_file": "N-118.md"
-    },
-    "117": {
-      "title": "Life in Interesting Times (117)",
-      "link": "https://newsletter.envisioning.io/p/life-in-interesting-times-117",
-      "fetched_at": "2025-11-17T11:45:01.537552",
-      "output_file": "N-117.md"
-    },
-    "116": {
-      "title": "One Person Unicorns (116)",
-      "link": "https://newsletter.envisioning.io/p/one-person-unicorns-116",
-      "fetched_at": "2025-11-17T11:45:02.538097",
-      "output_file": "N-116.md"
-    },
-    "115": {
-      "title": "You're Absolutely Right! (115)",
-      "link": "https://newsletter.envisioning.io/p/youre-absolutely-right-115",
-      "fetched_at": "2025-11-17T11:45:03.538523",
-      "output_file": "N-115.md"
-    },
-    "114": {
-      "title": "Weapons of Mass Distraction (114)",
-      "link": "https://newsletter.envisioning.io/p/weapons-of-mass-distraction-114",
-      "fetched_at": "2025-11-17T11:45:04.538698",
-      "output_file": "N-114.md"
-    },
-    "113": {
-      "title": "Entropy in the Feedback Loop (113)",
-      "link": "https://newsletter.envisioning.io/p/entropy-in-the-feedback-loop-113",
-      "fetched_at": "2025-11-17T11:45:05.538820",
-      "output_file": "N-113.md"
-    },
-    "112": {
-      "title": "The AI Line (112)",
-      "link": "https://newsletter.envisioning.io/p/the-ai-line-112",
-      "fetched_at": "2025-11-17T11:45:06.539380",
-      "output_file": "N-112.md"
-    },
-    "111": {
-      "title": "Failure of Imagination (111)",
-      "link": "https://newsletter.envisioning.io/p/failure-of-imagination-111",
-      "fetched_at": "2025-11-17T11:45:07.543438",
-      "output_file": "N-111.md"
-    },
-    "110": {
-      "title": "Your Second Self Is Typing (110)",
-      "link": "https://newsletter.envisioning.io/p/your-second-self-is-typing-110",
-      "fetched_at": "2025-11-17T11:45:08.548532",
-      "output_file": "N-110.md"
-    },
-    "109": {
-      "title": "We Turned Sand Into Thinking Machines (109)",
-      "link": "https://newsletter.envisioning.io/p/we-turned-sand-into-thinking-machines",
-      "fetched_at": "2025-11-17T11:45:09.553643",
-      "output_file": "N-109.md"
-    },
-    "108": {
-      "title": "Complete Accuracy Collapse (108)",
-      "link": "https://newsletter.envisioning.io/p/complete-accuracy-collapse-108",
-      "fetched_at": "2025-11-17T11:45:10.557852",
-      "output_file": "N-108.md"
-    },
-    "107": {
-      "title": "Macro Calm, Micro Carnage (107)",
-      "link": "https://newsletter.envisioning.io/p/macro-calm-micro-carnage-107",
-      "fetched_at": "2025-11-17T11:45:11.557950",
-      "output_file": "N-107.md"
-    },
-    "106": {
-      "title": "The News About The News (106)",
-      "link": "https://newsletter.envisioning.io/p/the-news-about-the-news-106",
-      "fetched_at": "2025-11-17T11:45:12.558117",
-      "output_file": "N-106.md"
-    },
-    "105": {
-      "title": "Futures Collapse (105)",
-      "link": "https://newsletter.envisioning.io/p/futures-collapse-105",
-      "fetched_at": "2025-11-17T11:45:13.563244",
-      "output_file": "N-105.md"
-    },
-    "104": {
-      "title": "Move Fast and Fix Things (104)",
-      "link": "https://newsletter.envisioning.io/p/move-fast-and-fix-things-104",
-      "fetched_at": "2025-11-17T11:45:14.568343",
-      "output_file": "N-104.md"
-    },
-    "103": {
-      "title": "Poker Face Recognition (103)",
-      "link": "https://newsletter.envisioning.io/p/poker-face-recognition-103",
-      "fetched_at": "2025-11-17T11:45:15.568460",
-      "output_file": "N-103.md"
-    },
-    "102": {
-      "title": "People Might Experience a Shift in Job Roles (102)",
-      "link": "https://newsletter.envisioning.io/p/people-might-experience-a-shift-in",
-      "fetched_at": "2025-10-05T10:12:26.220394",
-      "output_file": "N-102.md"
-    },
-    "101": {
-      "title": "The Black Smoke Issue (101)",
-      "link": "https://newsletter.envisioning.io/p/the-black-smoke-issue-101",
-      "fetched_at": "2025-10-05T10:12:27.396674",
-      "output_file": "N-101.md"
-    },
-    "100": {
-      "title": "Does AI sometimes dream of itself? (100)",
-      "link": "https://newsletter.envisioning.io/p/does-ai-sometimes-dream-of-itself",
-      "fetched_at": "2025-10-05T10:12:28.583143",
-      "output_file": "N-100.md"
-    },
-    "122": {
-      "title": "If you can\u2019t build it you don\u2019t understand it (122)",
-      "link": "https://newsletter.envisioning.io/p/if-you-cant-build-it-you-dont-understand",
-      "fetched_at": "2025-11-17T11:44:55.375342",
-      "output_file": "N-122.md"
-    },
-    "121": {
-      "title": "It's Not X, It's Y (121)",
-      "link": "https://newsletter.envisioning.io/p/its-not-x-its-y-121",
-      "fetched_at": "2025-11-17T11:44:56.788775",
-      "output_file": "N-121.md"
-    },
-    "120": {
-      "title": "Don't Believe Everything You Think (120)",
-      "link": "https://newsletter.envisioning.io/p/dont-believe-everything-you-think",
-      "fetched_at": "2025-11-17T11:44:58.523255",
-      "output_file": "N-120.md"
-    },
-    "123": {
-      "title": "\n Experimental Environments (123) \n",
-      "link": "https://newsletter.envisioning.io/p/experimental-environments-123",
-      "fetched_at": "2025-11-24T11:25:18.052536",
-      "output_file": "N-123.md"
-    },
-    "122": {
-      "title": "\n If you can\u2019t build it you don\u2019t understand it (122) \n",
-      "link": "https://newsletter.envisioning.io/p/if-you-cant-build-it-you-dont-understand",
-      "fetched_at": "2025-11-24T11:25:19.058276",
-      "output_file": "N-122.md"
-    },
-    "121": {
-      "title": "\n It's Not X, It's Y (121) \n",
-      "link": "https://newsletter.envisioning.io/p/its-not-x-its-y-121",
-      "fetched_at": "2025-11-24T11:25:20.062315",
-      "output_file": "N-121.md"
-    },
-    "120": {
-      "title": "\n Don't Believe Everything You Think (120) \n",
-      "link": "https://newsletter.envisioning.io/p/dont-believe-everything-you-think",
-      "fetched_at": "2025-11-24T11:25:21.064653",
-      "output_file": "N-120.md"
-    },
-    "119": {
       "title": "\n We are in service of the future (119) \n",
       "link": "https://newsletter.envisioning.io/p/we-are-in-service-of-the-future-119",
       "fetched_at": "2025-11-24T11:25:22.065619",
@@ -257,7 +95,175 @@
       "link": "https://newsletter.envisioning.io/p/move-fast-and-fix-things-104",
       "fetched_at": "2025-11-24T11:25:37.132572",
       "output_file": "N-104.md"
+    },
+    "103": {
+      "title": "Poker Face Recognition (103)",
+      "link": "https://newsletter.envisioning.io/p/poker-face-recognition-103",
+      "fetched_at": "2025-11-17T11:45:15.568460",
+      "output_file": "N-103.md"
+    },
+    "102": {
+      "title": "People Might Experience a Shift in Job Roles (102)",
+      "link": "https://newsletter.envisioning.io/p/people-might-experience-a-shift-in",
+      "fetched_at": "2025-10-05T10:12:26.220394",
+      "output_file": "N-102.md"
+    },
+    "101": {
+      "title": "The Black Smoke Issue (101)",
+      "link": "https://newsletter.envisioning.io/p/the-black-smoke-issue-101",
+      "fetched_at": "2025-10-05T10:12:27.396674",
+      "output_file": "N-101.md"
+    },
+    "100": {
+      "title": "Does AI sometimes dream of itself? (100)",
+      "link": "https://newsletter.envisioning.io/p/does-ai-sometimes-dream-of-itself",
+      "fetched_at": "2025-10-05T10:12:28.583143",
+      "output_file": "N-100.md"
+    },
+    "122": {
+      "title": "\n If you can\u2019t build it you don\u2019t understand it (122) \n",
+      "link": "https://newsletter.envisioning.io/p/if-you-cant-build-it-you-dont-understand",
+      "fetched_at": "2025-11-24T11:25:19.058276",
+      "output_file": "N-122.md"
+    },
+    "121": {
+      "title": "\n It's Not X, It's Y (121) \n",
+      "link": "https://newsletter.envisioning.io/p/its-not-x-its-y-121",
+      "fetched_at": "2025-11-24T11:25:20.062315",
+      "output_file": "N-121.md"
+    },
+    "120": {
+      "title": "\n Don't Believe Everything You Think (120) \n",
+      "link": "https://newsletter.envisioning.io/p/dont-believe-everything-you-think",
+      "fetched_at": "2025-11-24T11:25:21.064653",
+      "output_file": "N-120.md"
+    },
+    "123": {
+      "title": "\n Experimental Environments (123) \n",
+      "link": "https://newsletter.envisioning.io/p/experimental-environments-123",
+      "fetched_at": "2025-11-24T11:25:18.052536",
+      "output_file": "N-123.md"
+    },
+    "126": {
+      "title": "Field Notes from a Centaur (126)",
+      "link": "https://newsletter.envisioning.io/p/field-notes-from-a-centaur-126",
+      "fetched_at": "2025-12-28T14:30:07.998768",
+      "output_file": "N-126.md"
+    },
+    "125": {
+      "title": "Recursive Self-Improvement Regime (125)",
+      "link": "https://newsletter.envisioning.io/p/recursive-self-improvement-regime",
+      "fetched_at": "2025-12-28T14:30:09.004078",
+      "output_file": "N-125.md"
+    },
+    "124": {
+      "title": "Insufficient Data for a Meaningful Answer (124)",
+      "link": "https://newsletter.envisioning.io/p/insufficient-data-for-a-meaningful",
+      "fetched_at": "2025-12-28T14:30:10.008524",
+      "output_file": "N-124.md"
+    },
+    "123": {
+      "title": "Experimental Environments (123)",
+      "link": "https://newsletter.envisioning.io/p/experimental-environments-123",
+      "fetched_at": "2025-12-28T14:30:11.011709",
+      "output_file": "N-123.md"
+    },
+    "122": {
+      "title": "If you can\u2019t build it you don\u2019t understand it (122)",
+      "link": "https://newsletter.envisioning.io/p/if-you-cant-build-it-you-dont-understand",
+      "fetched_at": "2025-12-28T14:30:12.013627",
+      "output_file": "N-122.md"
+    },
+    "121": {
+      "title": "It's Not X, It's Y (121)",
+      "link": "https://newsletter.envisioning.io/p/its-not-x-its-y-121",
+      "fetched_at": "2025-12-28T14:30:13.018857",
+      "output_file": "N-121.md"
+    },
+    "120": {
+      "title": "Don't Believe Everything You Think (120)",
+      "link": "https://newsletter.envisioning.io/p/dont-believe-everything-you-think",
+      "fetched_at": "2025-12-28T14:30:14.020043",
+      "output_file": "N-120.md"
+    },
+    "119": {
+      "title": "We are in service of the future (119)",
+      "link": "https://newsletter.envisioning.io/p/we-are-in-service-of-the-future-119",
+      "fetched_at": "2025-12-28T14:30:15.025322",
+      "output_file": "N-119.md"
+    },
+    "118": {
+      "title": "Don't Obey in Advance (118)",
+      "link": "https://newsletter.envisioning.io/p/dont-obey-in-advance-118",
+      "fetched_at": "2025-12-28T14:30:16.025645",
+      "output_file": "N-118.md"
+    },
+    "117": {
+      "title": "Life in Interesting Times (117)",
+      "link": "https://newsletter.envisioning.io/p/life-in-interesting-times-117",
+      "fetched_at": "2025-12-28T14:30:17.028234",
+      "output_file": "N-117.md"
+    },
+    "116": {
+      "title": "One Person Unicorns (116)",
+      "link": "https://newsletter.envisioning.io/p/one-person-unicorns-116",
+      "fetched_at": "2025-12-28T14:30:18.030254",
+      "output_file": "N-116.md"
+    },
+    "115": {
+      "title": "You're Absolutely Right! (115)",
+      "link": "https://newsletter.envisioning.io/p/youre-absolutely-right-115",
+      "fetched_at": "2025-12-28T14:30:19.034502",
+      "output_file": "N-115.md"
+    },
+    "114": {
+      "title": "Weapons of Mass Distraction (114)",
+      "link": "https://newsletter.envisioning.io/p/weapons-of-mass-distraction-114",
+      "fetched_at": "2025-12-28T14:30:20.037013",
+      "output_file": "N-114.md"
+    },
+    "113": {
+      "title": "Entropy in the Feedback Loop (113)",
+      "link": "https://newsletter.envisioning.io/p/entropy-in-the-feedback-loop-113",
+      "fetched_at": "2025-12-28T14:30:21.042031",
+      "output_file": "N-113.md"
+    },
+    "112": {
+      "title": "The AI Line (112)",
+      "link": "https://newsletter.envisioning.io/p/the-ai-line-112",
+      "fetched_at": "2025-12-28T14:30:22.044605",
+      "output_file": "N-112.md"
+    },
+    "111": {
+      "title": "Failure of Imagination (111)",
+      "link": "https://newsletter.envisioning.io/p/failure-of-imagination-111",
+      "fetched_at": "2025-12-28T14:30:23.049875",
+      "output_file": "N-111.md"
+    },
+    "110": {
+      "title": "Your Second Self Is Typing (110)",
+      "link": "https://newsletter.envisioning.io/p/your-second-self-is-typing-110",
+      "fetched_at": "2025-12-28T14:30:24.055188",
+      "output_file": "N-110.md"
+    },
+    "109": {
+      "title": "We Turned Sand Into Thinking Machines (109)",
+      "link": "https://newsletter.envisioning.io/p/we-turned-sand-into-thinking-machines",
+      "fetched_at": "2025-12-28T14:30:25.057740",
+      "output_file": "N-109.md"
+    },
+    "108": {
+      "title": "Complete Accuracy Collapse (108)",
+      "link": "https://newsletter.envisioning.io/p/complete-accuracy-collapse-108",
+      "fetched_at": "2025-12-28T14:30:26.059160",
+      "output_file": "N-108.md"
+    },
+    "107": {
+      "title": "Macro Calm, Micro Carnage (107)",
+      "link": "https://newsletter.envisioning.io/p/macro-calm-micro-carnage-107",
+      "fetched_at": "2025-12-28T14:30:27.063643",
+      "output_file": "N-107.md"
     }
   },
-  "last_fetch": "2025-11-24T11:25:38.134029"
+  "last_fetch": "2025-12-28T14:30:28.065892"
 }
