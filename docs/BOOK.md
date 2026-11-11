@@ -4,10 +4,16 @@
 
 Publish *Field Notes from a Centaur* as a book with an ISBN: an ebook and a print-on-demand edition. The book makes Michell Zappa "the author of" in every bio, event page and pitch.
 
+## Objective
+
+The book is practical. A reader learns how MZ works with AI from concrete examples of things MZ has done: what the task was, what MZ did, what the AI did, what came out, and what MZ learned. Every chapter is mostly cases, not abstract description. The book is readable by humans first.
+
+A field note that only describes a habit ("I use AI to reason through ethical dilemmas") is not done until it has at least one real case behind it.
+
 ## Scope
 
 - Seven chapters (Thinking, Creating, Building, Deciding, Organizing, Living, Connecting), an introduction and an afterword (Seven principles, The next thousand days).
-- Each chapter: the essay, the field exercise, the vignette, and the field notes.
+- Each chapter: the essay, the field exercise, the vignette, the field notes, and the cases behind them (see ADR 0004).
 - English first. A Portuguese edition follows (see ADR 0003).
 
 ## Source of truth
@@ -16,7 +22,7 @@ The merged text in the website repo (`michellzappa/blog`, `content/field-notes/*
 
 ## Definition of done
 
-1. Manuscript edited: no newsletter framing, no broken sentences from the em-dash removal, consistent voice.
+1. Manuscript edited: every field note backed by at least one real case, no newsletter framing, no broken sentences from the em-dash removal, consistent voice.
 2. Front and back matter written: title page, copyright page, contents, introduction, acknowledgements, about the author.
 3. EPUB and print PDF build from the manuscript with one command.
 4. Cover designed for ebook and print.
