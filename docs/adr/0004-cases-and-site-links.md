@@ -1,6 +1,6 @@
 # ADR 0004: Cases as shared files, linked between book and site
 
-Status: proposed, MZ decides
+Status: accepted (2026-11-11)
 
 ## Context
 
