@@ -38,6 +38,10 @@ The merged text in the website repo (`michellzappa/blog`, `content/field-notes/*
 | M3 Publish | ISBN, store listing, book page, announcement. |
 | M4 Portuguese edition | Separate milestone, starts after M3. |
 
+## Local preview
+
+Drafts live in `private/drafts/field-notes/<n>-<slug>.md` (gitignored), with the same filename as the published chapter. Run the michellzappa.com dev server (`pnpm dev` in ~/Dev/michellzappa.com, or the "field-notes" preview, port 3005). In dev, a draft replaces the published file, so http://localhost:3005/field-notes/<slug> shows it in the real layout. Reload to see edits. Production builds never read drafts. Going live = copy the draft into the blog repo's content/field-notes/.
+
 ## How agents work here
 
 - One issue at a time. Each issue states its acceptance test.
