@@ -42,5 +42,6 @@ The merged text in the website repo (`michellzappa/blog`, `content/field-notes/*
 
 - One issue at a time. Each issue states its acceptance test.
 - Human-facing copy goes through the humanizer skill. No em dashes in the book text.
+- Cases in the text carry no dates or years unless the timing is the point ("six weeks later", "tools that did not exist two years earlier"). Dates stay in the case bank as sources, not in the prose.
 - Never invent anecdotes, quotes or numbers. If a chapter needs one, ask in the issue.
 - Decisions that cost money or are public (publisher, price, ISBN route, cover) are MZ's. Record them as ADRs.
