@@ -16,8 +16,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TURN = re.compile(r"^>\s*\*\*(Me|AI)\b([^*]*):\*\*\s*(.*)$")
-ORDER = ["index.md", "1-*.md", "2-*.md", "3-*.md", "4-*.md", "5-*.md", "6-*.md",
-         "7-*.md", "8-*.md", "9-*.md"]
 
 CSS = """
 body { font-family: serif; line-height: 1.45; }
@@ -126,10 +124,11 @@ def main() -> int:
     ap.add_argument("--blog", default=str(ROOT.parent / "michellzappa.com"))
     args = ap.parse_args()
     src = Path(args.blog) / "content" / "field-notes"
-    files = [f for pat in ORDER for f in sorted(src.glob(pat))]
-    if len(files) != len(ORDER):
-        print(f"expected {len(ORDER)} chapter files in {src}, found {len(files)}", file=sys.stderr)
-        return 1
+    # Intro first, then chapters by their frontmatter order (chapter 0 included).
+    def order(f: Path) -> float:
+        return float(split_frontmatter(f.read_text())[0].get("order", "0"))
+    chapters = sorted((f for f in src.glob("*.md") if re.match(r"\d+-", f.name)), key=order)
+    files = [src / "index.md", *chapters]
 
     book_meta, parts = {}, []
     for f in files:
