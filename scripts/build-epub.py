@@ -75,7 +75,21 @@ def exchange_to_divs(lines: list[str]) -> list[str]:
     return out
 
 
+WEB_ONLY = "<!-- web only -->"
+
+
+def drop_web_only(body: str) -> str:
+    """Cards marked web only stay on the site but not in the book (cut list, #9)."""
+    head, sep, cards = body.partition("## More field notes")
+    if not sep:
+        return body
+    parts = re.split(r"(?m)^(?=### )", cards)
+    kept = [parts[0]] + [p for p in parts[1:] if WEB_ONLY not in p]
+    return head + sep + "".join(kept)
+
+
 def convert_body(body: str) -> str:
+    body = drop_web_only(body)
     # Same token as the site (lib/book-text.ts): days since ChatGPT launched, at build time.
     days = (datetime.date.today() - datetime.date(2022, 11, 30)).days
     body = body.replace("%DAYS_SINCE_CHATGPT%", f"{days:,}")
