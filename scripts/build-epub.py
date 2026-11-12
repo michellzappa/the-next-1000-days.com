@@ -1,0 +1,146 @@
+#!/usr/bin/env python3
+"""Build a test EPUB of the book from the live manuscript (issue #11, first step).
+
+The manuscript is content/field-notes/*.md in the blog repo (ADR 0001). This script
+joins the chapters in book order, turns "> **Me:** / > **AI:**" exchanges into
+styled turns, and runs pandoc. Output: build/field-notes.epub (gitignored).
+
+    python3 scripts/build-epub.py [--blog ../michellzappa.com]
+"""
+import argparse
+import re
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+TURN = re.compile(r"^>\s*\*\*(Me|AI)\b([^*]*):\*\*\s*(.*)$")
+ORDER = ["index.md", "1-*.md", "2-*.md", "3-*.md", "4-*.md", "5-*.md", "6-*.md",
+         "7-*.md", "8-*.md", "9-*.md"]
+
+CSS = """
+body { font-family: serif; line-height: 1.45; }
+h1 { margin-top: 0; }
+span.subtitle { font-style: italic; }
+div.exchange { margin: 1em 0; }
+div.me, div.ai, div.note { margin: 0.4em 0; padding: 0.35em 0.6em; border-radius: 0.6em; }
+div.me { margin-left: 15%; background: #e8e8e8; }
+div.ai { margin-right: 15%; border: 1px solid #bbb; }
+div.note { text-align: center; font-size: 0.85em; color: #555; }
+div.me p, div.ai p, div.note p { margin: 0.2em 0; text-indent: 0; }
+span.who { font-size: 0.75em; text-transform: uppercase; letter-spacing: 0.05em; color: #666; }
+div.exercise { border: 1px dashed #888; padding: 0.5em 0.9em; margin: 1em 0; }
+"""
+
+
+def split_frontmatter(text: str) -> tuple[dict, str]:
+    if not text.startswith("---\n"):
+        return {}, text
+    head, body = text[4:].split("\n---\n", 1)
+    meta = {}
+    for line in head.splitlines():
+        if ":" in line:
+            k, v = line.split(":", 1)
+            meta[k.strip()] = v.strip().strip('"')
+    return meta, body
+
+
+def exchange_to_divs(lines: list[str]) -> list[str]:
+    """One quoted block of turns -> pandoc fenced divs, one per turn."""
+    out = ["::: exchange"]
+    current = None
+    for raw in lines:
+        m = TURN.match(raw.strip())
+        if m:
+            if current:
+                out.append(":::")
+            who, label, text = m.group(1), m.group(2).strip(" ()"), m.group(3)
+            cls = "me" if who == "Me" else "ai"
+            out += [f"::: {cls}", f"[{who}{' ' + label if label else ''}]{{.who}}", "", text]
+            current = cls
+            continue
+        text = re.sub(r"^\s*>\s?", "", raw)
+        if current:
+            out.append(text)
+        elif text.strip():
+            out += ["::: note", text, ":::"]
+    if current:
+        out.append(":::")
+    out.append(":::")
+    return out
+
+
+def convert_body(body: str) -> str:
+    lines, out, block = body.splitlines(), [], []
+
+    def flush():
+        if not block:
+            return
+        if any(TURN.match(l.strip()) for l in block):
+            out.extend([""] + exchange_to_divs(block) + [""])
+        else:
+            out.extend(block)
+        block.clear()
+
+    for line in lines:
+        if re.match(r"^\s*>", line):
+            block.append(line)
+        else:
+            flush()
+            out.append(line)
+    flush()
+    md = "\n".join(out)
+    md = md.replace("## More field notes", "## Field notes")
+    # Field exercise: wrap the section body in a box (up to the next heading).
+    md = re.sub(r"(### Field exercise\n)(.*?)(?=\n#{2,3} |\Z)",
+                lambda m: m.group(1) + "\n::: exercise\n" + m.group(2).strip() + "\n:::\n",
+                md, flags=re.S)
+    # Chapter headings move down one level: chapter = h1.
+    return re.sub(r"^(#{2,5}) ", lambda m: "#" + m.group(1) + " ", md, flags=re.M)
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--blog", default=str(ROOT.parent / "michellzappa.com"))
+    args = ap.parse_args()
+    src = Path(args.blog) / "content" / "field-notes"
+    files = [f for pat in ORDER for f in sorted(src.glob(pat))]
+    if len(files) != len(ORDER):
+        print(f"expected {len(ORDER)} chapter files in {src}, found {len(files)}", file=sys.stderr)
+        return 1
+
+    book_meta, parts = {}, []
+    for f in files:
+        meta, body = split_frontmatter(f.read_text())
+        if "⟦" in body:
+            print(f"{f.name}: unapproved ⟦⟧ connector line", file=sys.stderr)
+            return 1
+        title = "Introduction" if f.name == "index.md" else meta["title"]
+        if f.name == "index.md":
+            book_meta = meta
+        parts.append(f"# {title}\n\n")
+        if f.name != "index.md" and meta.get("subtitle"):
+            parts.append(f"[{meta['subtitle']}]{{.subtitle}}\n\n")
+        parts.append(convert_body(body) + "\n\n")
+
+    build = ROOT / "build"
+    build.mkdir(exist_ok=True)
+    (build / "manuscript.md").write_text("".join(parts))
+    (build / "epub.css").write_text(CSS)
+    (build / "metadata.yaml").write_text(
+        f'title: "{book_meta["title"]}"\nsubtitle: "{book_meta.get("subtitle", "")}"\n'
+        'author: "Michell Zappa"\nlang: en\n'
+    )
+    # Pandoc's markdown wraps <p class=subtitle> spans; a bracketed span is fine in EPUB.
+    cmd = ["pandoc", "build/metadata.yaml", "build/manuscript.md",
+           "-f", "markdown+fenced_divs+bracketed_spans-smart",
+           "--toc", "--toc-depth=1", "--split-level=1",
+           "--css", "build/epub.css", "-o", "build/field-notes.epub"]
+    subprocess.run(cmd, check=True, cwd=ROOT)
+    words = len(re.findall(r"\S+", "".join(parts)))
+    print(f"build/field-notes.epub  ({words} words incl. headings, ~{words // 250} print pages at 6x9)")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
