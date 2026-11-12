@@ -27,6 +27,7 @@ div.exchange { margin: 1em 0; }
 div.me, div.ai, div.note { margin: 0.4em 0; padding: 0.35em 0.6em; border-radius: 0.6em; }
 div.me { margin-left: 15%; background: #e8e8e8; }
 div.ai { margin-right: 15%; border: 1px solid #bbb; }
+div.gap { margin: 0.3em 0; color: #999; letter-spacing: 0.2em; }
 div.note { text-align: center; font-size: 0.85em; color: #555; }
 div.me p, div.ai p, div.note p { margin: 0.2em 0; text-indent: 0; }
 span.who { font-size: 0.75em; text-transform: uppercase; letter-spacing: 0.05em; color: #666; }
@@ -57,6 +58,8 @@ def exchange_to_divs(lines: list[str]) -> list[str]:
                 out.append(":::")
             who, label, text = m.group(1), m.group(2).strip(" ()"), m.group(3)
             cls = "me" if who == "Me" else "ai"
+            if cls == "me" and current == "me":
+                out += ["::: gap", "···", ":::"]  # the model's reply is not shown
             out += [f"::: {cls}", f"[{who}{' ' + label if label else ''}]{{.who}}", "", text]
             current = cls
             continue
