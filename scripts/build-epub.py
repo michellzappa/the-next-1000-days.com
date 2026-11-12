@@ -24,6 +24,7 @@ body { font-family: serif; line-height: 1.45; }
 h1 { margin-top: 0; }
 span.subtitle { font-style: italic; }
 div.exchange { margin: 1em 0; }
+div.exchange + div.exchange { border-top: 1px dashed #bbb; padding-top: 0.8em; }
 div.me, div.ai, div.note { margin: 0.4em 0; padding: 0.35em 0.6em; border-radius: 0.6em; }
 div.me { margin-left: 15%; background: #e8e8e8; }
 div.ai { margin-right: 15%; border: 1px solid #bbb; }
