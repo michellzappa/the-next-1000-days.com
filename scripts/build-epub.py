@@ -8,6 +8,7 @@ styled turns, and runs pandoc. Output: build/field-notes.epub (gitignored).
     python3 scripts/build-epub.py [--blog ../michellzappa.com]
 """
 import argparse
+import datetime
 import re
 import subprocess
 import sys
@@ -71,6 +72,9 @@ def exchange_to_divs(lines: list[str]) -> list[str]:
 
 
 def convert_body(body: str) -> str:
+    # Same token as the site (lib/book-text.ts): days since ChatGPT launched, at build time.
+    days = (datetime.date.today() - datetime.date(2022, 11, 30)).days
+    body = body.replace("%DAYS_SINCE_CHATGPT%", f"{days:,}")
     lines, out, block = body.splitlines(), [], []
 
     def flush():
