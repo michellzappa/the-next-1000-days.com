@@ -13,7 +13,7 @@ A field note that only describes a habit ("I use AI to reason through ethical di
 ## Scope
 
 - Seven chapters (Thinking, Creating, Building, Deciding, Organizing, Living, Connecting), an introduction and an afterword (Seven principles, The next thousand days).
-- Each chapter: the essay, the field exercise, the vignette, the field notes, and the cases behind them (see ADR 0004).
+- Each chapter: the essay, the field exercise, the field notes, and the cases behind them (see ADR 0004). The longest story (formerly the "vignette") is the first field note (MZ, 2026-11-12).
 - English first. A Portuguese edition follows (see ADR 0003).
 
 ## Source of truth
@@ -47,7 +47,7 @@ Drafts live in `private/drafts/field-notes/<n>-<slug>.md` (gitignored), with the
 - One issue at a time. Each issue states its acceptance test.
 - Human-facing copy goes through the humanizer skill. No em dashes in the book text.
 - Cases in the text carry no dates or years unless the timing is the point ("six weeks later", "tools that did not exist two years earlier"). Dates stay in the case bank as sources, not in the prose.
-- Chapter shape: essay, callouts (field exercise, vignette), then field-note cards. Each card is titled by its moment (a short quote or scene, e.g. "My whole CRM is like 1MB"); the practice name goes in the italic subtitle. Each card: what happened, then one "Try it" line.
+- Chapter shape: essay, the field exercise, then field-note cards; the first card is the chapter's longest story. Each card is titled by its moment (a short quote or scene, e.g. "My whole CRM is like 1MB"); the practice name goes in the italic subtitle. Each card: what happened, then one "Try it" line.
 - At least one card per chapter shows the real exchange as dialogue (> **Me:** / > **AI:**), quoted from the source, typos kept, trimmed with an ellipsis or a bracketed note, never reworded.
 - **Your words first (MZ, 2026-11-11).** Prose is built from sentences MZ already wrote or said: newsletter text, his talks and calls (Granola, microphone channel only), his own chat messages. Agent-written words are connective tissue only: as few as possible, and marked in the draft with ⟦double brackets⟧ so MZ can see them. Light edits to spoken text are allowed (cut fillers, fix grammar, join fragments), but the wording stays his. Typos in quoted chat messages stay.
 - **Contain claudisms (MZ, 2026-11-12).** MZ reads agent prose as "claudish" and cuts it. So: no card subtitles or one-line morals under titles, no signposting ("This chapter is about…", "This one is the map"), no agent-written section or page subtitles. When MZ's own words are missing, leave the gap or ask for a talk (#20, #23) instead of filling it. A chapter of only his exchanges is acceptable for now (Delegating, 2026-11-12).
