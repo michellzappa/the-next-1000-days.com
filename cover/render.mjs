@@ -10,7 +10,7 @@
  * that reads at thumbnail size, a large author name, one image between them.
  * Type is Ubuntu Mono 400/700, the site face, embedded so the SVG renders the
  * same everywhere. Colours: site ink, paper and the salmon accent.
- * PNGs are rendered by headless Chrome.
+ * SVG by default; --png renders PNGs with headless Chrome (ask mz first on his laptop).
  */
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -79,11 +79,19 @@ const variants = {
     frame({ bg: C.salmon, fg: C.ink, sub: "#6e4f4c", rule: C.ink }, centaurArt(7, C.ink, C.paper, MIX.dither)),
 };
 
-const pick = process.argv[2] ? [process.argv[2]] : Object.keys(variants);
+// PNGs need headless Chrome, which makes the Dock jump on mz's laptop: only with --png, and
+// only when mz asked for a PNG (or run it on mini-4p). SVG is the default output.
+const png = process.argv.includes("--png");
+const args = process.argv.slice(2).filter((a) => a !== "--png");
+const pick = args[0] ? [args[0]] : Object.keys(variants);
 const chrome = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 for (const name of pick) {
   const svg = variants[name]();
   writeFileSync(join(out, `${name}.svg`), svg);
+  if (!png) {
+    console.log(`cover/out/${name}.svg`);
+    continue;
+  }
   const html = join(out, `${name}.html`);
   writeFileSync(html, `<html><body style="margin:0">${svg}</body></html>`);
   execFileSync(chrome, ["--headless", "--disable-gpu", "--hide-scrollbars", `--window-size=${W},${H}`,
