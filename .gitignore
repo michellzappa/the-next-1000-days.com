@@ -37,3 +37,4 @@ next-env.d.ts
 
 # unapproved case candidates, may name clients
 private/
+cover/out/
