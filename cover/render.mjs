@@ -68,14 +68,17 @@ function grid(x0, y0, w, h, cols = 40, rows = 25) {
   return pts;
 }
 
-/** Ordered on the left (the hand), scattering into the accent on the right (the machine). */
-function centaurArt(seed, hand, machine) {
+/**
+ * Ordered dots (the hand) turning into scattered accent dots (the machine).
+ * `mix(u, v, R)` says how far each dot has turned, 0 to 1, from its position
+ * in the band (u across, v down, both 0 to 1). Each variant is a different mix.
+ */
+function centaurArt(seed, hand, machine, mix) {
   return (x, y, w, h) => {
     const R = rng(seed);
-    const seam = x + w * 0.45;
     return grid(x, y, w, h)
       .map(([px, py]) => {
-        const t = Math.max(0, (px - seam) / (x + w - seam));
+        const t = Math.min(1, Math.max(0, mix((px - x) / w, (py - y) / h, R)));
         const j = t ** 1.5 * 90;
         const nx = px + (R() - 0.5) * j;
         const ny = py + (R() - 0.5) * j;
@@ -85,26 +88,35 @@ function centaurArt(seed, hand, machine) {
   };
 }
 
-/** One real exchange from the book (Thinking): my turn in salmon, the reply as grey lines, the ··· gap. */
-function exchangeArt(x, y, w) {
-  const me = `<rect x="${x + 360}" y="${y + 40}" width="${w - 360}" height="300" rx="70" fill="${C.salmon}"/>
-<rect x="${x + w - 100}" y="${y + 240}" width="100" height="100" fill="${C.salmon}"/>
-${text(x + 430, y + 165, 66, C.ink, "ask me iqs if u need")}${text(x + 430, y + 260, 66, C.ink, "a human perspective")}`;
-  const ai = `<rect x="${x}" y="${y + 420}" width="${w - 280}" height="380" rx="70" fill="#e4e0d8"/>
-<rect x="${x}" y="${y + 700}" width="100" height="100" fill="#e4e0d8"/>
-${[0, 1, 2].map((i) => `<rect x="${x + 75}" y="${y + 520 + i * 80}" width="${[820, 760, 560][i]}" height="30" rx="15" fill="#c9c4bb"/>`).join("")}`;
-  const gap = `<g fill="${C.grey}">${[0, 1, 2].map((i) => `<circle cx="${x + 50 + i * 50}" cy="${y + 900}" r="14"/>`).join("")}</g>`;
-  return me + ai + gap;
-}
+/** Ways the hand turns into the machine. */
+const MIX = {
+  /** One straight seam. */
+  seam: (u) => (u - 0.45) / 0.55,
+  /** The seam runs on a slant, so the change starts lower left and ends upper right. */
+  diagonal: (u, v) => (u + (1 - v) * 0.5 - 0.6) / 0.6,
+  /** Each row turns at its own column: a ragged edge. */
+  ragged: (() => {
+    const R = rng(11);
+    const at = Array.from({ length: 25 }, () => 0.2 + R() * 0.5);
+    return (u, v) => (u - at[Math.round(v * 24)]) / (1 - at[Math.round(v * 24)]);
+  })(),
+  /** No edge: the chance that a dot has turned grows from left to right. */
+  dither: (u, v, R) => (R() < u ** 1.6 ? 0.25 + u * 0.75 : 0),
+  /** Time runs down the page: the first days in order, the later days loose. */
+  days: (u, v) => (v - 0.3) / 0.7,
+  /** A soft wave instead of a line. */
+  wave: (u, v) => (u - (0.45 + 0.18 * Math.sin(v * Math.PI * 2.2))) / 0.45,
+};
 
+const ink = { bg: C.ink, fg: C.paper, sub: C.grey, rule: C.salmon };
 const variants = {
-  /** Ink ground, paper dots turning salmon. */
-  centaur: () => frame({ bg: C.ink, fg: C.paper, sub: C.grey, rule: C.salmon }, centaurArt(7, C.paper, C.salmon)),
+  /** Ink ground, paper dots turning salmon; one variant per mix. */
+  ...Object.fromEntries(
+    Object.entries(MIX).map(([name, mix]) => [`dots-${name}`, () => frame(ink, centaurArt(7, C.paper, C.salmon, mix))]),
+  ),
   /** Salmon ground, ink type: the loudest on a shelf of thumbnails. */
-  "centaur-salmon": () =>
-    frame({ bg: C.salmon, fg: C.ink, sub: "#6e4f4c", rule: C.ink }, centaurArt(7, C.ink, C.paper)),
-  /** Paper ground, the book's own form. */
-  exchange: () => frame({ bg: C.paper, fg: C.ink, sub: "#6b6762", rule: C.salmon }, exchangeArt),
+  "dots-dither-salmon": () =>
+    frame({ bg: C.salmon, fg: C.ink, sub: "#6e4f4c", rule: C.ink }, centaurArt(7, C.ink, C.paper, MIX.dither)),
 };
 
 const pick = process.argv[2] ? [process.argv[2]] : Object.keys(variants);
