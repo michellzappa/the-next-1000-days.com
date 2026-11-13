@@ -91,6 +91,8 @@ def convert_body(body: str) -> str:
     # Same token as the site (lib/book-text.ts): days since ChatGPT launched, at build time.
     days = (datetime.date.today() - datetime.date(2022, 11, 30)).days
     body = body.replace("%DAYS_SINCE_CHATGPT%", f"{days:,}")
+    # Site images ("/images/…") resolve against the blog's public folder (--resource-path).
+    body = body.replace("](/images/", "](images/")
     lines, out, block = body.splitlines(), [], []
 
     def flush():
@@ -156,7 +158,8 @@ def main() -> int:
     cmd = ["pandoc", "build/metadata.yaml", "build/manuscript.md",
            "-f", "markdown+fenced_divs+bracketed_spans-smart",
            "--toc", "--toc-depth=1", "--split-level=1",
-           "--css", "build/epub.css", "-o", "build/field-notes.epub"]
+           "--css", "build/epub.css", "-o", "build/field-notes.epub",
+           f"--resource-path={Path(args.blog) / 'public'}"]
     subprocess.run(cmd, check=True, cwd=ROOT)
     words = len(re.findall(r"\S+", "".join(parts)))
     print(f"build/field-notes.epub  ({words} words incl. headings, ~{words // 250} print pages at 6x9)")
